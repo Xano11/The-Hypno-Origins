@@ -1,0 +1,27 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 6,
+        "name": "long sword"
+        },
+    "tick_rate": 20,
+      "condition": {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+			"conditions": [
+				{
+              "type": "origins:ingredient",
+              "ingredient": {
+                  "tag": "executioner:long_sword"
+              }
+            }
+        ]
+          }
+      },
+      "name": "§a§l§nHeavy Handed",
+      "description": "You have a specialty with long swords, but you are weaker with the rest."
+}

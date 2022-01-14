@@ -1,0 +1,43 @@
+{
+	"type":"origins:multiple",
+
+	"resource":
+	{
+	
+	"type": "origins:resource",
+	"min": 0,
+	"max": 120,
+	"start_value": 0,
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+		"bar_index": 4
+	}
+	},
+	"resource_gain":
+	{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "executioner:resource_resource",
+			"change": 5
+		},
+		"interval": 30
+	},
+	"resource_gain_on_kill":
+	{
+		"type": "origins:self_action_on_kill",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "executioner:resource_resource",
+			"change": 120
+		},
+		"cooldown": 400,
+    	"hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 17
+		}
+	},
+	"hidden": true
+}

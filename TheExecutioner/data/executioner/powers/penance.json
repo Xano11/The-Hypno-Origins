@@ -1,0 +1,23 @@
+{
+    "type": "origins:self_action_when_hit",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "minecraft:strength",
+            "amplifier": 1,
+            "duration": 100
+        }
+    },
+    "damage_condition": {
+        "type": "origins:amount",
+        "comparison": ">=",
+        "compare_to": 2
+    },
+    "cooldown": 1200,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+        "bar_index": 5
+    },
+    "name":"§a§l§nPenance",
+    "description":"Each minute, you will get a strength bonus for 5 seconds after taking damage."
+}

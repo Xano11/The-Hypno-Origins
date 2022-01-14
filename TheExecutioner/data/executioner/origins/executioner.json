@@ -1,0 +1,23 @@
+{
+	"powers": [
+		"executioner:callback",
+		"executioner:hungry",
+		"executioner:lurk",
+		"executioner:resource",
+		"executioner:rites",
+		"executioner:stalker",
+		"executioner:stalker2",
+		"executioner:strong_sword",
+		"executioner:weak_weapons",
+		"executioner:penance",
+		"executioner:size",
+		"executioner:outfit",
+		"executioner:sound",
+		"executioner:prevent"
+	],
+	"icon": "medievalweapons:netherite_long_sword",
+	"order": 4,
+	"impact": 3,
+	"name": "Executioner",
+	"description": "An executioner that likes to stalk its preys. Wielding a massive sword, they will easily kill you if you arent paying enough attention..."
+}

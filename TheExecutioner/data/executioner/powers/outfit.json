@@ -1,0 +1,180 @@
+{
+    "type":"origins:multiple",
+
+    "armor":{
+    "type": "origins:restrict_armor",
+    "chest": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 3
+    },
+    "legs": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 2
+    },
+    "feet": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 1
+    }
+  },
+  "leather_helmet":{
+        "type": "origins:conditioned_attribute",
+        "tick_rate": 20,
+        "modifiers": [
+            {
+            "attribute": "minecraft:generic.armor",
+            "operation": "addition",
+            "value": 2
+            },
+            {
+            "attribute": "minecraft:generic.armor_toughness",
+            "operation": "addition",
+            "value": 2
+            }
+            ],
+    "condition": {
+    "type": "origins:equipped_item",
+    "equipment_slot": "head",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:leather_helmet"
+            }
+        }
+    }
+  },
+  "golden_helmet":{
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifiers": [
+        {
+        "attribute": "minecraft:generic.armor",
+        "operation": "addition",
+        "value": 4
+        },
+        {
+        "attribute": "minecraft:generic.armor_toughness",
+        "operation": "addition",
+        "value": 4
+        }
+        ],
+    "condition": {
+    "type": "origins:equipped_item",
+    "equipment_slot": "head",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:golden_helmet"
+        }
+    }
+}
+},
+"chainmail_helmet":{
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifiers": [
+        {
+        "attribute": "minecraft:generic.armor",
+        "operation": "addition",
+        "value": 5
+        },
+        {
+        "attribute": "minecraft:generic.armor_toughness",
+        "operation": "addition",
+        "value": 6
+        }
+        ],
+"condition": {
+    "type": "origins:equipped_item",
+    "equipment_slot": "head",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:chainmail_helmet"
+        }
+    }
+}
+},
+"iron_helmet":{
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifiers": [
+        {
+        "attribute": "minecraft:generic.armor",
+        "operation": "addition",
+        "value": 7
+        },
+        {
+        "attribute": "minecraft:generic.armor_toughness",
+        "operation": "addition",
+        "value": 8
+        }
+        ],
+"condition": {
+    "type": "origins:equipped_item",
+    "equipment_slot": "head",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:iron_helmet"
+        }
+    }
+}
+},
+"diamond_helmet":{
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifiers": [
+        {
+        "attribute": "minecraft:generic.armor",
+        "operation": "addition",
+        "value": 9
+        },
+        {
+        "attribute": "minecraft:generic.armor_toughness",
+        "operation": "addition",
+        "value": 10
+        }
+        ],
+"condition": {
+    "type": "origins:equipped_item",
+    "equipment_slot": "head",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:diamond_helmet"
+            }
+        }
+    }
+},
+"netherite_helmet":{
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifiers": [
+        {
+        "attribute": "minecraft:generic.armor",
+        "operation": "addition",
+        "value": 11
+        },
+        {
+        "attribute": "minecraft:generic.armor_toughness",
+        "operation": "addition",
+        "value": 9
+        }
+        ],
+"condition": {
+    "type": "origins:equipped_item",
+    "equipment_slot": "head",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:netherite_helmet"
+        }
+    }
+}
+},
+  "name":"§e§l§nOutfit For The Job",
+    "description":"You can only wear leather armor, but you can wear any helmets and those give you more resilience."
+}

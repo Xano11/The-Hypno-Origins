@@ -1,0 +1,111 @@
+{
+    "type":"origins:active_self",
+    "entity_action":{
+        "type":"origins:and",
+        "actions":[
+            {
+                "type":"origins:execute_command",
+                "command":"particle minecraft:large_smoke ~ ~ ~ 1 1 1 0.01 100",
+                "permission_level":4
+            },   
+            {
+                "type":"origins:execute_command",
+                "command":"playsound minecraft:entity.vex.charge player @a[distance=..20] ~ ~ ~ 3 0.5",
+                "permission_level":4
+            },  
+            {
+                "type": "origins:delay",
+                "ticks": 30,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+            {
+                "type":"origins:execute_command",
+                "command":"summon armor_stand ^ ^ ^2.5 {CustomName:'{\"text\":\"spikes\"}',Invisible:1b,Invulnerable:1b,NoBasePlate:1b}",
+                "permission_level":4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"summon armor_stand ^ ^ ^5 {CustomName:'{\"text\":\"spikes\"}',Invisible:1b,Invulnerable:1b,NoBasePlate:1b}",
+                "permission_level":4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"summon armor_stand ^ ^ ^7.5 {CustomName:'{\"text\":\"spikes\"}',Invisible:1b,Invulnerable:1b,NoBasePlate:1b}",
+                "permission_level":4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"summon armor_stand ^ ^ ^10 {CustomName:'{\"text\":\"spikes\"}',Invisible:1b,Invulnerable:1b,NoBasePlate:1b}",
+                "permission_level":4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"summon armor_stand ^ ^ ^12.5 {CustomName:'{\"text\":\"spikes\"}',Invisible:1b,Invulnerable:1b,NoBasePlate:1b}",
+                "permission_level":4
+            }
+                    ]
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 31,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type":"origins:execute_command",
+                            "command":"power grant @e[type=minecraft:armor_stand,limit=5,distance=..15,name=spikes] executioner:spikes",
+                            "permission_level":4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:exhaust",
+                "amount": 6
+            },
+            {
+                "type": "origins:change_resource",
+                  "resource": "executioner:resource_resource",
+                  "change": -120
+            }
+        ]
+    },
+    "cooldown": 1,
+    "hud_render":{
+        "should_render":false
+    },
+        "condition": {
+            "type": "origins:and",
+			"conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "executioner:resource_resource",
+                                    "comparison": "==",
+                                    "compare_to": 120
+                                },
+                                {
+                                    "type": "origins:sneaking",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:equipped_item",
+                                    "equipment_slot": "mainhand",
+                                    "item_condition": {
+                                      
+                                          
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "tag": "executioner:long_sword"
+                                    }
+                            }
+                    }            
+            ]
+        },      
+    "key":{
+        "key":"key.origins.primary_active"
+    },
+    "name":"§a§l§nRites Of Judgement",
+    "description":"[Primary] While holding your long sword can trigger your ability to leave a trail of weakening and glowing spikes which last 1 minute."
+}

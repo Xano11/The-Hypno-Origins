@@ -1,0 +1,82 @@
+{
+    "type":"origins:multiple",
+
+
+
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "start_value": 200,
+        "hud_render": {
+            "should_render": false
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "kill @s"
+        }
+        
+},
+"damage":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=..4,tag=!executioner] minecraft:blindness 2 0 true",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=..4,tag=!executioner] minecraft:slowness 5 3 true",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "power grant @e[distance=..4,tag=!executioner] executioner:torment",
+                "permission_level": 4
+            }
+        ]
+    },
+    "interval": 10
+},
+"particles":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s run particle minecraft:large_smoke ~ ~ ~ 2 0 2 0.001 100",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s run particle minecraft:crit ~ ~ ~ 2 0 2 0.001 100",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s run particle minecraft:crimson_spore ~ ~ ~ 2 0 2 0.001 100",
+                "permission_level": 4
+            }
+        ]
+    },
+    "interval": 5
+},
+"remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "executioner:spikes_resource",
+        "change": -20
+    },
+    "interval": 20
+},
+"hidden": true
+}

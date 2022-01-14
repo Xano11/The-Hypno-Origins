@@ -1,0 +1,103 @@
+{
+    "type":"origins:multiple",
+
+
+
+    "resource":
+    { 
+            "type": "origins:resource",
+            "min": 0,
+            "max": 160,
+            "start_value": 160,
+            "hud_render": {
+                "should_render": true,
+                "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+                "bar_index": 4
+            },
+            "min_action": {
+                "type": "origins:execute_command",
+                "command": "power remove @s executioner:torment"
+            }
+            
+    },
+    "particles":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:dust_color_transition 0 0 0 1 0.6 0 0 ~ ~ ~ 1 1 1 1 100",
+            "permission_level": 4
+        },
+        "interval": 20
+    },
+    "remove_resource": 
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "executioner:torment_resource",
+            "change": -20
+        },
+        "interval": 20
+    },
+    "overlay":{
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/glow_lichen.png",
+        "strength": 0.6,
+        "red": 0.5,
+        "green": 0.2,
+        "blue": 0.2,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": false
+},
+"cant_mine":
+{
+    "type": "origins:modify_break_speed",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.7
+    }
+},
+"cant_jump":
+{
+    "type": "origins:modify_jump",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.4
+    }
+},
+
+"no_elytra": 
+{
+    "type": "origins:prevent_elytra_flight"
+    
+},
+"cant_projectile":
+{
+    "type": "origins:modify_projectile_damage",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.5
+    }
+},
+"cant_dealdmg":
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.5
+    }
+},
+"more_dmg":
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "name": "more dmg",
+        "operation": "multiply_total",
+        "value": 0.5
+    }
+},
+"hidden": true
+}

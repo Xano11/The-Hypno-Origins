@@ -1,0 +1,15 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:chance",
+        "action":
+         {    
+        "type": "origins:play_sound",
+        "sound": "minecraft:entity.shulker.close",
+        "volume": 10,
+        "pitch": 0.7
+    },
+    "chance": 0.2
+    },
+    "interval": 300
+}

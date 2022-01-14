@@ -6,6 +6,7 @@
         "minecraft:chainmail_boots",
         "minecraft:iron_boots",
         "minecraft:diamond_boots",
-        "minecraft:netherite_boots"
+        "minecraft:netherite_boots",
+		"fullturtlearmor:turtle_boots"
     ]
 }

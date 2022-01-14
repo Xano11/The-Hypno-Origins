@@ -21,6 +21,16 @@
                     "space": "local"
                 },
                 {
+                    "type": "origins:add_velocity",
+                    "z": 0.4,
+                    "space": "local"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power grant @s wereboar:leap_velocity",
+                    "permission_level": 4
+                },
+                {
                     "type": "origins:delay",
                     "ticks": 1,
                     "action": {
@@ -99,6 +109,14 @@
     },
     "modifier": {
       "value": -1,
+      "operation": "multiply_total"
+    }
+},
+"less_dmg":
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": -0.25,
       "operation": "multiply_total"
     }
 },

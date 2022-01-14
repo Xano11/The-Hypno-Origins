@@ -15,7 +15,7 @@
             },
             {
                 "type": "origins:execute_command",
-                "command": "effect give @s minecraft:slowness 2 4 true",
+                "command": "effect give @s minecraft:slowness 2 3 true",
                 "permission_level": 4
             },
             {

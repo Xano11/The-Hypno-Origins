@@ -1,0 +1,21 @@
+{
+    "type":"origins:multiple",
+
+"air_speed":
+{
+    "type": "origins:modify_air_speed",
+    "modifier": {
+        "operation": "addition",
+        "value": 0.02
+    }
+},
+"remove":
+{
+    "type": "origins:action_on_land",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "power remove @s wereboar:leap_velocity"
+    }
+},
+"hidden": true
+}

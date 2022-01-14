@@ -1,0 +1,143 @@
+{
+    "type": "origins:multiple",
+    "combat_timer_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "combat_timer_resource_drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_combat_timer_resource",
+            "change": -1
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_combat_timer_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "combat": {
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_combat_timer_resource",
+            "change": 30
+        },
+        "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">=",
+            "compare_to": 0.1
+        },
+        "cooldown": 20
+    },
+    "healthreset": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_health_resource",
+            "change": -1
+        },
+        "interval": 10,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_combat_timer_resource",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+    "health_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 4,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "health_1": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 5,
+            "name": "Increased Combat Health 1"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_health_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "health_2": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 5,
+            "name": "Increased Combat Health 2"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_health_resource",
+            "comparison": ">=",
+            "compare_to": 2
+        }
+    },
+    "health_3": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 5,
+            "name": "Increased Combat Health 1"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_health_resource",
+            "comparison": ">=",
+            "compare_to": 3
+        }
+    },
+    "health_4": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 5,
+            "name": "Increased Combat Health 4"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_health_resource",
+            "comparison": "==",
+            "compare_to": 4
+        }
+    },
+    "health_buff": {
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_health_resource",
+            "change": 1
+        },
+        "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">=",
+            "compare_to": 0.1
+        },
+        "cooldown": 400
+    },
+    "name": "§a§l§nMade For Combat",
+	"description": "Whilst in combat gain health the longer you are in a fight for, if you are out of combat for 30 seconds it will reset all of your bonus health"
+}

@@ -1,0 +1,22 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+		{
+			"type": "origins:feed",
+			"food": 6,
+			"saturation": 0
+		},
+		{
+			"type": "origins:extinguish"
+		}
+		]
+	},
+	"interval": 75,
+	"condition": {
+    	"type": "origins:on_fire"
+	},
+	"name": "§e§l§nInner Fire",
+	"description": "Being made of flames, eating the flames off of your body or consuming Dried Kelp fills your hunger! Sadly, other foods phase right through you."
+}

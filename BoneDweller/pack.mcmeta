@@ -1,0 +1,10 @@
+{
+	"pack": {
+		"name": "SizeShifter Origin",
+		"id": "sizeshifter",
+		"pack_format": 8,
+		"authors": "Muffin",
+		"version": "0.0.1",
+		"description": "Bones for the bone God"
+	}
+}

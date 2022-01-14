@@ -1,0 +1,11 @@
+{
+	"type": "origins:attribute",
+	"modifier": {
+		"name": "Natural Armor health bonus",
+		"attribute": "minecraft:generic.armor",
+		"value": 3.0,
+		"operation": "addition"
+	},
+	"name": "§a§l§nCarapace",
+	"description": "Your sturdy exoskeleton provides natural defense."
+}

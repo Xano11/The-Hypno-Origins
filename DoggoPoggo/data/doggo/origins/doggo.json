@@ -1,0 +1,28 @@
+{
+	"powers": [
+	   "doggo:pounce",
+	   "doggo:pounce_aerialdamage",
+	   "doggo:smolman",
+	   "doggo:speed",
+	   "doggo:jump",
+	   "doggo:fragilefox",
+	   "doggo:hungy",
+	   "doggo:fox_pouch_sound",
+	   "doggo:monch",
+	   "doggo:run",
+       "doggo:fire",
+       "doggo:wolf_strength",
+	   "origins:fall_immunity",
+	   "origins:carnivore",
+	   "doggo:bone_eat",
+	   "doggo:callback",
+	   "doggo:bond",
+	   "doggo:glow_hyooman"
+           
+	],
+	"icon": "minecraft:bone",
+	"order": 2,
+	"impact": 3,
+	"name": "doggo poggo",
+	"description": "dog pog (i edited the fox origin!!!!!)"
+}

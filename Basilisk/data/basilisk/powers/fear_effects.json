@@ -1,0 +1,67 @@
+{
+    "type":"origins:multiple",
+
+
+"effects":
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+        "type": "origins:execute_command",
+        "command": "effect give @s minecraft:glowing 10 0 true",
+        "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s minecraft:speed 10 0 true",
+                "permission_level": 4
+            }
+        ]
+    }
+},
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "start_value": 200,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 20
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s basilisk:fear_effects"
+        }
+        
+},
+
+"remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "basilisk:fear_effects_resource",
+        "change": -20
+    },
+    "interval": -20
+},
+
+"more_dmg":
+{
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:amount",
+        "comparison": ">=",
+        "compare_to": 3.0
+    },
+    "modifier": {
+        "name": "more dmg",
+        "operation": "multiply_total",
+        "value": 0.2
+    }
+},
+"hidden": true
+}

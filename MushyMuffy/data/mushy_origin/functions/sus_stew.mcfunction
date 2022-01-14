@@ -1,0 +1,1 @@
+give @s suspicious_stew{display:{Name:'{"text":"Not so suspicious stew","color":"dark_green","bold":true}'},Effects:[{EffectId:32b,EffectDuration:600}]}

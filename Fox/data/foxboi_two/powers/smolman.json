@@ -1,0 +1,38 @@
+{
+  "type": "origins:action_on_callback",
+  "entity_action_added":
+	{
+	"type": "origins:execute_command",
+	"command": "execute as @s run function foxboi_two:smolman_two",
+	"permission_level": 4
+	},
+  "entity_action_removed":
+	{
+    "type": "origins:and",
+    "actions": [
+	{
+	"type": "origins:execute_command",
+	"command": "execute as @s run function foxboi_two:nosmol_two",
+	"permission_level": 4
+	},
+	{
+	"type": "origins:execute_command",
+	"command": "attribute @s minecraft:generic.max_health base set 20",
+	"permission_level": 4
+	},
+	{
+	"type": "origins:execute_command",
+	"command": "attribute @s minecraft:generic.movement_speed  base set 0.7",
+	"permission_level": 4
+	    }
+      ]  
+	},
+  "entity_action_respawned":
+	{
+	"type": "origins:execute_command",
+	"command": "execute as @s run function foxboi_two:smolman_two",
+	"permission_level": 4
+	},
+  "execute_chosen_when_orb": true,
+	"hidden": true
+}

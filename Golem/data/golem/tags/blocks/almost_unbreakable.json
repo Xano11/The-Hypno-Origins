@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:netherite_block",
+        "minecraft:ancient_debris",
+        "minecraft:obsidian",
+        "minecraft:crying_obsidian"
+    ]
+}

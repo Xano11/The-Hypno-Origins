@@ -1,0 +1,111 @@
+{
+	"type": "origins:multiple",
+	"name": "§a§l§nHeightened Senses[Primary]",
+	"description": "As you gain souls your senses are increased. When hit you do not lose hearts, however your soul meter will decrease. This ability has 4 charges with a full soul meter and does not work in both the nether or the end. If your soul meter is empty, you will take damage. Toggle with primary.",
+	
+	"forcefield_active": {
+		"type": "origins:modify_damage_taken",
+			"damage_condition": {
+				"type": "origins:attacker"
+			},
+			"modifier": {
+				"value": -0.99,
+				"operation": "multiply_total"
+			},
+			"condition": {
+			"type": "origins:and",
+			"conditions": [
+			{
+				"type": "origins:resource",
+				"resource": "*:defence_resource",
+				"comparison": ">",
+				"compare_to": 0
+			},
+			{      
+				"type": "origins:resource",
+				"resource": "*:blood_resource",
+				"comparison": ">=",
+				"compare_to": 24
+			},
+			{
+				"type": "origins:dimension",
+				"dimension": "minecraft:overworld",
+				"inverted": false
+			}
+
+		]
+	}
+	},
+	"forcefield_break": {
+		"type": "origins:self_action_when_hit",
+		"cooldown": 0,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:change_resource",
+					"resource": "*:blood_resource",
+					"change": -25
+				},
+				{
+					"type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.wither.hurt master @a[distance=..15] ~ ~ ~ 1 1",
+                    "permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s run particle dust 0 0 0 1 ~ ~-1 ~ 0.5 1.4 0.5 0 500",
+					"frequency": 4
+				},
+				{
+				"type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "spreadplayers ~ ~ 5 15 false @s"
+				},
+				{
+				"type": "origins:delay",
+					"ticks": 5,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle dust 0 0 0 1 ~ ~-1 ~ 0.5 1.4 0.5 0 500",
+                    "permission_level": 4
+					}
+				},
+				{
+				"type": "origins:delay",
+					"ticks": 5,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.enderman.teleport master @a[distance=..15] ~ ~ ~ 1 1",
+                    "permission_level": 4
+					}
+				}
+			]
+		},
+		"condition": {
+		"type": "origins:and",
+		"conditions": [
+		{
+			"type": "origins:resource",
+			"resource": "*:defence_resource",
+			"comparison": ">",
+			"compare_to": 0
+		},
+		{      
+			"type": "origins:resource",
+			"resource": "*:blood_resource",
+			"comparison": ">=",
+			"compare_to": 24
+		},
+		{
+			"type": "origins:dimension",
+			"dimension": "minecraft:overworld",
+			"inverted": false
+		}
+	]
+},
+		"damage_condition": {
+			"type": "origins:attacker"
+		}
+	}
+}

@@ -1,0 +1,2 @@
+execute as @a[advancements={coworigin:cowjump=true}] run effect give @s minecraft:jump_boost 25 0 false
+execute as @a[advancements={coworigin:cowjump=true}] run advancement revoke @s only coworigin:cowjump

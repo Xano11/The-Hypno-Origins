@@ -1,0 +1,11 @@
+{
+  "type": "origins:night_vision",
+  "strength": 0.4,
+  "condition": {
+    "type": "origins:submerged_in",
+    "fluid": "minecraft:water",
+    "inverted": true
+  },
+  "name": "§a§l§nCat Eyes",
+  "description": "Your eyes, which were taken from cat DNA, can see very well in the dark."
+}

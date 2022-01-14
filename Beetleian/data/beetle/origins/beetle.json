@@ -1,0 +1,31 @@
+{
+	"powers": [
+		"beetle:carapace",
+		"origins:climbing",
+		"beetle:size",
+		"beetle:black",
+		"beetle:takeoff",
+		"beetle:less_health",
+		"beetle:elytra",
+		"beetle:elytra_damagetaken",
+		"beetle:buzz_hurt",
+		"origins:vegetarian",
+		"beetle:wingedcondition",
+		"beetle:winged_enable",
+		"beetle:winged_disable",
+		"beetle:countervail",
+		"beetle:countervailcharge",
+		"beetle:countervailcondition",
+		"beetle:countervail_transform",
+		"beetle:countervailbuff",
+		"beetle:firework",
+		"beetle:slow",
+		"beetle:sun_debuff",
+		"beetle:air"
+	],
+	"icon": "minecraft:polished_blackstone_button",
+	"order": 6,
+	"impact": 3,
+	"name": "Beetleian",
+	"description": "Humanoid beetles often portrayed as tough brutes. As capable fighters with their durable shell they prove themselves to be such."
+}

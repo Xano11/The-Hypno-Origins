@@ -1,0 +1,33 @@
+{
+  "type": "origins:multiple",
+  "strength": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 2,
+        "name": "Increased strength"
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether"
+    }
+},
+  "speed": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "addition",
+        "value": 0.06,
+        "name": "Increased speed"
+    },
+    "tick_rate": 20,
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether"
+    }
+},
+"name": "§a§l§nTartarus Body",
+"description": "While in the nether, you feel your body become stronger while in a familiar dimension. Giving you more attack, speed, and health while you are inside."
+}

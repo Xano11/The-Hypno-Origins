@@ -1,0 +1,24 @@
+{
+    "type": "origins:action_over_time",
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:command",
+                "inverted": false,
+                "comparison": ">=",
+                "compare_to": 1,
+                "permission_level": 4,
+                "command": "execute if entity @e[distance=..15,name=Demon_007]"
+            }
+        ]
+    },
+    "interval": 5,
+    "entity_action": {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "effect give @s minecraft:resistance 1 0 true"
+    },
+    "hidden": true
+}

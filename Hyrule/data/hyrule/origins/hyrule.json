@@ -1,0 +1,15 @@
+{
+	"powers": [
+		"hyrule:pickup",
+		"hyrule:boner",
+		"hyrule:brothers",
+		"hyrule:noise"
+	],
+	"icon": {
+		"item": "minecraft:player_head"
+	},
+	"order": 21,
+	"impact": 3,
+	"name": "Blue Horny Dragon",
+	"description": "Horny cuz they got horns. Right...?"
+}

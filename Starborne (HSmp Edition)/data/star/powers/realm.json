@@ -1,0 +1,25 @@
+{
+	"type": "origins:damage_over_time",
+	"hidden": true,
+	"interval": 100,
+	"onset_delay": 1,
+	"damage": 1,
+	"damage_easy": 1,
+	"damage_source": {
+		"name": "inWall",
+		"unblockable": true,
+		"bypasses_armor": false
+	},
+	"condition": {
+		"type": "origins:or",
+		"conditions": [{
+				"type": "origins:dimension",
+				"dimension": "minecraft:the_nether"
+			},
+			{
+				"type": "origins:dimension",
+				"dimension": "minecraft:the_end"
+			}
+		]
+	}
+}

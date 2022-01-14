@@ -1,0 +1,8 @@
+{
+    "type": "origins:effect_immunity",
+    "effects": [
+        "minecraft:poison"
+    ],
+    "name": "§a§l§nPoison-Immune",
+        "description": "Your glands also provide an immunity to any type of poisons."
+}

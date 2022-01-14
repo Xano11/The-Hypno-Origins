@@ -1,0 +1,592 @@
+{
+	"type": "origins:multiple",
+	"c_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/c_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:note ~ ~2.2 ~ 0.125 0.125 0.125 1 1 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "melody:magical_music_bar",
+					"change": 1
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "melody:magical_music_reset_bar"
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.1"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"d_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/d_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:note ~ ~2.2 ~ 0.125 0.125 0.125 1 1 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "melody:magical_music_bar",
+					"change": 1
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "melody:magical_music_reset_bar"
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.2"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"e_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/e_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:note ~ ~2.2 ~ 0.125 0.125 0.125 1 1 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "melody:magical_music_bar",
+					"change": 1
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "melody:magical_music_reset_bar"
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.3"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"f_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/f_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:note ~ ~2.2 ~ 0.125 0.125 0.125 1 1 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "melody:magical_music_bar",
+					"change": 1
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "melody:magical_music_reset_bar"
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.4"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"g_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/g_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:note ~ ~2.2 ~ 0.125 0.125 0.125 1 1 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "melody:magical_music_bar",
+					"change": 1
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "melody:magical_music_reset_bar"
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.5"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"a_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/a_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:note ~ ~2.2 ~ 0.125 0.125 0.125 1 1 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "melody:magical_music_bar",
+					"change": 1
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "melody:magical_music_reset_bar"
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.6"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"b_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/b_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:note ~ ~2.2 ~ 0.125 0.125 0.125 1 1 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "melody:magical_music_bar",
+					"change": 1
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "melody:magical_music_reset_bar"
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.7"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"c_two_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/c2_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:note ~ ~2.2 ~ 0.125 0.125 0.125 1 1 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "melody:magical_music_bar",
+					"change": 1
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "melody:magical_music_reset_bar"
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.8"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"d_two_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/d2_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:note ~ ~2.2 ~ 0.125 0.125 0.125 1 1 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "melody:magical_music_bar",
+					"change": 1
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "melody:magical_music_reset_bar"
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.9"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"open_menu": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "/function melody:menu/sound_selection",
+			"permission_level": 4
+		},
+		"cooldown": 5,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.command"
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "offhand",
+			"item_condition": {
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:note_block"
+				}
+			}
+		}
+	},
+	"default_sound": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:execute_command",
+			"command": "/tag @s add harp",
+			"permission_level": 4
+		},
+		"entity_action_lost": {
+			"type": "origins:execute_command",
+			"command": "/function melody:remove/all",
+			"permission_level": 4
+		}
+	},
+	"name": "§b§l§nMagical music",
+	"description": "Compose your own melodies to release the true power of music! You can play on a noteblock you hold in your offhand. Your toolbar becomes a keyboard."
+}

@@ -1,0 +1,11 @@
+{
+  "replace":false,
+  "origins": [
+    "manyorigins:soulling",
+    "manyorigins:caffine_demon",
+    "manyorigins:titan",
+    "manyorigins:celestial",
+    "manyorigins:depth_crawler",
+    "manyorigins:hiveborn"
+  ]
+}

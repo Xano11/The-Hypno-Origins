@@ -1,0 +1,6 @@
+{
+    "type": "origins:simple",
+    "name": "§e§l§nBulky",
+    "description": "You move slower, but take less damage.",
+    "hidden": false
+}

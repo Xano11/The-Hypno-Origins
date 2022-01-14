@@ -1,0 +1,106 @@
+{
+    "type": "origins:action_over_time",
+    "name": "§a§l§nCozy Aura",
+    "description": "You passively heal those around you while you are standing on wool, beds, or carpet and have your Wool Coat active!",
+    "condition": {
+        "conditions": [
+            {
+                "type": "origins:status_effect",
+                "effect": "minecraft:regeneration",
+                "min_amplifier": 0,
+                "max_amplifier": 2,
+                "min_duration": 0,
+                "max_duration": 10,
+                "inverted": true
+            },
+            {
+                "type": "origins:resource",
+                "comparison": ">",
+                "resource": "woolorigin:woolresource",
+                "compare_to": 0
+            },
+            {
+                "conditions": [
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "inverted": false,
+                            "tag": "minecraft:beds"
+                        },
+                        "radius": 1,
+                        "shape": "star",
+                        "comparison": ">=",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "inverted": false,
+                            "tag": "minecraft:carpets"
+                        },
+                        "radius": 1,
+                        "shape": "star",
+                        "comparison": ">=",
+                        "compare_to": 1
+                    },
+                    {
+                        "type": "origins:on_block",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "inverted": false,
+                            "tag": "minecraft:wool"
+                        }
+                    },
+                    {
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "inverted": false,
+                            "tag": "minecraft:beds"
+                        }
+                    },
+                    {
+                        "type": "origins:in_block",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "inverted": false,
+                            "tag": "minecraft:carpets"
+                        }
+                    }
+                ],
+                "type": "origins:or"
+            }
+        ],
+        "type": "origins:and"
+    },
+    "hidden": false,
+    "entity_action": {
+        "type": "origins:if_else",
+        "if_action": {
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "/effect give @e[sort=nearest,distance=0..4] regeneration 5"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "/effect give @s regeneration 5"
+                }
+            ],
+            "type": "origins:and"
+        },
+        "condition": {
+            "type": "origins:status_effect",
+            "inverted": true,
+            "effect": "minecraft:regeneration",
+            "max_amplifier": 1,
+            "min_duration": 0,
+            "max_duration": 5
+        }
+    },
+    "interval": 140
+}

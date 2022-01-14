@@ -1,0 +1,19 @@
+{
+  "type": "origins:particle",
+  "particle": "minecraft:happy_villager",
+  "frequency": 4,
+  "hidden": true,
+
+"condition": {
+  "type": "origins:and",
+      "inverted": false,
+      "conditions": [
+{
+"type": "origins:resource",
+      "resource": "epic:resource",
+      "comparison": "==",
+      "compare_to": 0
+}
+  ]
+}
+}

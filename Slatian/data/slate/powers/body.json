@@ -1,0 +1,10 @@
+{
+  "type": "origins:model_color",
+  "alpha": 1,
+  "red": 0.33,
+	"green": 0.34,
+	"blue": 0.45,
+  "name": "§e§l§nSlate Body",
+  "description": "You are made out of tough deep slate, giving you natural armor.",
+  "hidden": false
+}

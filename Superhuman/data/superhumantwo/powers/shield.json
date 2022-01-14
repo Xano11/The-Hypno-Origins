@@ -1,0 +1,20 @@
+{
+	"type": "origins:modify_damage_dealt",
+	"modifier": {
+		"operation": "addition",
+		"value": 3
+	},
+	"condition": {
+		"type": "origins:equipped_item",
+		"equipment_slot": "mainhand",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:shield"
+			}
+	}	
+	},
+	"name": "§a§l§nAlways Offensive",
+	"description": "You deal +4 damage when attacking with a shield as your weapon.",
+	"hidden": false
+}

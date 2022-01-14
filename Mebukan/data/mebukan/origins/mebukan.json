@@ -1,0 +1,20 @@
+{
+    "powers": [
+		"mebukan:iron_averse",
+		"mebukan:seafire",
+		"mebukan:water_breathing",
+		"mebukan:water_preference",
+		"mebukan:water_vision",
+		"origins:aqua_affinity",
+		"origins:aquatic",
+		"origins:like_water",
+        "origins:carnivore"
+    ],
+	"icon": {
+		"item": "minecraft:sea_lantern"
+	},
+	"order": 20,
+	"impact": 2,
+    "name": "Mebukan",
+    "description": "Neither the gates of heaven nor hell accepted you after death. You have been cursed and left wandering the land of the living. Perhaps you have unfinished business here?"
+}

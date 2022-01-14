@@ -1,0 +1,11 @@
+{
+	"type":"origins:attribute",
+	"modifier":{
+	   "attribute": "minecraft:generic.movement_speed",
+	   "value": 0.02,
+	   "operation": "addition"
+	},
+	"name": "§a§l§nLight body",
+	"description": "Your modified limbs provide little weight and are much more powerful, making it easier to move faster than average.",
+	"tick_rate": 2
+}

@@ -1,0 +1,22 @@
+{
+	"powers": [
+		"masquerader:bird/upwards",
+		"masquerader:bird/forwards",
+		"masquerader:agile",
+		"masquerader:notweapons",
+		"masquerader:nohelmet",
+		"masquerader:bird/birdmask",
+		"origins:claustrophobia",
+		"origins:elytra",
+		"masquerader:weaksoul",
+		"masquerader:weak",
+		"masquerader:weakedsoul",
+		"masquerader:untransform"
+	],
+	"icon": "minecraft:beacon",
+	"order": 10,
+	"impact": 3,
+	"name": "Cosmic Bird",
+	"description": "A Masquerader that has harnessed the power of the cosmos and take to the skies",
+	"unchoosable": true
+}

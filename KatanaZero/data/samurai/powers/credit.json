@@ -1,0 +1,10 @@
+{
+  "type":"origins:action_over_time",
+  "interval":800,
+  "entity_action":{
+    "type":"origins:execute_command",
+    "command":""
+  },
+  "name":"§0Made by Pier#2468!",
+  "description":"Join my discord for more origins here: https://discord.gg/9Ep2vQ27Qv"
+}

@@ -1,0 +1,68 @@
+{
+	"hidden": true,
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "hud_render": {
+		"should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 0
+		}
+    },
+	"possession_active_timer": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+		"entity_action": {
+        "type": "origins:change_resource",
+		"resource": "*:defence_resource",
+		"change": 20
+		},
+		"condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type":"origins:power_active",
+                    "power":"*:*_toggle",
+                    "inverted": false
+                },
+            {
+                "type": "origins:sneaking",
+                "inverted": true
+            }
+          ]
+        }
+	},
+	"possession_reduce_timer": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:defence_resource",
+            "change": -10
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type":"origins:power_active",
+                    "power":"*:*_toggle",
+                    "inverted": true
+                },
+            {
+                "type": "origins:sneaking",
+                "inverted": true
+            }
+          ]
+        }
+	},
+	"toggle":{
+      "type":"origins:toggle",
+	  "active_by_default": false,
+      "key":{
+         "key":"key.origins.primary_active",
+         "continuous":false
+      }
+	}
+}

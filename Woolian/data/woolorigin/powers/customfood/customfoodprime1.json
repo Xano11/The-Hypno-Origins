@@ -1,0 +1,71 @@
+{
+    "hidden": true,
+    "type": "origins:simple",
+    "description": "This is the eating animation itself. It is what increases the resource bar to the point where you finish eating and what plays the sounds and has optional particle effects.",
+    "condition": {
+        "type": "origins:or",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:grass"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:grass"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:tall_grass"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:tall_grass"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

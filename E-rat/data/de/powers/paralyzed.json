@@ -1,0 +1,74 @@
+{
+    "type": "origins:multiple",
+    "no_move": {
+		"type": "origins:attribute",
+		"modifier": {
+			"name": "Max health increase",
+			"attribute": "minecraft:generic.movement_speed",
+			"value": -1,
+			"operation": "multiply_total"
+		}
+	},
+
+	"no_jump": {
+		"type": "origins:modify_jump",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		}
+	},
+
+	"no_attack": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		}
+	},
+
+    "particles": {
+        "type": "origins:particle",
+		"particle": "minecraft:electric_spark",
+		"frequency": 32
+	},
+
+    "resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 60,
+		"start_value": 60,
+		"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/resource_bar.png",
+		"bar_index": 2
+		}
+	},
+
+	"drain": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "de:paralyzed_resource",
+			"change": -1
+		},
+		"interval": 1
+	},
+
+	"remove": {
+        "type": "origins:action_over_time",
+		"entity_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @e[limit=1,sort=nearest] de:paralyzed",
+            "permission_level": 4
+		},
+		"interval": 1,
+        "condition": {
+        "type": "origins:resource",
+        "resource": "de:paralyzed_resource",
+        "comparison": "==",
+        "compare_to": 0
+        }
+	},
+    "name": "§c§l§nParalyzed",
+	"description": "Shocking, Your frozen in place"
+}

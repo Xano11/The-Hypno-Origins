@@ -1,0 +1,8 @@
+{
+    "type": "origins:modify_player_spawn",
+    "name": "§e§l§nNatural Habitat",
+    "description": "You spawn within the moss.",
+    "hidden": false,
+    "dimension": "minecraft:overworld",
+	"biome": "minecraft:lush_caves"
+}

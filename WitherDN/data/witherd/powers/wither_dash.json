@@ -1,0 +1,61 @@
+{
+	"type": "origins:active_self",
+	"name": "§a§l§nWither Dash",
+	"description": "You channel the souls inside of you to dash that allows you to hover a short time",
+	"cooldown": 370,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [{
+				"type": "origins:add_velocity",
+				"space": "local",
+				"set": false,
+				"z": 1.5
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "effect give @s minecraft:slow_falling 1 0 true"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "effect give @s minecraft:levitation 1 0 true"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "effect give @e[distance=1..4] minecraft:wither 10 0"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "playsound minecraft:entity.wither.shoot player @a ~ ~ ~ 1 1.5"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "playsound minecraft:entity.wither.hurt player @a ~ ~ ~ 1 0.7"
+			},
+			{
+				"type": "origins:change_resource",
+				"resource": "witherd:ressource",
+				"change": -20
+			}
+		]
+	},
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+		"bar_index": 4
+	},
+	"condition": {
+		"type": "origins:resource",
+		"resource": "witherd:ressource",
+		"comparison": ">=",
+		"compare_to": 20
+	},
+	"key": {
+		"key": "primary",
+		"continuous": false
+	}
+}

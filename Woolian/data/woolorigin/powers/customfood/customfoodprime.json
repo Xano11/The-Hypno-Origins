@@ -1,0 +1,117 @@
+{
+    "hidden": true,
+    "type": "origins:active_self",
+    "name": "Custom Food Consumption",
+    "description": "The power which actively consumes food. You can configure it in the following ways:\n\n",
+    "cooldown": 5,
+    "key": {
+        "continuous": true,
+        "key": "key.use"
+    },
+    "hud_render": {
+        "should_render": false,
+        "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "inverted": false,
+                    "comparison": "<",
+                    "resource": "woolorigin:customfood/customfoodresource",
+                    "compare_to": 31
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "woolorigin:customfood/customfoodhaseatenbool",
+                    "change": -1
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "/playsound entity.generic.eat master @s ~ ~ ~ 0.5"
+            },
+            {
+                "type": "origins:apply_effect",
+                "effect": {
+                    "duration": 6,
+                    "is_ambient": false,
+                    "show_particles": false,
+                    "show_icon": false,
+                    "effect": "minecraft:slowness",
+                    "amplifier": 4
+                }
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:or",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:grass"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:grass"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:tall_grass"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:tall_grass"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

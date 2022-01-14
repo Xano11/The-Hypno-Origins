@@ -1,0 +1,35 @@
+{
+	"type": "origins:stacking_status_effect",
+	"min_stacks": -10,
+	"max_stacks": 10,
+	"duration_per_stack": 20,
+	"effects": [
+	  {
+		"effect": "minecraft:slowness",
+		"is_ambient": true,
+		"show_particles": false,
+		"show_icon": true,
+		"amplifier": 1
+	  },
+      {
+		"effect": "minecraft:nausea",
+		"is_ambient": true,
+		"show_particles": false,
+		"show_icon": true,
+		"amplifier": 0
+	  }
+	],
+	"condition": {
+	  "type": "origins:or",
+	 "conditions": [
+		{
+                "type": "origins:resource",
+                "resource": "witheredv2:ressource",
+                "comparison": "==",
+                "compare_to": 100
+        }
+	  ]
+	},
+	"name": "§c§l§nTormented Souls",
+	"description": "The damned souls try to take over. Having too many might be more of a disadvantage..."
+  }

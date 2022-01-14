@@ -1,0 +1,66 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:apply_effect",
+                "effects": [{
+                    "effect": "minecraft:slowness",
+                    "duration": 400,
+                    "amplifier": 4,
+                    "is_ambient": false,
+                    "show_particles": false,
+                    "show_icon": true
+            },
+            {
+                "effect": "minecraft:blindness",
+                "duration": 400,
+                "amplifier": 0,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:poison",
+                "duration": 400,
+                "amplifier": 0,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": true
+            }
+            ]
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"It isn't your lucky day.\",\"bold\":true,\"italic\":true,\"color\":\"gold\"}",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.elder_guardian.curse player @s ~ ~ ~ 1 2",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:squid_ink ~ ~1 ~ 0.5 0.5 0.5 0.01 100",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "power remove @s exodian:result2",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "hidden": true
+}

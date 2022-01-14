@@ -1,0 +1,1 @@
+execute at @s run tag @e[limit=100,type=!player,distance=..20] add slate

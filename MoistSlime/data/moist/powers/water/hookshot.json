@@ -1,0 +1,125 @@
+{
+    "type": "origins:multiple",
+
+    "grappling_hook": {
+    "type": "origins:active_self",
+    "entity_action": {
+    "type": "origins:raycast",
+    "distance": 16,
+    "block": true,
+    "entity": true,
+    "shape_type": "collider",
+    "fluid_handling": "none",
+    "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "tp @e[limit=1,sort=nearest,distance=..1] @e[limit=1,tag=slime,sort=nearest,distance=1..]",
+            "permission_level": 4
+            }
+        },
+        "block_action": {
+        "type": "origins:execute_command",
+        "command": "tag @e[limit=1,tag=slime,sort=nearest,distance=1..] add target"
+    },
+    "hit_action": {
+        "type": "origins:swing_hand",
+        "hand": "OFF_HAND"
+    },
+    "before_action": {
+        "type": "origins:execute_command",
+        "command": "playsound minecraft:entity.slime.squish player @a[distance=..10]"
+    },
+    "command_at_hit": "particle minecraft:item_slime ~ ~1 ~ 0.001 0.001 0.001 0.001 20 normal",
+    "command_along_ray": "particle minecraft:item_slime ~ ~1 ~ 0.001 0.001 0.001 0.001 20 normal",
+    "command_step": 1,
+    "command_along_ray_only_on_hit": false
+    },
+    "condition": {
+        "type": "origins:power_active",
+        "power": "moist:water/propulsion_toggle",
+        "inverted": true
+    },
+    "cooldown": 75,
+    "hud_render": {
+    "should_render": true,
+    "bar_index": 8
+    },
+    "key": {
+        "key": "key.origins.primary_active"
+    }
+    },
+
+    "pull_towards_hit_location": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [{
+                "type": "origins:add_velocity",
+                "space": "local",
+                "z": 1.7
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove target"
+                }
+            }
+        ]
+    },
+    "interval": 1,
+    "condition": {
+        "type": "origins:command",
+        "command": "execute if entity @s[tag=target]",
+        "comparison": "==",
+        "compare_to": 1
+    }
+    },
+
+    "water_blast": {
+        "type": "origins:active_self",
+        "entity_action": {
+        "type": "origins:raycast",
+        "distance": 16,
+        "block": true,
+        "entity": true,
+        "shape_type": "collider",
+        "fluid_handling": "none",
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:execute_command",
+                "command": "power grant @e[limit=1,sort=nearest,distance=..1] moist:water/soaked",
+                "permission_level": 4
+                }
+            },
+        "hit_action": {
+			"type": "origins:change_resource",
+			"resource": "*:water/moisture_resource",
+			"change": -20
+        },
+        "command_at_hit": "particle minecraft:falling_dripstone_water ~ ~ ~ 0.01 0.01 0.01 0.01 40 normal @a",
+        "command_along_ray": "particle minecraft:falling_dripstone_water ~ ~ ~ 0.01 0.01 0.01 0.01 40 normal @a",
+        "command_step": 1,
+        "command_along_ray_only_on_hit": false
+        },
+        "condition": {
+            "type": "origins:power_active",
+            "power": "moist:water/propulsion_toggle"
+        },
+        "cooldown": 100,
+        "hud_render": {
+        "should_render": true,
+        "bar_index": 8
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+			"continuous": true
+        }
+        },
+
+    "name": "§a§l§nSlime Tentacle/Water Shot",
+    "description": "[Primary] Launch your arm in the form of a Tentacle grabbing onto whatever it comes in contact with, if it hits a block it will pull you towards the block. If it hits a entity it will pull the entity towards you, If your water mode toggle is active shoot a water blast downing anyone it hits"
+}

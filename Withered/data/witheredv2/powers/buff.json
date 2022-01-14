@@ -1,0 +1,74 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:apply_effect",
+                "effects": [
+                    { 
+                        "effect": "minecraft:strength",
+                        "duration": 300,
+                        "amplifier": 1,
+                        "show_icon": false,
+                        "show_particles": false
+                    },
+                    { 
+                        "effect": "minecraft:speed",
+                        "duration": 300,
+                        "amplifier": 1,
+                        "show_icon": false,
+                        "show_particles": false
+                    },
+                    { 
+                        "effect": "minecraft:regeneration",
+                        "duration": 300,
+                        "amplifier": 0,
+                        "show_icon": false,
+                        "show_particles": false
+                    }
+                ]
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.wither.spawn player @a[distance=..15] ~ ~ ~ 0.4 0",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "witheredv2:ressource",
+                "change": -100
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect @e[distance=1..15] give minecraft:slowness 10 1 false",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s run particle minecraft:soul ~ ~ ~ 1 1 1 0.5 100 force",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @e[distance=1..15] run particle minecraft:warped_spore ~ ~1 ~ 0.4 0.4 0.4 1 100 force",
+                "permission_level": 4
+            }
+            ]
+            },
+    "cooldown": 1200,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 1
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "witheredv2:ressource",
+        "comparison": "==",
+        "compare_to": 100
+    },
+    "name": "§a§l§nRage of the Withered",
+    "description": "You feel the anger of the trapped souls and decide to lash out",
+    "key": "secondary"
+}

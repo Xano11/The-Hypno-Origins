@@ -1,0 +1,33 @@
+{
+	"type": "origins:multiple",
+	"name": "Dark Pump",
+	"description": "Your Dark Blood pumps whenever you get into combat, upon hitting an entity your adrenaline will skyrocket, your agility increases and your health increases as well. Unfortunately, when that blood is not pumping due to combat, it will most likely slowly freeze, and that decreases your max health when not engaged.",
+	"modify_break_speed": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 1
+		}
+	},
+	"night_vision": {
+		"type": "origins:night_vision",
+		"strength": 0.5
+	},
+	"speed_punch": {
+		"type": "origins:self_action_on_hit",
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:speed",
+				"duration": 600,
+				"amplifier": 0
+			},
+			"damage_condition": {
+				"type": "origins:amount",
+				"comparison": "<=",
+				"compare_to": 3.0
+			},
+		"cooldown": 300
+		}
+	}
+}

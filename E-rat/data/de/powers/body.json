@@ -1,0 +1,173 @@
+{
+    "type": "origins:multiple",
+    "size": {
+        "type": "origins:action_on_callback",
+        "entity_action_added": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:height 0.55 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:width 0.60 @s",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "scale reset pehkui:height @s",
+            "permission_level": 4
+        },
+        "entity_action_respawn": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:height 0.55 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:width 0.60 @s",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "execute_chosen_when_orb": true
+    },
+
+    "particles": {
+        "type": "origins:particle",
+		"particle": "minecraft:electric_spark",
+		"frequency": 16
+	},
+
+    "scamper": {
+        "type": "origins:attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "value": 0.2,
+            "name": "Increased speed"
+        }
+    },
+
+    "fall_immunity_partly": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "fall"
+            },
+            "modifier": {
+            "operation": "multiply_total",
+            "value": -1
+        }
+    },
+
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "de:body_resource",
+            "change": -1
+            },
+            "interval": 20,
+            "condition": {
+            "type": "origins:resource",
+            "resource": "de:body_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    
+    "slow": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "value": -0.5,
+            "name": "decreased movement speed after falling"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "de:body_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+
+    "land": {
+        "type": "origins:action_on_land",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "de:body_resource",
+            "change": 10
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fall_distance",
+                    "comparison": ">",
+                    "compare_to": 6
+                },
+                {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+
+    "thunder_almost_immunity": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "lightningBolt"
+            },
+            "modifier": {
+            "operation": "multiply_total",
+            "value": -0.99
+        }
+    },
+
+    "teamremove": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "team @e remove slime",
+            "permission_level": 4
+        },
+        "execute_chosen_when_orb": true
+    },
+    
+    "teamjoinandleave": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "tag @s add slime",
+            "permission_level": 4
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove slime",
+            "permission_level": 4
+        },
+        "execute_chosen_when_orb": true
+    },
+    
+    "name": "§e§l§nRat Body",
+    "description": "Your short, move slightly faster and don't take fall damage but upon falling 5 or more blocks when landing you get slowness for 10 seconds"
+}

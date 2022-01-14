@@ -1,0 +1,18 @@
+{
+  "type": "origins:stacking_status_effect",
+  "min_stacks": 0,
+  "max_stacks": 1,
+  "duration_per_stack": 20,
+  "effect": {
+    "effect": "minecraft:regeneration",
+    "amplifier": 0,
+    "show_particles": false,
+    "is_ambient": true
+  },
+  "condition": {
+    "type": "origins:submerged_in",
+    "fluid": "minecraft:water"
+  },
+  "name": "§a§l§nTidal Healing",
+  "description": "When in water, you have permanent regeneration."
+}

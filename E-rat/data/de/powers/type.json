@@ -1,0 +1,49 @@
+{
+    "type": "origins:multiple",
+    "poison_weakness": {
+        "type": "origins:damage_over_time",
+        "interval": 20,
+        "onset_delay": 1,
+        "damage": 1,
+        "damage_easy": 1,
+        "damage_source": {
+        "name": "even_more_magic",
+            "unblockable": true,
+            "bypasses_armor": true
+        },
+        "condition": {
+            "type": "origins:status_effect",
+            "effect": "minecraft:poison",
+            "min_amplifier": 0
+        }
+    },
+
+    "ground_weakness": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "name": "more_stalactite",
+            "operation": "multiply_total",
+            "value": 1
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "fallingStalactite"
+        }
+    },
+
+    "dragon_strength": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "name": "Extra damage to dragons",
+            "operation": "multiply_total",
+            "value": 2
+        },
+        "target_condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:ender_dragon"
+        }
+    },
+    
+    "name": "§c§l§nType Weakness",
+    "description": "You take more damage from poison and falling stalactites due to your weaknesses to those elements."
+}

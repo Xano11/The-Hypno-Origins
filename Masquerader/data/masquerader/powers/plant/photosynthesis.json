@@ -1,0 +1,25 @@
+{
+  "type": "origins:multiple",
+  "regenerate_food": {
+	"type": "origins:action_over_time",
+	"interval": 20,
+	"entity_action": {
+	  "type": "origins:feed",
+	  "food": 1,
+	  "saturation": 1
+	},
+	"condition": {
+	  "type": "origins:and",
+	  "conditions": [
+		{
+		  "type": "origins:daytime"
+		},
+		{
+		  "type": "origins:exposed_to_sky"
+		}
+	  ]
+	}
+  },
+  "name": "§a§l§nPhotosynthesis",
+  "description": "Being part plant has its perks! One of them is getting most of your energy from the sun."
+}

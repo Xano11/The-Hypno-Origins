@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "weak soul",
+    "attribute": "minecraft:generic.max_health",
+    "value": -6.0,
+    "operation": "addition"
+  },
+  "name": "§c§l§nWeakend Soul",
+  "description": "You have three hearts less than in your main human form."
+}

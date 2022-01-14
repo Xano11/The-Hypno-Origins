@@ -1,0 +1,88 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:heal",
+                "amount": 18
+            },
+            {
+                "type": "origins:apply_effect",
+                "effects": [{
+                    "effect": "minecraft:regeneration",
+                    "duration": 200,
+                    "amplifier": 1,
+                    "is_ambient": false,
+                    "show_particles": false,
+                    "show_icon": true
+            },
+            {
+                "effect": "minecraft:speed",
+                "duration": 200,
+                "amplifier": 2,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:absorption",
+                "duration": 200,
+                "amplifier": 0,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "effect": "minecraft:strength",
+                "duration": 200,
+                "amplifier": 1,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": true
+            }
+            ]
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"The gods are offering you a great gift. The gift of life.\",\"bold\":true,\"italic\":true,\"color\":\"gold\"}",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.elder_guardian.curse player @s ~ ~ ~ 1 2",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:happy_villager ~ ~0.6 ~ 0.6 1 0.6 1 100 force",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0 1 0 1 ~ ~0.6 ~ 0.6 1 0.6 1 100 force",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:note ~ ~0.6 ~ 1 1 1 1 5 force",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "power remove @s exodian:result4",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "hidden": true
+}

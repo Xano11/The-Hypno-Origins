@@ -1,0 +1,27 @@
+{
+    "type": "origins:target_action_on_hit",
+    "hidden": true,
+    "entity_action": {
+        "type": "origins:add_velocity",
+        "space": "velocity_horizontal_normalized",
+        "set": false,
+        "z": 0.3
+    },
+    "condition": {
+        "type": "origins:and",
+        "inverted": true,
+        "conditions": [
+            {
+                "type": "origins:sprinting",
+                "inverted": true
+            },
+            {
+                "type": "origins:fall_distance",
+                "inverted": false,
+                "comparison": ">",
+                "compare_to": 0
+            }
+        ]
+    },
+    "cooldown": 0
+}

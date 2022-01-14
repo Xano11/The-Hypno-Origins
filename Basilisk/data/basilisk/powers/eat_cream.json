@@ -1,0 +1,94 @@
+{
+    "type": "origins:active_self",
+    "cooldown": 50,
+    "key": {
+        "key": "key.use",
+        "continuous": true
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:heal",
+                "amount": 3
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "playsound minecraft:entity.player.burp player @s ~ ~ ~ 1 1.5"
+            },
+            {
+                "type": "origins:apply_effect",
+                "effect": {
+                    "effect": "minecraft:speed",
+                    "duration": 200,
+                    "amplifier": 0
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "inverted": false,
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:nbt",
+                        "nbt": "{display:{Name:'{\"text\":\"Love Cream\",\"color\":\"light_purple\",\"bold\":true,\"italic\":true}',Lore:['{\"text\":\"What could it do...?\",\"color\":\"white\",\"italic\":true}']},Enchantments:[{}]}"
+                    }
+                },
+                "if_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                "else_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                }
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+	"bar_index": 9,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    },
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{display:{Name:'{\"text\":\"Love Cream\",\"color\":\"light_purple\",\"bold\":true,\"italic\":true}',Lore:['{\"text\":\"What could it do...?\",\"color\":\"white\",\"italic\":true}']},Enchantments:[{}]}"
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{display:{Name:'{\"text\":\"Love Cream\",\"color\":\"light_purple\",\"bold\":true,\"italic\":true}',Lore:['{\"text\":\"What could it do...?\",\"color\":\"white\",\"italic\":true}']},Enchantments:[{}]}"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "hidden": false
+}

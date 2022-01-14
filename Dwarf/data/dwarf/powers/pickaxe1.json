@@ -1,0 +1,29 @@
+{
+	"type": "origins:conditioned_attribute",
+	"modifier": {
+		"attribute": "minecraft:generic.attack_damage",
+		"value": 3,
+		"operation": "addition"
+	},
+	"condition":
+	{
+		"type": "origins:and",
+		"conditions":
+		[
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition":
+				{
+					"type": "origins:ingredient",
+					"ingredient":
+					{
+						"item": "minecraft:wooden_pickaxe"
+					}
+				}
+			}
+		]
+	},
+	"name": "§a§l§nPickaxe Familiarity",
+	"description": "Wielding a pickaxe for those many years has made you quite proficient with them. (+3 damage with any pickaxe)"
+}

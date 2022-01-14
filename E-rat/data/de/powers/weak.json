@@ -1,0 +1,32 @@
+{
+    "type": "origins:multiple",
+    "less_health": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "Max health decrease",
+            "attribute": "minecraft:generic.max_health",
+            "value": -4,
+            "operation": "addition"
+        }
+    },
+
+    "fragile": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "name": "weak_body",
+            "operation": "multiply_total",
+            "value": 0.2
+        }
+    },
+
+    "weak_arms": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "name": "weak_arms",
+            "operation": "multiply_base",
+            "value": -0.2
+        }
+    },
+    "name": "§c§l§nWeak",
+    "description": "Due to you being small and fragile you have 8 hearts and deal and take 20% more damage from everything."
+}

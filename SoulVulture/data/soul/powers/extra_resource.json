@@ -1,0 +1,81 @@
+{
+    "type":"origins:multiple",
+
+"gain":{
+
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "soul:resource",
+        "change": 1
+      },
+    "cooldown": 0,
+    "condition": {
+    "type": "origins:food_level",
+	"comparison": "==",
+	"compare_to": 20
+	}
+},
+"eat":{
+    "type": "origins:active_self",
+    "entity_action": {	
+        "type": "origins:and",
+        "actions": [{
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.player.burp"
+            },
+            {
+                "type": "origins:feed",
+                "food": 5,
+                "saturation": 10
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "soul:resource",
+                "change": -1
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:soul ~ ~1.7 ~ 0.2 0.2 0.1 0.05 15",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "particle minecraft:block soul_soil ~ ~1.6 ~ 0.3 0.1 0.3 0.05 30",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "playsound block.soul_soil.place player @a ~ ~1 ~ 2 0",
+                "permission_level": 4
+            }
+        ]
+    },
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+        "type": "origins:resource",
+        "resource": "soul:resource",
+        "comparison": ">=",
+        "compare_to": 1
+            },
+            {
+				"type": "origins:food_level",
+				"comparison": "<",
+				"compare_to": 20
+			}
+        ]
+    },
+"cooldown": 30,
+"hud_render": {
+"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+"bar_index": 0,
+"should_render": false
+}
+},
+"hidden": true
+}

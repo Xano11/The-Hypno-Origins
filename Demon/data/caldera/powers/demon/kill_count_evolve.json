@@ -1,0 +1,34 @@
+{
+	"type": "origins:self_action_on_kill",
+	"cooldown": 6,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+	  {
+		  "type": "origins:execute_command",
+			"command": "particle minecraft:soul ~ ~1 ~ 0 0.3 0 0.2 50 normal",
+			"permission_level": 4
+	  },
+	  {
+		  "type": "origins:play_sound",
+			"sound": "minecraft:entity.illusioner.prepare_mirror"
+	  }]
+	},
+	"condition": {
+		"type": "origins:or",
+		"conditions": [
+		{
+			"type": "origins:resource",
+			"resource": "caldera:demon/kill_count",
+			"comparison": "==",
+			"compare_to": 99
+		},
+		{
+			"type": "origins:resource",
+			"resource": "caldera:demon/kill_count",
+			"comparison": "==",
+			"compare_to": 499
+		}]
+	},
+	"hidden": true
+}

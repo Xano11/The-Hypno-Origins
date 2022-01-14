@@ -1,0 +1,10 @@
+{
+    "hidden": true,
+    "type": "origins:action_over_time",
+    "interval": 5,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "woolorigin:customfood/customfoodresource",
+        "change": -1
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "type": "origins:invisibility",
+    "render_armor": false,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+            "type": "origins:sneaking"
+        },
+        {      
+            "type": "origins:resource",
+            "resource": "foxboi_two:stealth_timer",
+            "comparison":"<=",
+            "compare_to": 0
+        }
+        ]    
+    },
+    "hidden": true
+}

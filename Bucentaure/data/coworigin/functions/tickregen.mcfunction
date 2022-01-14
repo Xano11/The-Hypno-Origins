@@ -1,0 +1,2 @@
+execute as @a[advancements={coworigin:cowregen=true}] run effect give @s minecraft:regeneration 10 0 false
+execute as @a[advancements={coworigin:cowregen=true}] run advancement revoke @s only coworigin:cowregen

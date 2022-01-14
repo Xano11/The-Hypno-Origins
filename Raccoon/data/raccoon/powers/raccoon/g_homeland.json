@@ -1,0 +1,58 @@
+{
+    "type": "origins:multiple",
+    "spawn_homeland": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:overworld",
+        "biome": "minecraft:forest"
+    },
+    "falldmg": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "fall"
+        }
+    },
+    "homeland_buffs": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 19,
+        "effects": [
+            {
+                "effect": "minecraft:speed",
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false
+            },
+            {
+                "effect": "minecraft:jump_boost",
+                "amplifier": 1,
+                "is_ambient": true,
+                "show_icon": false,
+                "show_particles": false
+            }
+        ],
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:category",
+                        "category": "plains"
+                    }
+                },
+                {
+                    "type": "origins:biome",
+                    "condition": {
+                        "type": "origins:category",
+                        "category": "forest"
+                    }
+                }
+            ]
+        }
+    },
+    "name": "§a§l§nRaccoon Homeland",
+    "description": "You spawn in a forest biome and you gain buffs there too."
+}

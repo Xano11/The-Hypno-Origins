@@ -1,0 +1,33 @@
+{
+    "type": "origins:multiple",
+    "poison-touch": {
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+            "effect": "minecraft:poison",
+            "amplifier": 1,
+            "duration": 100
+        }
+    },
+    "cooldown": 10,
+    "hud_render": {
+        "should_render": false,
+        "bar_index": 5
+    }
+    },
+    "poison-touched": {
+        "type": "origins:attacker_action_when_hit",
+        "entity_action": {
+        "type": "origins:apply_effect",
+        "effect": {
+        "effect": "minecraft:poison",
+        "duration": 100,
+        "amplifier": 0
+        }
+        },
+        "cooldown": 100
+    },
+    "name":"§a§l§nPoison Ivy",
+	"description":"Everything you touch and that touches you is poisoned"
+}

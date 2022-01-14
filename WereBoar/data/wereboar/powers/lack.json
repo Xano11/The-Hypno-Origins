@@ -1,0 +1,22 @@
+{
+	"type": "origins:prevent_item_use",
+	"item_condition": {
+		"type": "origins:or",
+		"conditions": [
+		{	
+		"type": "origins:ingredient",
+		"ingredient": {
+			"tag": "wereboar:cant_use"
+		}
+	},
+	{
+		"type": "origins:enchantment",
+		"enchantment": "minecraft:riptide",
+		"comparison": ">",
+		"compare_to": 1
+	}	
+]
+	},
+	"name": "§c§l§nLack of understanding",
+    "description": "You lack the understanding to play against people with bows and enhanced tridents. You decide to not use them."
+}

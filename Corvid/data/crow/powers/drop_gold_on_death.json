@@ -1,0 +1,141 @@
+{
+	"type": "origins:self_action_on_kill",
+	"name": "§a§l§nKeen eye",
+	"description": "A small chance that enemies will drop gold upon death",
+	"cooldown": 40,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": 
+		[
+			{
+				"type": "origins:chance",
+				"action":
+				{
+					"type": "origins:choice",
+					"actions":[
+						{
+							"element": 
+							{
+							"type": "origins:give",
+							"stack": 
+								{
+								"item": "minecraft:gold_ingot",
+								"amount": 1
+								}
+							},
+							"weight": 30
+						},
+						{
+							"element": 
+							{
+							"type": "origins:give",
+							"stack": 
+								{
+								"item": "minecraft:gold_ingot",
+								"amount": 2
+								}
+							},
+							"weight": 25
+						},
+						{
+							"element": 
+							{
+							"type": "origins:give",
+							"stack": 
+								{
+								"item": "minecraft:gold_ingot",
+								"amount": 3
+								}
+							},
+							"weight": 15
+						},
+						{
+							"element": 
+							{
+							"type": "origins:give",
+							"stack": 
+								{
+								"item": "minecraft:gold_ingot",
+								"amount": 4
+								}
+							},
+							"weight": 10
+						}
+					]
+				},
+				"chance": 0.1
+			},
+			{
+				"type": "origins:chance",
+				"action": 
+					{
+						"type": "origins:choice",
+						"actions":[
+							{
+								"element": 
+								{
+								"type": "origins:give",
+								"stack": 
+									{
+									"item": "minecraft:gold_nugget",
+									"amount": 1
+									}
+								},
+								"weight": 45
+							},
+							{
+								"element": 
+								{
+								"type": "origins:give",
+								"stack": 
+									{
+									"item": "minecraft:gold_nugget",
+									"amount": 2
+									}
+								},
+								"weight": 40
+							},
+							{
+								"element": 
+								{
+								"type": "origins:give",
+								"stack": 
+									{
+									"item": "minecraft:gold_nugget",
+									"amount": 3
+									}
+								},
+								"weight": 30
+							},
+							{
+								"element": 
+								{
+								"type": "origins:give",
+								"stack": 
+									{
+									"item": "minecraft:gold_nugget",
+									"amount": 4
+									}
+								},
+								"weight": 25
+							}
+						]
+					},
+					"chance": 0.15
+				},
+				{
+					"type": "origins:chance",
+					"action":
+					{
+						"type": "origins:give",
+						"stack":
+						{
+							"item": "minecraft:gold_block",
+							"amount": 1
+						}
+					},	
+					"chance": 0.05
+				}
+			]
+	}
+}

@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Nine lives health reduction",
+    "attribute": "minecraft:generic.max_health",
+    "value": -8.0,
+    "operation": "addition"
+  },
+  "name": "§c§l§nSmol",
+  "description": "Being small comes with its downsides, 4 less hearts."
+}

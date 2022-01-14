@@ -1,0 +1,63 @@
+{
+    "type": "origins:active_self",
+    "name": "Update",
+    "description": "Transfer void shard 1.1.1 to 1.1.2 new shard",
+    "hidden": true,
+    "cooldown": 100,
+    "condition": {
+        "type": "origins:or",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:equipped_item",
+                "inverted": false,
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "inverted": false,
+                    "ingredient": {
+                        "item": "minecraft:structure_void"
+                    }
+                }
+            },
+            {
+                "type": "origins:equipped_item",
+                "inverted": false,
+                "equipment_slot": "offhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "inverted": false,
+                    "ingredient": {
+                        "item": "minecraft:structure_void"
+                    }
+                }
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": false,
+        "sprite_location": "origins:textures/gui/resource_bar.png",
+        "bar_index": 10
+    },
+    "key": "secondary",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "clear @s minecraft:structure_void 1"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "give @s prismarine_shard{display:{Name:'[{\"text\":\"Void Shard\",\"italic\":false,\"color\":\"dark_blue\",\"bold\":true}]',Lore:['[{\"text\":\"Invite players to the void or bring mobs permanently!\",\"italic\":false}]']},Enchantments:[{}],voidshard:true} 1"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "tellraw @s \"Void Shard Updated | Now you cant accidentally place it\""
+            }
+        ]
+    }
+}

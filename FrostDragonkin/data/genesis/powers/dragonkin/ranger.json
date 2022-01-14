@@ -1,0 +1,14 @@
+{
+        "type": "origins:modify_projectile_damage",
+        "modifier": {
+            "operation": "addition",
+            "value": 5
+	},
+    "damage_condition": {
+        "type": "origins:projectile",
+        "projectile": "minecraft:arrow"
+    },
+	"name": "§a§l§nRanger",
+	"description": "You are a natural ranger, you deal +5 damage with Projectiles.",
+	"hidden": true
+}

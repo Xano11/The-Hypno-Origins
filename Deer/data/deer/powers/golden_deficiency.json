@@ -1,0 +1,29 @@
+{
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+    "type": "origins:or",
+       "conditions": [
+      {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:enchanted_golden_apple"
+        }
+    },
+      {  
+        "type": "origins:ingredient",
+        "ingredient":{
+          "item": "minecraft:golden_apple"
+        }
+    },
+    {
+        "type": "origins:ingredient",
+        "ingredient":{
+            "item": "minecraft:golden_carrot"
+        }   
+    }
+    ]
+},
+"name": "§c§l§nNot so golden",
+"description": "You can't eat foods that contain gold."
+}
+    

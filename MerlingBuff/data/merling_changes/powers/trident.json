@@ -1,0 +1,25 @@
+{
+  "type": "origins:conditioned_attribute",
+  "modifiers": {
+    "attribute": "minecraft:generic.attack_damage",
+    "operation": "addition",
+    "value": 6
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+              "type": "origins:ingredient",
+              "ingredient":{
+              "tag": "merling_changes:trident"
+              }
+          }
+      }
+    ]
+  },
+  "name": "§a§l§nSpear Master",
+  "description": "If you have a trident on the mainhand, and nothing on your offhand, you will deal more damage with it."
+}

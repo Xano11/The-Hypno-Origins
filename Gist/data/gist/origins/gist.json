@@ -1,0 +1,21 @@
+{    
+    "name": "Gist",
+    "description": "A regular human who has learned to control a Gist, a demonic spirit trapped inside their mortal soul. Fueled by hatred, these powerful creatures can be both a boon and a curse.",
+
+    "powers": [
+        "gist:demon",
+        "gist:demon_overlay_red",
+        "gist:human_weakness",
+        "gist:hatred",
+        "gist:create_demon",
+        "gist:demon_overlay_blue",
+        "gist:ravenous",
+        "gist:magic_weakness",
+        "gist:check_red",
+        "gist:check_blue",
+        "gist:exhaustion"
+    ],
+    "impact": 3,
+    "order": 12,
+    "icon": "minecraft:lantern"
+}

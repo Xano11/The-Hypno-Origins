@@ -1,0 +1,10 @@
+{
+    "type": "origins:entity_glow",
+    "entity_condition": {
+            "type": "origins:command",
+            "command": "execute as @p[tag=glow] if entity @s[tag=glow]",
+            "comparison": "==",
+            "compare_to": 1
+            },
+            "hidden": true
+}

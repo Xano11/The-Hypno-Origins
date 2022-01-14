@@ -1,0 +1,53 @@
+{
+  "type": "origins:multiple",
+  
+  "health":{
+
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition",
+      "value": 4
+    },
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "beetle:countervailcondition",
+        "comparison": "==",
+        "compare_to": 1
+    }
+  },
+  "attack_speed":{
+
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.armor",
+      "operation": "addition",
+      "value": 3
+    },
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "beetle:countervailcondition",
+        "comparison": "==",
+        "compare_to": 1
+    }
+  },
+  "damage":{
+
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "multiply_total",
+      "value": 0.35
+    },
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "beetle:countervailcondition",
+        "comparison": "==",
+        "compare_to": 1
+    }
+  },
+  "hidden": true
+}

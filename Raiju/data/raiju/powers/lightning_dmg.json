@@ -1,0 +1,23 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+        "type": "origins:damage",
+        
+        "amount": 2,
+        "source": {
+            "name": "lightningBolt",
+            "bypasses_armor": true,
+	    "unblockable": true
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "summon lightning_bolt",
+                "permission_level": 4
+            }
+        ]
+    }
+}

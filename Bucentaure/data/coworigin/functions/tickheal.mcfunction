@@ -1,0 +1,2 @@
+execute as @a[advancements={coworigin:cowheal=true}] run effect give @s minecraft:instant_health 1 0 false
+execute as @a[advancements={coworigin:cowheal=true}] run advancement revoke @s only coworigin:cowheal

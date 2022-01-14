@@ -1,0 +1,21 @@
+{
+  "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "execute at @p run effect give @e[type=skeleton_horse,distance=..1] speed 10 3",
+        "permission_level": 4
+    },
+    "condition": {
+      "type": "origins:riding",
+      "bientity_condition": {
+          "type": "origins:target_condition",
+          "condition": {
+              "type": "origins:entity_type",
+              "entity_type": "minecraft:skeleton_horse"
+          }
+      }
+    },
+  "interval": 5,
+  "name": "§a§l§nMounted",
+  "description": "You have a skeleton horse gain speed when you are mounted onto them."
+}

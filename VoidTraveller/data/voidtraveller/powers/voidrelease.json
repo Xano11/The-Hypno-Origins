@@ -1,0 +1,48 @@
+{
+    "type": "origins:active_self",
+    "key": "secondary",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "execute as @s run function voidtraveller:sendvoidback",
+        "permission_level": 4
+    },
+    "cooldown": 100,
+    "hud_render": {
+        "should_render": false,
+        "bar_index": 3,
+        "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+    "name": "§a§l§nRelease",
+    "description": "Release your friends from the dimension!",
+    "hidden": true,
+    "condition": {
+        "type": "origins:or",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:equipped_item",
+                "inverted": false,
+                "equipment_slot": "offhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "inverted": false,
+                    "ingredient": {
+                        "item": "minecraft:clock"
+                    }
+                }
+            },
+            {
+                "type": "origins:equipped_item",
+                "inverted": false,
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "inverted": false,
+                    "ingredient": {
+                        "item": "minecraft:clock"
+                    }
+                }
+            }
+        ]
+    }
+}

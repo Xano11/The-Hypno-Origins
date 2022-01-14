@@ -1,0 +1,15 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:gain_air",
+        "value": 20
+    },
+    "interval": 5,
+    "condition": {
+        "type": "origins:submerged_in",
+        "inverted": false,
+        "fluid": "minecraft:water"
+    },
+    "name": "§e§l§nInorganic",
+    "description": "You have no need for things like food, water, or air, but you cannot recover health by natural means."
+}

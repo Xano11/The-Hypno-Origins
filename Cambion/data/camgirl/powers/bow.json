@@ -1,0 +1,16 @@
+{
+	"type": "origins:prevent_item_use",
+	"item_condition": {
+		"type": "origins:ingredient",
+		"ingredient": [{
+				"item": "bow"
+			},
+			{
+				"item": "crossbow"
+			}
+		]
+	},
+	"hidden": "true",
+	"name": "§c§l§nUnknown Objects",
+	"description": "You can’t use bows or crossbows."
+}

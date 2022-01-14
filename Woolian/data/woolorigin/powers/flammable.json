@@ -1,0 +1,28 @@
+{
+    "type": "origins:action_over_time",
+    "name": "§c§l§nFlammable",
+    "description": "Your Wool Coat is highly flammable and will not naturally be extinguished.",
+    "entity_action": {
+        "type": "origins:set_on_fire",
+        "duration": 3
+    },
+    "interval": 20,
+    "condition": {
+        "conditions": [
+            {
+                "type": "origins:on_fire",
+                "inverted": false
+            },
+            {
+                "type": "origins:resource",
+                "comparison": ">",
+                "resource": "woolorigin:woolresource",
+                "compare_to": 0,
+                "inverted": false
+            }
+        ],
+        "type": "origins:and",
+        "inverted": false
+    },
+    "hidden": false
+}

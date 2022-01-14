@@ -1,0 +1,56 @@
+{
+    "type":"origins:multiple",
+
+
+    "resource":
+    {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 7,
+        "start_value": 7,
+        "min_action": {
+            "type": "origins:and",
+            "actions":[
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type":"origins:execute_command",
+                        "command":"power remove @e[limit=1,sort=nearest] celestial:lunar_arrow_effects",
+                        "permission_level": 4
+                    }
+                }
+        ]
+    },
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 12
+    }
+    },
+
+    "remove_resource": 
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "celestial:lunar_arrow_effects_resource",
+            "change": -1
+        },
+        "interval": 50
+    },
+
+    "no_render":{
+    "type": "origins:prevent_entity_render",
+    "entity_condition": {
+        "type": "origins:origin",
+        "origin": "celestial:celestial",
+        "layer": "origins:origin"
+        }
+    },
+
+    "no_escape":
+    {
+        "type": "origins:prevent_elytra_flight"
+    }
+
+}

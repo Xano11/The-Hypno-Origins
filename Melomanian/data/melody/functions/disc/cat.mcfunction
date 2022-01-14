@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: Cat by C418", "color":"dark_green"}

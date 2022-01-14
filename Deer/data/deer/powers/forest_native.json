@@ -1,0 +1,54 @@
+{
+	"type": "origins:stacking_status_effect",
+	"min_stacks": -20,
+	"max_stacks": 6,
+	"duration_per_stack": 20,
+	"effects": [
+	  {
+		"effect": "minecraft:regeneration",
+		"is_ambient": true,
+		"show_particles": false,
+		"show_icon": true,
+		"amplifier": 1
+	  }
+	],
+	"condition": {
+	  "type": "origins:or",
+	 "conditions": [
+		{
+		  "type": "origins:biome",
+		  "biome": "minecraft:forest"
+		},
+		{    
+		  "type": "origins:biome",
+		  "biome": "minecraft:birch_forest"
+		},
+		{
+		  "type": "origins:biome",
+		  "biome": "minecraft:birch_forest_hills"
+		},
+		{    
+		  "type": "origins:biome",
+		  "biome": "minecraft:wooded_mountains"
+		},
+		{
+		  "type": "origins:biome",
+		  "biome": "minecraft:tall_birch_forest"
+		},
+		  {
+			"type": "origins:biome",
+			"biome": "minecraft:dark_forest"
+		  },
+		  {    
+			"type": "origins:biome",
+			"biome": "minecraft:dark_forest_hills"
+		  },
+		  {
+			"type": "origins:biome",
+		    "biome": "minecraft:flower_forest"
+		  }
+	  ]
+	},
+	"name": "§a§l§nForest Native",
+	"description": "You were born in the land of bark and leaves and staying there makes you feel better."
+  }

@@ -1,0 +1,43 @@
+{
+	"powers": [
+		"origins:no_shield",
+		"shulker:shulk_teleport_activate",
+		"shulker:shulk_teleport_resource",
+		"shulker:shulk_teleport_decrease",
+		"shulker:shulk_teleport_invis",
+		"shulker:shulk_teleport_slower",
+		"shulker:shulk_teleport_to_shut_demon_up",
+		"shulker:shulk_hiding",
+		"shulker:shulk_resource_hiding",
+		"shulker:shulk_hide_tick_timer",
+		"shulker:shulk_hiding_trigger",
+		"shulker:shulk_bonk",
+		"shulker:shulk_bonk_self",
+		"shulker:shulk_shielded_weakness",
+		"shulker:shulk_hide_shell",
+		"shulker:shulk_taunt",
+		"shulker:shulk_hide_kbres",
+		"shulker:shulk_shielded_nojump",
+		"shulker:shulk_hide_projectiles",
+		"shulker:shulk_shielded_slowness",
+		"shulker:shulk_shielded_noregen",
+		"shulker:shulk_closed_vision",
+		"shulker:shulk_inventory",
+		"shulker:shulk_tough_skin",
+		"shulker:shulk_strong_arms",
+		"shulker:shulk_strong_arms_speed",
+		"shulker:shulk_more_exhaustion",
+		"shulker:shulk_less_reach",
+		"shulker:shulk_slow",
+		"shulker:shulk_sink"
+	],
+	"icon": {
+		"item": "minecraft:shulker_shell",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"unchoosable": false,
+	"order": 10,
+	"impact": 3,
+  "name": "Shulk vDemon",
+  "description": "Truly unbreakable."
+}

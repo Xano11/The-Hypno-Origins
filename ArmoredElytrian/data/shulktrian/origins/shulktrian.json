@@ -1,0 +1,26 @@
+{
+	"powers": [
+			"origins:elytra",
+            "origins:claustrophobia",
+			"origins:more_kinetic_damage",
+            "origins:shulker_inventory",
+			"origins:strong_arms",
+			"origins:strong_arms_break_speed",
+            "origins:more_exhaustion",
+            "origins:vegetarian",
+                "shulktrian:slow",
+                "shulktrian:small",
+            "origins:no_shield",
+				"shulktrian:crash",
+				"shulktrian:armor",
+				"shulktrian:attack_speed",
+				"shulktrian:resource",
+				"shulktrian:launch"
+              
+	],
+	"icon": "minecraft:shulker_shell",
+	"order": 10,
+	"impact": 3,
+	"name": "Armored Elytrian",
+	"description": "A mix between a shulk and an elytrian."
+}

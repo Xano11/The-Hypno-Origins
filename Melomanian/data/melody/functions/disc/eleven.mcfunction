@@ -1,0 +1,1 @@
+title @s actionbar {"text":"§kPlaying: Eleven by C418", "color":"black"}

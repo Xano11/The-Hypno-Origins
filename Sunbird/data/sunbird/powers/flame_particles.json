@@ -1,0 +1,6 @@
+{
+  "type": "origins:particle",
+  "particle": "minecraft:soul_fire_flame",
+  "frequency": 4,
+  "hidden": true
+}

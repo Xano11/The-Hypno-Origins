@@ -1,0 +1,32 @@
+{
+	"powers": [
+		"raiju:lightning_infused",
+		"raiju:lightning_infused2",
+		"raiju:lightning_infused3",
+		"raiju:lightning_infused4",
+		"raiju:particle",
+		"raiju:lightning_invulnerable",
+		"raiju:thunderstorm",
+		"raiju:trident_bonus",
+		"raiju:thunder",
+		"raiju:dry_air",
+		"raiju:dry_air2",
+		"raiju:hungry",
+		"raiju:ressource",
+		"raiju:ressource_gain1",
+		"raiju:ressource_gain2",
+		"raiju:ressource_lost",
+		"origins:carnivore",
+		"raiju:concentrated_lightning1",
+		"raiju:concentrated_lightning2",
+		"raiju:fear_of_copper",
+		"raiju:throw_dmg",
+		"raiju:absorb",
+		"raiju:doublejump"
+	],
+	"icon": "minecraft:bell",
+	"order": 4,
+	"impact": 3,
+	"name": "Raiju",
+	"description": "Born in the land of the roaring thunder, this beast has learned to channel the energy of lightning to strike its foes."
+}

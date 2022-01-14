@@ -1,0 +1,40 @@
+{
+  "type": "origins:multiple",
+  "name": "Sweapped Fire",
+  "description": "You take extra damage to Sweeping Edge and Fire damage",
+	"sweeping_edge": {
+		"type": "origins:modify_damage_taken",
+		"bientity_condition": {
+			"type": "origins:actor_condition",
+			"condition": {
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:enchantment",
+							"enchantment": "minecraft:smite",
+							"comparison": ">=",
+							"compare_to": 2
+						}
+					]
+				}
+			}
+		},
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 0.5
+		}
+	},
+	"damage_to_fire": {
+		"type": "origins:modify_damage_taken",
+		"damage_condition": {
+			"type": "origins:projectile"
+		},
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 1
+		}
+	}
+}

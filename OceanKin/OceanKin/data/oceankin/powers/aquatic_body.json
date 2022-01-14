@@ -1,0 +1,13 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "type": "origins:gain_air",
+    "value": 20
+  },
+  "interval": 20,
+  "condition": {
+    "type": "origins:submerged_in",
+    "fluid": "minecraft:water"
+  },
+  "hidden": true
+}

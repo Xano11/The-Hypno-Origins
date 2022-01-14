@@ -1,0 +1,136 @@
+{
+    "type": "origins:multiple",
+
+"size1":{
+
+"type": "origins:action_over_time",
+"interval": 4,
+"rising_action": {
+    "type": "origins:and",
+    "actions": [
+	{
+	"type": "origins:execute_command",
+	"command": "execute as @s run function slate:smolman_three",
+	"permission_level": 4
+	},
+	{
+	"type": "origins:execute_command",
+	"command": "attribute @s minecraft:generic.max_health base set 16",
+	"permission_level": 4
+	},
+	{
+	"type": "origins:execute_command",
+	"command": "attribute @s minecraft:generic.movement_speed  base set 0.8",
+	"permission_level": 4
+	    }
+      ]
+    },
+    "condition": {
+        "type": "origins:and",
+			"conditions": [
+                {
+                "type": "origins:resource",
+                "resource": "slate:shadow_resource",
+                "comparison": ">=",
+                "compare_to": 25
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "slate:shadow_resource",
+                    "comparison": "<",
+                    "compare_to": 50
+                    }
+
+                ]
+    }
+},
+
+"size2":{
+
+    "type": "origins:action_over_time",
+    "interval": 4,
+    "rising_action": {
+        "type": "origins:and",
+        "actions": [
+        {
+        "type": "origins:execute_command",
+        "command": "execute as @s run function slate:smolman_four",
+        "permission_level": 4
+        },
+        {
+        "type": "origins:execute_command",
+        "command": "attribute @s minecraft:generic.max_health base set 18",
+        "permission_level": 4
+        },
+        {
+        "type": "origins:execute_command",
+        "command": "attribute @s minecraft:generic.movement_speed  base set 0.9",
+        "permission_level": 4
+            }
+          ]
+        },
+        "condition": {
+            "type": "origins:and",
+                "conditions": [
+                    {
+                    "type": "origins:resource",
+                    "resource": "slate:shadow_resource",
+                    "comparison": ">=",
+                    "compare_to": 50
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "slate:shadow_resource",
+                        "comparison": "<",
+                        "compare_to": 75
+                        }
+    
+                    ]
+        }
+    },
+    "size3":{
+
+        "type": "origins:action_over_time",
+        "interval": 4,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+            {
+            "type": "origins:execute_command",
+            "command": "execute as @s run function slate:smolman_five",
+            "permission_level": 4
+            },
+            {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.max_health base set 20",
+            "permission_level": 4
+            },
+            {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.movement_speed  base set 1",
+            "permission_level": 4
+                }
+              ]
+            },
+            "condition": {
+                "type": "origins:and",
+                    "conditions": [
+                        {
+                        "type": "origins:resource",
+                        "resource": "slate:shadow_resource",
+                        "comparison": ">=",
+                        "compare_to": 75
+                        },
+                        {
+                            "type": "origins:resource",
+                            "resource": "slate:shadow_resource",
+                            "comparison": "<=",
+                            "compare_to": 100
+                            }
+        
+                        ]
+            }
+        },
+        "name": "§e§l§nDust Scaling",
+        "description": "Depending on your dust meter, you scale in proportion. That changes your size as well as maximum health."
+}

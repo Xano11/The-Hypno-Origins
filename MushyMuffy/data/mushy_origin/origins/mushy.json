@@ -1,0 +1,31 @@
+{
+	"powers": [
+		"mushy_origin:digging",		
+		"mushy_origin:spore_boost",
+		"mushy_origin:death",
+		"mushy_origin:cordyceps",
+		"mushy_origin:short",
+		"origins:fall_immunity",
+		"mushy_origin:decay_immunity",
+		"mushy_origin:bad_food_is_good",
+		"mushy_origin:action_callback",
+		
+		"mushy_origin:infection",
+		"mushy_origin:involuntary_milking",
+		"mushy_origin:moisture_resource",
+
+		"mushy_origin:prevent_use",
+		"mushy_origin:mycelium_creep",		
+		"mushy_origin:darkvision",
+		"mushy_origin:moisture_abilities",
+
+		"extraorigins:jockey",
+		"mushy_origin:lovers",
+		"mushy_origin:cute_noises"
+	],
+	"icon": "minecraft:red_mushroom",
+	"order": 9,
+	"impact": 3,
+	"name": "Mushy Muffy",
+	"description": "A rare mushroom known as a delicacy, nearly drove to extinction by hungry players."
+}

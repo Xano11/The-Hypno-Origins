@@ -1,0 +1,164 @@
+{
+    "type": "origins:multiple",
+    "activate_one": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:chance",
+            "action": {
+                "type": "origins:execute_command",
+                "command": "power grant @e[type=!minecraft:villager,type=!minecraft:boat,type=!minecart,type=!minecraft:item,type=!minecraft:item_frame,type=!minecraft:glow_item_frame,distance=1..8] de:thunder_paralyzed",
+                "permission_level": 4
+            },
+            "chance": 0.8
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "de:charge_resource",
+                    "comparison": ">=",
+                    "compare_to": 140
+                },
+                {      
+                    "type": "origins:in_rain",
+                    "inverted": true
+                }
+            ]
+        },
+        "cooldown": 300,
+        "hud_render": {
+            "should_render": false
+        },
+        "key":
+        {
+            "key": "key.loadToolbarActivator"
+        }
+    },
+
+    "activate_two": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "de:charge_resource",
+                "change": -140
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "de:thunder_resource",
+                "change": 2
+            }
+        ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "de:charge_resource",
+                    "comparison": ">=",
+                    "compare_to": 140
+                },
+                {      
+                    "type": "origins:in_rain",
+                    "inverted": true
+                }
+            ]
+        },
+        "cooldown": 300,
+        "hud_render": {
+            "should_render": false
+        },
+        "key":
+        {
+            "key": "key.loadToolbarActivator"
+        }
+    },
+
+    "activate_three": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:chance",
+            "action": {
+                "type": "origins:execute_command",
+                "command": "power grant @e[type=!minecraft:villager,type=!minecraft:boat,type=!minecart,type=!minecraft:item,type=!minecraft:item_frame,type=!minecraft:glow_item_frame,distance=1..8] de:thunder_paralyzed",
+                "permission_level": 4
+            },
+            "chance": 1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "de:charge_resource",
+                    "comparison": ">=",
+                    "compare_to": 140
+                },
+                {      
+                    "type": "origins:in_rain"
+                }
+            ]
+        },
+        "cooldown": 300,
+        "hud_render": {
+            "should_render": false
+        },
+        "key":
+        {
+            "key": "key.loadToolbarActivator"
+        }
+        
+    },
+
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "thunder_fix": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "lightningBolt"
+        },
+        "modifier": {
+        "operation": "multiply_total",
+        "value": -1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "de:thunder_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+
+    "drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "de:thunder_resource",
+            "change": -1
+            },
+            "interval": 20,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "de:thunder_resource",
+                "comparison": ">=",
+                "compare_to": 1
+        }
+    },
+
+    "name": "§a§l§nThunder (loadToolbarActivator)",
+    "description": "does 15 damage to every entity within a 8 block radius also paralyzing them at the cost of 10% of charge to attempt at a 80% of working but in thunderstorms it’s 100%."
+}
+
+

@@ -1,0 +1,39 @@
+{
+	"type": "origins:multiple",
+	"normal_form": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 10,
+		"modifiers": [
+			{
+				"attribute": "generic.max_health",
+				"operation": "addition",
+				"value": -8
+			}
+		],
+		"condition": {
+			"type": "origins:resource",
+			"resource": "sunbird:reborn_resource",
+			"comparison": "<",
+			"compare_to": 1
+		}
+	},
+	"reborn_form": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 10,
+		"modifiers": [
+			{
+				"attribute": "generic.max_health",
+				"operation": "addition",
+				"value": -12
+			}
+		],
+		"condition": {
+			"type": "origins:resource",
+			"resource": "sunbird:reborn_resource",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"name": "§c§l§nFewer Hearts",
+	"description": "You have 4 less hearts in full form, and 6 in baby form, giving a total of 10 hearts."
+}

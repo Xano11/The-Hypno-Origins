@@ -1,0 +1,88 @@
+{
+	"name": "§c§l§nEclipse",
+	"description": "In the nether, the stars are eclipsed. You deal less damage, fear flames and water, and are slowed.",
+	"type": "origins:multiple",
+	"lunar_weakness": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "addition",
+			"value": -4,
+			"name": "Lunar Weakness"
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:dimension",
+			"dimension": "minecraft:nether"
+		}
+	},
+	"lunar_vulnerability": {
+		"type": "origins:modify_damage_taken",
+		"modifier": {
+			"name": "Lunar Vulnerability",
+			"value": 1.0,
+			"operation": "multiply_base"
+		},
+		"damage_condition": {
+			"type": "origins:fire"
+		},
+		"bientity_condition": {
+			"type": "origins:actor_condition",
+			"condition": {
+				"type": "origins:dimension",
+				"dimension": "minecraft:the_nether"
+			}
+		}
+	},
+	"solar_slowness": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "addition",
+			"value": -0.02,
+			"name": "Solar Slowness"
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:dimension",
+			"dimension": "minecraft:nether"
+		}
+	},
+	"solar_vulnerability": {
+		"type": "origins:damage_over_time",
+		"interval": 20,
+		"onset_delay": 1,
+		"damage": 2,
+		"damage_easy": 1,
+		"damage_source": {
+			"name": "hurt_by_water",
+			"unblockable": true,
+			"bypasses_armor": true
+		},
+		"protection_enchantment": "origins:water_protection",
+		"protection_effectiveness": 1.0,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:fluid_height",
+							"fluid": "minecraft:water",
+							"comparison": ">",
+							"compare_to": 0.0
+						},
+						{
+							"type": "origins:in_rain"
+						}
+					]
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether"
+				}
+			]
+		}
+	}
+}

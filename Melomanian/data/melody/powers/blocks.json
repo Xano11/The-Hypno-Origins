@@ -1,0 +1,74 @@
+{
+	"type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:if_else",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:music_disc_blocks"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:is_empty",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		},
+		"if_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:music_disc.blocks",
+					"volume": 7
+				},
+				{
+					"type": "origins:equipped_item_action",
+					"equipment_slot": "mainhand",
+					"action": {
+						"type": "origins:consume",
+						"amount": 1
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/resource set @s melody:is_empty 0",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @s melody:blocks_active",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @s melody:blocks_powers",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:disc/blocks",
+					"permission_level": 4
+				}
+			]
+		}
+	},
+	"cooldown": 5,
+	"hud_render": {
+		"should_render": false
+	},
+	"key": {
+		"key": "key.origins.primary_active"
+	},
+	"name": "§c§l§nBLOCKS",
+	"description": "An upbeat chiptune encourages you to mining.\n§aPros: fast breaking, further reach, natural armor\n§r§cCons: slowness, heavy, unwieldy"
+}

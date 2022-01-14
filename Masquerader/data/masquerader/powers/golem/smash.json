@@ -1,0 +1,39 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+		    	"type": "origins:execute_command",
+		    	"command": "summon tnt ~ ~1 ~ {Fuse:0}"
+    		},
+            {
+                "type": "origins:apply_effect",
+                "effect": {
+                    "effect": "minecraft:instant_damage",
+                    "duration": 20,
+                    "amplifier": 1
+                }
+            },
+            {
+                "type": "origins:apply_effect",
+                "effect": {
+                    "effect": "minecraft:resistance",
+                    "duration": 60,
+                    "amplifier": 50
+                }
+            }
+        ]
+    },
+    "cooldown": 600,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+        "bar_index": 1
+    },
+    "key": {
+        "key": "key.origins.primary_active",
+        "continuous": false
+    },
+    "name": "§a§l§nGolem Smash",
+    "description": "You smash the ground making an explosion."
+}

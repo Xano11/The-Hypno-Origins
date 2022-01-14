@@ -1,0 +1,16 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "name": "increased movement cuz demon won't stfu",
+        "attribute": "minecraft:generic.movement_speed",
+        "value": 0.06,
+        "operation": "addition"
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "*:shulk_teleport_resource",
+      "comparison": ">=",
+      "compare_to": 3
+    },
+    "hidden": true
+  }

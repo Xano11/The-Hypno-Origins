@@ -1,0 +1,120 @@
+{
+    "type": "origins:multiple",
+
+	"state": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"start_value": 1,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+
+	"perform": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_state",
+					"change": -1
+				},
+				{
+					"type": "origins:add_velocity",
+					"y": 0.9,
+					"set": true
+				},
+				{
+					"type": "origins:add_velocity",
+					"z": 0.3,
+					"space": "local_horizontal"
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:block.snow.place"
+				},
+				{
+					"type": "origins:set_fall_distance",
+					"fall_distance": 0
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:resource",
+					"resource": "*:*_state",
+					"comparison": ">",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:fluid_height",
+					"fluid": "minecraft:water",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		},
+		"cooldown": 60,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+			"bar_index": 1
+		},
+		"key": {
+			"key": "key.jump",
+			"continuous": false
+		}
+	},
+	
+	"restore": {
+		"type": "origins:action_on_land",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_state",
+			"change": 1
+		}
+	},
+
+	"speed": {
+	"type": "origins:attribute",
+	"modifier": {
+		"attribute": "minecraft:generic.movement_speed",
+		"operation": "multiply_base",
+		"value": 0.2,
+		"name": "20% faster speed"
+		}
+	},
+
+	"no_fall": {
+		"type": "origins:modify_damage_taken",
+		"damage_condition": {
+			"type": "origins:name",
+			"name": "fall"
+			},
+			"modifier": {
+				"operation": "multiply_total",
+				"value": -1
+			}
+		},
+
+	"jump_increase": {
+		"type": "origins:modify_jump",
+		"modifier": {
+			"operation": "addition",
+			"value": 0.1
+		},
+		"condition": {
+			"type": "origins:sprinting"
+		}
+	},
+
+    "name": "§a§l§nMovement Overlord",
+    "description": "You have mastered the movement of the mortal plain, allowing you to move 20% faster, not take fall damage, jump higher whist sprinting and double jump"
+}

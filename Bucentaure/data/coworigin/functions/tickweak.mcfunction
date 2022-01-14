@@ -1,0 +1,2 @@
+execute as @a[advancements={coworigin:cowweak=true}] run effect give @s minecraft:weakness 15 0 false
+execute as @a[advancements={coworigin:cowweak=true}] run advancement revoke @s only coworigin:cowweak

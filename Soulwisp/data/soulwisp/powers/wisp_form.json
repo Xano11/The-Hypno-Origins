@@ -1,0 +1,6 @@
+{
+	"type": "origins:toggle",
+	"key": "primary",
+	"name": "§a§l§nWisp Form",
+	"description": "By pressing G, You can disperse your flames to become faster, and slip through any wall or blocks. Doing so will be slower and greatly exhaust you; however, while cold/impermeable walls like Snow or Obsidian will stop you."
+}

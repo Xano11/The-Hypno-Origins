@@ -1,0 +1,16 @@
+{
+	"type": "origins:prevent_item_use",
+	"item_condition": {
+		"type": "origins:ingredient",
+		"ingredient": {
+			"item": "minecraft:milk_bucket"
+		}
+	},
+    "condition": {
+        "type": "origins:resource",
+        "resource": "ghost:ghost/phase_resource",
+        "comparison": "==",
+        "compare_to": 1
+    },
+"hidden": true
+}

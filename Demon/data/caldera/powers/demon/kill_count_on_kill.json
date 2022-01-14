@@ -1,0 +1,10 @@
+{
+	"type": "origins:self_action_on_kill",
+	"cooldown": 6,
+	"entity_action": {
+		"type": "origins:change_resource",
+		"resource": "caldera:demon/kill_count",
+		"change": 1
+	},
+	"hidden": true
+}

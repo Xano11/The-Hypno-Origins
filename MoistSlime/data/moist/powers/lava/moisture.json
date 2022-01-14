@@ -1,0 +1,243 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 700,
+        "start_value": 700,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 12
+        }
+    },
+    "increase_soak": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "moist:lava/moisture_resource",
+            "change": 20
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": ">",
+            "compare_to": 0.0
+        }
+    },
+    "increase_drink": {
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "moist:lava/moisture_resource",
+            "change": 20
+        },
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:potion"
+            }
+        }
+    },
+    "drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "moist:lava/moisture_resource",
+            "change": -5
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0.0,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:status_effect",
+                    "effect": "minecraft:fire_resistance",
+                    "min_amplifier": 0,
+                    "inverted": true
+                }
+        ]
+    }
+    },
+    "no_need_for_burns": {
+        "type":"origins:modify_damage_taken",
+        "modifier":{
+        "value": -1,
+        "operation":"multiply_total"
+        },
+        "damage_condition":{
+            "type":"origins:or",
+            "conditions":[
+            {
+            "type":"origins:name",
+            "name":"lava"
+            },
+            {
+            "type":"origins:name",
+            "name":"onFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"inFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"hotFloor"
+            }
+            ]
+        }
+    },
+    "dry_out": {
+        "type": "origins:damage_over_time",
+        "interval": 20,
+        "onset_delay": 1,
+        "damage": 2,
+        "damage_easy": 1,
+        "damage_source": {
+            "name": "dryout",
+            "unblockable": true,
+            "bypasses_armor": true
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0.0,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moist:lava/moisture_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:status_effect",
+                    "effect": "minecraft:fire_resistance",
+                    "min_amplifier": 0,
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "75_and_below": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_total",
+            "value": -0.2,
+            "name": "Decreased Movement Speed at 75 and below"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0.0,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moist:lava/moisture_resource",
+                    "comparison": "<=",
+                    "compare_to": 525
+                }
+            ]
+        }
+    },
+    "50_and_below": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.attack_speed",
+            "operation": "multiply_total",
+            "value": -0.5,
+            "name": "Decreased attack Speed at 50 and below"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0.0,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moist:lava/moisture_resource",
+                    "comparison": "<=",
+                    "compare_to": 350
+                }
+            ]
+        }
+    },
+    "25_and_below": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "addition",
+            "value": -6,
+            "name": "Decreased attack damage at 25 and below"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:lava",
+                    "comparison": ">",
+                    "compare_to": 0.0,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "moist:lava/moisture_resource",
+                    "comparison": "<=",
+                    "compare_to": 175
+                }
+            ]
+        }
+    },
+    "moist_reset1": {
+        "type": "origins:action_on_callback",
+        "entity_action_respawned": {
+            "type": "origins:change_resource",
+            "resource": "moist:lava/moisture_resource",
+            "change": 700
+        },
+        "execute_chosen_when_orb": true
+    },
+    "moist_reset2": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:change_resource",
+            "resource": "moist:lava/moisture_resource",
+            "change": 350
+        },
+        "entity_action_lost": {
+            "type": "origins:change_resource",
+            "resource": "moist:lava/moisture_resource",
+            "change": 700
+        },
+        "execute_chosen_when_orb": true
+    },
+    "name": "§e§l§nMoisture Bar",
+    "description": "Your form of oxygen is lava, you must fill yourself with lava to live and use your skills, Gain Moisture by touching lava and drinking filled bottles, when it depletes to zero you will start dying"
+}

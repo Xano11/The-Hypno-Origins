@@ -1,0 +1,426 @@
+{
+    "type":"origins:multiple",
+    "arrow_resource":{
+      "type": "origins:resource",
+      "min": 0,
+      "max": 3,
+      "hud_render": {
+          "should_render": false
+      }
+  },
+  "increase_resource":{
+    "type":"origins:active_self",
+    "key":{
+      "key":"key.spectatorOutlines"
+    },
+    "cooldown":1,
+    "hud_render":{
+      "should_render":false
+    },
+    "entity_action": {
+      "type":"origins:and",
+      "actions":[
+        {
+      "type":"origins:delay",
+      "ticks":1,
+      "action":{
+      "type": "origins:change_resource",
+      "resource": "samurai:time_stop_arrow_resource",
+      "change": 1
+      }
+    },
+    {
+      "type":"origins:execute_command",
+        "command":"/playsound minecraft:entity.experience_orb.pickup master @s ~ ~ ~ 1 0"
+    }
+  ]
+    },
+    "condition":{
+      "type":"origins:resource",
+      "resource":"samurai:time_stop_arrow_resource",
+      "comparison":"!=",
+      "compare_to":3
+    }
+  },
+  "decrease_resource":{
+    "type":"origins:active_self",
+    "key":{
+      "key":"key.spectatorOutlines"
+    },
+    "cooldown":1,
+    "hud_render":{
+      "should_render":false
+    },
+    "entity_action": {
+      "type":"origins:and",
+      "actions":[ 
+        {
+      "type": "origins:change_resource",
+      "resource": "samurai:time_stop_arrow_resource",
+      "change": -3
+        },
+        {
+          "type":"origins:execute_command",
+            "command":"/playsound minecraft:entity.experience_orb.pickup master @a[distance=..15] ~ ~ ~ 1 0"
+        }
+      ]
+  },
+  "condition":{
+    "type":"origins:resource",
+    "resource":"samurai:time_stop_arrow_resource",
+    "comparison":"==",
+    "compare_to":3
+  }
+  },
+  "toggle":{
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "condition": {
+    "type":"origins:resource",
+    "resource":"samurai:time_stop_limit_bar",
+    "comparison":">",
+    "compare_to":0
+    }
+},
+"limit_bar":{
+  "type": "origins:resource",
+  "min": 0,
+  "max": 5,
+  "start_value":5,
+  "min_action":{
+    "type":"origins:and",
+    "actions":[
+      {
+        "type":"origins:delay",
+        "ticks":1,
+        "action":{
+          "type":"origins:execute_command",
+        "command":"power grant @s samurai:time_stop_toggle"
+        }
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"power remove @s samurai:time_stop_toggle"
+      }
+    ]
+  },
+  "hud_render": {
+      "should_render": true,
+      "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index":9
+  }
+},
+"limit_bar_down":{
+  "type":"origins:action_over_time",
+  "interval":20,
+  "entity_action":{
+    "type":"origins:change_resource",
+    "resource":"samurai:time_stop_limit_bar",
+    "change":-1
+  },
+  "condition":{
+    "type":"origins:power_active",
+    "power":"samurai:time_stop_toggle"
+  }
+},
+"limit_bar_up":{
+  "type":"origins:action_over_time",
+  "interval":240,
+  "entity_action":{
+    "type":"origins:change_resource",
+    "resource":"samurai:time_stop_limit_bar",
+    "change":1
+  },
+  "condition":{
+    "type":"origins:power_active",
+    "power":"samurai:time_stop_toggle",
+    "inverted":true
+  }
+},
+"arrow_stop":{
+  "type":"origins:action_over_time",
+  "interval":2,
+  "entity_action":{
+    "type":"origins:execute_command",
+    "command":"/data merge entity @e[type=#minecraft:impact_projectiles,limit=1,nbt=!{NoGravity:1b},nbt={inGround:0b},distance=..15] {Motion:[0.0d,0.0d,0.0d],NoGravity:1b}"
+  },
+  "condition":{
+    "type":"origins:power_active",
+    "power":"samurai:time_stop_toggle"
+  }
+},      
+  "arrow_1":{
+    "type":"origins:action_over_time",
+    "interval":3,
+    "entity_action":{
+      "type":"origins:execute_command",
+      "command":"function samurai:arrow_1"
+    },
+    "condition":{
+      "type":"origins:resource",
+      "resource":"samurai:time_stop_arrow_resource",
+      "comparison":"==",
+      "compare_to":0
+    }
+  },
+  "arrow_1_launch":{
+    "type":"origins:action_over_time",
+    "interval":1,
+    "entity_action":{
+      "type":"origins:execute_command",
+      "command":"/data merge entity @e[type=#minecraft:impact_projectiles,limit=1,distance=..15,nbt={NoGravity:1b},nbt={inGround:0b}] {Motion:[2.0d,0.0d,0.0d],NoGravity:0b}"
+    },
+    "condition":{
+      "type":"origins:and",
+      "conditions":[
+        {
+      "type":"origins:resource",
+      "resource":"samurai:time_stop_arrow_resource",
+      "comparison":"==",
+      "compare_to":0
+        },
+        {
+          "type":"origins:power_active",
+          "power":"samurai:time_stop_toggle",
+          "inverted":true
+        }
+      ]
+    }
+  },
+  "arrow_2":{
+    "type":"origins:action_over_time",
+    "interval":3,
+    "entity_action":{
+      "type":"origins:execute_command",
+      "command":"function samurai:arrow_2"
+    },
+    "condition":{
+      "type":"origins:resource",
+      "resource":"samurai:time_stop_arrow_resource",
+      "comparison":"==",
+      "compare_to":1
+    }
+  },
+  "arrow_2_launch":{
+    "type":"origins:action_over_time",
+    "interval":1,
+    "entity_action":{
+      "type":"origins:execute_command",
+      "command":"/data merge entity @e[type=#minecraft:impact_projectiles,limit=1,distance=..15,nbt={NoGravity:1b},nbt={inGround:0b}] {Motion:[0.0d,0.0d,2.0d],NoGravity:0b}"
+    },
+    "condition":{
+      "type":"origins:and",
+      "conditions":[
+        {
+      "type":"origins:resource",
+      "resource":"samurai:time_stop_arrow_resource",
+      "comparison":"==",
+      "compare_to":1
+        },
+        {
+          "type":"origins:power_active",
+          "power":"samurai:time_stop_toggle",
+          "inverted":true
+        }
+      ]
+    }
+  },
+    "arrow_3":{
+      "type":"origins:action_over_time",
+      "interval":3,
+      "entity_action":{
+        "type":"origins:execute_command",
+        "command":"function samurai:arrow_3"
+      },
+      "condition":{
+        "type":"origins:resource",
+        "resource":"samurai:time_stop_arrow_resource",
+        "comparison":"==",
+        "compare_to":2
+      }
+    },
+    "arrow_3_launch":{
+      "type":"origins:action_over_time",
+      "interval":1,
+      "entity_action":{
+        "type":"origins:execute_command",
+        "command":"/data merge entity @e[type=#minecraft:impact_projectiles,distance=..15,limit=1,nbt={NoGravity:1b},nbt={inGround:0b}] {Motion:[-2.0d,0.0d,0.0d],NoGravity:0b}"
+      },
+      "condition":{
+        "type":"origins:and",
+        "conditions":[
+          {
+        "type":"origins:resource",
+        "resource":"samurai:time_stop_arrow_resource",
+        "comparison":"==",
+        "compare_to":2
+          },
+          {
+            "type":"origins:power_active",
+            "power":"samurai:time_stop_toggle",
+            "inverted":true
+          }
+        ]
+      }
+    },
+    "arrow_4":{
+      "type":"origins:action_over_time",
+      "interval":3,
+      "entity_action":{
+        "type":"origins:execute_command",
+        "command":"function samurai:arrow_4"
+      },
+      "condition":{
+        "type":"origins:resource",
+        "resource":"samurai:time_stop_arrow_resource",
+        "comparison":"==",
+        "compare_to":3
+      }
+    },
+    "arrow_4_launch":{
+      "type":"origins:action_over_time",
+      "interval":1,
+      "entity_action":{
+        "type":"origins:execute_command",
+        "command":"/data merge entity @e[type=#minecraft:impact_projectiles,limit=1,distance=..15,nbt={NoGravity:1b},nbt={inGround:0b}] {Motion:[0.0d,0.0d,-2.0d],NoGravity:0b}"
+      },
+      "condition":{
+        "type":"origins:and",
+        "conditions":[
+          {
+        "type":"origins:resource",
+        "resource":"samurai:time_stop_arrow_resource",
+        "comparison":"==",
+        "compare_to":3
+          },
+          {
+            "type":"origins:power_active",
+            "power":"samurai:time_stop_toggle",
+            "inverted":true
+          }
+        ]
+      }
+    },
+    "out_of_range":{
+      "type":"origins:action_over_time",
+      "interval":3,
+      "entity_action":{
+        "type":"origins:and",
+        "actions":[
+          {
+        "type":"origins:execute_command",
+        "command":"/execute as @e[type=#minecraft:impact_projectiles,distance=15..,nbt={NoGravity:1b},nbt={inGround:0b}] at @s if entity @a[distance=15..,tag=samurai] unless entity @a[distance=..15] run data merge entity @s {NoGravity:0b}"
+          },
+          {
+            "type":"origins:execute_command",
+            "command":"function samurai:mob_unfreeze_15_block"
+          },
+          {
+            "type":"origins:execute_command",
+            "command":"function samurai:player_reset_15_block"
+          }
+        ]
+      }
+    },
+    "entity_stop":{
+      "type":"origins:action_over_time",
+      "interval":1,
+      "entity_action":{
+            "type":"origins:execute_command",
+            "command":"/function samurai:mob_freeze"
+      },
+      "condition":{
+        "type":"origins:power_active",
+        "power":"samurai:time_stop_toggle"
+      }
+    },
+    "entity_go":{
+      "type":"origins:action_over_time",
+      "interval":1,
+      "entity_action":{
+            "type":"origins:execute_command",
+            "command":"/function samurai:mob_unfreeze"
+      },
+      "condition":{
+        "type":"origins:power_active",
+        "power":"samurai:time_stop_toggle",
+        "inverted":true
+      }
+    },
+    "player_slow":{
+      "type":"origins:action_over_time",
+      "interval":20,
+      "entity_action":{
+            "type":"origins:execute_command",
+            "command":"/function samurai:player_slow"
+      },
+      "condition":{
+        "type":"origins:power_active",
+        "power":"samurai:time_stop_toggle"
+      }
+    },
+    "player_reset":{
+      "type":"origins:action_over_time",
+      "interval":20,
+      "entity_action":{
+            "type":"origins:execute_command",
+            "command":"/function samurai:player_reset"
+      },
+      "condition":{
+        "type":"origins:power_active",
+        "power":"samurai:time_stop_toggle",
+        "inverted":true
+      }
+    },
+    "active_sfx":{
+      "type":"origins:action_over_time",
+      "interval":5,
+      "rising_action":{
+        "type":"origins:execute_command",
+        "command":"playsound minecraft:block.beacon.power_select master @a[distance=..15] ~ ~ ~ 1 1"
+      },
+      "entity_action":{
+        "type":"origins:and",
+        "actions":[ 
+          {
+        "type":"origins:execute_command",
+        "command":"playsound minecraft:block.beacon.ambient master @a[distance=..15] ~ ~ ~ 1 0"
+          },
+          {
+            "type":"origins:execute_command",
+            "command":"/execute at @p run particle minecraft:ash ~ ~1 ~ 7.5 0.1 7.5 0.1 700"
+              }
+        ]
+      },
+      "falling_action":{
+        "type":"origins:and",
+        "actions":[ 
+          {
+        "type":"origins:execute_command",
+        "command":"playsound minecraft:block.beacon.deactivate master @a[distance=..15] ~ ~ ~ 1 1.7"
+          },
+          {
+            "type":"origins:execute_command",
+        "command":"/stopsound @a[distance=..15] master minecraft:block.beacon.ambient"
+          }
+        ]
+      },
+      "condition":{
+        "type":"origins:power_active",
+        "power":"samurai:time_stop_toggle"
+      }
+    },
+"shader":{
+  "type": "origins:shader",
+    "shader": "minecraft:shaders/post/desaturate.json",
+    "condition":{
+      "type":"origins:power_active",
+      "power":"samurai:time_stop_toggle"
+    }
+},
+    "name":"§a§l§nPerception Increase",
+    "description":"(Secondary) you speed up your own perception so much that the world looks like it's not moving but you're just moving faster. All mobs become completely frozen in place, players are slowed, and projectiles can be redirected by pressing the HighLightSpectators key"
+}

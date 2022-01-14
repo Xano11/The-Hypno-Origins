@@ -1,0 +1,10 @@
+{
+    "auto_choose": false,
+    "allow_random": false,
+    "enabled": true,
+    "replace": false,
+    "allow_random_unchoosable": false,
+    "origins": [
+        "beetle:beetle"
+    ]
+}

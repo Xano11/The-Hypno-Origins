@@ -1,0 +1,76 @@
+{
+    "type": "origins:multiple",
+    "illager": {
+        "type": "origins:entity_group",
+        "group": "illager"
+	},
+    "iron_golem_hate": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s as @e[type=iron_golem,distance=..30] run data modify entity @s AngryAt set from entity @p[distance=..3] UUID"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s as @e[type=minecraft:iron_golem,distance=..20] run data modify entity @s AngerTime set value 60"
+                }
+            ]
+        }
+    },
+    "xp_on_villager_kill": {
+        "type": "origins:self_action_on_kill",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_xp",
+                    "points": 10
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.experience_orb.pickup"
+                }
+            ]
+        },
+        "cooldown": 1,
+        "target_condition": {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:villager"
+        }
+    },
+	"bad_trades": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s as @e[type=villager,distance=..30] run data merge entity @s {Gossips:[{Target:[I;1,1,1,1],Type:'major_negative',Value:100}]}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s as @e[type=villager,distance=..30] run data modify entity @s Gossips[{Target:[I;1,1,1,1]}].Target set from entity @p[distance=..3] UUID"
+                }
+            ]
+        }
+    },
+    "iron_golem_buff": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 1,
+            "name": "Extra Damage Taken Because of Origin"
+        },
+        "condition": {
+                "type": "origins:entity_type",
+                "entity_type": "minecraft:iron_golem"
+            }
+        },
+    "name": "§e§l§nIllager ally",
+	"description": "Illagers won't attack you except other Ravagers due to them wanting to state their dominance, Villagers prices are maxed, Iron golems attack you on sight and deal double damage"
+}

@@ -1,0 +1,78 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "increase": {
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_resource",
+        "change": 2
+        },
+        "cooldown": 500,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 5
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        }
+    },
+    "drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": -1
+        },
+        "interval": 100,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "speed": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "multiply_base",
+            "value": 0.20,
+            "name": "Increased speed during dash"
+        },
+        "tick_rate": 5,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "damage": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "addition",
+            "value": 5,
+            "name": "Increased damage during dash"
+        },
+        "tick_rate": 5,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "name": "§a§l§nCharge",
+	"description": "Dash at forward 20% faster than a normal player, dealing 3 extra damage"
+}

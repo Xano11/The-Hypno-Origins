@@ -1,0 +1,43 @@
+{
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": [{
+                "item": "bow"
+            },
+            {
+                "item": "crossbow"
+            },
+            {
+                "item": "trident"
+            },
+            {
+                "item": "medievalweapons:recurve_bow"
+            },
+			{
+                "item": "medievalweapons:wooden_javelin"
+            },
+			{
+                "item": "medievalweapons:stone_javelin"
+            },
+			{
+                "item": "medievalweapons:iron_javelin"
+            },
+			{
+                "item": "medievalweapons:golden_javelin"
+            },
+			{
+                "item": "medievalweapons:diamond_javelin"
+            },
+			{
+                "item": "medievalweapons:netherite_javelin"
+            },
+            {
+                "item": "medievalweapons:long_bow"
+            }
+        ]
+    },
+    "hidden": "false",
+    "name": "§c§l§nCurse of Apollo",
+    "description": "After your father had help kill his son, Apollo held a grudge where he gave you the curse to never being able to use any ranged weapon in your lifetime."
+}

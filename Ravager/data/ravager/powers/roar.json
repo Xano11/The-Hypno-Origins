@@ -1,0 +1,146 @@
+{
+    "type": "origins:multiple",
+    "stuck_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "stuck_resource_drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_stuck_resource",
+            "change": -1
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_stuck_resource",
+            "comparison": ">",
+                "compare_to": 0
+        }
+    },
+    "stuck_no_jump": {
+        "type": "origins:modify_jump",
+        "modifier": {
+            "operation": "addition",
+            "value": -10
+        },
+        "tick_rate": 1,
+        "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_stuck_resource",
+        "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "stuck_no_move": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": -10,
+            "name": "No Move"
+        },
+        "tick_rate": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_stuck_resource",
+            "comparison": ">",
+                "compare_to": 0
+        }
+    },
+    "activate_one": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:delay",
+            "ticks": 40,
+            "action": {
+            "type": "origins:execute_command",
+            "command": "power grant @e[distance=1..7] ravager:stunned",
+            "permission_level": 4
+            }
+        },
+        "cooldown": 440,
+        "hud_render": {
+            "should_render": false,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 4
+        },
+        "key": {
+			"key": "key.origins.secondary_active",
+			"continuous": true
+		}
+    },
+    "activate_two": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:delay",
+            "ticks": 1,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "resource set @p ravager:roar_stuck_resource 2",
+                "permission_level": 4
+            }
+        },
+        "cooldown": 440,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 4
+        },
+        "key": {
+			"key": "key.origins.secondary_active",
+			"continuous": true
+		}
+    },
+    "activate_three": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:delay",
+            "ticks": 1,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.ravager.stunned player @a[distance=..35] ~ ~ ~ 100 0.9",
+                "permission_level": 4
+            }
+        },
+        "cooldown": 440,
+        "hud_render": {
+            "should_render": false,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 4
+        },
+        "key": {
+			"key": "key.origins.secondary_active",
+			"continuous": true
+		}
+    },
+    "activate_four": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:delay",
+            "ticks": 40,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.ravager.roar player @a[distance=..35] ~ ~ ~ 100 1.1",
+                "permission_level": 4
+            }
+        },
+        "cooldown": 440,
+        "hud_render": {
+            "should_render": false,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 4
+        },
+        "key": {
+			"key": "key.origins.secondary_active",
+			"continuous": true
+		}
+    },
+    "name": "§a§l§nRoar",
+	"description": "get stunned for 2 seconds than deal 14 damage and disable all ranged weapons and shields to things within a 7 block radius"
+}

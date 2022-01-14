@@ -1,0 +1,159 @@
+{
+    "type": "origins:multiple",
+
+	"thunder": {
+		"type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+        {
+    		"type": "origins:damage",
+    		"amount": 15,
+    		"source": {
+            "name": "lightningBolt",
+            "bypasses_armor": false,
+	    	"unblockable": false
+            }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "summon lightning_bolt",
+                "permission_level": 4
+            },
+			{
+				"type": "origins:execute_command",
+				"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+				"permission_level": 4
+			}
+		]
+	}
+	},
+
+	"no_items": {
+        "type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+			"permission_level": 4
+		},
+		"interval": 1,
+        "condition": {
+        "type": "origins:resource",
+        "resource": "de:thunder_paralyzed_resource",
+        "comparison": ">",
+        "compare_to": 0
+        }
+	},
+
+    "no_move": {
+		"type": "origins:attribute",
+		"modifier": {
+			"name": "Max health increase",
+			"attribute": "minecraft:generic.movement_speed",
+			"value": -1,
+			"operation": "multiply_total"
+		}
+	},
+
+	"no_jump": {
+		"type": "origins:modify_jump",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		}
+	},
+
+	"no_attack": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		}
+	},
+
+    "particles": {
+        "type": "origins:particle",
+		"particle": "minecraft:electric_spark",
+		"frequency": 16
+	},
+
+    "resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 30,
+		"start_value": 30,
+		"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/resource_bar.png",
+		"bar_index": 2
+		}
+	},
+
+	"drain": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "de:thunder_paralyzed_resource",
+			"change": -1
+		},
+		"interval": 1
+	},
+
+	"insurance": {
+	"type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:extinguish"
+    },
+    "interval": 1,
+    "condition": {
+        "type": "origins:on_fire"
+	}
+	},
+	
+	"no_need_for_burns": {
+        "type":"origins:modify_damage_taken",
+        "modifier":{
+        "value": -1,
+        "operation":"multiply_total"
+        },
+        "damage_condition":{
+            "type":"origins:or",
+            "conditions":[
+            {
+            "type":"origins:name",
+            "name":"lava"
+            },
+            {
+            "type":"origins:name",
+            "name":"onFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"inFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"hotFloor"
+            }
+            ]
+        }
+    },
+
+	"remove": {
+        "type": "origins:action_over_time",
+		"entity_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @e[limit=1,sort=nearest] de:thunder_paralyzed",
+            "permission_level": 4
+		},
+		"interval": 1,
+        "condition": {
+        "type": "origins:resource",
+        "resource": "de:thunder_paralyzed_resource",
+        "comparison": "==",
+        "compare_to": 0
+        }
+	},
+    "name": "§c§l§nParalyzed",
+	"description": "Shocking, You were struck, Your frozen in place"
+}

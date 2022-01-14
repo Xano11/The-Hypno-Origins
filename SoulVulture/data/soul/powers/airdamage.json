@@ -1,0 +1,161 @@
+{
+"type": "origins:multiple",
+
+"resource": 
+{
+    "type": "origins:resource",
+    "min": 0,
+    "max": 7,
+    "start_value": 0,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 1
+    },
+	"hidden":true
+},
+"resource_gain":{
+		
+	"type": "origins:action_over_time",
+	"entity_action": {
+	"type": "origins:and",
+	"actions": [
+		{
+		"type": "origins:change_resource",
+		"resource": "soul:airdamage_resource",
+		"change": 1
+		}
+	]
+	},
+	"interval": 60,
+	"condition": {
+		"type": "origins:fall_flying"
+	}
+},
+"ground":
+{
+    "type": "origins:action_on_land",
+    "entity_action": {
+		"type": "origins:change_resource",
+		"resource": "soul:airdamage_resource",
+		"change": -7
+		}
+},
+"remove":
+{
+    "type": "origins:self_action_on_hit",
+    "entity_action": {
+		"type": "origins:change_resource",
+		"resource": "soul:airdamage_resource",
+		"change": -7
+	},
+    "cooldown": 1
+},
+"damage1":
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "name": "Extra damage when submerged",
+        "operation": "addition",
+        "value": 4
+    },
+	"condition": {
+		"type": "origins:resource",
+		"resource": "soul:airdamage_resource",
+		"comparison": "==",
+		"compare_to": 1
+	}
+},
+"damage2":
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "name": "Extra damage when submerged",
+        "operation": "addition",
+        "value": 8
+    },
+	"condition": {
+		"type": "origins:resource",
+		"resource": "soul:airdamage_resource",
+		"comparison": "==",
+		"compare_to": 2
+	}
+},
+"damage3":
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "name": "Extra damage when submerged",
+        "operation": "addition",
+        "value": 12
+    },
+	"condition": {
+		"type": "origins:resource",
+		"resource": "soul:airdamage_resource",
+		"comparison": "==",
+		"compare_to": 3
+	}
+},
+"damage4":
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "name": "Extra damage when submerged",
+        "operation": "addition",
+        "value": 16
+    },
+	"condition": {
+		"type": "origins:resource",
+		"resource": "soul:airdamage_resource",
+		"comparison": "==",
+		"compare_to": 4
+	}
+},
+"damage5":
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "name": "Extra damage when submerged",
+        "operation": "addition",
+        "value": 20
+    },
+	"condition": {
+		"type": "origins:resource",
+		"resource": "soul:airdamage_resource",
+		"comparison": "==",
+		"compare_to": 5
+	}
+},
+"damage6":
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "name": "Extra damage when submerged",
+        "operation": "addition",
+        "value": 24
+    },
+	"condition": {
+		"type": "origins:resource",
+		"resource": "soul:airdamage_resource",
+		"comparison": "==",
+		"compare_to": 6
+	}
+},
+"damage7":
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "name": "Extra damage when submerged",
+        "operation": "addition",
+        "value": 28
+    },
+	"condition": {
+		"type": "origins:resource",
+		"resource": "soul:airdamage_resource",
+		"comparison": "==",
+		"compare_to": 7
+	}
+},
+
+	"name": "§a§l§nHostile Skies",
+	"description": "Used to aerial combat, you deal much more damage in flight depending on how long you've been flying."
+}	

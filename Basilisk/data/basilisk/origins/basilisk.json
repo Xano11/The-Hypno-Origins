@@ -1,0 +1,25 @@
+{
+	"powers": [
+	"basilisk:venom_inflict",
+	"basilisk:petrify_basilisk",
+	"basilisk:no_shield",
+	"basilisk:lunge",
+	"basilisk:hungy",
+	"basilisk:growth",
+	"basilisk:fall_immunity",
+	"basilisk:reset_size",
+	"origins:climbing",
+	"basilisk:poison_immunity",
+	"basilisk:arachnid_hate",
+	"basilisk:monster",
+	"basilisk:no_jump",
+	"basilisk:fear",
+	"basilisk:callback",
+	"basilisk:eat_cream"
+	],
+	"icon": "minecraft:egg",
+	"order": 17,
+	"impact": 2,
+	"name": "Basilisk",
+	"description": "The Basilisk is a giant serpent that is well known for being the king of them all."
+}

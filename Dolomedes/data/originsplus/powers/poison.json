@@ -1,0 +1,22 @@
+{
+	"type": "origins:target_action_on_hit",
+	"hidden": true,
+	"entity_action": {
+		"type": "origins:apply_effect",
+		"effects": [{
+			"effect": "minecraft:poison",
+			"amplifier": 1,
+			"duration": 140,
+			"show_particles": true
+			}
+		]
+	},
+	"cooldown": 400,
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+		"bar_index": 21
+	},
+	"name": "§a§l§nPoisonous Gland",
+	"description": "Hitting a mob or a player will poison them. (Has a cooldown)"
+}

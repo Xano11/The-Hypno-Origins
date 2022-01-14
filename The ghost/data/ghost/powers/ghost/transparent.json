@@ -1,0 +1,23 @@
+{
+"type": "origins:multiple", 
+        "perm": {
+        "type": "origins:model_color",
+        "alpha": 0.65,
+        "condition": {
+            "type": "origins:status_effect",
+            "effect": "minecraft:weakness",
+            "min_amplifier": 0,
+            "inverted":true
+            }
+        },
+        "weakness": {
+        "type": "origins:model_color",
+        "alpha": 0.35,
+        "condition": {
+            "type": "origins:status_effect",
+            "effect": "minecraft:weakness",
+            "min_amplifier": 0
+            }
+        },
+        "hidden": true
+}

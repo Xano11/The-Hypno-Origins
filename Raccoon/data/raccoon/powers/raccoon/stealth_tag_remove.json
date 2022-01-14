@@ -1,0 +1,19 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type":"origins:and",
+        "actions":[
+        {
+                 "type":"origins:execute_command",
+                 "command":"tag @s remove invis",
+                 "permission_level":4
+        }
+]
+    },
+    "interval": 5,
+    "condition": {
+        "type": "origins:sneaking",
+        "inverted": true
+    },
+    "hidden": true
+}

@@ -1,0 +1,15 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+		"command": "execute as @s run team leave @s",
+		"permission_level": 4
+    },
+    "interval": 10,
+    "condition": {
+        "type": "origins:power_active",
+		"power": "slate:shadow_toggle",
+		"inverted": true
+    },
+	"hidden": true
+}

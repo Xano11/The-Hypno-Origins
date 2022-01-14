@@ -1,0 +1,56 @@
+{
+	"type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:if_else",
+		"condition": {
+			"type": "origins:resource",
+			"resource": "sizeshifter:growth_resource",
+			"comparison": "<=",
+			"compare_to": 0
+		},
+		"if_action": {
+			"type": "origins:exhaust",
+			"amount": 0.4
+		},
+		"else_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:change_resource",
+					"resource": "sizeshifter:growth_resource",
+					"change": -1
+				},
+				{
+					"type": "origins:equipped_item_action",
+					"equipment_slot": "mainhand",
+					"action": {
+						"type": "origins:consume",
+						"amount": 1
+					}
+				}
+			]
+		}
+	},
+	"cooldown": 60,
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+		"bar_index": 17
+	},
+	"condition": {
+		"type": "origins:equipped_item",
+		"equipment_slot": "mainhand",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:bone_meal"
+			}
+		}
+	},
+	"key": {
+        "key": "key.origins.primary_active",
+        "continuous": false
+    },
+	"name": "§a§l§nShrink Self",
+	"description": "You can make yourself shrink using a bonemeal."
+}

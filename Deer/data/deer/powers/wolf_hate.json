@@ -1,0 +1,21 @@
+{
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s as @e[type=minecraft:wolf,distance=..30] run data modify entity @s AngryAt set from entity @p[tag=deer] UUID",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s as @e[type=minecraft:wolf,distance=..30] run data modify entity @s AngerTime set value 60",
+                "permission_level": 4
+            }
+        ]
+    },
+    "name": "§c§l§nHatred of the canine.",
+    "description": "Dogs and wolves will always be angry towards you."
+}

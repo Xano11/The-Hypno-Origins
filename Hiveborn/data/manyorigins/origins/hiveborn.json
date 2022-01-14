@@ -1,0 +1,21 @@
+{
+	"powers": [
+		"origins:arthropod",
+		"origins:fragile",
+		"manyorigins:bee_size",
+		"manyorigins:worker_bee",
+		"manyorigins:hive_home",
+		"origins:slow_falling",
+		"manyorigins:bee_wings",
+		"manyorigins:nectarivore",
+		"manyorigins:nectar_processing",
+		"manyorigins:poisonous_sting",
+		"manyorigins:bee_gone",
+		"manyorigins:callback"
+	],
+	"icon": "minecraft:honey_block",
+	"order": 16,
+	"impact": 2,
+	"name": "Hiveborn",
+	"description": "Humanoid relatives of the bee, hiveborns are often seen buzzing about, collecting nectar and fiercely defending their homes"
+}

@@ -1,0 +1,58 @@
+{
+	"type": "origins:active_self",
+	"cooldown": 6000,
+	"hud_render": {
+	  "should_render":true,
+	  "sprite_location":"origins:textures/gui/resource_bar.png",
+	  "bar_index": 5
+	},
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [ 
+			{
+				"type": "origins:delay",
+                  "ticks": 1,
+                  "action": {
+                      "type": "origins:and",
+                      "actions": {
+                           "type": "origins:execute_command",
+                           "command": "tag @s add speed",
+                           "permission_level": 4
+					  }
+					}
+				},
+		{
+		  "type": "origins:execute_command",
+		  "command": "playsound minecraft:entity.evoker.cast_spell master @e[tag=speed] ~ ~ ~ 1 1",
+		  "permission_level": 4
+		},
+		{
+		  "type": "origins:execute_command",
+		  "command": "effect give @e[tag=speed] minecraft:speed 10 3 true",
+		  "permission_level": 4
+		},
+		{
+		  "type": "origins:execute_command",
+		  "command": "execute at @e[tag=speed] run particle minecraft:totem_of_undying ~ ~ ~ 0.3 0.3 0.3 0.8 10 force",
+		  "permission_level": 4
+		},
+		{
+			"type": "origins:execute_command",
+			"command": "execute at @e[tag=speed] run tag @e remove speed",
+			"permission_level": 4
+		  },
+		{
+      		  "type":"origins:feed",
+      		  "food": -12,
+      		  "saturation": 2.4
+    }
+	  ]
+	},
+		"name": "§a§l§nIcarus Speed",
+		"description": "Speed up those whose been tagged ! Costs hunger and has a 5 minute cooldown (Healer Form)",
+		"key": "secondary"
+}
+
+
+
+

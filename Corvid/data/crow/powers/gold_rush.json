@@ -1,0 +1,167 @@
+{
+	"type": "origins:action_on_item_use",
+	"name": "§a§l§nGold Rush",
+	"description": "Eating golden food gives you a boost",
+	"entity_action": 
+		{
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": 
+					{
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:equipped_item",
+								"equipment_slot": "mainhand",
+								"item_condition": 
+								{
+									"type": "origins:ingredient",
+									"ingredient": 
+									{
+										"item": "minecraft:golden_carrot"
+									}
+								}
+							},
+							{
+								"type": "origins:equipped_item",
+								"equipment_slot": "offhand",
+								"item_condition": 
+								{
+									"type": "origins:ingredient",
+									"ingredient": 
+									{
+										"item": "minecraft:golden_carrot"
+									}
+								}
+							}
+						]
+
+					},
+					"action":
+					{
+						"type": "origins:apply_effect",
+						"effect": 
+						{
+							"effect": "minecraft:speed",
+							"duration": 1200,
+							"amplifier": 0
+						}
+					}
+				},
+				{
+					"condition": 
+					{
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:equipped_item",
+								"equipment_slot": "mainhand",
+								"item_condition": 
+								{
+									"type": "origins:ingredient",
+									"ingredient": 
+									{
+										"item": "minecraft:golden_apple"
+									}
+								}
+							},
+							{
+								"type": "origins:equipped_item",
+								"equipment_slot": "offhand",
+								"item_condition": 
+								{
+									"type": "origins:ingredient",
+									"ingredient": 
+									{
+										"item": "minecraft:golden_apple"
+									}
+								}
+							}
+						]
+					},
+					"action":
+					{
+						"type": "origins:apply_effect",
+						"effects": [
+							{
+								"effect": "minecraft:speed",
+								"duration": 2400,
+								"amplifier": 0
+							},
+							{
+								"effect": "minecraft:haste",
+								"duration": 1200,
+								"amplifier": 0
+							}
+						]
+					}
+				},
+				{
+					"condition": 
+					{
+						"type": "origins:or",
+						"conditions": [
+							{
+								"type": "origins:equipped_item",
+								"equipment_slot": "mainhand",
+								"item_condition": 
+								{
+									"type": "origins:ingredient",
+									"ingredient": 
+									{
+										"item": "minecraft:enchanted_golden_apple"
+									}
+								}
+							},
+							{
+								"type": "origins:equipped_item",
+								"equipment_slot": "offhand",
+								"item_condition": 
+								{
+									"type": "origins:ingredient",
+									"ingredient": 
+									{
+										"item": "minecraft:enchanted_golden_apple"
+									}
+								}
+							}
+						]
+					},
+					"action":
+					{
+						"type": "origins:apply_effect",
+						"effects": [
+							{
+								"effect": "minecraft:speed",
+								"duration": 1200,
+								"amplifier": 1
+
+							},
+							{
+								"effect": "minecraft:haste",
+								"duration": 2400,
+								"amplifier": 1
+							}
+						]
+					}
+				}
+			]
+		},
+	"item_condition":  
+	{
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:food"
+			},
+			{
+			"type": "origins:ingredient",
+			"ingredient": 
+				{
+					"tag": "minecraft:piglin_loved"
+				}
+			}
+		]
+	}
+}

@@ -1,0 +1,30 @@
+{
+    "type": "origins:multiple",
+    "wooden": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "addition",
+            "value": 2
+        },
+        "condition": {
+            "type": "origins:health",
+            "comparison": "<",
+            "compare_to": 6,
+            "inverted": true
+        }
+    },
+    "diamond": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.5
+        },
+        "condition": {
+            "type": "origins:health",
+            "comparison": "<",
+            "compare_to": 4
+        }
+    },
+    "name": "§b§l§nJukebox Body",
+    "description": "Your wooden exterior is fragile but your diamond core is highly resistant to attacks\n§4§l§nPros/Cons: more damage, low health protection"
+}

@@ -1,0 +1,104 @@
+{
+    "type": "origins:prevent_death",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:clear_effect"
+            },
+            {
+                "type": "origins:apply_effect",
+                "effects": [
+                    {
+                        "effect": "minecraft:regeneration",
+                        "amplifier": 1,
+                        "duration": 900
+                    },
+                    {
+                        "effect": "minecraft:fire_resistance",
+                        "duration": 800
+                    },
+                    {
+                        "effect": "minecraft:absorption",
+                        "amplifier": 1,
+                        "duration": 100
+                    }
+                ]
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "head",
+                "action": {
+                    "type": "origins:damage",
+                    "amount": -1000,
+                    "ignore_unbreaking": false
+                }
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "chest",
+                "action": {
+                    "type": "origins:damage",
+                    "amount": -1000,
+                    "ignore_unbreaking": false
+                }
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "legs",
+                "action": {
+                    "type": "origins:damage",
+                    "amount": -1000,
+                    "ignore_unbreaking": false
+                }
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "feet",
+                "action": {
+                    "type": "origins:damage",
+                    "amount": -1000,
+                    "ignore_unbreaking": false
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:totem_of_undying ~ ~ ~ 1 1 1 1 1000",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tellraw @a {\"text\":\"\",\"color\":\"yellow\",\"extra\":[{\"selector\":\"@s\"},{\"text\":\" has lost the game!\"}]}",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 49,
+                "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.6 0 1 1 ~ ~ ~ 1 1 1 1 100",
+                "permission_level": 4
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 49,
+                "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:end_rod ~ ~ ~ 1 1 1 1 100",
+                "permission_level": 4
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 50,
+                "action": {
+                "type": "origins:execute_command",
+                "command": "tp @s @e[limit=1,sort=nearest,type=armor_stand,tag=arena_death]",
+                "permission_level": 4
+                }
+            }
+        ]
+    },
+"hidden": true
+}

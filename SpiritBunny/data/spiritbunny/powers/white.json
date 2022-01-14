@@ -1,0 +1,9 @@
+{
+    "type": "origins:model_color",
+    "red": 0.6,
+    "green": 0.6,
+	"blue": 0.6,
+    "alpha": 0.85,
+	"name": "§e§l§nGhost Rabbit",
+	"description": "your skin has a white transparent tint."
+}

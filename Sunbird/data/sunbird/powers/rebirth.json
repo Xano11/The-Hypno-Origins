@@ -1,0 +1,65 @@
+{
+	"type": "origins:prevent_death",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0.4 500 normal",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:change_resource",
+				"resource": "sunbird:reborn_resource",
+				"change": 1
+			},
+			{
+				"type": "origins:heal",
+				"amount": 8
+			},
+			{
+				"type": "origins:apply_effect",
+				"effects": [
+					{
+						"effect": "minecraft:absorption",
+						"duration": 400,
+						"amplifier": 0,
+						"is_ambient": true,
+						"show_particles": true,
+						"show_icon": true
+					},
+					{
+						"effect": "minecraft:regeneration",
+						"duration": 400,
+						"amplifier": 1,
+						"is_ambient": true,
+						"show_particles": true,
+						"show_icon": true
+					},
+					{
+						"effect": "minecraft:fire_resistance",
+						"duration": 400,
+						"amplifier": 0,
+						"is_ambient": true,
+						"show_particles": true,
+						"show_icon": true
+					}
+				]
+			},
+			{
+				"type": "origins:play_sound",
+				"sound": "minecraft:item.totem.use",
+				"volume": 2,
+				"pitch": 1
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:resource",
+		"resource": "sunbird:reborn_resource",
+		"comparison": "<",
+		"compare_to": 1
+	},
+	"name": "§a§l§nRebirth",
+	"description": "You are able of return from your ashes. When you die in Full form you reborn as a baby instead of dying, but at the cost of losing your wings and becoming more fragile."
+}

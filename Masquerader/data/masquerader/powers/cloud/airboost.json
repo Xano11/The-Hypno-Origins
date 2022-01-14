@@ -1,0 +1,35 @@
+{
+  "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+      "actions": [
+        {
+	    "type": "origins:execute_command",
+	    "command": "particle minecraft:cloud ~ ~ ~ 0.5 0 0.5 0.2 40 normal",
+        "permission_level": 4
+        },
+        {    
+	    "type": "origins:execute_command",
+	    "command": "playsound minecraft:entity.firework_rocket.launch master @a ~ ~ ~ 3 1",
+        "permission_level": 4
+        },
+		{
+		"type": "origins:add_velocity",
+		"z": 1.0,
+		"space": "local"
+		}
+    ]
+    },
+    "key": {
+        "key": "key.origins.primary_active",
+        "continuous": false
+    },
+	"cooldown": 60,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 23
+		},
+    "name": "§a§l§nAir Manipulation",
+    "description": "Use your bond with the wind to slightly propel yourself forward"
+}

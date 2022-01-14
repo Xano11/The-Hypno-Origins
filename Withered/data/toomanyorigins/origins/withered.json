@@ -1,0 +1,25 @@
+{
+	"loading_priority": 10,
+	"powers": [
+		"toomanyorigins:wither_toxins",
+		"origins:nether_spawn",
+		"toomanyorigins:black_thumb",
+		"toomanyorigins:scorched_structure",
+		"toomanyorigins:soul_shield",
+		"toomanyorigins:soul_shield_overlay",
+		"toomanyorigins:wither_immunity",
+		"witheredv2:buff",
+		"witheredv2:ressource",
+		"witheredv2:soul_absorption",
+		"witheredv2:soul_hit",
+		"witheredv2:wither_charge",
+		"witheredv2:tormented_souls",
+		"witheredv2:soul_hungry",
+		"witheredv2:soul_leak",
+		"witheredv2:undead",
+		"origins:fire_immunity"
+	],
+	"icon": "minecraft:wither_rose",
+	"order": 1,
+	"impact": 2
+}

@@ -1,0 +1,19 @@
+{
+    "type": "origins:restrict_armor",
+    "head": {
+        "type": "origins:constant",
+        "value": true
+    },
+    "chest": {
+        "type": "origins:constant",
+        "value": true
+    },
+    "legs": {
+        "type": "origins:constant",
+        "value": true
+    },
+    "feet": {
+        "type": "origins:constant",
+        "value": true
+    }
+}

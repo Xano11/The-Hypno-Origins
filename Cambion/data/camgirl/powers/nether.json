@@ -1,0 +1,23 @@
+{
+	"type": "origins:stacking_status_effect",
+	"min_stacks": 0,
+	"max_stacks": 2,
+	"duration_per_stack": 100,
+	"effects": [
+		{
+			"effect": "minecraft:slowness",
+			"duration": 20,
+			"amplifier": 1,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		}
+	],
+	"condition": 
+	{
+		"type": "origins:dimension",
+		"dimension": "minecraft:the_nether"
+	},
+	"name": "§c§l§nScared",
+	"description": "In the nether you get slowness 1"
+}

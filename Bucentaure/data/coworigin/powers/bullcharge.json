@@ -1,0 +1,12 @@
+{
+    "type": "origins:modify_damage_dealt",
+    "condition": {
+        "type": "origins:sprinting",
+        "inverted": false
+    },
+    "modifier": {
+        "operation": "addition",
+        "value": 2
+    },
+    "hidden": true
+}

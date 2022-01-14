@@ -1,0 +1,141 @@
+{
+    "type": "origins:multiple",
+    "glow_berries": {
+        "type": "origins:modify_food",
+        "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient":
+        {
+            "item": "minecraft:glow_berries"
+        }
+        },
+        "food_modifier":
+        {
+            "operation": "addition",
+            "value": 2
+        },
+        "saturation_modifier":
+        {
+            "operation": "addition",
+            "value": 2.5
+        },
+        "entity_action": {
+        "type": "origins:chance",
+        "action":
+        {    
+            "type": "origins:execute_command",
+            "command": "effect give @s minecraft:glowing 10 0 true",
+            "permission_level": 4
+        },
+            "chance": 0.1
+        }
+    },
+
+    "sweet_berries": {
+        "type": "origins:modify_food",
+        "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient":
+        {
+            "item": "minecraft:sweet_berries"
+        }
+        },
+        "food_modifier":
+        {
+            "operation": "addition",
+            "value": 2
+        },
+        "saturation_modifier":
+        {
+            "operation": "addition",
+            "value": 2.5
+        },
+        "entity_action": {
+        "type": "origins:chance",
+        "action":
+        {    
+            "type": "origins:execute_command",
+            "command": "effect give @s minecraft:speed 10 0 true",
+            "permission_level": 4
+        },
+            "chance": 0.1
+        }
+    },
+
+    "limitations": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions":[
+                {
+                    "type": "origins:food"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient":{
+                        "item": "minecraft:sweet_berries"
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient":{
+                        "item": "minecraft:glow_berries"
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient":{
+                        "item": "minecraft:apple"
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient":{
+                        "item": "minecraft:golden_apple"
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient":{
+                        "item": "minecraft:enchanted_golden_apple"
+                    },
+                    "inverted": true
+                }
+            ]
+        }
+    },
+
+    "exhaust": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "name": "Increased exhaustion",
+            "operation": "multiply_base",
+            "value": 2.0
+        }
+    },
+
+    "pouch": {
+    "type": "origins:inventory",
+        "name": "pouchforberries",
+        "title": "Berry Pouch",
+        "drop_on_death": true,
+        "drop_on_death_filter": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "de:berry"
+            },
+            "inverted": true
+        },
+        "key": {
+            "key": "key.pickItem",
+            "continuous": false
+        }
+    },
+
+    "name": "§c§l§nBerry Pouch",
+    "description": "Your used to eating berries and apples so they are all you can eat, You have a 3x3 inventory that you can only put berries and apples in, you also exhaust 3x faster."
+}

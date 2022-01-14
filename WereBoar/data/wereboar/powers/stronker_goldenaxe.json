@@ -1,0 +1,98 @@
+{
+    "type": "origins:multiple",
+    "golden_axe": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 15,
+        "name": "axe dmg"
+            },
+    "tick_rate": 20,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:golden_axe"
+                }
+            }
+        }
+},
+"golden_waraxe": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 18,
+        "name": "axe dmg"
+            },
+    "tick_rate": 20,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "medievalweapons:golden_big_axe"
+                }
+            }
+        }
+    },
+"golden_battle_axe": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 14,
+        "name": "axe dmg"
+            },
+    "tick_rate": 20,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "medievalweapons:golden_small_axe"
+                }
+            }
+        }
+    },
+"tooltip1":
+{
+    "type": "origins:tooltip",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:golden_axe"
+        }
+    },
+    "text": "Redemption."
+},
+"tooltip2":
+{
+    "type": "origins:tooltip",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "medievalweapons:golden_big_axe"
+        }
+    },
+    "text": "Vengeance."
+},
+"tooltip3":
+{
+    "type": "origins:tooltip",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "medievalweapons:golden_small_axe"
+        }
+    },
+    "text": "Wrath."
+},
+        "name": "§a§l§nSignature Weapon",
+        "description": "You are more than twice as strong while holding a Golden Axe (any type of golden axes), but also somewhat weak if not."
+}

@@ -1,0 +1,6 @@
+{
+    "replace": false,
+    "origins": [
+        "golem:iron_golem"
+    ]
+}

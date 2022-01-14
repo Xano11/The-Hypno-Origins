@@ -1,0 +1,6 @@
+{
+  "name": "§a§l§nWinged",
+  "description": "You have wings, along with the ability to charge up a short boost mid flight.",
+  "type": "origins:elytra_flight",
+  "render_elytra": true
+}

@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: Chirp by C418", "color":"dark_red"}

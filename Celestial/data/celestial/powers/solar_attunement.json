@@ -1,0 +1,197 @@
+{
+	"name": "§e§l§nSolar Attunement",
+	"description": "During the day, you gain the power of the sun. Your fists burn, dealing increased damage. You are fireproof. You are hydrophobic and slower.",
+	"type": "origins:multiple",
+	"solar_flame": {
+		"type": "origins:action_on_hit",
+		"bientity_action": {
+			"type": "origins:target_action",
+			"action": {
+				"type": "origins:set_on_fire",
+				"duration": 4
+			}
+		},
+		"bientity_condition": {
+			"type": "origins:actor_condition",
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:predicate",
+						"predicate": "celestial:night",
+						"inverted": true
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_nether",
+						"inverted": true
+					},
+					{
+						"type": "origins:dimension",
+						"dimension": "minecraft:the_end",
+						"inverted": true
+					}
+				]
+			}
+		},
+		"cooldown": 20
+	},
+	"solar_strength": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "addition",
+			"value": 4,
+			"name": "Solar Strength"
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"solar_archery": {
+		"type": "origins:modify_projectile_damage",
+		"modifier": {
+			"operation": "addition",
+			"value": -4
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"solar_slowness": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "addition",
+			"value": -0.04,
+			"name": "Solar Slowness"
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"solar_resistance": {
+		"type": "origins:fire_immunity",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"solar_vulnerability": {
+		"type": "origins:damage_over_time",
+		"interval": 20,
+		"onset_delay": 1,
+		"damage": 2,
+		"damage_easy": 1,
+		"damage_source": {
+			"name": "hurt_by_water",
+			"unblockable": true,
+			"bypasses_armor": true
+		},
+		"protection_enchantment": "origins:water_protection",
+		"protection_effectiveness": 1.0,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:fluid_height",
+							"fluid": "minecraft:water",
+							"comparison": ">",
+							"compare_to": 0.0
+						},
+						{
+							"type": "origins:in_rain"
+						}
+					]
+				},
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	}
+}

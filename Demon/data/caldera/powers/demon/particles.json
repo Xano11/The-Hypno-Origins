@@ -1,0 +1,6 @@
+{
+    "type": "origins:particle",
+    "particle": "minecraft:dripping_obsidian_tear",
+    "frequency": 12,
+    "hidden": true
+}

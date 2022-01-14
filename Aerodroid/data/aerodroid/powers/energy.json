@@ -1,0 +1,50 @@
+{
+    "type": "origins:active_self",
+	"name": "§a§l§nExtra Energy",
+    "description": "You can launch yourself in mid-flight as if you were using a firework.",
+    "loading_priority": 10,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:add_velocity",
+                "z": 1,
+                "space": "local"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:block.composter.ready master @s ~ ~ ~ 1 1",
+                "permission_level": 4
+            },
+			{
+				"type": "origins:exhaust",
+				"amount": 1
+			}
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:fall_flying",
+                "inverted": false
+            },
+            {
+                "type": "origins:food_level",
+                "inverted": false,
+                "comparison": ">",
+                "compare_to": 6
+            }
+        ]
+    },
+    "cooldown": 60,
+    "hud_render": {
+        "should_render": true,
+        "bar_index": 4,
+        "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+		"key": {
+		"key": "key.origins.primary_active"
+	}
+}

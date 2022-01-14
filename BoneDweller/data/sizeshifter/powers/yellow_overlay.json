@@ -1,0 +1,13 @@
+{
+    "type": "origins:overlay",
+    "texture": "minecraft:textures/block/yellow_stained_glass.png",
+    "strength": 0.15,
+    "red": 1.0,
+    "green": 1.0,
+    "blue": 1.0,
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "hide_with_hud": false,
+    "visible_in_third_person": false,
+    "hidden": true
+}

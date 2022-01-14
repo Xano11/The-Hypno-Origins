@@ -1,0 +1,21 @@
+{
+	"powers": [
+		"spiritbunny:smol",
+		"spiritbunny:white",
+		"spiritbunny:boost",
+		"spiritbunny:speed",
+		"spiritbunny:health",
+		"spiritbunny:fire",
+		"origins:fall_immunity",
+		"origins:cat_vision",
+		"origins:no_shield",
+		"origins:vegetarian",
+		"origins:more_exhaustion",
+		"origins:sprint_jump"
+	],
+	"icon": "minecraft:snowball",
+	"order": 10,
+	"impact": 2,
+	"name": "Spirit Bunny",
+	"description": "Spoopy Rabbit"
+}

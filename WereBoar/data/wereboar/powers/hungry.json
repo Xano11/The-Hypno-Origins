@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier":{
+         "value": 1,
+         "operation": "multiply_base"
+         },
+      "name": "§c§l§nHungry.",
+      "description": "This large metabolism needs more food for sustenance."
+  }

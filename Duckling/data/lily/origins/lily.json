@@ -1,0 +1,21 @@
+{
+    "powers": [
+    "lily:drown",
+    "lily:water_vision",
+    "origins:aqua_affinity",
+    "origins:swim_speed",
+    "origins:slow_falling",
+    "lily:bill",
+    "lily:duck_fur",
+    "lily:feet",
+    "lily:hunger",
+    "lily:slow",
+    "lily:toggle",
+    "lily:flap"  
+    ],
+    "icon": "minecraft:lily_pad",
+    "order": 1,
+    "impact": 2,
+    "name": "Duckling",
+    "description": "A bird, born for the water.They call me Duckie."
+  }

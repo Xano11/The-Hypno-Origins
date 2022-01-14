@@ -1,0 +1,3 @@
+execute as @e[type=armor_stand,tag=phase_marker] if score @s x_phase = @p x_phase if score @s y_phase = @p y_phase if score @s z_phase = @p z_phase run tp @p @s
+execute as @e[type=armor_stand,tag=phase_marker] if score @s x_phase = @p x_phase if score @s y_phase = @p y_phase if score @s z_phase = @p z_phase at @s run forceload remove ~ ~ ~ ~
+execute as @e[type=armor_stand,tag=phase_marker] if score @s x_phase = @p x_phase if score @s y_phase = @p y_phase if score @s z_phase = @p z_phase run kill @s

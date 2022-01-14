@@ -1,0 +1,84 @@
+{
+    "type": "origins:multiple",
+        "add_hydrophobia": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "power grant @s origins:water_vulnerability",
+            "permission_level": 4
+        },
+        "interval": 20,
+        "condition": {
+                "type": "origins:resource",
+                "resource": "sizeshifter:hydrophobia_resource",
+                "comparison": "==",
+                "compare_to": 15
+	    }
+    },
+    "remove_hydrophobia": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+                "command": "power revoke @s origins:water_vulnerability",
+                "permission_level": 4
+            },
+        "interval": 20,
+        "condition": {
+                "type": "origins:resource",
+                "resource": "sizeshifter:hydrophobia_resource",
+                "comparison": "<",
+                "compare_to": 15
+        }
+    },
+    "hydrophobia_loss": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "sizeshifter:hydrophobia_resource",
+            "change": -1
+        },
+        "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": ">",
+                "compare_to": 0.0,
+                "inverted": true
+            },
+            {
+                "type": "origins:in_rain",
+                "inverted": true
+            }
+        ]
+    },
+        "interval": 20
+    },
+    "hydrophobia_gain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "sizeshifter:hydrophobia_resource",
+            "change": 1
+        },
+        "condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": ">",
+                "compare_to": 0.0
+            },
+            {
+                "type": "origins:in_rain"
+            }
+        ]
+    },
+        "interval": 20
+    },
+    "name": "§c§l§nWater Damage",
+    "description": "You start taking damage from water after being exposed to it for too long, avoiding water will dry you off."
+}
+

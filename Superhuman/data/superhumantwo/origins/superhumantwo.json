@@ -1,0 +1,16 @@
+{
+	"powers": [
+		"superhumantwo:super_effects",
+		"superhumantwo:shield",
+		"superhumantwo:effect_immune",
+		"origins:fall_immunity",	
+		"superhumantwo:too_big",
+		"origins:more_exhaustion",
+		"origins:pumpkin_hate"
+	],
+	"icon": "minecraft:dragon_breath",
+	"order": 2,
+	"impact": 1,
+	"name": "Super-Human",
+	"description": "A regular human that was drugged up by scientists to become supernatural."
+}

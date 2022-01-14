@@ -1,0 +1,29 @@
+{
+	"powers": [
+		"witherd:rampage",
+		"witherd:onkill",
+		"witherd:wramp",
+		"witherd:ressource2",
+		"witherd:refil",
+		"witherd:ressource3",
+		"witherd:wither_dash",
+		"witherd:ressource",
+		"witherd:witheronhit",
+		"witherd:souls",
+		"witherd:soul_spawn",
+		"witherd:wither_atri",
+		"witherd:no_swim",
+		"witherd:anti_pearl",
+		"witherd:anti_trident",
+		"origins:fire_immunity",
+		"toomanyorigins:soul_shield",
+		"toomanyorigins:soul_shield_overlay",
+		"toomanyorigins:black_thumb",
+		"toomanyorigins:scorched_structure"
+	],
+	"icon": "minecraft:wither_skeleton_skull",
+	"order": 10,
+	"impact": 3,
+	"name": "The Wither",
+	"description": "A Nether monster with the *soul* purpose of destroying everything"
+}

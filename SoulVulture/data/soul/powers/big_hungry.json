@@ -1,0 +1,10 @@
+{
+  "name": "§c§l§nInsatiable Hunger",
+  "description": "Your require much more to feed off of then usual.",
+  "type": "origins:modify_exhaustion",
+  "modifier": {
+    "name": "Extra exhaustion from large appetite",
+    "value": 0.6,
+    "operation": "multiply_base"
+  }
+}

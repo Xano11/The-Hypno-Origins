@@ -1,0 +1,111 @@
+{
+    "name": "§e§l§nGist Strength",
+    "description": "Your Gist consumes your strength, causing it to have double your health, as well as an increased attack damage. However, this leaves you much weaker, reducing your attack damage.",
+    "type": "origins:multiple",
+    "modify_damage": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.2,
+            "name": "Gist human damage reduction"
+        }
+    },
+    "weapon_tooltip_red": {
+        "type": "origins:tooltip",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "gist:weapons"
+            }
+        },
+        "texts": [
+            " ",
+            "§7In §bHuman §7form: §4-20% Attack Damage",
+            "§7In §4Gist §7form: §2+40% Attack Damage"
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:demon_form_resource",
+            "comparison": "<=",
+            "compare_to": 1
+        }
+    },
+    "non_weapon_tooltip_red": {
+        "type": "origins:tooltip",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "gist:weapons"
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:food",
+                    "inverted": true
+                }
+            ]
+        },
+        "texts": [
+            " ",
+            "§7In §4Gist §7form: §2+6 Attack Damage"
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:demon_form_resource",
+            "comparison": "<=",
+            "compare_to": 1
+        }
+    },
+    "weapon_tooltip_blue": {
+        "type": "origins:tooltip",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "gist:weapons"
+            }
+        },
+        "texts": [
+            " ",
+            "§7In §bHuman §7form: §4-20% Attack Damage",
+            "§7In §4Gist §7form: §2+75% Attack Damage"
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:demon_form_resource",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "non_weapon_tooltip_blue": {
+        "type": "origins:tooltip",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "gist:weapons"
+                    },
+                    "inverted": true
+                },
+                {
+                    "type": "origins:food",
+                    "inverted": true
+                }
+            ]
+        },
+        "texts": [
+            " ",
+            "§7In §4Gist §7form: §2+9 Attack Damage"
+        ],
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:demon_form_resource",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    }
+}

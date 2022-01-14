@@ -1,0 +1,13 @@
+{
+	"type":"origins:attribute",
+	"modifier":{
+	   "attribute": "minecraft:generic.movement_speed",
+	   "value": 0.02,
+	   "operation": "addition"
+	},
+	"name": "§a§l§nLight body",
+	"description": "Your small frame gives little weight, making it easier to move and jump at the cost of health.",
+	"tick_rate": 2
+}
+
+

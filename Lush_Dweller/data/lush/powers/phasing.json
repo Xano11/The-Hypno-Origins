@@ -1,0 +1,63 @@
+{
+    "type": "origins:multiple",
+    "phase": {
+    "type": "origins:phasing",
+    "render_type": "blindness",
+    "view_distance": 5,
+    "block_condition": {
+    "type": "origins:in_tag",
+    "tag": "*:phase"
+	},
+    "phase_down_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:sneaking"
+            }
+        ]
+    },
+	"condition": {
+	"type": "origins:and",
+	"conditions": [
+    {      
+    "type": "origins:power_active",
+		"power": "*:on",
+		"inverted": true
+    }
+  ]
+}
+},
+    "no_suf": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+                "type": "origins:name",
+                "name": "inWall"
+            },
+            {
+                "type": "origins:amount",
+                "comparison": "==",
+                "compare_to": 1
+            }
+            ]
+        },
+        "modifier": {
+            "operation": "addition",
+            "value": -1
+        },
+			"condition": {
+	"type": "origins:and",
+	"conditions": [
+    {      
+    "type": "origins:power_active",
+		"power": "*:on",
+		"inverted": true
+    }
+  ]
+}
+    },
+    "name": "§a§l§nBurrow",
+    "description": "You can burrow into moss and leaves to hide from predictors."
+}

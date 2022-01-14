@@ -1,0 +1,28 @@
+{
+    "type": "origins:model_color",
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "inverted": false,
+                "comparison": "==",
+                "resource": "woolorigin:onpurple",
+                "compare_to": 1
+            },
+            {
+                "type": "origins:resource",
+                "inverted": false,
+                "comparison": "==",
+                "resource": "woolorigin:woolresource",
+                "compare_to": 1
+            }
+        ]
+    },
+    "red": 0.76862745098,
+    "blue": 0.86078431372,
+    "alpha": 1,
+    "green": 0.59803921568,
+    "hidden": true
+}

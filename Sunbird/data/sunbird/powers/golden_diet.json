@@ -1,0 +1,39 @@
+{
+	"type": "origins:modify_food",
+	"item_condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:golden_apple"
+				},
+				"inverted": true
+			},
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:golden_carrot"
+				},
+				"inverted": true
+			},
+			{
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:enchanted_golden_apple"
+				},
+				"inverted": true
+			}
+		]
+	},
+	"food_modifier": {
+		"operation": "multiply_base",
+		"value": -0.5
+	},
+	"saturation_modifier": {
+		"operation": "multiply_base",
+		"value": -0.4
+	},
+	"name": "§c§l§nGolden Diet",
+	"description": "A legendary being like you shouldn't eat peasants food. Your fine palate requires expensive foods. Any non-golden food can't satisfy you."
+}

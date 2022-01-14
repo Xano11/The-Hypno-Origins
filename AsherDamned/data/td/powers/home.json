@@ -1,0 +1,7 @@
+{
+	"name": "§c§l§nWelcome to hell",
+	"description":"You are dead making you spawn in the underworld",
+	"type": "origins:modify_player_spawn",
+	"dimension": "minecraft:the_nether",
+	"spawn_strategy": "center"
+}

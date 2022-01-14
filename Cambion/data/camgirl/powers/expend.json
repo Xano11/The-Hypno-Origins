@@ -1,0 +1,66 @@
+{
+	"name": "§e§l§nExpend[Shift+Secondary]",
+	"description": "Holding shift and pressing your secondary releases souls, reducing your soul bar",
+	"type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "cooldown": 10,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.wither.hurt master @a[distance=..15] ~ ~ ~ 1 1",
+                    "permission_level": 4
+					}
+                },
+                {
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle dust 0 0 0 1 ~ ~-1 ~ 0.5 1.4 0.5 0 500",
+                    "permission_level": 4
+					}
+                },
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+					"type": "origins:execute_command",
+                    "command": "particle minecraft:soul ~ ~1.8 ~ 0 0 0 0.1 5 force",
+                    "permission_level": 4
+					}
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+                    "type": "origins:change_resource",
+					"resource": "*:blood_resource",
+					"change": -14.3
+					}
+                }
+            ]
+        },
+		"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"resource": "*:blood_resource",
+				"comparison": ">",
+				"compare_to": 0
+			},
+			{      
+				"type": "origins:sneaking"
+			}
+		]
+		}
+}

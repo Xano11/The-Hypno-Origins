@@ -1,0 +1,17 @@
+{
+    "type": "origins:action_over_time",
+    "name": "Fatigue Reset",
+    "description": "Fatigue Reset",
+    "hidden": true,
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "voidtraveller:fatigue_resource",
+        "change": -1200
+    },
+    "condition": {
+        "type": "origins:dimension",
+        "inverted": false,
+        "dimension": "void:void_dimension"
+    }
+}

@@ -1,0 +1,10 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+	    "type": "origins:change_resource",
+	    "resource": "inkbat:ressource",
+	    "change": 30
+	},
+	"interval": 20,
+    "hidden": true 
+}

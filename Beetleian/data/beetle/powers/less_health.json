@@ -1,0 +1,10 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "attribute": "minecraft:generic.max_health",
+    "value": -4,
+    "operation": "addition"
+  },
+  "name": "§c§l§nSmall Stature",
+  "description": "You have 2 less hearts of health than humans and you are a bit taller than one block."
+}

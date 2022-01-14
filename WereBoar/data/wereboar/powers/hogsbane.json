@@ -1,0 +1,21 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {    
+                "type": "origins:execute_command",
+                "command": "execute as @s if entity @e[distance=..7,nbt={ActiveEffects:[{Id:38b}]}] run effect give @s minecraft:blindness 3 0",
+                "permission_level": 4
+                },
+            {    
+                "type": "origins:execute_command",
+                "command": "execute as @s if entity @e[distance=..7,nbt={ActiveEffects:[{Id:38b}]}] run effect give @s minecraft:slowness 1 1",
+                "permission_level": 4
+                }
+        ]
+    },
+    "interval": 10,
+    "name": "§c§l§nHogsbaned.",
+    "description": "Any close entity with hogsbane will weaken you."
+	}

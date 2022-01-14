@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "operation": "addition",
+        "name": "no hunger",
+        "value": -1
+    },
+    "hidden": true
+}

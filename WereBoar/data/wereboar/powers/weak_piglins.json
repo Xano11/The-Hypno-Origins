@@ -1,0 +1,28 @@
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 1.5,
+        "name": "Extra Damage Taken Because of Origin"
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:piglin"
+          },
+          {      
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:piglin_brute"
+          },
+          {      
+            "type": "origins:entity_type",
+            "entity_type": "minecraft:zombified_piglin"
+          }
+          
+        ]
+    },
+    "name": "§c§l§nRivalry",
+    "description": "Piglins deal you more damage."
+}

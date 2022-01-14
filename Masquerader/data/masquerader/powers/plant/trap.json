@@ -1,0 +1,457 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "toggle": {
+            "type": "origins:active_self",
+            "entity_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                "if_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": -1
+                },
+                "else_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 1
+                }
+            },
+            "cooldown": 40,
+            "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 0
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:moving",
+                    "inverted": true
+                },
+                {      
+                    "type": "origins:on_block"
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": false
+        }
+    },
+    "toggleunmask": {
+      "type": "origins:active_self",
+      "entity_action": {
+          "type": "origins:if_else",
+          "condition": {
+              "type": "origins:resource",
+              "resource": "*:*_resource",
+              "comparison": "==",
+              "compare_to": 1
+          },
+          "if_action": {
+              "type": "origins:change_resource",
+              "resource": "*:*_resource",
+              "change": -1
+          },
+          "else_action": {
+              "type": "origins:change_resource",
+              "resource": "*:*_resource",
+              "change": 1
+          }
+      },
+      "cooldown": 40,
+      "hud_render": {
+      "should_render": false,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 0
+  },
+  "condition": {
+      "type": "origins:and",
+      "conditions": [
+          {
+              "type": "origins:moving",
+              "inverted": true
+          },
+          {      
+              "type": "origins:on_block"
+          }
+      ]
+  },
+  "key": {
+      "key": "key.loadToolbarActivator",
+      "continuous": false
+  }
+},
+    "summon": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "==",
+                "compare_to": 0
+                },
+                "if_action": {
+                    "type": "origins:execute_command",
+                    "command": "kill @e[type=armor_stand,nbt={ArmorItems:[{},{},{},{id:\"minecraft:flowering_azalea\",Count:1b}]}]",
+                    "permission_level": 4
+                },
+                "else_action": {
+                        "type": "origins:execute_command",
+                        "command": "summon armor_stand ~ ~-0.68 ~ {CustomNameVisible:0b,Silent:1b,Invulnerable:1b,ShowArms:0b,Small:1b,Marker:1b,Invisible:1b,NoBasePlate:1b,ArmorItems:[{},{},{},{id:'minecraft:flowering_azalea',Count:1b}]}",
+                        "permission_level": 4
+                    }
+                },
+            "cooldown": 39,
+            "hud_render": {
+                "should_render": false
+            },
+            "key": {
+                "key": "key.origins.secondary_active",
+                "continuous": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:moving",
+                    "inverted": true
+                },
+                {      
+                    "type": "origins:on_block"
+                }
+            ]
+        }
+    },
+    "shrink": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:hitbox_height 0.3 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:model_height 0.05 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:model_width 0.05 @s",
+                    "permission_level": 4 
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:motion 0.001 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:reach 0 @s",
+                    "permission_level": 4
+                }
+            ]
+            },
+            "interval": 20,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        },
+        "reset": {
+            "type": "origins:action_over_time",
+            "entity_action": {
+                "type": "origins:and",
+                "actions": [{
+                        "type": "origins:execute_command",
+                        "command": "scale reset pehkui:hitbox_height @s",
+                        "permission_level": 4
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "scale reset pehkui:model_height @s",
+                        "permission_level": 4
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "scale reset pehkui:model_width @s",
+                        "permission_level": 4 
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "scale reset pehkui:motion @s",
+                        "permission_level": 4 
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "scale reset pehkui:reach @s",
+                        "permission_level": 4 
+                    }
+                ]
+                },
+                "interval": 5,
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+            },
+            "nomove": {
+                "type": "origins:conditioned_attribute",
+                "modifier": {
+                    "attribute": "minecraft:generic.movement_speed",
+                    "operation": "addition",
+                    "value": -10,
+                    "name": "No Move"
+                },
+                "tick_rate": 1,
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            },
+            "nojump": {
+                "type": "origins:modify_jump",
+                "modifier": {
+                    "operation": "addition",
+                    "value": -10
+                },
+                "entity_action": {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:spore_blossom_air ~ ~ ~ 0.3 0.3 0.3 0.01 16 normal @a"
+                },
+                "tick_rate": 1,
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                    }
+                },
+                "posfix": {
+                        "type": "origins:action_over_time",
+                        "entity_action": {
+                            "type": "origins:execute_command",
+                            "command": "execute at @e[limit=1,nbt={ArmorItems:[{},{},{},{id:\"minecraft:flowering_azalea\",Count:1b}]}] run tp @s ~ ~0.68 ~",
+                            "permission_level": 4 
+                        },
+                        "interval": 60,
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    }            
+                },
+                "spore": {
+                    "type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+	    {
+                "type": "origins:execute_command",
+                "command": "function masquerader:spore",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s minecraft:speed 5 1 true",
+                "permission_level": 4
+            }
+		]
+	},
+    "cooldown": 100,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_resource",
+        "comparison": "==",
+        "compare_to": 0
+        },
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": false
+            }
+        },
+        "moredmg": {
+            "type":"origins:modify_damage_taken",
+            "modifier":{
+              "value": 0.25,
+              "operation":"multiply_total"
+            },
+            "damage_condition":{
+              "type":"origins:or",
+              "conditions":[
+                {
+                  "type": "origins:name",
+                  "name": "generic"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "magic"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "wither"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "witherSkull"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "mob"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "inFire"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "onFire"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "lava"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "hotFloor"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "thrown"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "indirectMagic"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "anvil"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "fallingBlock"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "dragonBreath"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "dryOut"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "badRespawnPoint"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "thorns"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "flyIntoWall"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "outOfWorld"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "cactus"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "drown"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "cramming"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "trident"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "arrow"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "sting"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "fall"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "inWall"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "lightningBolt"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "starve"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "sweetBerryBush"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "player"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "explosion"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "explosion.player"
+                },
+                {
+                  "type": "origins:name",
+                  "name": "fireworks"
+                }
+              ]
+            },
+            "condition": {
+                    "type": "origins:or",
+                    "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "*:*_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    }
+                ]
+            }
+        }
+}

@@ -1,0 +1,20 @@
+{
+    "type": "origins:model_color",
+    "alpha": 0.0,
+    
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+            "type": "origins:sneaking"
+        },
+        {      
+            "type": "origins:resource",
+            "resource": "doggo:stealth_timer",
+            "comparison":"<=",
+            "compare_to": 0
+        }
+        ]    
+    },
+    "hidden": true
+}

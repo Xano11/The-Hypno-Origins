@@ -1,0 +1,43 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "playsound minecraft:entity.zoglin.angry player @a[distance=..25] ~ ~ ~ 3 0.65"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "power grant @s wereboar:leap_effects"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s minecraft:slowness 2 4 true",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "wereboar:leap_resource_resource",
+                "change": -300
+            }
+        ]
+    },
+    "cooldown": 1,
+    "hud_render": {
+        "should_render": false
+    },
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "wereboar:leap_resource_resource",
+        "comparison": "==",
+        "compare_to": 300
+    },
+    "name": "§a§l§nLeap",
+    "description": "You can use a leap with your [Secondary] ability key."
+}

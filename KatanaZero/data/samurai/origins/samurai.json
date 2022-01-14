@@ -1,0 +1,20 @@
+{
+	"unchoosable":false,
+	"powers": [
+		"samurai:phase",
+		"samurai:time_stop",
+		"samurai:tag",
+		"samurai:home",
+		"samurai:stats",
+		"samurai:duel",
+		"samurai:nightmare",
+		"samurai:new_chronos",
+		"samurai:block_break",
+		"samurai:credit"
+	],
+	"icon": "minecraft:iron_sword",
+	"order": 10,
+	"impact": 2,
+	"name": "Zero Samurai",
+	"description": "a mysterious power allows you to manipulate time to your will, so you decided to become a bad-ass time-bending samurai"
+}

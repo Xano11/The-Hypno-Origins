@@ -1,0 +1,31 @@
+{
+  "type":"origins:multiple",
+"health":{
+  "type": "origins:attribute",
+  "modifier": {
+      "name": "Max health increase",
+      "attribute": "minecraft:generic.max_health",
+      "value": 4,
+      "operation": "addition"
+  }
+},
+"speed":{
+  "type": "origins:attribute",
+  "modifier": {
+      "name": "speed increase",
+      "attribute": "minecraft:generic.movement_speed",
+      "value": 0.007,
+      "operation": "addition"
+  }
+},
+"hunger":{
+  "type": "origins:modify_exhaustion",
+  "modifier": {
+      "name": "decreased exhaustion",
+      "operation": "multiply_total",
+      "value": 1
+  }
+},
+"name":"§a§l§nLiterally a samurai",
+"description":"all your base stats are increased slightly"
+}

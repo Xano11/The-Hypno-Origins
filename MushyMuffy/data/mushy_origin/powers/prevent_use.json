@@ -1,0 +1,57 @@
+{
+	"type": "origins:multiple",
+	"hatless":{
+		"type": "origins:restrict_armor",
+		"head": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 0
+            }
+		},
+	"no_range": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:trident"
+					}
+				},
+                {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:shield"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:crossbow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:long_bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:recurve_bow"
+					}
+				}
+			]
+		}
+	},
+    "name": "§c§l§nTrauma",
+    "description": "You're unable to use tridents due to fork related trauma."
+}

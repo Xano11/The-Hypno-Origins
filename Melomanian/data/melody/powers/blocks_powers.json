@@ -1,0 +1,92 @@
+{
+	"type": "origins:multiple",
+	"breaking": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 3
+		}
+	},
+	"block_breaking_reach": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "reach-entity-attributes:reach",
+			"value": 2,
+			"operation": "addition"
+		}
+	},
+	"natural_armor": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.armor",
+			"value": 6,
+			"operation": "addition"
+		},
+		"tick_rate": 1
+	},
+	"slowness": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"value": -0.06,
+			"operation": "addition"
+		}
+	},
+	"no_shields": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:shield"
+			}
+		}
+	},
+	"sinking": {
+		"type": "origins:ignore_water"
+	},
+	"delete_blocks": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:blocks_active",
+				"comparison": "==",
+				"compare_to": 345
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:blocks_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:blocks_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_blocks",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:blocks_active",
+				"change": 1
+			}
+		}
+	}
+}

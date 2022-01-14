@@ -1,0 +1,98 @@
+{
+    "type": "origins:multiple",
+    "hook_shot": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 16,
+            "block": true,
+            "entity": true,
+            "shape_type": "visual",
+            "fluid_handling": "any",
+            "bientity_action": {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power grant @e[limit=1,sort=nearest] de:paralyzed",
+                                "permission_level": 4
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "execute at @e[tag=slime,limit=1,sort=nearest] run tp @e[limit=1,sort=nearest] ~ ~ ~",
+                                "permission_level": 4
+                            }
+                        ]
+                    }
+                },
+            "block_action": {
+                "type": "origins:execute_command",
+                "command": "tag @e[limit=1,tag=slime,sort=nearest,distance=1..] add target"
+            },
+            "hit_action": {
+            "type": "origins:and",
+            "actions": [
+            {
+                "type": "origins:swing_hand",
+                "hand": "OFF_HAND"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "de:charge_resource",
+                "change": -70
+            }
+            ]
+            },
+            "command_at_hit": "particle minecraft:electric_spark ~ ~ ~ 0.01 0.01 0.01 0.001 120",
+            "command_along_ray": "particle minecraft:electric_spark ~ ~ ~ 0.01 0.01 0.01 0.001 120",
+            "command_step": 1,
+            "command_along_ray_only_on_hit": true
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "de:charge_resource",
+            "comparison": ">=",
+            "compare_to": 70
+        },
+        "cooldown": 200,
+        "key":{
+            "key": "key.saveToolbarActivator"
+        }
+    },
+
+    "launch": {
+        "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [{
+                "type": "origins:add_velocity",
+                "space": "local",
+                "z": 1.7
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove target"
+                }
+            }
+        ]
+    },
+    "interval": 1,
+    "condition": {
+        "type": "origins:command",
+        "command": "execute if entity @s[tag=target]",
+        "comparison": "==",
+        "compare_to": 1
+        }
+    },
+
+
+    "name": "§a§l§nElectroweb (SaveToolBar)",
+    "description": "The user attacks and captures opposing entity using an electric net. This paralyzes the opposing entity, this can also be used on a block to become a grappling hook, this costs 5% of your charge"
+}
+
+

@@ -1,0 +1,19 @@
+{
+    "type": "origins:resource",
+    "hidden": true,
+    "min": 0,
+    "max": 1,
+    "start_value": 1,
+    "hud_render": {
+        "should_render": true,
+        "bar_index": 11,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+        "condition": {
+            "type": "origins:resource",
+            "inverted": false,
+            "comparison": "==",
+            "resource": "woolorigin:onmagenta",
+            "compare_to": 1
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+	"type":"origins:conditioned_attribute",
+	"modifier":{
+	   "attribute": "minecraft:generic.movement_speed",
+	   "value": 0.015,
+	   "operation": "addition"
+	},
+	"condition":
+	{
+	"type": "origins:health",
+	"comparison": "<",
+	"compare_to": 7
+	},
+	"name": "§a§l§nScram!",
+	"description": "Whenever your health goes below 4 hearts, you gain a small speed boost",
+	"tick_rate": 2
+}
+
+

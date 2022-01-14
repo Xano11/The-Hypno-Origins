@@ -1,0 +1,22 @@
+{
+	"powers": [
+      "origins:carnivore",
+      "origins:cat_vision",
+      "origins:climbing",
+      "origins:arthropod",
+      "originsplus:weak_body",
+      "originsplus:walk_water",
+      "originsplus:size",
+      "originsplus:water_speed",
+      "origins:no_cobweb_slowdown",
+      "originsplus:poison",
+      "originsplus:leap"
+
+	],
+	"icon": "minecraft:spider_eye",
+	"order": 10,
+	"impact": 3,
+  "name": "Dolomedes",
+  "description": "Arachnids that have evolved in the aquatic biomes of this world now they roam the rivers and lakes to hunt their preys"
+}
+

@@ -1,0 +1,102 @@
+{
+    "type": "origins:multiple",
+    "toggle1": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 5
+        }
+    },
+    "toggle2": {
+        "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_toggle1",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_toggle1",
+            "change": -1
+        },
+        "else_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_toggle1",
+            "change": 1
+        }
+        },
+        "cooldown": 20,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "give": {
+        "type": "origins:target_action_on_hit",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "power grant @e[limit=1,sort=nearest] woolorigin:coated",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_toggle1",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {      
+                    "type": "origins:resource",
+                    "resource": "*:woolresource",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "removecoat": {
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:delay",
+            "ticks": 5,
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "*:woolresource",
+                "change": -1
+        }
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_toggle1",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {      
+                    "type": "origins:resource",
+                    "resource": "*:woolresource",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "name": "§a§l§nGive Coat",
+    "description": "[Primary Toggle] Whist you have a coat on and have the bone toggle enabled punching a entity will give it your coat, making them take 50% less damage for 1 hit"
+}

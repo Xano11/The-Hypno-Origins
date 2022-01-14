@@ -1,0 +1,19 @@
+{
+	"type": "origins:effect_immunity",
+	"effects": [
+		"minecraft:poison",
+		"minecraft:unluck"
+	],
+	"condition": {
+		"type": "origins:equipped_item",
+		"equipment_slot": "offhand",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item":"minecraft:soul_torch"
+			}
+		}
+	},
+	"name": "§a§l§nTether",
+	"description": "You feel different depending on which Soul item you hold close to you, but it's always reassuring."
+}

@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_food",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "coworigin:milkresource",
+        "change": 20
+    },
+    "hidden": true
+}

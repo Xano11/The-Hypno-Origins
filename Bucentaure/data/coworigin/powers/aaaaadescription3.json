@@ -1,0 +1,6 @@
+{
+    "type": "origins:simple",
+    "name": "§a§l§nGot Milk?",
+    "hidden": false,
+    "description": "Eating food restores some of your milk bar. Pressing Primary Key while holding a bucket consumes some of your milk bar to fill it."
+}

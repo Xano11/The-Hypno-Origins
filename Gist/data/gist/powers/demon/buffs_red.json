@@ -1,0 +1,78 @@
+{
+    "type": "origins:multiple",
+    "fist_damage": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "addition",
+            "value": 6
+        },
+        "condition": {
+            "inverted": true,
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "gist:weapons"
+                }
+            }
+        }
+    },
+    "damage": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.75
+        },
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "gist:weapons"
+                }
+            }
+        }
+    },
+    "health": {
+        "type": "origins:attribute",
+        "modifiers": [
+            {
+                "name": "Demon health increase",
+                "attribute": "minecraft:generic.max_health",
+                "value": 20,
+                "operation": "addition"
+            },
+            {
+                "name": "Demon knockback resistance",
+                "attribute": "minecraft:generic.knockback_resistance",
+                "value": 1000,
+                "operation": "addition"
+            }
+        ],
+        "update_health": true
+    },
+    "damage_reduction": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.40
+        }
+    },
+    "effects": {
+        "type": "origins:action_over_time",
+        "interval": 40,
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effect": {
+                "effect": "regeneration",
+                "duration": 41,
+                "amplifier": 1,
+                "show_particles": false,
+                "show_icon": true,
+                "is_ambient": true
+            }
+        }
+    }
+}

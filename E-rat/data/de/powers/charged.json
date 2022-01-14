@@ -1,0 +1,135 @@
+{
+    "type": "origins:multiple",
+    "shocking": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "de:charged_resource",
+            "change": 7
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "lightningBolt"
+        },
+        "cooldown": 1200
+    },
+
+    "shocking2": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "de:charge_resource",
+            "change": 1400
+        },
+        "damage_condition": {
+            "type": "origins:name",
+            "name": "lightningBolt"
+        },
+        "cooldown": 1200
+    },
+
+    "drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "de:charged_resource",
+            "change": -1
+            },
+            "interval": 342,
+            "condition": {
+            "type": "origins:resource",
+            "resource": "de:charged_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 7,
+        "hud_render": {
+            "should_render": true,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "de:charged_resource",
+                "comparison": ">=",
+                "compare_to": 1
+            }
+        }
+    },
+
+    "charged": {
+        "type": "apugli:energy_swirl",
+        "texture_location": "minecraft:textures/entity/wither/wither_armor.png",
+        "speed": 0.01,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "de:charged_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+
+    "over_charged": {
+    "type": "origins:shaking",
+    "condition": {
+        "type": "origins:resource",
+        "resource": "de:charged_resource",
+        "comparison": ">=",
+        "compare_to": 1
+        }
+    },
+
+    "speed": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_total",
+        "value": 0.4,
+        "name": "Increased speed while charged"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "de:charged_resource",
+        "comparison": ">=",
+        "compare_to": 1
+        }
+    },
+
+    "arrow_stop": {
+    "type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [{
+			"type": "origins:execute_command",
+			"command": "execute as @s at @e[type=#de:tag,distance=..5] run function de:des",
+			"permission_level": 4
+		    }]
+	    },
+	"interval": 2,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "de:charged_resource",
+        "comparison": ">=",
+        "compare_to": 1
+        }
+    },
+
+    "damage": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "de:charged_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "name": "§a§l§nBolt",
+    "description": "When struck by lightning it fills you with energy making you faster and stronger"
+}

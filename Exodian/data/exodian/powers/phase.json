@@ -1,0 +1,27 @@
+{
+    "type": "origins:phasing",
+    "blacklist": true,
+    "render_type": "blindness",
+    "view_distance": 5,
+    "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "origins:unphasable"
+    },
+    "phase_down_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:sneaking"
+            },
+            {
+                "type": "origins:on_block"
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:power_active",
+        "power": "exodian:phasing"
+    },
+    "name": "§a§l§nI'm... Dead?",
+    "description": "Due to being killed and revived so many times your body has taken a permanent toll, you are able to phase through blocks but at the cost of 5 hearts whilst within this state."
+}

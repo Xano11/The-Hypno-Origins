@@ -1,0 +1,10 @@
+{
+    "values": [
+        "#fabric:swords",
+        "#fabric:axes",
+        "#fabric:pickaxes",
+        "#fabric:shovels",
+        "#fabric:hoes",
+        "minecraft:trident"
+    ]
+}

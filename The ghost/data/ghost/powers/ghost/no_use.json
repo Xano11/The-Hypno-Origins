@@ -1,0 +1,36 @@
+{
+    "type": "origins:multiple",
+        "shield":{
+
+	"type": "origins:prevent_item_use",
+	"item_condition": {
+		"type": "origins:ingredient",
+		"ingredient": {
+			"tag": "ghost:cant_use"
+		}
+	}
+},
+"axes":{
+
+    "type": "origins:modify_damage_dealt",
+    "damage_condition": {
+        "type": "origins:attacker",
+        "entity_condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "ghost:cant_use"
+                }
+            }
+        }
+    },
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -1
+    }
+},
+"name": "§c§l§nUnefficient.",
+"description": "You're not proficient nor able to use shields and axes."
+}

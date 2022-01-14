@@ -1,0 +1,135 @@
+{
+	"name": "§a§l§nAdrenaline Addict",
+	"description": "You cannot sleep through a thunderstorm, but you get a defense boost and can convert a full charge into four absorption hearts by discharging during a thunderstorm.",
+	
+	"type": "origins:multiple",
+	
+	"less_health": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.max_health",
+			"value": -10,
+			"operation": "addition"
+		}
+	},
+	
+	"armor_during_storm": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.armor",
+			"operation": "addition",
+			"value": 8
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "inkbat:weather_thunderstorm"
+				}
+			]
+		}
+	},
+	
+	"touches_ground_charged_during_storm": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"rising_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:apply_effect",
+					"effect": {
+						"effect": "minecraft:absorption",
+						"duration": 3600,
+						"amplifier": 1,
+						"is_ambient": true,
+						"show_particles": false,
+						"show_icon": false
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "summon minecraft:lightning_bolt ~ ~6 ~",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:change_resource",
+					  "resource": "inkbat:ressource",
+					  "change": -600
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "inkbat:static_discharge_charge_cooldown"
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:in_block",
+							"block_condition": {
+								"type": "origins:block",
+								"block": "minecraft:water"
+							}
+						},
+						{
+							"type": "origins:on_block"
+						}
+					]
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:ressource",
+					"comparison": "==",
+					"compare_to": 600
+				},
+				{
+					"type": "origins:predicate",
+					"predicate": "inkbat:weather_thunderstorm"
+				}
+			]
+		}
+	},
+	
+	"clear_absorption_when_storm_ends": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"falling_action": {
+			"type": "origins:clear_effect",
+			"effect": "minecraft:absorption"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:status_effect",
+					"effect": "minecraft:absorption",
+					"min_amplifier": 1
+				},
+				{
+					"type": "origins:predicate",
+					"predicate": "inkbat:weather_thunderstorm"
+				}
+			]
+		}
+	},
+	
+	"prevent_sleep_during_storm": {
+		"type": "origins:prevent_sleep",
+		"message": "You're too energized to sleep during a thunderstorm.",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "inkbat:weather_thunderstorm"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,80 @@
+{
+	"type": "origins:multiple",
+	"brainless": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/team join possessed @s",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/playsound minecraft:entity.vex.charge ambient @a[distance=..10]",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:soul ~ ~1 ~ 1 1 1 0 10 force",
+					"permission_level": 4
+				}
+			]
+		},
+		"entity_action_removed": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/team leave @s",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/data modify entity @s NoAI set value 0",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/playsound minecraft:entity.vex.death ambient @a[distance=..10]",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:soul ~ ~1 ~ 1 1 1 0 10 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/scoreboard players reset @s possess",
+					"permission_level": 4
+				}
+			]
+		}
+	},
+	"follow": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "/execute at @a[team=possessed,distance=..3] if score @p[team=possessed] possess = @s possess run teleport @s @p[team=possessed]",
+			"permission_level": 4
+		}
+	},
+	"abandoned": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "/power remove @s melody:thirteen_possessed",
+			"permission_level": 4
+		},
+		"condition": {
+			"type": "origins:command",
+			"command": "/execute if entity @e[type=minecraft:player,limit=1,sort=nearest,distance=..3,team=possessed]",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	}
+}

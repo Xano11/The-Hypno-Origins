@@ -1,0 +1,26 @@
+{
+    "type": "origins:effect_immunity",
+    "effects": [
+        "minecraft:speed",
+        "minecraft:haste",
+		"minecraft:strength",
+		"minecraft:instant_health",
+		"minecraft:jump_boost",
+		"minecraft:regeneration",
+		"minecraft:resistance",
+		"minecraft:fire_resistance",
+		"minecraft:water_breathing",
+		"minecraft:invisibility",
+		"minecraft:night_vision",
+		"minecraft:health_boost",
+		"minecraft:absorption",
+		"minecraft:saturation",
+		"minecraft:luck",
+		"minecraft:slow_falling",
+		"minecraft:conduit_power",
+		"minecraft:dolphins_grace",
+		"minecraft:hero_of_the_village"
+    ],
+	"name": "§c§l§nAcidic Potions",
+	"description": "Potions are acidic to you, so you won't be able to drink them and buffs will not affect you."
+}

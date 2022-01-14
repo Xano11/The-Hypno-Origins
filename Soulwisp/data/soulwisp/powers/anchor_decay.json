@@ -1,0 +1,21 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type":"origins:damage",
+		"amount": 3,
+		"source": {
+			"name": "wither",
+			"bypasses_armor": true,
+			"fire": false,
+			"unblockable": true,
+			"magic": false,
+			"out_of_world": false
+		}
+	},
+	"interval": 20,
+	"condition": {
+    	"type": "origins:power_active",
+    	"power": "soulwisp:anchored"
+	},
+	"hidden": true
+}

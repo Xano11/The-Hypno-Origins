@@ -1,0 +1,1 @@
+execute at @p run playsound minecraft:block.chain.break master @p ~ ~ ~ 1 1

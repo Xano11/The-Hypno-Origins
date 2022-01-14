@@ -1,0 +1,71 @@
+{
+    "type": "origins:multiple",
+
+    "flight": {
+        "type": "origins:elytra_flight",
+        "render_elytra": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_toggle",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+
+    "invisible": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_toggle",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+
+    "toggle": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 17
+        }
+    },
+
+    "toggle2": {
+        "type": "origins:active_self",
+        "entity_action": {
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_toggle",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "if_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_toggle",
+            "change": -1
+        },
+        "else_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_toggle",
+            "change": 1
+        }
+    },
+    "cooldown": 2,
+    "hud_render": {
+        "should_render": false
+        }
+    },
+
+    "invis": {
+        "type": "origins:invisibility",
+        "render_armor": false
+    },
+    
+    "name": "§a§l§nYour invisible when your me",
+    "description": "Since you are dead you are able to fly to scare people, though you have perm invis, you can't phase through bedrock or obsidian"
+}

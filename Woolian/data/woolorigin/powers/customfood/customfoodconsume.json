@@ -1,0 +1,477 @@
+{
+    "hidden": false,
+    "type": "origins:active_self",
+    "name": "Herbivore",
+    "description": "You can eat grass to restore hunger as well as regrow your Wool Coat! However, your digestive system can only process non-meat foods.",
+    "cooldown": 32,
+    "key": {
+        "key": "key.use",
+        "continuous": true
+    },
+    "hud_render": {
+        "should_render": false,
+        "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "woolorigin:customfood/customfoodhaseatenbool",
+                "change": -1
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:and",
+                    "inverted": false,
+                    "conditions": [
+                        {
+                            "type": "origins:or",
+                            "inverted": false,
+                            "conditions": [
+                                {
+                                    "type": "origins:equipped_item",
+                                    "inverted": false,
+                                    "equipment_slot": "mainhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "inverted": false,
+                                        "ingredient": {
+                                            "item": "minecraft:grass"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "origins:equipped_item",
+                                    "inverted": false,
+                                    "equipment_slot": "offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "inverted": false,
+                                        "ingredient": {
+                                            "item": "minecraft:grass"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "woolorigin:customfood/customfoodresource",
+                            "compare_to": 32
+                        },
+                        {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "woolorigin:customfood/customfoodhaseatenbool",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:equipped_item",
+                                "inverted": false,
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "inverted": false,
+                                    "ingredient": {
+                                        "item": "minecraft:grass"
+                                    }
+                                }
+                            },
+                            "if_action": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "execute as @a[nbt={SelectedItem:{id:\"minecraft:grass\"}}] run clear @s minecraft:grass 1"
+                            },
+                            "else_action": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "execute as @s[nbt={Inventory:[{Slot:-106b, id: \"minecraft:grass\"}]}] run clear @s minecraft:grass 1"
+                            }
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "permission_level": 4,
+                            "command": "playsound block.grass.break master @s ~ ~ ~ 0.5"
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "woolorigin:customfood/customfoodhaseatenbool",
+                            "change": 1
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "woolorigin:customfood/customfoodresource",
+                            "change": -32
+                        },
+                        {
+                            "type": "origins:feed",
+                            "food": 1,
+                            "saturation": 0.4
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "woolorigin:woolresource",
+                            "change": 1
+                        },
+                        {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorblack",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorblue",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorbrown",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorcyan",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorgray",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorgreen",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorlightblue",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorlightgray",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorlime",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolormagenta",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolororange",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorpink",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorpurple",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorred",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorwhite",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcoloryellow",
+                                    "change": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:and",
+                    "inverted": false,
+                    "conditions": [
+                        {
+                            "type": "origins:or",
+                            "inverted": false,
+                            "conditions": [
+                                {
+                                    "type": "origins:equipped_item",
+                                    "inverted": false,
+                                    "equipment_slot": "mainhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "inverted": false,
+                                        "ingredient": {
+                                            "item": "minecraft:tall_grass"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "origins:equipped_item",
+                                    "inverted": false,
+                                    "equipment_slot": "offhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "inverted": false,
+                                        "ingredient": {
+                                            "item": "minecraft:tall_grass"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "woolorigin:customfood/customfoodresource",
+                            "compare_to": 32
+                        },
+                        {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "woolorigin:customfood/customfoodhaseatenbool",
+                            "compare_to": 0
+                        }
+                    ]
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:if_else",
+                            "condition": {
+                                "type": "origins:equipped_item",
+                                "inverted": false,
+                                "equipment_slot": "mainhand",
+                                "item_condition": {
+                                    "type": "origins:ingredient",
+                                    "inverted": false,
+                                    "ingredient": {
+                                        "item": "minecraft:tall_grass"
+                                    }
+                                }
+                            },
+                            "if_action": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "execute as @a[nbt={SelectedItem:{id:\"minecraft:tall_grass\"}}] run clear @s minecraft:grass 1"
+                            },
+                            "else_action": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "execute as @s[nbt={Inventory:[{Slot:-106b, id: \"minecraft:tall_grass\"}]}] run clear @s minecraft:grass 1"
+                            }
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "permission_level": 4,
+                            "command": "playsound block.grass.break master @s ~ ~ ~ 0.5"
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "woolorigin:customfood/customfoodhaseatenbool",
+                            "change": 1
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "woolorigin:customfood/customfoodresource",
+                            "change": -32
+                        },
+                        {
+                            "type": "origins:feed",
+                            "food": 1,
+                            "saturation": 0.4
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "woolorigin:woolresource",
+                            "change": 1
+                        },
+                        {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorblack",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorblue",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorbrown",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorcyan",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorgray",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorgreen",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorlightblue",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorlightgray",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorlime",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolormagenta",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolororange",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorpink",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorpurple",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorred",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcolorwhite",
+                                    "change": 1
+                                },
+                                {
+                                    "type": "origins:change_resource",
+                                    "resource": "woolorigin:hudcoloryellow",
+                                    "change": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:or",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:grass"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:grass"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:tall_grass"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:tall_grass"
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

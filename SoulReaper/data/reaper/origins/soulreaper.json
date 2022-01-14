@@ -1,0 +1,22 @@
+{
+	"powers": [
+		"reaper:grab",
+		"reaper:surge",
+		"reaper:scythe",
+		"reaper:scythe2",
+		"reaper:scythe3",
+		"reaper:scythe4",
+		"reaper:scythe5",
+		"reaper:scythe6",
+		"reaper:physical",
+		"reaper:hunger",
+		"reaper:sword",
+		"reaper:symbiotic_relationship",
+		"reaper:callback"
+	],
+	"icon": "minecraft:soul_soil",
+	"order": 0,
+	"impact": 3,
+	"name": "Soul Reaper",
+	"description": "A S-Grade reaper, taker of souls. You use the death of others and a devilish deal to boost yourself up and slay all."	
+}

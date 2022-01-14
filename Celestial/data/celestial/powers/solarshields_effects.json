@@ -1,0 +1,100 @@
+{
+    "type":"origins:multiple",
+
+    "model":
+    {
+        "type": "origins:model_color",
+        "red": 0.7,
+        "green": 0.2,
+        "blue": 0,
+        "alpha": 1
+    },
+    "overlay":
+    {
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/magma.png",
+        "strength": 0.4,
+        "red": 1.0,
+        "green": 0.8,
+        "blue": 0.5,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": false
+    },
+    "fire_immune":
+    {
+        "type": "origins:fire_immunity"
+        
+    },
+    "explode":
+    {
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+                "type": "origins:change_resource",
+                "resource": "celestial:solarshields_effects_resource",
+                "change": -1
+        },
+        "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">=",
+            "compare_to": 2
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    
+    "resource":
+    {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "start_value": 3,
+        "min_action": {
+            "type": "origins:and",
+            "actions":[
+                {
+                    "type":"origins:execute_command",
+                    "command":"particle minecraft:flame ~ ~0.5 ~ 3 0 3 0.2 1000",
+                    "permission_level": 4
+                },
+                {
+                    "type":"origins:execute_command",
+                    "command":"power grant @e[distance=0.5..5,type=!minecraft:item] celestial:solarshields_fire",
+                    "permission_level": 4
+                },
+                {
+                    "type":"origins:execute_command",
+                    "command":"playsound minecraft:entity.generic.explode player @s ~ ~ ~ 3 0.5",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type":"origins:execute_command",
+                        "command":"power remove @e[limit=1,sort=nearest] celestial:solarshields_effects",
+                        "permission_level": 4
+                    }
+                }
+        ]
+    },
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 14
+    },
+    "hidden": true
+},
+    "remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "celestial:solarshields_effects_resource",
+        "change": -1
+        },
+    "interval": 300
+    }
+}

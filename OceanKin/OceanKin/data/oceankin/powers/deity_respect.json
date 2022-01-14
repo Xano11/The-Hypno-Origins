@@ -1,0 +1,32 @@
+{
+  "type": "origins:action_over_time",
+  "interval": 20,
+  "entity_action": {
+    "type": "origins:and",
+    "actions":
+    [
+      {
+        "type": "origins:execute_command",
+        "command": "team join Oceankin @s",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "team join Oceankin @e[type=drowned]",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "team join Oceankin @e[type=guardian]",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "team join Oceankin @e[type=elder_guardian]",
+        "permission_level": 4
+      }
+    ]
+  },
+  "name": "§a§l§nDeity's Respect",
+  "description": "Drowned and Guardians bow to you, becoming passive."
+}

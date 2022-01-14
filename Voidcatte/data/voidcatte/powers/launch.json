@@ -1,0 +1,113 @@
+{
+    "type":"origins:multiple",
+
+    
+    "charge_up":
+    {
+            "type": "origins:action_over_time",
+            "entity_action": {
+            "type": "origins:and",
+			"actions": [
+                {
+                "type": "origins:change_resource",
+                "resource": "voidcatte:resource",
+                "change": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:portal ~ ~ ~ 1 1 1 1 20"
+            }
+            ]
+            },
+            "interval": 4,
+            "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                "type": "origins:sneaking",
+                "inverted": false
+                },
+                {
+                    "type": "origins:moving",
+                    "inverted": true
+                }
+            ]
+        }    
+    },
+    "charge_drain":
+    {
+            "type": "origins:action_over_time",
+            "entity_action": {
+                "type": "origins:change_resource",
+                "resource": "voidcatte:resource",
+                "change": -5
+            },
+            "interval": 2,
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                    },
+                    {
+                        "type": "origins:moving",
+                        "inverted": false
+                    }
+                ]
+            }    
+    },
+    "leap":{
+            "type": "origins:active_self",
+            "entity_action": {
+            "type": "origins:and",
+			"actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "y": 6,
+                    "client": true
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "voidcatte:resource",
+                    "change": -100
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:dust_color_transition 1 0 1 1 0 0 1 ~ ~ ~ 1 1 1 1 1000"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle illuminations:sculk_tendril ~ ~ ~ 5 0 5 1 1000"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:block.portal.travel player @s ~ ~ ~ 1 2 "
+                }
+            ]
+            },
+            "key": "key.origins.primary_active",
+            "cooldown": 0,
+            "hud_render": {
+                "should_render": false
+            },
+            
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                    "type": "origins:sneaking",
+                    "inverted": false
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "voidcatte:resource",
+                        "comparison": "==",
+                        "compare_to": 100
+                    }
+                ]
+            } 
+    },
+    "name":"§a§l§nVoid Accumulation",
+    "description":"You can charge an upward launch whilst sneaking and not moving. Then, pressing the main ability key whilst sneaking will propel you up."
+}

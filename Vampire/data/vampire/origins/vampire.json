@@ -1,0 +1,24 @@
+{
+    "powers":[
+        "vampire:blood_bar",
+        "vampire:blood",
+        "vampire:dash",
+        "vampire:daytime",
+        "vampire:night_vision",
+        "vampire:undead",
+        "vampire:disable_regen",
+        "vampire:blood_regen",
+        "vampire:wooden_stake",
+        "vampire:immunity",
+        "vampire:burn",
+        "vampire:switch",
+        "vampire:blood_gain",
+        "origins:fall_immunity"
+        
+    ],
+    "icon":"minecraft:red_candle",
+    "order":5,
+    "impact":3,
+    "name":"Vampire",
+    "description":"Vampires, the dukes of the night. They live on human blood and can use supernatural abilities."
+}

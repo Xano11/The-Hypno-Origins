@@ -1,0 +1,11 @@
+{
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+	  "type": "origins:ingredient",
+        "ingredient": {
+          "item": "minecraft:ender_pearl"
+		}
+  },
+  "name": "§c§l§nNo Pearls",
+  "description": "You don't have the ability to teleport using pearls."
+}

@@ -1,0 +1,48 @@
+{
+	"name": "§e§l§nWater Preference",
+	"description": "You move faster underwater, but slower on land. Additionally, you have mining fatigue outside of water.",
+	"type": "origins:multiple",
+	"swim": {
+		"type": "origins:modify_swim_speed",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 0.5
+		}
+	},
+	"land": {
+		"type": "origins:attribute",
+		"modifier": {
+			"name": "Land speed decrease",
+			"attribute": "minecraft:generic.movement_speed",
+			"value": -0.02,
+			"operation": "addition"
+		}
+	},
+	"mining_fatigue": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 40,
+		"effect": {
+			"effect": "minecraft:mining_fatigue",
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": true
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:fluid_height",
+					"fluid": "minecraft:water",
+					"comparison": ">",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:in_rain"
+				}
+			],
+			"inverted": true
+		}
+	}
+}

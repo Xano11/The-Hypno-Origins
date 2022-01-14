@@ -1,0 +1,38 @@
+{
+    "powers": [
+		"raccoon:raccoon/short",
+		"raccoon:raccoon/g_homeland",
+		"raccoon:raccoon/extra_crafts",
+		"raccoon:raccoon/scram",
+		"raccoon:raccoon/climbing",
+		"raccoon:raccoon/set_raccoon",
+		"raccoon:raccoon/trap",
+		"raccoon:raccoon/steal",
+		"raccoon:raccoon/callback",
+		"raccoon:raccoon/tagging",
+		"raccoon:raccoon/armor",
+		"raccoon:raccoon/hp",
+		"raccoon:raccoon/stealth_a",
+		"raccoon:raccoon/stealth_s",
+		"raccoon:raccoon/stealth_d",
+		"raccoon:raccoon/stealth_w",
+		"raccoon:raccoon/stealth_timer",
+		"raccoon:raccoon/stealth_translucent",
+		"raccoon:raccoon/stealth_primary",
+		"raccoon:raccoon/stealth_jump",
+		"raccoon:raccoon/stealth_countdown",
+		"raccoon:raccoon/tagging_invis",
+		"raccoon:raccoon/stealth_tag",
+		"raccoon:raccoon/stealth_tag_remove",
+		"origins:no_shield",
+		"raccoon:raccoon/hungry",
+		"raccoon:raccoon/hungry_immunity"
+    ],
+	"icon": {
+		"item": "minecraft:structure_block"
+	},
+	"order": 14,
+	"impact": 3,
+    "name": "Raccoon",
+    "description": "Short criminals, full of absolute chaos."
+}

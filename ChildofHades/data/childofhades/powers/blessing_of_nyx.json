@@ -1,0 +1,15 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 2,
+        "name": "Increased strength"
+    },
+    "condition": {
+        "type": "origins:daytime",
+        "inverted": true
+    },
+    "name": "§a§l§nBlessing of Nyx",
+    "description": "Nyx was your caretaker as you grew older in the underworld, and so she gives you strength in her darkness."
+}

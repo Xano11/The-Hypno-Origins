@@ -1,0 +1,38 @@
+{
+	"type": "origins:target_action_on_hit",
+	"entity_action": {
+    "type":"origins:and",
+    "actions":[
+        {
+            "type": "origins:chance",
+            "action": {
+                 "type":"origins:execute_command",
+                 "command":"execute if entity @e[distance=..10,tag=raccoon,tag=!invis] run tag @s add stolen",
+                 "permission_level":4
+        },
+        "chance": 0.1
+    },
+        {
+            "type": "origins:delay",
+            "ticks": 5,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "tag @s remove stolen",
+                        "permission_level": 4
+                    }
+                ]
+            }
+        }
+    ]
+    },
+	"hud_render": {
+		"should_render": false,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+		"bar_index": 10
+	},
+	"cooldown": 0,
+	"hidden": true 
+}

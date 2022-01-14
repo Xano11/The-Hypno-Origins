@@ -1,0 +1,16 @@
+{
+	"loading_priority": 10,
+	"powers": [
+		"origins:climbing",
+		"origins:master_of_webs",
+		"origins:carnivore",
+		"origins:fragile",
+		"origins:arthropod",
+		"arachnid_changes:health",
+		"arachnid_changes:poison_immunity",
+		"arachnid_changes:silky_composition"
+	],
+	"icon": "minecraft:cobweb",
+	"order": 3,
+	"impact": 1
+}

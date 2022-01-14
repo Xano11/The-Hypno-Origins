@@ -1,0 +1,10 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "name": "Increased exhaustion",
+        "operation": "multiply_base",
+        "value": 0.75
+    },
+    "name": "§c§l§nLarge Digestive Track",
+    "description":"Because your old digestive system was one fourth the size it is now, you exhaust 75% faster than normal"
+}

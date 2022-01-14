@@ -1,0 +1,28 @@
+{
+	"type": "origins:multiple",
+	"passive_speed": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "addition",
+			"value": 0.04
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:exposed_to_sun"
+		}
+	},
+	"passive_regeneration": {
+		"type": "origins:action_over_time",
+		"interval": 60,
+		"entity_action": {
+			"type": "origins:heal",
+			"amount": 1
+		},
+		"condition": {
+			"type": "origins:exposed_to_sun"
+		}
+	},
+	"name": "§a§l§nHelios Blessing",
+	"description": "You has been blessed by Helios, god of the sun. You are much faster and slowly regenerate health when under the sun."
+}

@@ -1,0 +1,20 @@
+{
+	"powers": [
+		"arysam:darkblood/dark_pump",
+		"arysam:darkblood/killing_spree",
+		"arysam:darkblood/damage",
+		"arysam:darkblood/burst_bar",
+		"arysam:darkblood/dark",
+		"arysam:darkblood/graze",
+		"origins:nether_spawn",
+		"origins:no_shield",
+		"arysam:darkblood/armor",
+		"arysam:credits"
+	],
+	"icon": "minecraft:coal",
+	"order": 8,
+	"impact": 3,
+	"unchoosable": false,
+	"name": "Dark Blood",
+	"description": "An ancient humanoid race with cold Dark Blood, they intention is killing for survival and fun as they thrive within their empires. It was, until they were wiped out."
+}

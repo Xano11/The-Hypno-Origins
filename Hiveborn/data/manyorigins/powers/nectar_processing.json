@@ -1,0 +1,171 @@
+{
+	"type": "origins:multiple",
+	"storage": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 30,
+		"start_value": 0,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+			"bar_index": 10
+		}
+	},
+	"collect": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:change_resource",
+					"resource": "manyorigins:nectar_processing_storage",
+					"change": 1
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.bee.pollinate master @s"
+				}
+			]
+		},
+		"key": {
+			"key": "key.use",
+			"continuous": true
+		},
+		"cooldown": 20,
+		"hud_render": {
+			"should_render": false
+		},
+		"condition": {
+			"type": "origins:in_block_anywhere",
+			"block_condition": {
+				"type": "origins:in_tag",
+				"tag": "manyorigins:flowers"
+			}
+		}
+	},
+	"convert": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:block.beehive.drip master @s"
+				},
+				{
+					"type": "origins:give",
+					"stack": {
+						"item": "minecraft:honey_bottle",
+						"amount": 1
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "clear @s minecraft:glass_bottle 1"
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "manyorigins:nectar_processing_storage",
+					"change": -10
+				}
+			]
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": true
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "mainhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "minecraft:glass_bottle"
+								}
+							}
+						},
+						{
+							"type": "origins:equipped_item",
+							"equipment_slot": "offhand",
+							"item_condition": {
+								"type": "origins:ingredient",
+								"ingredient": {
+									"item": "minecraft:glass_bottle"
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "origins:resource",
+					"resource": "manyorigins:nectar_processing_storage",
+					"comparison": ">=",
+					"compare_to": 10
+				},
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"convert_comb": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:block.honey_block.place master @s"
+				},
+				{
+					"type": "origins:give",
+					"stack": {
+						"item": "minecraft:honeycomb",
+						"amount": 1
+					}
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "manyorigins:nectar_processing_storage",
+					"change": -10
+				}
+			]
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": true
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "manyorigins:nectar_processing_storage",
+					"comparison": ">=",
+					"compare_to": 10
+				},
+				{
+					"type": "origins:sneaking"
+				}
+			]
+		}
+	},
+	"name": "§a§l§nNectar Processing",
+	"description": "You can collect nectar from flowers by standing in them and right clicking, and can convert 10 nectar into honey (not sneaking w/ glass bottle in hand) or honeycomb (when sneaking)."
+		
+}

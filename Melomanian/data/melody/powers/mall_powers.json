@@ -1,0 +1,433 @@
+{
+	"type": "origins:multiple",
+	"ender_vision": {
+		"type": "origins:shader",
+		"shader": "minecraft:shaders/post/invert.json"
+	},
+	"end_particles": {
+		"type": "origins:particle",
+		"particle": "minecraft:portal",
+		"frequency": 4
+	},
+	"teleport": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:portal ~ ~1 ~ 0 0 0 1 100 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/playsound minecraft:entity.enderman.teleport ambient @a[distance=0..10] ~ ~ ~ 10",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/teleport @s ^ ^ ^32",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/spreadplayers ~ ~ 1 3 false @s",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:portal ~ ~1 ~ 0 0 0 1 100 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/playsound minecraft:entity.enderman.teleport ambient @a[distance=0..10] ~ ~ ~ 10",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 120,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/resource_bar.png",
+			"bar_index": 6
+		},
+		"key": {
+			"key": "key.origins.secondary_active"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:mall_powers_teleport_pearl",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"teleport_pearl": {
+		"type": "origins:fire_projectile",
+		"entity_type": "origins:enderian_pearl",
+		"cooldown": 120,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/resource_bar.png",
+			"bar_index": 6
+		},
+		"count": 1,
+		"sound": "minecraft:entity.ender_pearl.throw",
+		"key": {
+			"key": "key.origins.secondary_active"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:mall_powers_teleport",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:sneaking"
+				}
+			]
+		}
+	},
+	"target_teleport": {
+		"type": "origins:target_action_on_hit",
+		"entity_action": {
+			"type": "origins:chance",
+			"action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/particle minecraft:portal ~ ~ ~ 0 0 0 1 100 force",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/playsound minecraft:entity.enderman.teleport ambient @a[distance=0..10] ~ ~ ~ 10",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/tp ~ ~10 ~",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/particle minecraft:portal ~ ~ ~ 0 0 0 1 100 force",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/playsound minecraft:entity.enderman.teleport ambient @a[distance=0..10] ~ ~ ~ 10",
+						"permission_level": 4
+					}
+				]
+			},
+			"chance": 0.2
+		},
+		"damage_condition": {
+			"type": "origins:projectile",
+			"inverted": true
+		},
+		"cooldown": 20,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"set_owner": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/scoreboard objectives add owner dummy",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/scoreboard objectives add OWNER dummy",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/execute store result score @s OWNER run data get entity @s UUID[0]",
+					"permission_level": 4
+				}
+			]
+		},
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/scoreboard players reset @s OWNER",
+			"permission_level": 4
+		},
+		"entity_action_respawned": {
+			"type": "origins:execute_command",
+			"command": "/execute store result score @s OWNER run data get entity @s UUID[0]",
+			"permission_level": 4
+		}
+	},
+	"arrow_particles": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/execute as @e[type=minecraft:arrow,distance=..2] store result score @s owner run data get entity @s Owner[0]",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/execute at @e[type=minecraft:arrow] if score @s OWNER = @e[type=minecraft:arrow,limit=1,sort=nearest] owner run particle minecraft:dust 1 0 1 1 ~ ~ ~",
+					"permission_level": 4
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:mall_powers_target_teleport_projectile",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	},
+	"target_teleport_projectile": {
+		"type": "origins:target_action_on_hit",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/playsound minecraft:entity.enderman.teleport ambient @a[distance=0..10] ~ ~ ~ 10",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:portal ~ ~ ~ 0 0 0 1 100 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/execute store result score @s owner run data get entity @e[type=minecraft:arrow,limit=1,sort=nearest] Owner[0]",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/execute at @a[distance=0.1..] if score @p OWNER = @s owner run tp @s ^ ^ ^1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/playsound minecraft:entity.enderman.teleport ambient @a[distance=0..10] ~ ~ ~ 10",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:portal ~ ~ ~ 0 0 0 1 100 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/scoreboard players reset @s owner",
+					"permission_level": 4
+				}
+			]
+		},
+		"damage_condition": {
+			"type": "origins:projectile",
+			"projectile": "minecraft:arrow"
+		},
+		"target_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:entity_type",
+					"entity_type": "minecraft:wither"
+				},
+				{
+					"type": "origins:entity_type",
+					"entity_type": "minecraft:ender_dragon"
+				}
+			],
+			"inverted": true
+		},
+		"cooldown": 400,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+			"bar_index": 2
+		}
+	},
+		"chaotic_bs": {
+		"type": "origins:self_action_when_hit",
+		"entity_action": {
+			"type": "origins:if_else_list",
+			"actions": [
+				{
+					"condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:dimension",
+								"dimension": "minecraft:the_nether",
+								"inverted": true
+							}
+						]
+					},
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:chance",
+								"chance": 0.5,
+								"action":{
+									"type": "origins:choice",
+									"actions": [
+										{
+											"element": {
+												"type": "origins:and",
+												"actions": [
+													{
+														"type": "origins:execute_command",
+														"command": "spreadplayers ~ ~ 20 10 false @s",
+														"permission_level": 4
+													},
+													{
+													  "type": "origins:execute_command",
+													  "command": "playsound minecraft:entity.enderman.teleport master @a[distance=..5] ~ ~ ~ 2 0.7",
+													  "permission_level": 4
+													}
+												]
+											},
+											"weight": 5
+										}
+									]
+								}
+							}
+						]
+					}
+				},
+				{
+					"condition": {
+						"type": "origins:and",
+						"conditions": [
+							{
+								"type": "origins:dimension",
+								"dimension": "minecraft:the_nether",
+								"inverted": false
+							}
+						]
+					},
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:chance",
+								"chance": 0.5,
+								"action":{
+									"type": "origins:choice",
+									"actions": [
+										{
+											"element": {
+												"type": "origins:and",
+												"actions": [
+													{
+														"type": "origins:execute_command",
+														"command": "spreadplayers ~ ~ 20 10 under 127 false @s",
+														"permission_level": 4
+													},
+													{
+													  "type": "origins:execute_command",
+													  "command": "playsound minecraft:entity.enderman.teleport master @a[distance=..5] ~ ~ ~ 2 0.7",
+													  "permission_level": 4
+													}
+												]
+											},
+											"weight": 5
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false
+		},
+	  "name": "Away he goes!",
+	  "description": "Teleport yourself away if you get hit."
+	},
+	"hates_water": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:execute_command",
+			"command": "/power grant @s origins:water_vulnerability",
+			"permission_level": 4
+		},
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/power remove @s origins:water_vulnerability",
+			"permission_level": 4
+		}
+	},
+	"delete_mall": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:mall_active",
+				"comparison": "==",
+				"compare_to": 197
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:mall_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:mall_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_mall",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:mall_active",
+				"change": 1
+			}
+		}
+	}
+}

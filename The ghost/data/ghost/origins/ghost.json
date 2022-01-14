@@ -1,0 +1,22 @@
+{
+	"powers": [
+				"ghost:ghost/anima",
+				"ghost:ghost/phase_resource",
+				"ghost:ghost/exhaust",
+				"ghost:ghost/cloak",
+				"ghost:ghost/hp",
+				"ghost:ghost/sword",
+				"ghost:ghost/no_use",
+				"ghost:ghost/transparent",
+				"ghost:ghost/light_weakness",
+				"ghost:ghost/night_buff",
+				"ghost:ghost/speed",
+				"ghost:ghost/milk_prevent"
+	],
+	"icon": "minecraft:ghast_tear",
+	"order": 7,
+	"impact": 3,
+	"unchoosable": false,
+	"name": "Ghost",
+	"description": "The Ghost."
+}

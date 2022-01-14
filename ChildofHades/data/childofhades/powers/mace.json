@@ -1,0 +1,22 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "multiply_total",
+        "value": 0.5,
+        "name": "Increased mace damage"
+    },
+    "tick_rate": 2,
+    "condition": {
+          "type":"origins:equipped_item",
+          "equipment_slot":"mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "childofhades:weapons"
+            }
+        }
+    },
+    "name": "Mace Expertise",
+	"description": "You've mastered the usage of the mace. You deal 1.5x damage with them."
+  }

@@ -1,0 +1,9 @@
+{
+	"type": "origins:invulnerability",
+	"damage_condition": {
+		"type": "origins:name",
+		"name": "drown"
+	},
+"name": "§a§l§nDeep diving",
+"description": "You do not need to go up for air when exploring the deep seas. Nor do you suffocate when on land."
+}

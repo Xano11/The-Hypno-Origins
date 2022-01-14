@@ -1,0 +1,9 @@
+{
+  "type": "origins:invulnerability",
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "fall"
+	},
+	"name": "§a§l§nSnake..? SNAKE !!!!!", 
+  "description": "You don't take fall damage cuz s n a k e."
+}

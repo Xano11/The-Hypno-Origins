@@ -1,0 +1,30 @@
+{
+	"powers": [
+		"de:backstab",
+		"de:pc",
+		"de:thunder",
+		"de:web",
+		"de:rest",
+		"de:nuzzle",
+		"de:charged",
+		"de:charge",
+		"de:cream",
+		"de:body",
+		"de:shortarms",
+		"de:weak",
+		"de:food",
+		"de:type",
+		"de:instincts",
+		"extraorigins:jockey",
+		"origins:like_air",
+		"de:credits"
+	],
+	"icon": {
+		"item": "minecraft:comparator",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"order": 10,
+	"impact": 0,
+	"name": "Electric Rat",
+	"description": "A creature that uses its tail to absorb electricity from power plants or from outlets in houses, and then it fires the electricity from its whiskers."
+}

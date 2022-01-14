@@ -1,0 +1,99 @@
+{
+    "type": "origins:multiple",
+    "uundeadnow":{
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+    "type": "origins:and",
+        "actions": [
+        {
+        "type": "origins:execute_command",
+        "command": "team add Undead",
+        "permission_level": 4
+        },
+        {
+        "type": "origins:execute_command",
+        "command": "team join Undead @s",
+        "permission_level": 4
+        }
+        ]
+    },  
+    "entity_action_lost": {
+        "type": "origins:execute_command",
+        "command": "team leave @s",
+        "permission_level": 4
+    }
+    },
+    "undeadundeadnow":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                "type": "origins:execute_command",
+                "command": "team leave @e[tag=hateunow,distance=20..]",
+                "permission_level": 4
+                },
+                {
+                "type": "origins:execute_command",
+                "command": "team join Undead @e[type=minecraft:zombie,tag=!hateunow,distance=0.5..20]",
+                "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join Undead @e[type=minecraft:skeleton,tag=!hateunow,distance=0.5..20]",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join Undead @e[type=minecraft:husk,tag=!hateunow,distance=0.5..20]",
+                    "permission_level": 4
+                },
+				{
+                    "type": "origins:execute_command",
+                    "command": "team join Undead @e[type=minecraft:zombified_piglin,tag=!hateunow,distance=0.5..20]",
+                    "permission_level": 4
+                },
+				{
+                    "type": "origins:execute_command",
+                    "command": "team join Undead @e[type=minecraft:zoglin,tag=!hateunow,distance=0.5..20]",
+                    "permission_level": 4
+                },
+				{
+                    "type": "origins:execute_command",
+                    "command": "team join Undead @e[type=minecraft:zombie_villager,tag=!hateunow,distance=0.5..20]",
+                    "permission_level": 4
+                },
+				{
+                    "type": "origins:execute_command",
+                    "command": "team join Undead @e[type=minecraft:wither_skeleton,tag=!hateunow,distance=0.5..20]",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join Undead @e[type=minecraft:drowned,tag=!hateunow,distance=0.5..20]",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "team join Undead @e[type=minecraft:stray,tag=!hateunow,distance=0.5..20]",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "interval": 20
+    },
+    "umesswithundeadugetundead":{
+        "type": "origins:target_action_on_hit",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "tag @s[team=Undead,type=!minecraft:player] add hateunow",
+        "permission_level": 4
+    },
+    "cooldown": 1,
+    "hud_render": {
+        "should_render": false
+    }
+    },
+    "name": "§a§l§nThanatos' Blessing",
+	"description": "Since you are the Child of Hades, Thanatos has ordered the undead creatures to not attack you and help you in battle."
+}

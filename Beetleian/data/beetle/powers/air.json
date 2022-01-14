@@ -1,0 +1,20 @@
+
+  {
+    "name": "§a§l§nAir Pocket",
+    "description": "You can store a pocket of air under your elytras, allowing you to stay underwater for much longer.",
+  "type": "origins:stacking_status_effect",
+  "min_stacks": 1,
+  "max_stacks": 1,
+  "duration_per_stack": 210,
+  "effect": {
+  "effect": "minecraft:water_breathing",
+  "is_ambient": true,
+  "show_particles": false,
+  "show_icon": false
+  },
+    "condition": {
+      "type": "origins:submerged_in",
+      "fluid": "minecraft:water",
+      "inverted": true
+    }
+  }

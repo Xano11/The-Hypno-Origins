@@ -1,0 +1,2 @@
+clear @s minecraft:nether_star 1
+give @s prismarine_shard{display:{Name:'[{"text":"Void Shard","italic":false,"color":"dark_blue","bold":true}]',Lore:['[{"text":"Invite players to the void or bring mobs permanently!","italic":false}]']},Enchantments:[{}],voidshard:true} 1

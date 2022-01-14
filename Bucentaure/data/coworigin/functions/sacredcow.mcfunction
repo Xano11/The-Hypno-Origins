@@ -1,0 +1,2 @@
+execute as @a[tag=Bovinian] run execute at @s run execute as @e[type=minecraft:cow,distance=..40] run effect give @s minecraft:resistance 5 5 true
+execute as @a[tag=Bovinian] run execute at @s run execute as @e[type=minecraft:cow,distance=..40] run effect give @s minecraft:regeneration 5 5 true

@@ -1,0 +1,2 @@
+execute as @a[advancements={coworigin:cowinvis=true}] run effect give @s minecraft:invisibility 25 0 false
+execute as @a[advancements={coworigin:cowinvis=true}] run advancement revoke @s only coworigin:cowinvis

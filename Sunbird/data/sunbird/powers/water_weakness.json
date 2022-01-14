@@ -1,0 +1,40 @@
+{
+	"type": "origins:stacking_status_effect",
+	"min_stacks": 0,
+	"max_stacks": 6,
+	"duration_per_stack": 20,
+	"effects": [
+		{
+			"effect": "minecraft:weakness",
+			"duration": 20,
+			"amplifier": 0,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": true
+		},
+		{
+			"effect": "minecraft:slowness",
+			"duration": 20,
+			"amplifier": 1,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": true
+		}
+	],
+	"condition": {
+		"type": "origins:or",
+		"conditions": [
+			{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:water",
+				"comparison": ">",
+				"compare_to": 0.1
+			},
+			{
+				"type": "origins:in_rain"
+			}
+		]
+	},
+	"name": "§c§l§nWater Weakness",
+	"description": "You are a fire bird, and the water makes your feathers wet and uncomfortable. Because of this you are also not that good at swimming."
+}

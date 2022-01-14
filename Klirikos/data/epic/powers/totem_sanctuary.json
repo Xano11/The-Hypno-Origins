@@ -1,0 +1,91 @@
+{
+	"type": "origins:active_self",
+	"cooldown": 400,
+	"hud_render": {
+	  "should_render":true,
+	  "sprite_location":"origins:textures/gui/community/huang/resource_bar_01.png",
+	  "bar_index": 6
+	},
+	"entity_action": {
+		"type": "origins:if_else",
+		"condition":
+		{
+			"type": "origins:or",
+			"conditions":
+			[
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition":
+					{
+						"type": "origins:ingredient",
+						"ingredient":
+						{
+							"item": "minecraft:totem_of_undying"
+						}
+					}
+				}
+			]
+		},
+		"if_action":
+		{
+			"type": "origins:and",
+			"actions":
+			[
+				{
+					"type": "origins:execute_command",
+					"command": "clear @s totem_of_undying 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "effect give @e[distance=..7] minecraft:instant_health 1 2 true",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "effect give @e[distance=..7] minecraft:resistance 30 1 true",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "effect give @e[distance=..7] minecraft:regeneration 30 2 true",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "effect give @e[distance=..7] minecraft:absorption 15 1 true",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s run summon area_effect_cloud ~ ~ ~ {Particle:totem_of_undying,Radius:7f,Duration:1}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:item.totem.use player @a[distance=..7] ~ ~ ~ 1 1.3",
+					"permission_level": 4
+				}
+			]
+		}
+	},
+	"condition": {
+		"type": "origins:and",
+        "inverted": false,
+        "conditions": [
+			{
+		"type": "origins:equipped_item",
+		"equipment_slot": "mainhand",
+		"item_condition": {
+		  "type": "origins:ingredient",
+		  "ingredient": {
+			"item": "minecraft:totem_of_undying"
+		  }
+		}
+	}
+	]
+	  },
+		"key": "primary",
+		"hidden": "true"
+}

@@ -1,0 +1,147 @@
+{
+	"type": "origins:stacking_status_effect",
+	"min_stacks": 0,
+	"max_stacks": 2,
+	"duration_per_stack": 10,
+	"effects": [
+	{
+		"effect": "minecraft:slowness",
+		"duration": 20,
+		"amplifier": 2,
+		"is_ambient": false,
+		"show_particles": false,
+		"show_icon": true
+	},
+	{
+		"effect": "minecraft:mining_fatigue",
+		"duration": 20,
+		"amplifier": 0,
+		"is_ambient": false,
+		"show_particles": false,
+		"show_icon": true
+	},
+	{
+		"effect": "minecraft:hunger",
+		"duration": 20,
+		"amplifier": 1,
+		"is_ambient": false,
+		"show_particles": false,
+		"show_icon": true
+	},
+	{
+		"effect": "minecraft:weakness",
+		"duration": 20,
+		"amplifier": 0,
+		"is_ambient": false,
+		"show_particles": false,
+		"show_icon": true
+	}
+	],
+	"condition": {
+		"type": "origins:and",
+		"conditions":
+		[
+			{
+			"type": "origins:or",
+			"conditions": [
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:frozen_ocean"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:deep_frozen_ocean"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:cold_ocean"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:deep_cold_ocean"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:frozen_river"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:snowy_beach"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:frozen_river"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:taiga"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:snowy_taiga"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:snowy_taiga_hills"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:snowy_taiga_mountains"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:snowy_tundra"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:snowy_mountains"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:ice_spikes"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:mountains"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:gravelly_mountains"
+				},
+				{
+				"type": "origins:biome",
+				"biome": "minecraft:modified_gravelly_mountains"
+				}
+			]
+			},
+			{
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:equipped_item",
+						"equipment_slot": "chest",
+						"item_condition": {
+							"type": "origins:ingredient",
+							"ingredient": {
+								"item": "minecraft:leather_chestplate"
+							}
+						}
+					},
+					{
+						"type": "origins:equipped_item",
+						"equipment_slot": "legs",
+						"item_condition": {
+							"type": "origins:ingredient",
+							"ingredient": {
+								"item": "minecraft:leather_leggings"
+							}
+						}
+					}
+				],
+				"inverted": true
+			}
+		]
+		},
+	"name": "§c§l§nFrostbite",
+	"description": "When in cold climates, your flames are harder to maintain, making you weaker unless warmed up properly."
+}

@@ -1,0 +1,17 @@
+{
+    "type": "origins:attribute",
+	"modifiers": [
+	{
+		"attribute": "minecraft:generic.attack_damage",
+		"operation": "addition",
+		"value": 6
+	},
+	{
+		"attribute": "minecraft:generic.knockback_resistance",
+		"operation": "multiply_base",
+		"value": 0.50
+	}
+	],
+    "name": "§a§l§nLarge Stature",
+	"description": "Due to your large mass, you take 50% less knockback and your hits deal 6 more damage"
+}

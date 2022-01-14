@@ -1,0 +1,29 @@
+{
+	"powers": [
+		"origins:fire_immunity",
+		"origins:nether_spawn",
+		"exodian:diceroll",
+		"exodian:drown",
+		"exodian:less_hp",
+		"exodian:moredmg",
+		"exodian:no_swim",
+		"exodian:particles",
+		"exodian:phase",
+		"exodian:phasing_hp",
+		"exodian:phasing",
+		"exodian:size",
+		"exodian:soulspeed",
+		"exodian:lava_swim",
+		"exodian:less_dmg"
+
+
+	],
+	"icon": {
+		"item": "minecraft:netherite_scrap",
+		"tag": "{Enchantments:[{}]}"
+	},
+	"order": 4,
+	"impact": 2,
+	"name": "Exodian",
+	"description": "After the collapse of your kingdom you are left with nothing, outcasted and forgotten to time, your bastions have been overridden by Piglins and your Loot taken by scavengers."
+}

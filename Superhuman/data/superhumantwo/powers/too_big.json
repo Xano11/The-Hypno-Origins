@@ -1,0 +1,66 @@
+{
+	"type": "origins:multiple",
+	"only_leather": {
+		"type": "origins:restrict_armor",
+		"head": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 1
+		},
+		"chest": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 3
+		},
+		"legs": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 2
+		},
+		"feet": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 1
+		}
+	},
+	"height": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:execute_command",
+			"command": "scale set pehkui:height 1.25 @s",
+			"permission_level": 4
+		},
+		"execute_chosen_when_orb": true,
+		"entity_action_lost": {
+			"type": "origins:execute_command",
+			"command": "scale set pehkui:height 1.0 @s",
+			"permission_level": 4
+		}
+	},
+	"width": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:execute_command",
+			"command": "scale set pehkui:width 1.25 @s",
+			"permission_level": 4
+		},
+		"execute_chosen_when_orb": true,
+		"entity_action_lost": {
+			"type": "origins:execute_command",
+			"command": "scale set pehkui:width 1.0 @s",
+			"permission_level": 4
+		}
+	},
+	"arrow_damage": {
+		"type": "origins:modify_damage_taken",
+		"damage_condition": {
+			"type": "origins:projectile"
+		},
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 1
+		}
+	},
+	"name": "§c§l§nRapid Growth",
+	"description": "Your rapid body growth has caused you to be slightly taller than two blocks, as a result you can only fit into leather armor. You also take double damage from projectiles."
+}

@@ -1,0 +1,59 @@
+{
+	"type": "origins:multiple",
+	"speed": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 1
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:on_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:honeycomb_block"
+					}
+				},
+				{
+					"type": "origins:in_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:honey_block"
+					}
+				}
+			]
+		}
+	},
+	"regeneration": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:heal",
+			"amount": 1
+		},
+		"interval": 20,
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:on_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:honeycomb_block"
+					}
+				},
+				{
+					"type": "origins:in_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:honey_block"
+					}
+				}
+			]
+		}
+	},
+	"name": "§a§l§nWorker Bee",
+	"description": "When on honeycomb blocks or honey blocks, your movement speed is increased and you regenerate health at an increased rate."	
+}

@@ -1,0 +1,75 @@
+{
+    "type":"origins:multiple",
+
+    "poisoned":
+{
+	"type": "origins:model_color",
+	"red": 0,
+	"green": 0.5,
+	"blue": 0,
+	"alpha": 1
+},
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 10,
+        "start_value": 100,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 20
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s basilisk:venom_effects"
+        }
+        
+},
+"particles":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "particle minecraft:block minecraft:slime_block ~ ~0.5 ~ 0.5 0.5 0.5 0.01 10",
+		"permission_level": 4
+	},
+    "interval": 20
+},
+"remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "basilisk:venom_effects_resource",
+        "change": -1
+    },
+    "interval": 60
+},
+"venom_dmg": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:damage",
+        "amount": 2,
+        "source": {
+            "name": "sting",
+            "bypasses_armor": true,
+            "unblockable": true
+        }
+    },
+    "interval": 60
+},
+"overlay":{
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/block/slime_block.png",
+        "strength": 0.3,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": false
+},
+"hidden": true
+}

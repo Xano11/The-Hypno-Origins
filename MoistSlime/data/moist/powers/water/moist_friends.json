@@ -1,0 +1,28 @@
+{
+	"type": "origins:multiple",
+    "up_moist": {
+	"type": "origins:attacker_action_when_hit",
+	"entity_action": {
+        "type": "origins:execute_command",
+        "command": "resource change @e[limit=1,sort=nearest] mushy_origin:moisture_resource 50",
+        "permission_level": 4
+	},
+	"cooldown": 1,
+	"hud_render": {
+		"should_render": false
+	}
+	},
+	"lower_moist": {
+	"type": "origins:target_action_on_hit",
+    "entity_action": {
+		"type": "origins:execute_command",
+		"command": "resource change @e[limit=1,sort=nearest] mushy_origin:moisture_resource -50",
+		"permission_level": 4
+	},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"hidden": true
+}

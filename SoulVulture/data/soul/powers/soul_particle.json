@@ -1,0 +1,14 @@
+{
+  "type": "origins:multiple",
+    "particle_1": {
+  "type": "origins:particle",
+  "particle": "minecraft:soul",
+  "frequency": 4
+  },
+  "particle_2": {
+    "type": "origins:particle",
+    "particle": "minecraft:soul_fire_flame",
+    "frequency": 4
+    },
+  "hidden": true
+}

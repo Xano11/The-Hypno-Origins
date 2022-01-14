@@ -1,0 +1,9 @@
+{
+  "pack": {
+	"name":"Melomanian",
+	"id":"melomanian",
+    "pack_format":8,
+	"authors":"Visual",
+    "description":"This datapack adds Melomanian origin."
+  }
+}

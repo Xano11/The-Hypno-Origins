@@ -1,0 +1,211 @@
+{
+    "type":"origins:multiple",
+    
+    "armor_1":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.armor base set 1",
+            "permission_level": 4
+        },
+        "condition": {
+                "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": "<",
+                "compare_to": 12.5
+        },
+        "interval": "10",
+        "hidden": true
+    },
+    "armor_2":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.armor base set 2",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": ">=",
+                "compare_to": 12.5 
+            },
+            {      
+              "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": "<",
+                "compare_to": 25
+            }
+          ]
+        },
+        "interval": "10",
+        "hidden": true
+    },
+    "armor_3":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.armor base set 3",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": ">=",
+                "compare_to": 25
+            },
+            {      
+              "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": "<",
+                "compare_to": 37.5
+            }
+          ]
+        },
+        "interval": "10",
+        "hidden": true
+    },
+    "armor_4":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.armor base set 4",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": ">=",
+                "compare_to": 37.5
+            },
+            {      
+              "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": "<",
+                "compare_to": 50
+            }
+          ]
+        },
+        "interval": "10",
+        "hidden": true
+    },
+    "armor_5":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.armor base set 5",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": ">=",
+                "compare_to": 50 
+            },
+            {      
+              "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": "<",
+                "compare_to": 62.5
+            }
+          ]
+        },
+        "interval": "10",
+        "hidden": true
+    },
+    "armor_69":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.armor base set 6",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": ">=",
+                "compare_to": 62.5
+            },
+            {      
+              "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": "<",
+                "compare_to": 75
+            }
+          ]
+        },
+        "interval": "10",
+        "hidden": true
+    },
+    "armor_7":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.armor base set 7",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": ">=",
+                "compare_to": 75
+            },
+            {      
+              "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": "<",
+                "compare_to": 87.5
+            }
+          ]
+        },
+        "interval": "10",
+        "hidden": true
+    },
+    "armor_8":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "attribute @s minecraft:generic.armor base set 8",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:blood_resource",
+                "comparison": ">=",
+                "compare_to": 87.5 
+            }
+          ]
+        },
+        "interval": "10"
+    },
+    "hidden": true
+}

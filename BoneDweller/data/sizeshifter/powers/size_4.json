@@ -1,0 +1,15 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+		"command": "function sizeshifter:size_4"
+    },
+    "interval": 20,
+    "condition": {
+        "type": "origins:resource",
+		"resource": "sizeshifter:growth_resource",
+		"comparison": "==",
+		"compare_to": 4
+    },
+	"hidden": true
+}

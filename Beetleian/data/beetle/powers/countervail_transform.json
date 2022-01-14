@@ -1,0 +1,77 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "beetle:countervailcondition",
+                "change": 1
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.bee.hurt player @a[distance=..15] ~ ~ ~ 2 0",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.pillager.hurt player @a[distance=..15] ~ ~ ~ 2 0",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "resource set @p beetle:countervail 0",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale set 2.35 @s",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:motion 0.5 @p",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 600,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "scale set 1 @s",
+                            "permission_level": 4
+                        },
+						{
+                            "type": "origins:execute_command",
+                            "command": "scale set pehkui:motion 1 @p",
+                            "permission_level": 4
+                        },
+                        {
+                            "type": "origins:exhaust",
+                            "amount": 12
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "beetle:countervailcondition",
+                            "change": -1
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 1800,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 1
+    },
+	"key":{
+		"key": "key.origins.secondary_active"
+		},
+    "name": "§a§l§nCountervail",
+    "description": "Taking damage raises 'Countervail', a resource that goes up to 30. When at 30 'Countervail' You can transform into a form that is 3 blocks tall, doubles the armor your shell grants, and allows you to deal double damage in flight."
+}

@@ -1,0 +1,63 @@
+{
+  "type": "origins:multiple",
+  "resource": {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 280,
+    "start_value": 0,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "bar_index": 0
+    }
+  },
+  "gain": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_resource",
+        "change": 10
+    },
+    "interval": 40
+  },
+  "fire_breath": {
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:raycast",
+      "distance": 16,
+      "block": true,
+      "entity": true,
+      "shape_type": "visual",
+      "fluid_handling": "any",
+      "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:execute_command",
+          "command": "power grant @e[limit=1,sort=nearest,distance=..1] genesis:frozen",
+          "permission_level": 4
+              }
+            },
+      "before_action": {
+        "type": "origins:change_resource",
+        "resource": "*:*_resource",
+        "change": -20
+      },
+      "command_at_hit": "particle minecraft:snowflake ~ ~ ~ 0 0 0 0.00000 10 normal",
+      "command_along_ray": "particle minecraft:snowflake ~ ~ ~ 0 0 0 0.00000 10 normal",
+      "command_step": 1,
+      "command_along_ray_only_on_hit": false
+    },
+    "condition": {
+      "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 2
+      },
+  "key": {
+		"key": "key.origins.primary_active",
+		"continuous": true
+	}
+  },
+  "name": "§a§l§nFrost Breath",
+  "description": "Shoot a storm's worth of snow out of your mouth freezing anything it hits."
+}

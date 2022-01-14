@@ -1,0 +1,507 @@
+{
+	"type": "origins:multiple",
+	"dry_damage": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:damage",
+            "amount": 1,
+            "source": {
+                "name": "dryout",
+                "bypasses_armor": true,
+                "unblockable": true
+            }
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "mushy_origin:moisture_resource",
+                    "comparison": "<=",
+                    "compare_to": 100
+                },
+                {
+                    "type": "origins:health",
+                    "comparison": ">",
+                    "compare_to": 1
+                }
+            ]
+	    },
+        "interval": 20
+    },
+    "shivers": {
+		"type": "origins:shaking",
+        "condition": {
+                "type": "origins:resource",
+                "resource": "mushy_origin:moisture_resource",
+                "comparison": "<=",
+                "compare_to": 100
+	    }	
+	},
+    "dry_off": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mushy_origin:moisture_resource",
+            "change": -9
+        },
+        "condition": {
+			"type": "origins:or",
+			"conditions": [
+                {
+					"type": "origins:block_in_radius",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:fire"
+					},
+					"radius": 2
+				},
+                {
+					"type": "origins:block_in_radius",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:lava"
+					},
+					"radius": 2
+				},
+				{
+					"type": "origins:block_in_radius",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:soul_fire"
+					},
+					"radius": 2
+				},
+				{
+					"type": "origins:block_in_radius",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:campfire"
+					},
+					"radius": 2
+				},
+				{
+					"type": "origins:block_in_radius",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:soul_campfire"
+					},
+					"radius": 2
+				},
+                {
+					"type": "origins:block_in_radius",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:magma_block"
+					},
+					"radius": 2
+				}
+			]	
+		},
+		"interval": 20
+	},
+    "moisture_loss": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mushy_origin:moisture_resource",
+            "change": -1
+        },
+        "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:fluid_height",
+                "fluid": "minecraft:water",
+                "comparison": ">",
+                "compare_to": 0.0,
+                "inverted": true
+            },
+            {
+                "type": "origins:in_rain",
+                "inverted": true
+            }
+        ]
+    },
+        "interval": 20
+    },
+            "wet_damage": {
+            "type": "origins:action_over_time",
+            "entity_action": {
+                "type": "origins:damage",
+                "amount": 1,
+                "source": {
+                    "name": "drown",
+                    "bypasses_armor": true,
+                    "unblockable": true
+                }
+            },
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "mushy_origin:moisture_resource",
+                        "comparison": ">=",
+                        "compare_to": 500
+                    },
+                    {
+                        "type": "origins:health",
+                        "comparison": ">",
+                        "compare_to": 1
+                    }
+                ]
+            },
+            "interval": 20
+        },
+        "shivers_two": {
+            "type": "origins:shaking",
+            "condition": {
+                    "type": "origins:resource",
+                    "resource": "mushy_origin:moisture_resource",
+                    "comparison": ">=",
+                    "compare_to": 500
+            }	
+        },
+        "soak_up": {
+            "type": "origins:action_over_time",
+            "entity_action": {
+                "type": "origins:change_resource",
+                "resource": "mushy_origin:moisture_resource",
+                "change": 1
+            },
+            "condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:water"
+                        },
+                        "radius": 2
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:slime_block"
+                        },
+                        "radius": 2
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:moss_block"
+                        },
+                        "radius": 2
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:cactus"
+                        },
+                        "radius": 2
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:pumpkin"
+                        },
+                        "radius": 2
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:melon"
+                        },
+                        "radius": 2
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:block",
+                            "block": "minecraft:mycelium"
+                        },
+                        "radius": 2
+                    }
+                ]	
+            },
+            "interval": 20
+        },
+        "water_bottle": {
+                "type": "origins:action_on_item_use",
+                "entity_action": {
+                    "type": "origins:change_resource",
+                    "resource": "mushy_origin:moisture_resource",
+                    "change": 25
+                },
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "item": "minecraft:potion"
+                    }
+                }
+            },
+        "moisture_gain": {
+            "type": "origins:action_over_time",
+            "entity_action": {
+                "type": "origins:change_resource",
+                "resource": "mushy_origin:moisture_resource",
+                "change": 9
+            },
+            "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0.0
+                }
+            ]
+        },
+            "interval": 20
+        },
+        "gain_rain":{
+            "type": "origins:action_over_time",
+            "condition": {
+                "type": "origins:and",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:in_rain"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "mushy_origin:moisture_resource",
+                        "comparison": "<",
+                        "compare_to": 300
+                    }
+                ]
+            },
+            "interval": 5,
+            "entity_action": {
+                "type": "origins:change_resource",
+                "resource": "mushy_origin:moisture_resource",
+                "change": 2
+            }
+        },
+        "lose_rain":{
+            "type": "origins:action_over_time",
+            "condition": {
+                "type": "origins:and",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:in_rain"
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "mushy_origin:moisture_resource",
+                        "comparison": ">",
+                        "compare_to": 300
+                    }
+                ]
+            },
+            "interval": 5,
+            "entity_action": {
+                "type": "origins:change_resource",
+                "resource": "mushy_origin:moisture_resource",
+                "change": -2
+            }
+        },
+    "new_life": {
+    "type": "origins:action_on_callback",
+	"entity_action_respawned": {
+        "type": "origins:and",
+        "actions": [
+			{
+				"type": "origins:change_resource",
+				"resource": "mushy_origin:moisture_resource",
+				"operation": "set",
+                "change": 300
+			}
+    		]
+        }
+    },
+	"unsuitable_con": {
+		"type": "origins:conditioned_attribute",
+        "modifier":{
+            "attribute": "minecraft:generic.max_health",
+   		    "value": -8.0,
+   		    "operation": "addition"
+        },
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": "<=",
+					"compare_to": 150
+				},
+                {
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": ">=",
+					"compare_to": 450
+				}
+			]
+		}
+	},
+    "unsuitable_dex": {
+		"type":"origins:conditioned_attribute",
+		"modifier":{
+		   "attribute": "minecraft:generic.movement_speed",
+		   "value": -0.02,
+		   "operation": "addition"
+        },
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": ">=",
+					"compare_to": 450
+				},
+                {
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": "<=",
+					"compare_to": 150
+				}
+			]
+		}
+	},
+    "unsuitable_str": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "addition",
+			"value": -4
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": "<=",
+					"compare_to": 150
+				},
+                {
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": ">=",
+					"compare_to": 450
+				}
+			]
+		}
+	},
+    "suitable_con": {
+        "type": "origins:conditioned_attribute",
+        "modifier":{
+            "attribute": "minecraft:generic.max_health",
+            "value": -6.0,
+            "operation": "addition"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": ">=",
+					"compare_to": 150
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": "<=",
+					"compare_to": 450
+                }
+            ]
+        }
+    },
+    "suitable_dex": {
+		"type":"origins:conditioned_attribute",
+		"modifier":{
+		   "attribute": "minecraft:generic.movement_speed",
+		   "value": 0.02,
+		   "operation": "addition"
+        },
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": ">=",
+					"compare_to": 150
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": "<=",
+					"compare_to": 450
+				}
+			]
+		}
+	},
+    "very_suitable_con": {
+        "type": "origins:conditioned_attribute",
+        "modifier":{
+            "attribute": "minecraft:generic.max_health",
+            "value": 2.0,
+            "operation": "addition"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": ">=",
+					"compare_to": 250
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": "<=",
+					"compare_to": 350
+                }
+            ]
+        }
+    },
+    "very_suitable_dex": {
+		"type":"origins:conditioned_attribute",
+		"modifier":{
+		   "attribute": "minecraft:generic.movement_speed",
+		   "value": 0.02,
+		   "operation": "addition"
+        },
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": ">=",
+					"compare_to": 250
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mushy_origin:moisture_resource",
+					"comparison": "<=",
+					"compare_to": 350
+				}
+			]
+		}
+	},
+	"hidden": true
+}

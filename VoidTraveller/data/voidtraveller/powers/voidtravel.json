@@ -1,0 +1,58 @@
+{
+    "hidden": false,
+    "type": "origins:active_self",
+    "name": "§a§l§nDimensional Travel",
+    "description": "You can travel to the void dimension by pressing primary key!",
+    "cooldown": 600,
+    "key": "primary",
+    "entity_action": {
+        
+        "type":"origins:and",
+        "actions":[
+            {
+                "type": "origins:delay",
+                "ticks": 60,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "execute as @s run function voidtraveller:dimensiontravel",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "effect give @s minecraft:resistance 3 0 true"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "effect give @s minecraft:blindness 3 0 true"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "effect give @s minecraft:slowness 3 200 true"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "effect give @s minecraft:jump_boost 3 200 true"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound block.respawn_anchor.set_spawn player @a[distance=..5] ~ ~ ~",
+                "permission_level": 4
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/resource_bar.png",
+        "bar_index": 6
+    }
+}

@@ -1,0 +1,16 @@
+{
+	"type": "origins:modify_damage_taken",
+	"modifier": {
+		"operation": "multiply_base",
+		"value": 2
+	},
+	"damage_condition": {
+		"type": "origins:attacker",
+		"entity_condition": {
+			"type": "origins:entity_group",
+			"group": "undead"
+		}
+	},
+	"name": "§c§l§nHatred of the undead",
+	"description": "You hate the undead. They deal triple damage to you and slow you down on hit."
+}

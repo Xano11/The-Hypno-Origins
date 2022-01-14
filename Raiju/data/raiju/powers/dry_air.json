@@ -1,0 +1,16 @@
+{
+    "type": "origins:conditioned_attribute",
+    "tick_rate": 20,
+    "modifiers": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "multiply_total",
+        "value": -0.25
+    },
+    "condition": {
+      "type": "origins:in_rain",
+      "inverted": true
+    },
+    "name": "§c§l§nDry Air",
+    "description": "The dry air is less conductive and doesn't help the chanelling your electricity. You deal less damage and have less hearts when it is not storming."
+  }
+  

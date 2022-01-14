@@ -1,0 +1,104 @@
+{
+    "type":"origins:active_self",
+    "entity_action":{
+        "type":"origins:and",
+        "actions":[
+            {
+                "type":"origins:execute_command",
+                "command":"execute at @s run summon minecraft:bee ~ ~ ~",
+                "permission_level":4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"execute at @s run summon minecraft:bee ~ ~ ~",
+                "permission_level":4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"execute at @s run summon minecraft:bee ~ ~ ~",
+                "permission_level":4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"execute at @s run summon minecraft:bee ~ ~ ~",
+                "permission_level":4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"execute at @s run summon minecraft:bee ~ ~ ~",
+                "permission_level":4
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "execute at @s as @e[type=bee,distance=..5] run data modify entity @s AngerTime set value 500000",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "execute at @s as @e[type=bee,distance=..5] run data modify entity @s AngryAt set from entity @e[sort=nearest,limit=1,tag=!bee,type=!minecraft:painting,type=!minecraft:item,type=!minecraft:item_frame,type=!minecraft:minecart,type=!minecraft:boat,type=!minecraft:armor_stand,type=!minecraft:arrow,type=!minecraft:potion,type=!minecraft:bee] UUID",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "execute at @s as @e[type=bee,distance=..5] run tag @s add bee_gone",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 140,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "execute at @s as @e[type=bee,tag=bee_gone] run kill",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:exhaust",
+                "amount": 6
+            }
+        ]
+    },
+    "cooldown": 1200,
+    "hud_render":{
+        "should_render":true,
+        "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 24
+    },  
+    "key":{
+        "key":"key.origins.primary_active"
+    },
+    "name":"§a§l§nBEE GONE",
+    "description":"By pressing your primary power key, you will summon a horde of bees that will target the closest entity. (The bees will die shortly after)"
+}

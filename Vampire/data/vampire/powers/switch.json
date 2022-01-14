@@ -1,0 +1,181 @@
+{
+"type": "origins:multiple",
+
+"tag":{
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @e remove vampired"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s at @s run power remove @e vampire:switch_effects"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "execute as @s at @s run tag @e[limit=1,sort=nearest,distance=0.2..] add vampired",
+                                "permission_level": 4
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "execute as @s at @s run power grant @e[limit=1,sort=nearest,distance=0.2..] vampire:switch_effects",
+                                "permission_level": 4
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.note_block.chime"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 2,
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "execute at @e[tag=vampired] run particle minecraft:witch ~ ~1 ~ 1 0.5 1 1 30",
+                                "permission_level": 4
+                            }
+                        ]
+                    }
+                }
+			]
+		},
+		"key": {
+			"key": "key.origins.secondary_active"
+		},
+		"condition": {
+            "type": "origins:sneaking",
+            "inverted": true
+        },  
+"cooldown": 50,
+"hud_render": {
+	"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+	"bar_index": 0,
+	"should_render": false
+}   
+},
+    "switch_tp": {
+            "type": "origins:active_self",
+            "entity_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "execute at @s as @s run summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,NoGravity:1b}"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "execute at @e[tag=vampired] run summon armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,NoGravity:1b}"
+                    },
+                    {
+                        "type": "origins:delay",
+                        "ticks": 1,
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "execute at @s run tag @e[limit=1,sort=nearest,type=armor_stand] add tp1",
+                                    "permission_level": 4
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "execute at @e[tag=vampired] run tag @e[limit=1,sort=nearest,type=armor_stand] add tp2",
+                                    "permission_level": 4
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "execute at @s run particle illuminations:shadowbringer_aura ~ ~ ~ 0.2 0.2 0.2 0.01 20 normal",
+                                    "permission_level": 4
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "execute at @e[tag=vampired,limit=1] particle illuminations:shadowbringer_aura ~ ~ ~ 0.2 0.2 0.2 0.01 20 normal",
+                                    "permission_level": 4
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:delay",
+                        "ticks": 2,
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "power remove @e vampire:switch_effects"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:delay",
+                        "ticks": 2,
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "tp @e[tag=vampired,limit=1] @e[tag=tp1,limit=1]",
+                                    "permission_level": 4
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "tp @s @e[tag=tp2,limit=1]",
+                                    "permission_level": 4
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "origins:delay",
+                        "ticks": 3,
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "kill @e[type=armor_stand,tag=tp1]",
+                                    "permission_level": 4
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "command": "kill @e[type=armor_stand,tag=tp2]",
+                                    "permission_level": 4
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "key": {
+                "key": "key.origins.secondary_active"
+            },
+            "condition": {
+                "type": "origins:sneaking",
+                "inverted": false
+            },  
+    "cooldown": 1800,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+        "bar_index": 1,
+        "should_render": true
+    }   
+    },
+    "name":"§a§l§nSwitch",
+    "description":"Using the secondary ability key, you can choose a nearby entity that you'll be able to switch with. Sneaking and right-clicking will then execute the teleport action."
+}

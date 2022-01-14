@@ -1,0 +1,23 @@
+{
+	"powers": [
+		"masquerader:cloud/airboost",
+		"masquerader:cloud/doublejump",
+		"masquerader:cloud/speed",
+		"masquerader:agile",
+		"masquerader:cloud/cloudbody",
+		"masquerader:cloud/cloudmask",
+		"masquerader:cloud/walkwater",
+		"masquerader:notweapons",
+		"masquerader:nohelmet",
+		"masquerader:weakedsoul",
+		"masquerader:weak",
+		"masquerader:weaksoul",
+		"masquerader:untransform"
+	],
+	"icon": "minecraft:white_stained_glass",
+	"order": 10,
+	"impact": 3,
+	"name": "Cloud",
+	"description": "A Masquerader that has harnessed the power of the winds and gain the body of a cloud",
+	"unchoosable": true
+}

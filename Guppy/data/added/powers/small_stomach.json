@@ -1,0 +1,9 @@
+{
+	"type": "origins:modify_exhaustion",
+	"modifier": {
+		"operation": "multiply_base",
+		"value": -0.5
+	},
+	"name": "§a§l§nSmall Stomach",
+	"description": "Your small stomach causes you to get hungry slower then others."
+}

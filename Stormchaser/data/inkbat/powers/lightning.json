@@ -1,0 +1,90 @@
+{
+	"type": "origins:multiple",
+	
+	"ground_entity_hits_player": {
+		"type": "origins:attacker_action_when_hit",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:damage",
+					"amount": 10,
+					"source": {
+						"name": "lightningBolt",
+						"bypasses_armor": false,
+						"unblockable": true
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					  "resource": "inkbat:ressource",
+					  "change": -600
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "summon minecraft:lightning_bolt ~ ~ ~",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 2,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 3,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:ressource",
+					"comparison": "==",
+					"compare_to": 600
+				}
+			]
+		},
+		"cooldown": 0
+		}
+	}

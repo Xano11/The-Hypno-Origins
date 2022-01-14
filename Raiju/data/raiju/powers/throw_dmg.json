@@ -1,0 +1,130 @@
+{
+    "type":"origins:multiple",
+
+    "more_dmg":
+{
+    "type": "origins:modify_projectile_damage",
+    "damage_condition": {
+        "type": "origins:projectile",
+        "projectile": "minecraft:trident"
+    },
+    "modifier": {
+        "operation": "addition",
+        "value": 20
+    }
+},
+
+"lightning":
+{
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+        "type":"origins:and",
+        "actions":[
+            {
+                "type": "origins:execute_command",
+                "command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+                "permission_level": 4
+            },
+            {
+            "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                "type": "origins:execute_command",
+                "command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+                "permission_level": 4
+                    }
+                },
+                {
+                    "type": "origins:delay",
+                        "ticks": 2,
+                        "action": {
+                        "type": "origins:execute_command",
+                        "command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+                        "permission_level": 4
+                            }
+                        },
+                        {
+                            "type": "origins:delay",
+                                "ticks": 3,
+                                "action": {
+                                "type": "origins:execute_command",
+                                "command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+                                "permission_level": 4
+                                    }
+                                },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type":"origins:execute_command",
+                            "command":"power grant @s raiju:lightning_dmg",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 2,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "power remove @s raiju:lightning_dmg",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "damage_condition": {
+        "type":"origins:and",
+        "conditions":[
+            {
+                "type": "origins:projectile",
+                "projectile": "minecraft:trident"
+            }
+    ]
+    },
+    "cooldown": 1,
+    "hud_render": {
+        "should_render": false
+    }
+},
+"speed": 
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "addition",
+        "value": 0.3,
+        "name": "Increased speed while charging"
+    },
+    "tick_rate": 1,
+    "condition": {
+        "type": "origins:using_item",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+              "type": "origins:ingredient",
+              "ingredient": {
+                  "item": "minecraft:trident"
+              }
+            },
+            {
+                "type": "origins:enchantment",
+                "enchantment": "minecraft:channeling",
+                "comparison": ">=",
+                "compare_to": 1
+            }
+        ]
+          }
+    }
+}
+}

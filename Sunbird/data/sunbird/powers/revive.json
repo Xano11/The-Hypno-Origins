@@ -1,0 +1,42 @@
+{
+	"type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "ledger rollback action:entity-kill range:5 after:5s object:!minecraft:ender_dragon object:!minecraft:minecart object:!minecraft:tnt_minecart object:!minecraft:furnace_minecart object:!minecraft:item"
+			},
+			{
+				"type": "origins:play_sound",
+				"sound": "minecraft:entity.player.levelup",
+				"volume": 2,
+				"pitch": 1
+			}
+		]
+	},
+	"cooldown": 10000,
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+		"bar_index": 9
+	},
+	"key": {
+		"key": "key.origins.secondary_active"
+	},
+	"condition": {
+        "type": "origins:and",
+		"conditions": [
+            {
+        "type": "origins:power",
+        "power": "sunbird:ultimate_effects"
+        },
+        {
+        "type": "origins:sneaking"
+        }
+    ]
+    },
+	"name": "§a§l§nRevive",
+	"description": "Cover the surroundings with your blessed flames, healing anyone in a 12 blocks radius around you."
+}

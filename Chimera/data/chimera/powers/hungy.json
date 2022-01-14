@@ -1,0 +1,9 @@
+{
+  "type": "origins:modify_exhaustion",
+  "modifier":{
+	   "value": 0.8,
+	   "operation": "multiply_base"
+	   },
+	"name": "§c§l§nFast metabolism",
+	"description": "Your body wasn't meant to contain so many different types of DNA, so you need to eat a lot to maintain your energy."
+}

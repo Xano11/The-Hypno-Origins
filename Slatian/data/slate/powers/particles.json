@@ -1,0 +1,26 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+		"permission_level": 4
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+		{
+			"type": "origins:resource",
+            "resource": "slate:shadow_resource",
+            "comparison": ">",
+            "compare_to": 0
+		},
+		{      
+			"type": "origins:power_active",
+			"power": "*:shadow_toggle"
+		}
+	]
+	},
+	"interval": "2",
+	"hidden": true
+}
+

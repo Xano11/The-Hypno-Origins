@@ -1,0 +1,30 @@
+{
+    "impact": 2,
+    "unchoosable": false,
+    "name": "Bucentaure",
+    "description": "You are half-cow! You can produce milk with magical effects, take more hits than most people, and defend your kind from those who would harm them!",
+    "icon": "minecraft:milk_bucket",
+    "powers": [
+        "coworigin:brewstrength",
+        "coworigin:potionresource",
+        "coworigin:foodfillsmilk",
+        "coworigin:milkresource",
+        "coworigin:thickskin",
+        "coworigin:bulky",
+        "coworigin:bulky2",
+        "coworigin:bullcharge",
+        "coworigin:tagger",
+        "coworigin:hooves",
+        "coworigin:herbivore",
+        "coworigin:aaaaadescription1",
+        "coworigin:aaaaadescription2",
+        "coworigin:aaaaadescription3",
+        "coworigin:aaaaadescription4",
+        "coworigin:aaaaadescription5",
+        "coworigin:aaaaadescription6",
+        "coworigin:aaaaadescription7",
+        "coworigin:aaaaadescription8",
+        "coworigin:tall",
+        "coworigin:pickup"
+    ]
+}

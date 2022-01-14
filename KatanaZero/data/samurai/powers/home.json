@@ -1,0 +1,235 @@
+{
+  "type":"origins:multiple",
+"bar":{
+  "type": "origins:resource",
+  "min": 0,
+  "max": 6000,
+  "hud_render": {
+      "should_render": true,
+      "bar_index":8,
+      "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+      "condition":{
+        "type":"origins:resource",
+        "resource":"samurai:home_bar",
+        "comparison":"!=",
+        "compare_to":6000
+      }
+  },
+  "start_value":6000
+},
+"recharge":{
+  "type":"origins:action_over_time",
+  "interval":20,
+  "entity_action":{
+    "type":"origins:change_resource",
+    "resource":"samurai:home_bar",
+    "change":1
+  }
+},
+"get_coords":{
+  "type":"origins:active_self",
+  "cooldown":1,
+  "key":{
+    "key":"key.saveToolbarActivator"
+  },
+  "hud_render":{
+    "should_render":false
+  },
+  "entity_action":{
+    "type":"origins:and",
+    "actions":[ 
+      {
+        "type":"origins:execute_command",
+        "command":"/function samurai:move_home"
+          },
+      {
+        "type":"origins:delay",
+        "ticks":2,
+        "action":{
+    "type":"origins:execute_command",
+    "command":"/function samurai:get_coords"
+        }
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"/playsound minecraft:entity.wither.shoot master @a[distance=..10] ~ ~ ~ 1 0"
+          },
+      {
+        "type":"origins:execute_command",
+        "command":"/resource set @s samurai:home_bar 0"
+          }
+    ]
+  },
+  "condition":{
+    "type":"origins:and",
+    "conditions":[
+      {
+    "type":"origins:resource",
+    "resource":"samurai:home_bar",
+    "comparison":">=",
+    "compare_to":6000
+      },
+      {
+        "type":"origins:power_active",
+        "power":"samurai:phase_phase_toggle",
+        "inverted":true
+      },
+      {
+        "type":"origins:power",
+        "power":"samurai:phase_phase_toggle"
+      }
+    ]
+  }
+},
+"tp_to_coords":{
+  "type":"origins:active_self",
+  "cooldown":1,
+  "key":{
+    "key":"key.loadToolbarActivator"
+  },
+  "hud_render":{
+    "should_render":false
+  },
+  "entity_action":{
+    "type":"origins:and",
+    "actions":[ 
+      {
+        "type":"origins:delay",
+        "ticks":90,
+        "action":{
+    "type":"origins:execute_command",
+    "command":"/function samurai:tp_to_coords"
+        }
+      },
+      {
+        "type":"origins:delay",
+        "ticks":90,
+        "action":{
+        "type":"origins:execute_command",
+        "command":"/effect give @s minecraft:saturation 1 99"
+        }
+      },
+      {
+        "type": "origins:apply_effect",
+         "effects":[ 
+           {
+            "effect": "minecraft:slowness",
+            "duration": 140,
+            "amplifier": 8
+           },
+           {
+            "effect": "minecraft:weakness",
+            "duration": 140,
+            "amplifier": 8
+           },
+           {
+            "effect": "minecraft:blindness",
+            "duration": 140,
+            "amplifier": 8
+           }
+          ]
+      },
+      {
+        "type":"origins:delay",
+        "ticks":90,
+        "action":{
+        "type":"origins:execute_command",
+        "command":"/playsound minecraft:entity.wither.spawn master @a[distance=..10] ~ ~ ~ 1 2"
+        }
+          },
+          {
+            "type":"origins:execute_command",
+            "command":"/playsound minecraft:entity.wither.hurt master @a[distance=..10] ~ ~ ~ 1 0"
+              },
+              {
+                "type":"origins:delay",
+                "ticks":20,
+                "action":{
+                "type":"origins:execute_command",
+                "command":"/playsound minecraft:entity.wither.ambient master @a[distance=..10] ~ ~ ~ 1 0"
+                }
+                  },
+      {
+        "type":"origins:delay",
+        "ticks":90,
+        "action":{
+        "type":"origins:execute_command",
+        "command":"/title @s actionbar {\"text\":\"No... That won't work\",\"color\":\"dark_aqua\",\"bold\":true}"
+        }
+          },
+      {
+        "type":"origins:execute_command",
+        "command":"/resource set @s samurai:home_bar 0"
+          }
+    ]
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+    "type":"origins:resource",
+    "resource":"samurai:home_bar",
+    "comparison":">=",
+    "compare_to":6000
+      },
+      {
+        "type": "origins:health",
+        "comparison": "==",
+        "compare_to": 24
+      }
+    ]
+  }
+},
+"particle":{
+  "type":"origins:action_over_time",
+  "interval":10,
+  "entity_action":{
+    "type":"origins:and",
+    "actions":[
+      {
+        "type":"origins:execute_command",
+        "command":"/execute at @e[type=minecraft:marker,scores={x=0..}] if entity @p[distance=..10] run particle minecraft:dust 0 0 0 3.5 ~ ~1 ~ 0.2 0.5 0.2 1 100"
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"/execute at @e[type=minecraft:marker,scores={x=0..}] run playsound minecraft:block.beacon.ambient master @a[distance=..5] ~ ~ ~ 1 0.5"
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"/execute at @e[type=minecraft:marker,scores={x=..0}] if entity @p[distance=..10] run particle minecraft:dust 0 0 0 3.5 ~ ~1 ~ 0.2 0.5 0.2 1 100"
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"/execute at @e[type=minecraft:marker,scores={x=0..}] if entity @p[distance=..10] run particle minecraft:ash ~ ~1 ~ 0.25 0.5 0.25 1 100"
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"/execute at @e[type=minecraft:marker,scores={x=..0}] if entity @p[distance=..10] run particle minecraft:ash ~ ~1 ~ 0.25 0.5 0.25 1 100"
+      }
+    ]
+  }
+},
+"scoreboards":{
+  "type":"origins:action_over_time",
+  "interval":40,
+  "entity_action":{
+    "type":"origins:and",
+    "actions":[
+      {
+        "type":"origins:execute_command",
+        "command":"/scoreboard objectives add x dummy"
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"/scoreboard objectives add y dummy"
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"/scoreboard objectives add z dummy"
+      }
+    ]
+  }
+},
+"name":"§a§l§nPlay Back",
+"description":"(SaveHotBar + LoadHotBar) teleport to your spawn point, refilling your hunger and doing 13 hearts of health. press SaveHotBar to set a home and LoadHotBar to teleport to your home. 30 minute cooldown which both abilities share"
+}

@@ -1,0 +1,59 @@
+{
+    "hidden": true,
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "sleep": {
+        "type": "origins:action_on_wake_up",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar {\"text\":\"Your exhaustion wears off\",\"color\":\"green\"}"
+                }
+            ]
+        }
+    },
+    "debuffs": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 11,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "effects": [
+            {
+                "effect": "slowness",
+                "duration": 11,
+                "amplifier": 0,
+                "show_particles": false,
+                "is_ambient": true
+            },
+            {
+                "effect": "mining_fatigue",
+                "duration": 11,
+                "amplifier": 0,
+                "show_particles": false,
+                "is_ambient": true
+            }
+        ]
+    }
+}

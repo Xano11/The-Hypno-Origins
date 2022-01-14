@@ -1,0 +1,461 @@
+{
+    "type": "origins:active_self",
+    "name": "moo",
+    "description": "moo",
+    "hidden": true,
+    "cooldown": 1,
+    "key": {
+        "key": "key.origins.primary_active",
+        "continuous": false
+    },
+    "hud_render": {
+        "should_render": false,
+        "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:if_else_list",
+                "actions": [
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 0
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 1
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Low-fat Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowfall} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 2
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Chocolate Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowfireres} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 3
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Coconut Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowharm} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 4
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Cherry Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowheal} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 5
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Almond Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowinvis} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 6
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Banana Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowjump} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 7
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Butterscotch Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cownight} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 8
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Soy Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowpoison} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 9
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Strawberry Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowregen} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 10
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Caramel Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowslow} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 11
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Buttermilk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowstrength} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 12
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Cookie Dough Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowswift} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 13
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Oat Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowturtle} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 14
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Watermelon Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowwater} 1"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "condition": {
+                            "type": "origins:resource",
+                            "inverted": false,
+                            "comparison": "==",
+                            "resource": "coworigin:potionresource",
+                            "compare_to": 15
+                        },
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/clear @s bucket 1"
+                                },
+                                {
+                                    "type": "origins:execute_command",
+                                    "permission_level": 4,
+                                    "command": "/give @s milk_bucket{display:{Name:'{\"text\":\"Rice Milk\"}',Lore:['{\"text\":\"Milk with an unusual\"}','{\"text\":\"aura to it...\"}']},tag:cowweak} 1"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.cow.milk"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "coworigin:milkresource",
+                "change": -25
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:bucket"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:bucket"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:resource",
+                "inverted": false,
+                "comparison": ">=",
+                "resource": "coworigin:milkresource",
+                "compare_to": 25
+            }
+        ]
+    }
+}

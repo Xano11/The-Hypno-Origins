@@ -1,0 +1,379 @@
+{
+	"name": "§a§l§nSoar in the Clouds",
+	"description": "Standing still allows you to hover in mid-air. You ascend by holding space and descend by sneaking. Sprinting & pressing / holding space in the air allows you to fly and boost yourself forward.",
+	
+	"type": "origins:multiple",
+	
+	"climb_up": {
+		"type": "origins:climbing",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:sprinting",
+					"inverted": true
+				},
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				}
+			]
+		},
+		"allow_holding": false
+	},
+	
+	"hover": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:levitation",
+				"duration": 10,
+				"amplifier": -1,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			}
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "effect clear @s levitation",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:health",
+					"comparison": ">",
+					"compare_to": 2
+				},
+				{
+					"type": "origins:food_level",
+					"comparison": ">",
+					"compare_to": 6
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_head_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_chest_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_legs_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_feet_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:sprinting",
+					"inverted": true
+				},
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				}
+			]
+		}
+	},
+	
+	"hover_down": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:slow_falling",
+				"duration": 10,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			}
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "effect clear @s slow_falling",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:sprinting"
+						},
+						{
+							"type": "origins:sneaking"
+						}
+					]
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_head_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_chest_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_legs_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_feet_b",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	
+	"elytra": {
+		"type": "origins:elytra_flight",
+		"render_elytra": false,
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:sprinting"
+				}
+			]
+		}
+	},
+	
+	"particle_still": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "particle cloud ~ ~-0.5 ~ 0.3 0.3 0.3 0.01 16 normal @a[distance=1..]",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:fall_flying",
+					"inverted": true
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:gamemode",
+					"gamemode": "spectator",
+					"inverted": true
+				}
+			]
+		}
+	},
+	
+	"particle_fly": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "particle cloud ~ ~-1 ~ 0.3 0.3 0.3 0.01 5 normal @a[distance=1..]",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:fall_flying"
+				},
+				{
+					"type": "origins:sprinting"
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:gamemode",
+					"gamemode": "spectator",
+					"inverted": true
+				}
+			]
+		}
+	},
+	
+	"reset_fall": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:set_fall_distance",
+			"fall_distance": 0
+		}
+	},
+	
+	"velocity_boost_normal": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:add_velocity",
+					"z": 0.8,
+					"space": "local"
+				},
+				{
+					"type": "origins:exhaust",
+					"amount": 0.6
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:food_level",
+					"comparison": ">=",
+					"compare_to": 6
+				},
+				{
+					"type": "origins:fall_flying"
+				},
+				{
+					"type": "origins:sprinting"
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_head_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_chest_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_legs_b",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:fly2_feet_b",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		},
+		"cooldown": 20,
+		"hud_render": {
+			"should_render": true,
+			"bar_index": 5
+		},
+		"key": {
+			"key": "key.jump",
+			"continuous": true
+		}
+	},
+	
+	"velocity_boost_heavy_armor": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:add_velocity",
+					"z": 0.3,
+					"space": "local"
+				},
+				{
+					"type": "origins:exhaust",
+					"amount": 1.2
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:food_level",
+					"comparison": ">=",
+					"compare_to": 6
+				},
+				{
+					"type": "origins:fall_flying"
+				},
+				{
+					"type": "origins:sprinting"
+				},
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:fly2_head_b",
+							"comparison": "==",
+							"compare_to": 1
+						},
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:fly2_chest_b",
+							"comparison": "==",
+							"compare_to": 1
+						},
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:fly2_legs_b",
+							"comparison": "==",
+							"compare_to": 1
+						},
+						{
+							"type": "origins:resource",
+							"resource": "inkbat:fly2_feet_b",
+							"comparison": "==",
+							"compare_to": 1
+						}
+					]
+				}
+			]
+		},
+		"cooldown": 40,
+		"hud_render": {
+			"should_render": true,
+			"bar_index": 5
+		},
+		"key": {
+			"key": "key.jump",
+			"continuous": true
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [{
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.dragon_fireball.explode"
+				},
+				{
+					"type": "origins:add_velocity",
+					"space": "local",
+					"z": 2
+				}
+			]
+		},
+		"key": {
+			"key": "key.origins.primary_active"
+		},
+		"condition": {
+            "type": "origins:power_active",
+            "power": "karma:karma/toggle"
+        },
+"cooldown": 100,
+"hud_render": {
+	"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+	"bar_index": 0,
+	"should_render": true
+},
+  "name": "§a§l§nDash",
+    "description": "You have the ability to dash with your [PRIMARY] ability key. That dash"
+}

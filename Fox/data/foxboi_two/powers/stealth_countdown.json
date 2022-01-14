@@ -1,0 +1,10 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:change_resource",
+		"resource":"foxboi_two:stealth_timer",
+		"change":-1
+	},
+	"interval": 5,
+    "hidden": true
+}

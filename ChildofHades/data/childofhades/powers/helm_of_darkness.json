@@ -1,0 +1,26 @@
+{
+"type": "origins:invisibility",
+    "render_armor": false,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+        "type": "origins:equipped_item",
+        "equipment_slot": "head",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:chainmail_helmet"
+                }
+            }
+        },
+        {
+            "type": "origins:status_effect",
+            "effect": "minecraft:invisibility",
+            "min_amplifier": 0
+        }
+    ]
+    },
+    "name": "§a§l§nChains of Darkness",
+	"description": "If you wear a chainmail helm and an invisibility potion, you become completely invisible like how your father was able to."
+}

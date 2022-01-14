@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+      "name": "Max armor increase",
+      "attribute": "minecraft:generic.armor",
+      "value": 4,
+      "operation": "addition"
+  },
+  "name": "§a§l§nTough Skin",
+	"description": "4 extra points of armor (2 full icons)"
+}

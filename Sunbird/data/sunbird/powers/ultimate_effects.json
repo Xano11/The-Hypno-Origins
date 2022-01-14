@@ -1,0 +1,133 @@
+{
+    "type":"origins:multiple",
+
+"regen":
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s minecraft:absorption 15 0 true",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s minecraft:regeneration 15 1 true",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @s minecraft:speed 30 1 true",
+                "permission_level": 4
+            }
+        ]
+    }
+},
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3000,
+        "start_value": 3000,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 5
+        },
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+            {
+            "type": "origins:execute_command",
+            "command": "power remove @s sunbird:ultimate_effects"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "power remove @s sunbird:landing_fire"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "power remove @s origins:fall_immunity"
+            }
+    ]
+}       
+},
+"particles1":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "particle minecraft:flame ~ ~1 ~ 0.5 0.5 0.5 0.1 50"
+    },
+    "interval": 50
+},
+"particles2":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "particle minecraft:soul_fire_flame ~ ~1 ~ 0.5 0.5 0.5 0.1 50"
+    },
+    "interval": 50
+},
+"remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "sunbird:ultimate_effects_resource",
+        "change": -20
+    },
+    "interval": 20
+},
+
+"more_mine":
+{
+    "type": "origins:modify_break_speed",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 1
+    }
+},
+"more_damage":
+{
+
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 4
+    }
+},
+"more_jump":
+{
+    "type": "origins:modify_jump",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": 2
+    }  
+},
+"more_health":
+{
+
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition",
+      "value": 4
+    }
+},
+"less_dmg":
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "name": "more dmg",
+        "operation": "multiply_total",
+        "value": -0.2
+    }
+},
+"hidden": true
+}

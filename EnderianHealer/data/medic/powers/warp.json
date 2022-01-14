@@ -1,0 +1,90 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 1 2"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~0.8 ~ 0.1 0.1 0.1 1 100 normal"
+      },
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:speed",
+          "duration": 10,
+          "amplifier": 39,
+          "show_particles": false,
+          "show_icon": false
+        }
+      },
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:weakness",
+          "duration": 10,
+          "amplifier": 99,
+          "show_particles": false,
+          "show_icon": false
+        }
+      },
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:resistance",
+          "duration": 10,
+          "amplifier": 99,
+          "show_particles": false,
+          "show_icon": false
+        }
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "power grant @s medic:enderstats"
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 15,
+        "action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:execute_command",
+              "command": "power revoke @s medic:enderstats"
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "playsound minecraft:entity.enderman.teleport master @s ~ ~ ~ 1 0"
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:reverse_portal ~ ~0.8 ~ 0.1 0.1 0.1 1 100 normal"
+            },
+            {
+              "type": "origins:trigger_cooldown",
+              "power": "medic:warp"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "cooldown": 140,
+  "condition": {
+    "type": "origins:sneaking",
+    "inverted": true
+  },
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/resource_bar.png",
+    "bar_index": 6
+  },
+  "key": {
+    "key": "key.origins.primary_active"
+  },
+  "name": "§a§l§nBlink Warp",
+  "description": "You can enter the Enderspace for just a blink of an eye, however, these two planes are not directly connected, meaning you won't see others in this state."
+}

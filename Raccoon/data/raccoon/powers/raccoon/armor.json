@@ -1,0 +1,10 @@
+{
+    "type": "origins:restrict_armor",
+    "chest": {
+      "type": "origins:armor_value",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "name":"§c§l§nChestplate hater.",
+    "description":"You can't wear chestplate."
+  }

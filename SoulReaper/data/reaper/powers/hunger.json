@@ -1,0 +1,10 @@
+{
+  "type": "origins:modify_exhaustion",
+  "modifier": {
+    "name": "Extra exhaustion from large appetite",
+    "value": 0.6,
+    "operation": "multiply_base"
+  },
+  "name": "§c§l§nReaping Hunger",
+  "description": "Taking all of these lives requires a lot of energy, thus making you require a lot of food."
+}

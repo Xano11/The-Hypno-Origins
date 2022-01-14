@@ -1,0 +1,34 @@
+{
+    "type": "origins:multiple",
+    "slow_attack": {
+    "type": "origins:attribute",
+    "modifier": {
+        "name": "low attack speed",
+        "attribute": "minecraft:generic.attack_speed",
+        "operation": "multiply_total",
+        "value": -0.3
+        }
+    },
+    "no_riptide": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+            {	
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:trident"
+            }
+        },
+        {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:riptide",
+            "comparison": ">",
+            "compare_to": 0
+                }	
+            ]
+        }
+    },
+    "name": "§c§l§nLong Arms",
+    "description": "Those long arms of yours aren't as agile as you'd want. It makes your attack speed 30% slower and you can't hold on to riptide tridents"
+}

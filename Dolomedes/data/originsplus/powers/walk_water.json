@@ -1,0 +1,21 @@
+{
+  "type": "origins:walk_on_fluid",
+  "fluid": "minecraft:water",
+  "condition": {
+	"type": "origins:and",
+	"conditions": [
+		{
+		 "type": "origins:fluid_height",
+		"fluid": "minecraft:water",
+		"comparison": "<=",
+		"compare_to": 0.4
+		},
+		{
+		"type": "origins:sneaking",
+		"inverted": true
+		}
+		]
+	},
+	"name": "§a§l§nDolomedes Finesse",
+	"description": "Your spider finesse is too glamorous for water. You can walk on water"
+}

@@ -1,0 +1,81 @@
+{
+	"type": "origins:multiple",
+	  "poison": {
+	  "type":"origins:modify_damage_taken",
+	  "modifier":{
+		"value": -1.00,
+		"operation":"multiply_total"
+	  },
+		"damage_condition":{
+		  "type":"origins:and",
+		  "conditions":[
+			{
+			  "type": "origins:name",
+			  "name": "magic"
+			},
+			{
+				"type": "origins:amount",
+				"comparison": "==",
+				"compare_to": 1
+			}
+		  ]
+		}
+	  },
+	  "heal":{
+			  "type": "origins:action_over_time",
+				  "entity_action": {
+			  "type": "origins:heal",
+			  "amount": 1
+						},
+						"condition": {
+							"type": "origins:status_effect",
+					"effect": "minecraft:poison",
+					"min_amplifier": 0
+					  },
+				  "interval": 40
+		  },
+	  "wither": {
+		"type":"origins:modify_damage_taken",
+		"modifier":{
+		  "value": -1.00,
+		  "operation":"multiply_total"
+		},
+		  "damage_condition":{
+			"type":"origins:and",
+			"conditions":[
+			  {
+				"type": "origins:name",
+				"name": "wither"
+			  },
+			  {
+				  "type": "origins:amount",
+				  "comparison": "==",
+				  "compare_to": 1
+			  }
+			]
+		  }
+		},
+		"heal_two":{
+		  "type": "origins:action_over_time",
+			"entity_action": {
+				"type": "origins:heal",
+				"amount": 1
+				},
+				"condition": {
+				  "type": "origins:status_effect",
+					  "effect": "minecraft:wither",
+					  "min_amplifier": 0
+			  },
+			"interval": 40
+		},
+	"immune": {
+	"type":"origins:effect_immunity",
+	"effects":[
+		"minecraft:hunger",
+		"minecraft:nausea",
+		"toomanyorigins:zombifying"
+		]
+	},
+	"name":"§a§l§nDecay Immunity",
+	"description":"You are immune to the Poison, Hunger, Wither, and Zombifying status effects."
+}

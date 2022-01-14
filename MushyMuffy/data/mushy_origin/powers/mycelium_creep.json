@@ -1,0 +1,147 @@
+{
+	"type":"origins:multiple",
+	"vertical_recipe":{
+		"type":"origins:recipe",
+		"recipe": {
+			"id":"mushy_origin:mycelium",
+			"type":"minecraft:crafting_shaped",
+			"pattern": [
+				"dmd",
+				"dmd",
+				"dmd"
+			],
+			"key": {
+				"m": [{
+					"item":"minecraft:red_mushroom"
+				},{
+					"item":"minecraft:brown_mushroom"
+				}],
+				"d": {
+					"item":"minecraft:dirt"
+				}
+			},
+			"result": {
+				"item": "minecraft:mycelium",
+				"count": 6
+			}
+		}
+	},
+	"horizontal_recipe":{
+		"type":"origins:recipe",
+		"recipe": {
+			"id":"mushy_origin:mycelium",
+			"type":"minecraft:crafting_shaped",
+			"pattern": [
+				"ddd",
+				"mmm",
+				"ddd"
+			],
+			"key": {
+				"m": [{
+					"item":"minecraft:red_mushroom"
+				},{
+					"item":"minecraft:brown_mushroom"
+				}],
+				"d": {
+					"item":"minecraft:dirt"
+				}
+			},
+			"result": {
+				"item": "minecraft:mycelium",
+				"count": 6
+			}
+		}
+	},
+	"bright": {
+		"type": "origins:modify_exhaustion",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 1.0
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+			{
+				"type": "origins:exposed_to_sun"
+			},
+			{
+				"type":"origins:on_block",
+				"block_condition": {
+					"type":"origins:block",
+					"block":"minecraft:mycelium",
+					"inverted": true
+					}
+			},
+			{
+				"type":"origins:on_block",
+				"block_condition": {
+					"type":"origins:block",
+					"block":"minecraft:podzol",
+					"inverted": true
+					}
+			},
+			{
+				"type":"origins:on_block",
+				"block_condition": {
+					"type":"origins:block",
+					"block":"minecraft:crimson_nylium",
+					"inverted": true
+					}
+			},
+			{
+				"type":"origins:on_block",
+				"block_condition": {
+					"type":"origins:block",
+					"block":"minecraft:warped_nylium",
+					"inverted": true
+					}
+			}
+			]
+		},
+	"hidden": true
+	},
+	"tasty": {	
+	"type": "origins:action_over_time",
+	"entity_action": {
+			"type": "origins:feed",
+			"food": 1,
+			"saturation": 0.5
+			},
+			"condition": {
+				"type":"origins:or",
+				"conditions":[
+				{
+					"type":"origins:on_block",
+					"block_condition": {
+						"type":"origins:block",
+						"block":"minecraft:mycelium"
+						}
+				},
+				{
+					"type":"origins:on_block",
+					"block_condition": {
+						"type":"origins:block",
+						"block":"minecraft:podzol"
+						}
+				},
+				{
+					"type":"origins:on_block",
+					"block_condition": {
+						"type":"origins:block",
+						"block":"minecraft:crimson_nylium"
+						}
+				},
+				{
+					"type":"origins:on_block",
+					"block_condition": {
+						"type":"origins:block",
+						"block":"minecraft:warped_nylium"
+						}
+				}
+			]
+		},
+			"interval": 60
+	},
+	"name":"§c§l§nMushroom Communism",
+	"description":"Get fed slowly while standing on mycelium, if you arent standing on mycelium when exposed to the sun you lose hunger at an extreme pace."
+}

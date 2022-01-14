@@ -1,0 +1,281 @@
+{
+	"type": "origins:multiple",
+	"is_reset_bar_zero": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "/resource set @s melody:magical_music_bar 0",
+			"permission_level": 4
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:magical_music_reset_bar",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	},
+	"set_noteblock": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:or",
+				"conditions": [
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=banjo]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=basedrum]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=bass]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=bell]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=bit]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=chime]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=cow_bell]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=didgeridoo]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=flute]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=guitar]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=harp]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=hat]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=iron_xylophone]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=pling]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=snare]",
+						"comparison": "==",
+						"compare_to": 1
+					},
+					{
+						"type": "origins:command",
+						"command": "/execute if entity @s[tag=xylophone]",
+						"comparison": "==",
+						"compare_to": 1
+					}
+				],
+				"inverted": true
+			},
+			"if_action": {
+				"type": "origins:execute_command",
+				"command": "/resource set @s melody:magical_music_noteblock 0",
+				"permission_level": 4
+			},
+			"else_action": {
+				"type": "origins:execute_command",
+				"command": "/resource set @s melody:magical_music_noteblock 1",
+				"permission_level": 4
+			}
+		}
+	},
+	"state_levitation": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 2,
+		"duration_per_stack": 15,
+		"effect": {
+			"effect": "minecraft:levitation",
+			"duration": 20,
+			"amplifier": 0,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_first_choice",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"state_glowing": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 2,
+		"duration_per_stack": 15,
+		"effect": {
+			"effect": "minecraft:glowing",
+			"duration": 20,
+			"amplifier": 0,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_first_choice",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"state_slow_falling": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 2,
+		"duration_per_stack": 100,
+		"effect": {
+			"effect": "minecraft:slow_falling",
+			"duration": 20,
+			"amplifier": 0,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_first_choice",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"state_particles": {
+		"type": "origins:action_over_time",
+		"interval": 10,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "/particle minecraft:end_rod ~ ~ ~ 1 1 1 0.1 20 force",
+			"permission_level": 4
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_first_choice",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"state_invulnerability": {
+		"type": "origins:invulnerability",
+		"damage_condition": {
+			"type": "origins:name",
+			"name": "fireworks"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_first_choice",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"hidden": true
+}

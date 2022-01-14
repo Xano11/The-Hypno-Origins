@@ -1,0 +1,33 @@
+{
+        "type": "origins:multiple",
+
+
+"offense": {
+    "type": "origins:particle",
+    "particle": "minecraft:flame",
+    "frequency": 3,
+    "hidden": true,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "karma:karma/toggle"
+        }
+},
+"neutral": {
+    "type": "origins:particle",
+    "particle": "minecraft:mycelium",
+    "frequency": 3,
+    "hidden": true
+},
+"defense": {
+    "type": "origins:particle",
+    "particle": "minecraft:glow",
+    "frequency": 2,
+    "hidden": true,
+    "condition": {
+            "type": "origins:power_active",
+            "power": "karma:karma/toggle",
+            "inverted": true
+    }
+},
+"hidden": true
+}

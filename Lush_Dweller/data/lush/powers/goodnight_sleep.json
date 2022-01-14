@@ -1,0 +1,11 @@
+{
+  "type": "origins:prevent_sleep",
+  "block_condition": {
+    "type": "origins:height",
+    "comparison": ">",
+    "compare_to": 30
+  },
+  "message": "You must be deeper",
+  "name": "§c§l§nHome sweet home",
+  "description": "You can only sleep below y 30 because you are used to the caves."
+}

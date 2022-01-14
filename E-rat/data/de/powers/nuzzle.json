@@ -1,0 +1,72 @@
+{
+    "type": "origins:multiple",
+    "action_upon_hit": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+            "type": "origins:execute_command",
+            "command": "power grant @e[limit=1,sort=nearest] de:paralyzed",
+            "permission_level": 4
+        }
+        },
+        "cooldown": 140,
+        "hud_render": {
+            "should_render": false
+        },
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "de:charge_resource",
+                "comparison": ">=",
+                "compare_to": 10
+            }
+        }
+    },
+
+    "action_upon_hit_part_two": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+                "resource": "de:charge_resource",
+                "change": -10
+            }
+        },
+        "cooldown": 140,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "action_upon_being_hit": {
+        "type": "origins:action_when_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:execute_command",
+                "command": "power grant @e[limit=1,sort=nearest] de:paralyzed",
+                "permission_level": 4
+            }
+        },
+        "cooldown": 340,
+        "hud_render": {
+            "should_render": false
+        },
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "de:charge_resource",
+                "comparison": ">=",
+                "compare_to": 10
+            }
+        }
+    },
+    "name": "§a§l§nNuzzle",
+    "description": "You are charged with static electricity, so making contact with you may cause paralysis"
+}
+
+

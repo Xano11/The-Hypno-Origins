@@ -1,0 +1,1 @@
+execute as @e[distance=15..,type=!player,nbt={NoAI:1b}] at @s unless entity @a[distance=..15,tag=samurai] run data merge entity @s {NoAI:0b}

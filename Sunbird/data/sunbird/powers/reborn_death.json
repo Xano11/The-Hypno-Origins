@@ -1,0 +1,20 @@
+{
+	"type": "origins:action_over_time",
+	"interval": 10,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:change_resource",
+				"resource": "sunbird:reborn_resource",
+				"change": -1
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:health",
+		"comparison": "==",
+		"compare_to": 0
+	},
+	"hidden": true
+}

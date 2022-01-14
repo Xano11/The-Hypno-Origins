@@ -1,0 +1,17 @@
+{
+    "type": "origins:conditioned_attribute",
+        "modifier": {
+        "attribute": "minecraft:generic.armor",
+        "operation": "addition",
+        "value": 5,
+        "name": "def_boost"
+        },
+        "tick_rate": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:wingedcondition",
+            "comparison": "==",
+            "compare_to": 0
+              },
+    "hidden": true
+}

@@ -1,0 +1,114 @@
+{
+    "type":"origins:multiple",
+
+"fire":
+{
+	"type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "power grant @s sunbird:ultimate_effects"
+			},
+            {
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "power grant @s sunbird:landing_fire"
+			},
+            {
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "power grant @s origins:fall_immunity"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "particle minecraft:flame ~ ~ ~ 2 2 2 1 1000"
+			},
+            {
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "particle minecraft:soul_fire_flame ~ ~ ~ 2 2 2 1 1000"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "playsound minecraft:entity.dragon_fireball.explode player @a[distance=..30] ~ ~ ~ 3 0.5"
+			},
+            {
+                "type": "origins:change_resource",
+                "resource": "sunbird:ultimate_resource",
+                "change": -500
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "mainhand",
+                "action": {
+                    "type": "origins:consume",
+                    "amount": 1
+                }
+            }
+		]
+	},
+	"cooldown": 1,
+	"hud_render": {
+		"should_render": false
+	},
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:totem_of_undying"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "sunbird:ultimate_resource",
+                        "comparison": "==",
+                        "compare_to": 500
+                    }
+                ]
+    },
+	"key": {
+		"key": "key.use"
+	}
+},
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 500,
+        "start_value": 0,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 6
+        }  
+},
+"gain_resource": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "sunbird:ultimate_resource",
+        "change": 1
+    },
+    "interval": 5,
+    "condition": {
+        "type": "origins:fluid_height",
+        "fluid": "minecraft:lava",
+        "comparison": ">",
+        "compare_to": 0
+    }
+},
+"hidden": true
+}

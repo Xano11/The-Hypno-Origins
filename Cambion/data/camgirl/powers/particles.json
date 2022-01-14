@@ -1,0 +1,106 @@
+{
+	"type":"origins:multiple",
+	"particles_1":
+	{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "particle minecraft:dust 0 0 0 2 ~ ~ ~ 0.3 0.9 0.3 0 1 normal",
+		"permission_level": 4
+	},
+	"condition": {
+			"type": "origins:resource",
+			"resource": "*:blood_resource",
+			"comparison": ">=",
+			"compare_to": 0
+	},
+	"interval": "20",
+	"hidden": true
+	},
+	"particles_2":
+	{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "particle minecraft:dust 0 0 0 2 ~ ~ ~ 0.3 0.9 0.3 0 1 normal",
+			"permission_level": 4
+		},
+		"condition": {
+				"type": "origins:resource",
+				"resource": "*:blood_resource",
+				"comparison": ">=",
+				"compare_to": 28.6
+		},
+		"interval": "20",
+		"hidden": true
+	},
+	"particles_3":
+	{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "particle minecraft:dust 0 0 0 2 ~ ~ ~ 0.3 0.9 0.3 0 1 normal",
+			"permission_level": 4
+		},
+		"condition": {
+				"type": "origins:resource",
+				"resource": "*:blood_resource",
+				"comparison": ">=",
+				"compare_to": 85.8
+		},
+		"interval": "20",
+		"hidden": true
+	},
+	"particles_4":
+	{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "particle minecraft:dust 0 0 0 2 ~ ~ ~ 0.3 0.9 0.3 0 1 normal",
+			"permission_level": 4
+		},
+		"condition": {
+				"type": "origins:resource",
+				"resource": "*:blood_resource",
+				"comparison": ">=",
+				"compare_to": 85.8
+		},
+		"interval": "20",
+		"hidden": true
+	},	
+	"particles_5":
+	{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "particle minecraft:dust 1 0 0 2 ~ ~ ~ 0.3 0.9 0.3 0 5 normal",
+			"permission_level": 4
+		},
+		"condition": {
+				"type": "origins:resource",
+				"resource": "*:blood_resource",
+				"comparison": ">=",
+				"compare_to": 100
+		},
+		"interval": "10",
+		"hidden": true
+	},
+	"particles_6":
+	{
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "particle minecraft:flame ~ ~ ~ 0.3 0.9 0.3 0 3 normal",
+			"permission_level": 4
+		},
+		"condition": {
+				"type": "origins:resource",
+				"resource": "*:blood_resource",
+				"comparison": "==",
+				"compare_to": 100
+		},
+		"interval": "10"
+	},
+	"hidden": true
+}
+

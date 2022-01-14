@@ -1,0 +1,43 @@
+{
+  "type": "origins:multiple",
+  "1": {
+  	"type": "origins:action_over_time",
+  	"entity_action": {
+    	"type": "origins:and",
+    	"actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale delay set 0"
+        },
+      	{
+      		"type": "origins:execute_command",
+      		"command": "scale set pehkui:height 0.9"
+     		},
+        {
+          "type": "origins:execute_command",
+          "command": "scale set pehkui:width 0.9"
+        }
+    	]
+  	},
+    "interval": 20,
+  	"name": "Eat your §mgreens§rpurples!",
+  	"description": "You forgot to eat your chorus fruits and other purples whilst delving into your studies, and this is why you are 5'9 to this very day."
+  },
+  "2": {
+    "type": "origins:action_on_callback",
+    "entity_action_removed": {
+      "type": "origins:and",
+      "actions": [
+        {
+          "type": "origins:execute_command",
+          "command": "scale reset pehkui:height"
+        },
+        {
+          "type": "origins:execute_command",
+          "command": "scale reset pehkui:width"
+        }
+      ]      
+    }
+  },
+  "hidden": true
+}

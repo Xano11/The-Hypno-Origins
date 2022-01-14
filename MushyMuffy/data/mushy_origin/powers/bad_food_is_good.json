@@ -1,0 +1,29 @@
+{
+	"type": "origins:modify_food",
+	"item_condition": {
+		"type": "origins:ingredient",
+		"ingredient": [
+		{
+			"item":"minecraft:rotten_flesh"
+		},
+		{
+			"item":"minecraft:poisonous_potato"
+		},
+		{
+			"item":"minecraft:spider_eye"
+		}
+		]
+	},
+	"food_modifier": {
+		"operation": "multiply_total",
+		"value": 0.5,
+		"name": "Bonus Hunger"
+	},
+	"saturation_modifier": {
+		"operation": "addition",
+		"value": 0.5,
+		"name": "Bonus Saturation"
+	},
+	"name": "§a§l§nDevour Death",
+	"description": "You can sustain yourself on food that would be otherwise hazardous."
+}

@@ -1,0 +1,19 @@
+{
+	"type": "origins:modify_projectile_damage",
+	"modifier": {
+		"operation": "multiply_total",
+		"value": -1
+	},
+	"condition": {
+		"type": "origins:or",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"comparison": "==",
+				"resource": "shulker:shulk_resource_hiding",
+				"compare_to": 1
+			}
+		]
+	},
+	"hidden": true
+}

@@ -1,0 +1,14 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:fireball",
+		"minecraft:small_fireball",
+		"minecraft:arrow",
+		"minecraft:spectral_arrow",
+		"minecraft:dragon_fireball",
+		"minecraft:wither_skull",
+		"minecraft:llama_spit",
+		"minecraft:shulker_bullet"
+		
+	]
+}

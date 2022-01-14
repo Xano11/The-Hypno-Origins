@@ -1,0 +1,13 @@
+{
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:fire"
+        },
+        "modifier": {
+            "name": "weak to fire",
+            "operation": "multiply_base",
+            "value": 2
+    },
+    "name":"§c§l§nInsect",
+    "description":"As most insects are, you are also weak to fire."
+}

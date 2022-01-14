@@ -1,0 +1,10 @@
+{
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "wereboar:resource",
+        "change": -20
+    },
+    "hidden": true
+}

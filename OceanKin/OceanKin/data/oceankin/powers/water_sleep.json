@@ -1,0 +1,13 @@
+{
+	"type": "origins:prevent_sleep",
+	"message": "You aren't in the water!",
+	"condition": {
+		"type": "origins:submerged_in",
+		"fluid": "minecraft:water",
+		"inverted": true
+	},
+
+	"name": "§e§l§nSea Bed",
+	"description": "You can only sleep underwater."
+
+}

@@ -1,0 +1,1 @@
+item replace entity @e[tag=stolen,limit=1,sort=nearest] weapon.mainhand with air

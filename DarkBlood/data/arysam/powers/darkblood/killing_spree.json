@@ -1,0 +1,77 @@
+{
+	"type": "origins:multiple",
+	"name": "Killer Instinsct",
+    "description": "Killing a mob sets you off into a start of a killing spree, your health increases back to 10 hearts, and you gain temporary buffs.",
+	"killing_spree": {
+		"type": "origins:self_action_on_kill",
+		"cooldown": 300,
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effects": [{
+				"effect": "minecraft:regeneration",
+				"duration": 100,
+				"amplifier": 1
+			},
+			{
+				"effect": "minecraft:speed",
+				"duration": 150,
+				"amplifier": 2
+			},
+			{
+				"effect": "minecraft:strength",
+				"duration": 200,
+				"amplifier": 0
+			}]
+		}
+	},
+
+    "combat_timer_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 30,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+	"combat_timer_resource_drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:darkblood/killing_spree_combat_timer_resource",
+            "change": -1
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:darkblood/killing_spree_combat_timer_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "combat": {
+        "type": "origins:self_action_on_kill",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:darkblood/killing_spree_combat_timer_resource",
+            "change": 30
+        },
+        "cooldown": 20
+    },
+    "health_bad": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": -10,
+            "name": "health decrease"
+        },
+        "tick_rate": 5,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:darkblood/killing_spree_combat_timer_resource",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    }
+}

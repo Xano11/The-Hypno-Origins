@@ -1,0 +1,20 @@
+{
+	"powers": [
+		"masquerader:golem/smash",
+		"masquerader:agile",
+		"masquerader:golem/rock_skin",
+		"masquerader:golem/bulky",
+		"masquerader:nohelmet",
+		"masquerader:golem/dense",
+		"masquerader:notweapons",
+		"masquerader:weaksoul",
+		"masquerader:golem/golemmask",
+		"masquerader:untransform"
+	],
+	"icon": "minecraft:gray_stained_glass",
+	"order": 10,
+	"impact": 3,
+	"name": "Rock Golem",
+	"description": "A Masquerader that has harnessed the power of the earth itself and take the form of a golem to provide strength and resistance",
+	"unchoosable": true
+}

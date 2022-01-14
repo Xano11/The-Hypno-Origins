@@ -1,0 +1,875 @@
+{
+    "type": "origins:active_self",
+    "name": "§a§l§nWool Harvest",
+    "description": "Press the Primary Key while holding shears to remove your Wool Coat and obtain 1-3 Wool! It starts as white, but pressing the Primary Key while holding any Dye will change the color you produce!",
+    "condition": {
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "comparison": ">",
+                "resource": "woolorigin:woolresource",
+                "compare_to": 0,
+                "inverted": false
+            },
+            {
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:shears"
+                            }
+                        },
+                        "inverted": false
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:shears"
+                            }
+                        },
+                        "inverted": false
+                    }
+                ],
+                "type": "origins:or",
+                "inverted": false
+            }
+        ],
+        "type": "origins:and",
+        "inverted": false
+    },
+    "entity_action": {
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "woolorigin:woolresource",
+                "change": -1
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onwhite",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:white_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:white_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:white_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onorange",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:orange_wool 1"
+                            },
+                            "weight": 10
+                        },
+                        {
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:orange_wool 2"
+                            },
+                            "weight": 10
+                        },
+                        {
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:orange_wool 3"
+                            },
+                            "weight": 10
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onmagenta",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:magenta_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:magenta_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:magenta_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onlightblue",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:light_blue_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:light_blue_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:light_blue_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onyellow",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:yellow_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:yellow_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:yellow_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onlime",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:lime_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:lime_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:lime_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onpink",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:pink_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:pink_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:pink_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:ongray",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:gray_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:gray_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:gray_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onlightgray",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:light_gray_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:light_gray_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:light_gray_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:oncyan",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:cyan_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:cyan_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:cyan_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onpurple",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:purple_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:purple_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:purple_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onblue",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:blue_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:blue_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:blue_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onbrown",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:brown_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:brown_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:brown_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:ongreen",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:green_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:green_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:green_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onred",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:red_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:red_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:red_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "conditions": [
+                        {
+                            "type": "origins:resource",
+                            "comparison": ">",
+                            "resource": "woolorigin:onblack",
+                            "compare_to": 0,
+                            "inverted": false
+                        }
+                    ],
+                    "type": "origins:and",
+                    "inverted": false
+                },
+                "if_action": {
+                    "actions": [
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:black_wool 1"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:black_wool 2"
+                            }
+                        },
+                        {
+                            "weight": 10,
+                            "element": {
+                                "type": "origins:execute_command",
+                                "permission_level": 4,
+                                "command": "give @s minecraft:black_wool 3"
+                            }
+                        }
+                    ],
+                    "type": "origins:choice"
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "playsound minecraft:entity.sheep.shear neutral @s ~ ~ ~ 100"
+            },
+            {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorblack",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorblue",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorbrown",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorcyan",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorgray",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorgreen",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorlightblue",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorlightgray",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorlime",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolormagenta",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolororange",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorpink",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorpurple",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorred",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcolorwhite",
+                        "change": -1
+                    },
+                    {
+                        "type": "origins:change_resource",
+                        "resource": "woolorigin:hudcoloryellow",
+                        "change": -1
+                    }
+                ]
+            }
+        ],
+        "type": "origins:and"
+    },
+    "hud_render": {
+        "should_render": false,
+        "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+    "hidden": false,
+    "cooldown": 1,
+    "key": "primary"
+}

@@ -1,0 +1,24 @@
+{
+	"type": "origins:action_over_time",
+	"interval": 6000,
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:change_resource",
+				"resource": "sunbird:reborn_resource",
+				"change": -1
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "particle minecraft:happy_villager ~ ~1 ~ 0.375 0.375 0.375 1 5000 normal"
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:exposed_to_sun"
+	},
+	"name": "§a§l§nRejuvenation",
+	"description": "You are able to grow using the energy of the sun, although this take a long time to happen. The process can be sped up by taking a nap."
+}

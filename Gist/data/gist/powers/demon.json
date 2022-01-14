@@ -1,0 +1,524 @@
+{
+    "name": "§a§l§nExorcism",
+    "description": "Unleash your Gist and channel your will through the mortal coil to control the spirit, forcing it to do as you wish. Activating this ability while your Gist is loose will force the spirit back towards your body, trapping it once again. This happens automatically if the Gist ventures too far. Manually re-entering your mortal body will also end the exorcism.",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/active.png",
+            "text": "Activate excorcism, bound to [primary]"
+        }
+    ],
+    "type": "origins:multiple",
+    "activate": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": false
+        },
+        "cooldown": 5,
+        "hud_render": {
+            "should_render": false
+        },
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_resource",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_cooldown",
+                                "comparison": "==",
+                                "compare_to": 0
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:*_form_resource",
+                                "comparison": ">=",
+                                "compare_to": 1
+                            },
+                            {
+                                "type": "origins:resource",
+                                "resource": "*:exhaustion_resource",
+                                "comparison": "==",
+                                "compare_to": 0
+                            }
+                        ]
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_resource",
+                                "change": 1,
+                                "operation": "set"
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_timer_resource",
+                                "change": 0,
+                                "operation": "set"
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "function gist:demon/start"
+                            },
+                            {
+                                "type": "origins:apply_effect",
+                                "effects": [
+                                    {
+                                        "effect": "minecraft:slowness",
+                                        "duration": 10,
+                                        "amplifier": 9,
+                                        "show_icon": false,
+                                        "show_particles": false
+                                    },
+                                    {
+                                        "effect": "minecraft:blindness",
+                                        "duration": 20,
+                                        "amplifier": 9,
+                                        "show_icon": false,
+                                        "show_particles": false
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "origins:if_else",
+                                "condition": {
+                                    "type": "origins:resource",
+                                    "resource": "*:*_form_resource",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                },
+                                "if_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "tag @s add def.gist.red"
+                                        },
+                                        {
+                                            "type": "origins:grant_power",
+                                            "power": "*:*/buffs_red",
+                                            "source": "*:*"
+                                        }
+                                    ]
+                                },
+                                "else_action": {
+                                    "type": "origins:and",
+                                    "actions": [
+                                        {
+                                            "type": "origins:execute_command",
+                                            "command": "tag @s add def.gist.blue"
+                                        },
+                                        {
+                                            "type": "origins:grant_power",
+                                            "power": "*:*/buffs_blue",
+                                            "source": "*:*"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "function gist:demon/deactivate"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:exhaustion_resource",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "title @s actionbar {\"text\":\"You are too exhausted to summon your gist...\",\"color\":\"red\",\"italic\":true}"
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:*_form_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:execute_command",
+                        "command": "title @s actionbar {\"text\":\"You do not possess a gist to summon...\",\"color\":\"red\",\"italic\":true}"
+                    }
+                }
+            ]
+        }
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": "300",
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 7
+        }
+    },
+    "swimming": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:status_effect",
+                    "effect": "minecraft:slowness",
+                    "min_amplfiier": 9,
+                    "max_amplfiier": 9,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_swimming_toggle"
+                }
+            ]
+        }
+    },
+    "swimming_toggle": {
+        "type": "origins:toggle",
+        "active_by_default": true,
+        "key": "key.origins.secondary_active"
+    },
+    "levitation": {
+        "type": "origins:stacking_status_effect",
+        "duration_per_stack": 11,
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "effect": {
+            "effect": "levitation",
+            "amplifier": 255,
+            "show_particles": false,
+            "show_icon": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:power_active",
+                    "power": "*:*_swimming_toggle"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "toggle_display": {
+        "type": "origins:active_self",
+        "key": "key.origins.secondary_active",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:power_active",
+                "power": "*:*_swimming_toggle"
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar [{\"text\":\"Gist\",\"color\":\"dark_red\"},{\"text\":\" form levitation: [\",\"color\":\"aqua\"},{\"text\":\"Enabled\",\"color\":\"green\"},{\"text\":\"]\",\"color\":\"aqua\"}]"
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar [{\"text\":\"Gist\",\"color\":\"dark_red\"},{\"text\":\" form levitation: [\",\"color\":\"aqua\"},{\"text\":\"Disabled\",\"color\":\"red\"},{\"text\":\"]\",\"color\":\"aqua\"}]"
+            }
+        },
+        "cooldown": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "phasing": {
+        "type": "origins:phasing",
+        "blacklist": true,
+        "render_type": "blindness",
+        "view_distance": 3,
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "origins:unphasable"
+        },
+        "phase_down_condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:swimming"
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "modify_damage": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "callback": {
+        "type": "origins:action_on_callback",
+        "entity_action_lost": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function gist:demon/quit"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove def.gist.gist"
+                }
+            ]
+        },
+        "entity_action_added": {
+            "type": "origins:execute_command",
+            "command": "tag @s add def.gist.gist"
+        },
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:hatred_resource",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:demon_form_resource",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:exhaustion_resource",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar {\"text\":\"Your mortal coil has shattered!\",\"color\":\"red\",\"bold\":true}"
+                }
+            ]
+        }
+    },
+    "gist_death": {
+        "type": "origins:prevent_death",
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function gist:demon/death"
+        }
+    },
+    "overlay_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "form_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "glow_red": {
+        "type": "origins:entity_glow",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:distance",
+                    "comparison": "<=",
+                    "compare_to": 25
+                },
+                {
+                    "type": "origins:can_see"
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:entity_type",
+                        "entity_type": "minecraft:armor_stand",
+                        "inverted": true
+                    }
+                }
+            ]
+        },
+        "use_teams": false,
+        "red": 1,
+        "blue": 0.2,
+        "green": 0.2
+    },
+    "model_color_red": {
+        "type": "origins:model_color",
+        "alpha": 0.7,
+        "red": 1,
+        "green": 0.7,
+        "blue": 0.7,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "glow_blue": {
+        "type": "origins:entity_glow",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_form_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        },
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:distance",
+                    "comparison": "<=",
+                    "compare_to": 25
+                },
+                {
+                    "type": "origins:can_see"
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:entity_type",
+                        "entity_type": "minecraft:armor_stand",
+                        "inverted": true
+                    }
+                }
+            ]
+        },
+        "use_teams": false,
+        "red": 0.2,
+        "blue": 1,
+        "green": 0.7
+    },
+    "model_color_blue": {
+        "type": "origins:model_color",
+        "alpha": 0.7,
+        "red": 0.3,
+        "green": 0.6,
+        "blue": 0.9,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_form_resource",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        }
+    }
+}

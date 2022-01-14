@@ -1,0 +1,26 @@
+{
+	"powers": [
+		"aerodroid:cavity",
+		"aerodroid:cavity2",
+		"aerodroid:energy",
+		"aerodroid:plating",
+		"origins:elytra",
+		"origins:aerial_combatant",
+		"origins:fall_immunity",
+		"aerodroid:buffimmune",
+		"aerodroid:buffimmune2",
+		"aerodroid:food2",
+		"aerodroid:food3",
+		"aerodroid:food4",
+		"aerodroid:food5",
+		"aerodroid:flydamage",
+		"aerodroid:claustrophobia",
+		"origins:no_shield",
+		"aerodroid:discharge"
+	],
+	"icon": "minecraft:redstone",
+	"order": 21,
+	"impact": 3,
+	"name": "Aerodroid",
+	"description": "The Aerodroid Mecha-4 is a type of android with birdlike features. They're extremely advanced, yet nobody knows where they came from, not even themselves."
+}

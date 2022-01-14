@@ -1,0 +1,29 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [{
+				"type": "origins:execute_command",
+				"command": "particle minecraft:dust .6 0 1 2 ~ ~1 ~ .500 .500 .500 0 2"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "particle minecraft:dust .7 0 .8 2 ~ ~1 ~ .500 .500 .500 0 2"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "particle minecraft:dust .2 0.3 1 2 ~ ~1 ~ .500 .500 .500 0 2"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "particle minecraft:dust .4 0 .8 2 ~ ~1 ~ .500 .500 .500 0 2"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "particle minecraft:dust .3 0 .8 2 ~ ~1 ~ .500 .500 .500 0 2"
+			}
+		]
+	},
+	"interval": 20,
+	"hidden": true
+}

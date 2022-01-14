@@ -1,0 +1,8 @@
+{
+    "type": "origins:modify_player_spawn",
+    "name": "§e§l§nNeed for souls",
+    "description": "You spawn in a soul sand valley",
+    "hidden": false,
+    "dimension": "minecraft:the_nether",
+	"biome": "minecraft:soul_sand_valley"
+}

@@ -1,0 +1,11 @@
+{
+  "type": "origins:inventory",
+  "title": "Shell Storage",
+  "drop_on_death": false,
+  "key": {
+    "key": "key.saveToolbarActivator",
+    "continuous": false
+  },
+  "name": "§a§l§nShell Storage",
+	"description": "3x3 inventory that doesn't drop on death"
+}

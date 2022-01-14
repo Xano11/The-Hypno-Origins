@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.75
+    },
+    "name": "§c§l§nPoor Swimmer",
+    "description": "You are a very bad swimmer."
+}

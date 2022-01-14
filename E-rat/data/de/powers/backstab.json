@@ -1,0 +1,107 @@
+{
+    "type": "origins:multiple",
+    "cooldown": {
+        "type": "origins:cooldown",
+        "cooldown": 400,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 9
+        }
+    },
+    "inflict": {
+        "type": "origins:modify_damage_dealt",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.5
+        },
+        "target_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "tag @s add backstab.potential_target",
+                    "comparison": ">=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:command",
+                    "command": "execute anchored eyes as @a[tag = backstab.initiator, distance = ..5] facing entity @s eyes anchored feet positioned ^ ^ ^1 rotated as @e[tag = backstab.potential_target, limit = 1] rotated ~180 ~ positioned ^ ^ ^-1 if entity @e[tag = backstab.potential_target, distance = ..0.8]",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        },
+        "self_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove backstab.initiator"
+                },
+                {
+                    "type": "origins:trigger_cooldown",
+                    "power": "*:*_cooldown"
+                }
+            ]
+        },
+        "target_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove backstab.potential_target"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:block.nether_wart.break master @a ~ ~ ~ 1 0"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:item.shield.break master @a ~ ~ ~ 0.25 2"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:command",
+                    "command": "tag @s add backstab.initiator",
+                    "comparison": ">=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:*_cooldown",
+                    "comparison": ">=",
+                    "compare_to": 1,
+                    "inverted": true
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "tag": "fabric:swords"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "failsafe": {
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove backstab.initiator"
+        },
+        "cooldown": 2,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "name": "§a§l§nBack Stab",
+    "description": "Due to your short size you can get better angles on people, dealing more damage when behind them"
+}

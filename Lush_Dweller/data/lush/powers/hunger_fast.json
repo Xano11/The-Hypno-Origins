@@ -1,0 +1,23 @@
+{
+	"type": "origins:multiple",
+	"name": "§c§l§nBurning Metabolism",
+	"description": "Your hunger drains 125% faster and you get 50% less food from all food.",
+	"hunger": {
+		"type": "origins:modify_exhaustion",
+		"modifier": {
+			"value": 1.25,
+			"operation": "multiply_total"
+		}
+	},
+	"food": {
+		"type": "origins:modify_food",
+		"food_modifier": {
+			"operation": "multiply_base",
+			"value": -0.50
+		},
+		"saturation_modifier": {
+			"operation": "multiply_base",
+			"value": -0.50
+		}
+	}
+}

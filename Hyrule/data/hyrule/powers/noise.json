@@ -1,0 +1,13 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:play_sound",
+        "sound": "minecraft:entity.elder_guardian.flop"
+      },
+    "cooldown": 1,
+    "key": "key.sneak",
+    "hud_render": {
+        "should_render": false
+    },
+    "hidden": true
+}

@@ -1,0 +1,12 @@
+{
+    "hidden": false,
+    "type": "origins:action_on_callback",
+    "name": "§a§l§nAgile",
+    "description": "Being small makes you faster than normal.",
+    "execute_chosen_when_orb": true,
+     "entity_action_respawned": {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "scale set pehkui:motion 1.20 @s"
+    }
+}

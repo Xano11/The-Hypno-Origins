@@ -1,0 +1,6 @@
+{
+    "type": "origins:simple",
+    "name": "§a§l§nMagic Milk",
+    "description": "Drinking a potion taints your Milk, making it have weak versions of that potion's effects. Drinking Water resets this.",
+    "hidden": false
+}

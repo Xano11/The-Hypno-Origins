@@ -1,0 +1,23 @@
+{
+	"powers": [
+		"living_armor:soul_bound",
+		"living_armor:armor_powers",
+		"living_armor:no_exhaustion",
+		"living_armor:campfire_spawn",
+		"living_armor:more_magic_damage",
+		"living_armor:fragile",
+		"living_armor:starting_armor",
+		"living_armor:translucent",
+		"living_armor:credits",
+		"living_armor:soul_hit",
+		"living_armor:resource1",
+		"living_armor:immunity",
+		"living_armor:no_swim",
+		"living_armor:rage_resource"
+	],
+	"icon": "minecraft:netherite_helmet",
+	"order": 10, 
+	"impact": 2,
+	"name": "Living Armor",
+	"description": "Lost souls that used the last of their strength to cling to a set of armor."
+}

@@ -1,0 +1,9 @@
+{
+	"type": "origins:modify_damage_dealt",
+	"modifier": {
+		"operation": "addition",
+		"value": -4
+	},
+	"name": "§c§l§nWeak paws",
+	"description": "Your little rabbit paws are not meant for mass genocide."
+}

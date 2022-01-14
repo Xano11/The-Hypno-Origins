@@ -1,0 +1,65 @@
+{
+	"name": "§e§l§nAirborne Adaptation",
+	"description": "Your mining speed is excruciatingly slow on land, but normal in the air. When sleeping, your bed needs to be at an altitude of at least 100 blocks.",
+	
+	"type": "origins:multiple",
+	
+	"sleep_100": {
+		"type": "origins:prevent_sleep",
+		"block_condition": {
+			"type": "origins:height",
+			"comparison": "<=",
+			"compare_to": 100
+		},
+		"message": "The bed needs to be at y=100 minimum."
+	},
+	
+	"increase_attack_range": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "reach-entity-attributes:attack_range",
+			"operation": "addition",
+			"value": 2
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"inverted": true
+		}
+	},
+	
+	"increase_reach": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "reach-entity-attributes:reach",
+			"operation": "addition",
+			"value": 1
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"inverted": true
+		}
+	},
+	
+	"mining_speed_in_air": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 4
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"inverted": true
+		}
+	},
+	
+	"mining_speed_on_ground": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "addition",
+			"value": -0.5
+		},
+		"condition": {
+			"type": "origins:on_block"
+		}
+	}
+}

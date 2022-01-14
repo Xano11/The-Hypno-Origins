@@ -1,0 +1,25 @@
+{
+	"type": "origins:action_on_callback",
+	"entity_action_chosen": {
+		"type": "origins:and",
+	"actions": [{"type": "origins:execute_command",
+		"command": "scale set pehkui:height 1.25 @s"},
+		{"type": "origins:execute_command",
+		"command": "scale set pehkui:width 1.25 @s"}]},
+	"entity_action_respawned": {
+		"type": "origins:and",
+	"actions": [{"type": "origins:execute_command",
+		"command": "scale set pehkui:height 1.25 @s"},
+		{"type": "origins:execute_command",
+		"command": "scale set pehkui:width 1.25 @s"}]},
+	"entity_action_lost": {
+		"type": "origins:execute_command",
+		"command": "scale set 1 @s"
+	},
+	"entity_action_removed": {
+		"type": "origins:execute_command",
+		"command": "scale set 1 @s"
+	},
+	"name": "§e§l§nBig-Size",
+	"description": "A problem occurred during your creation and you ended up an additional meter tall."
+}

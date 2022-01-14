@@ -1,0 +1,29 @@
+{
+	"type": "origins:active_self",
+	"name": "§a§l§nLunge",
+	"description": "Press your primary key to dash through the water.(Riptide effect)",
+	    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+        {
+            "type": "origins:add_velocity",
+            "z": 6.5,
+            "space": "local",
+            "set": true
+        }
+      ]
+    },
+
+       "hud_render": {
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+		"bar_index": 12,
+		"should_render": true
+	},
+
+	"cooldown": 400,
+
+	"key": {
+		"key": "key.origins.primary_active",
+		"continuous": false
+	}
+}

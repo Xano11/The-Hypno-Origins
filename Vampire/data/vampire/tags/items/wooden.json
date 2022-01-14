@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+      "medievalweapons:wooden_dagger",
+      "medievalweapons:wooden_long_sword",
+      "medievalweapons:wooden_lance",
+      "medievalweapons:wooden_javelin",
+      "minecraft:wooden_sword"
+    ]
+  }

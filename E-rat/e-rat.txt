@@ -1,0 +1,20 @@
+Electric Rat (Based of the Pokémon Dedenne)
+---------------------------------------------------------------------
+A creature that uses its tail to absorb electricity from power plants or from outlets in houses, and then it fires the electricity from its whiskers.
+
+🟢 Nuzzle -  You are charged with static electricity, so making contact with you may cause paralysis. de:nuzzle
+🟢 Parabolic Charge (Primary) - shoots a beam of electricity that does 18 damage and restores the user's HP equal to a quarter of the damage dealt (4 HP) also requires and consumes 25% of your charge upon use. de:pc
+🟢 Jockey (Secondary) - You can mount other players, But they may have trouble interacting with stuff while your on their head! extraorigins:jockey
+🟢 Thunder (LoadToolBar) - does 15 damage to every entity within a 8 block radius also paralyzing them at the cost of 10% of charge to attempt and a 80% of working but in thunderstorms it’s 100%. de:thunder
+🟢 Electroweb (SaveToolBar) - The user attacks and captures opposing entity using an electric net. This paralyzes the opposing entity, this can also be used on a block to become a grappling hook de:web
+🟢 Rest (OutlinePlayers) - Go to sleep becoming immobile, blind and taking more damage but regen your health very quickly
+🟢 Small Perks - Due to your short size you can get better angles on people, dealing more damage when behind them! de:backstab
+🟢 Charged - when struck by lightning it will fully charge you making you shake also giving you buffed damage and speed for 2 minutes. de:charged
+🟡 Charge - Charge is required to use all your abilities. All types of copper give you charge, so do thunderstorms but watch out for those pesky lightning rods and water because they will drain your charge faster than you possibly could gain it. de:charge
+🟡 Rat Body - Your short and don't take fall damage but upon falling more than 5 blocks, you get the equivalent of slowness 3 for 10 seconds. de:body
+🟡 Creamy - When taking damage you have a chance to produce different creams, some of the cream seems pretty healthy for snakes... wonder what's that's for! de:body
+🔴 Weak - Due to you being small and fragile you have 8 hearts and take and deal 20% more damage from everything de:weak
+🔴 Type Weakness - You take more damage from poison and falling stalactites due to your weaknesses to those elements de:type
+🔴 Short Arms - Those short arms can't reach as far as you'd want. It makes your reach -1 and you can't pull back bows also you can't hold on to channelling tridents because discharge on touch with your skin de:shortarms
+🔴 Berry Pouch - Your used to eating berries and apples so they are all you can eat, You have a 3x3 inventory that you can only put berries and apples in, you also exhaust 3x faster. de:food
+🔴 Rodent Instincts - Every time you are hit for 4 or more damage, there is a 15% chance that you will get weakness 3, blindness and speed 3 for 5 seconds. de:instincts

@@ -1,0 +1,80 @@
+{
+  "type": "origins:multiple",
+  "cold_speed": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_total",
+        "value": 0.4,
+        "name": "Increased speed whilst in cold areas"
+    },
+    "tick_rate": 5,
+    "condition": {
+      "type": "origins:biome",
+      "condition": {
+          "type": "origins:temperature",
+          "comparison": "<=",
+          "compare_to": 0
+        }
+    }
+  },
+
+  "cold_strong": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 3,
+        "name": "Increased attack damage whilst in cold areas"
+    },
+    "tick_rate": 5,
+    "condition": {
+      "type": "origins:biome",
+      "condition": {
+          "type": "origins:temperature",
+          "comparison": "<=",
+          "compare_to": 0
+        }
+    }
+  },
+
+  "warm_slow": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_total",
+        "value": -0.4,
+        "name": "decreased speed whilst in warm areas"
+    },
+    "tick_rate": 5,
+    "condition": {
+      "type": "origins:biome",
+      "condition": {
+          "type": "origins:temperature",
+          "comparison": ">=",
+          "compare_to": 2
+        }
+    }
+  },
+
+  "warm_weak": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": -4,
+        "name": "decreased attack damage whilst in warm areas"
+    },
+    "tick_rate": 5,
+    "condition": {
+      "type": "origins:biome",
+      "condition": {
+          "type": "origins:temperature",
+          "comparison": ">=",
+          "compare_to": 2
+        }
+    }
+  },
+  "name": "§e§l§nAdapted To The Chills",
+  "description": "In cold biomes you gain the equivalent of strength 1 and speed 2, in warm biomes its weakness 1 and slowness 2"
+}

@@ -1,0 +1,11 @@
+{
+    "replace": false,
+    "values": [
+      "medievalweapons:wooden_mace",
+      "medievalweapons:stone_mace",
+      "medievalweapons:golden_mace",
+      "medievalweapons:iron_mace",
+      "medievalweapons:diamond_mace",
+      "medievalweapons:netherite_mace"
+    ]
+  }

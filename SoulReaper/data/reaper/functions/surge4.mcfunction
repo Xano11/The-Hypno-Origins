@@ -1,0 +1,1 @@
+scoreboard players set @e[scores={healthadd=1..}] healthadd 0

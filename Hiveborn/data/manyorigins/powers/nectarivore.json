@@ -1,0 +1,36 @@
+{
+	"type": "origins:multiple",
+	"honey_only": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:honey_bottle"
+					},
+					"inverted": true
+				},
+				{
+					"type": "origins:food"
+				}
+			]
+		}
+	},
+	"more_saturation": {
+		"type": "origins:modify_food",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item": "minecraft:honey_bottle"
+			}
+		},
+		"saturation_modifier": {
+			"operation": "multiply_base",
+			"value": 5
+		}
+	},
+	"name": "§e§l§nNectarivore",
+	"description": "You can only eat honey, but are more sated by it."
+}

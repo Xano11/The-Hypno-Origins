@@ -1,0 +1,298 @@
+{
+    "type":"origins:multiple",
+
+    "fire": {
+    "type": "origins:burn",
+    "interval": 20,
+    "burn_duration": 1,
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:and",
+                "inverted": false,
+                "conditions": [
+                    
+            {
+                "type": "origins:resource",
+                "resource": "blazeborn_changes:fire_resource",
+                "comparison": ">",
+                "compare_to": 0
+            },
+            {
+                "type":"origins:power_active",
+                "power":"blazeborn_changes:fire_toggle",
+                "inverted": false
+            }
+    ]
+    }
+    ]
+    }
+    },
+"cost":
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "blazeborn_changes:fire_resource",
+        "change": -1
+    },
+    "interval": 4,
+    "condition": {
+        "type":"origins:power_active",
+        "power":"blazeborn_changes:fire_toggle",
+        "inverted": false
+    }
+},
+"refill1":
+{
+    
+    "type": "origins:active_self",
+    "cooldown": 30,
+    "key": {
+            "key": "key.use",
+            "continuous": false
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "blazeborn_changes:fire_resource",
+                "change": 10
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "playsound minecraft:block.furnace.fire_crackle player @a[distance=..15] ~ ~ ~ 1 1"
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "inverted": false,
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "inverted": false,
+                        "ingredient": {
+                            "tag": "blazeborn_changes:fuel"
+                        }
+                    }
+                },
+                "if_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                "else_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                }
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "tag": "blazeborn_changes:fuel"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "tag": "blazeborn_changes:fuel"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:sneaking",
+                        "inverted": false
+                    }
+                ]
+            },
+            {
+                "type": "origins:resource",
+                "resource": "blazeborn_changes:fire_resource",
+                "comparison": "<",
+                "compare_to": 100
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+	    "bar_index": 1,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png"
+    }
+},
+"refill2":
+{
+    
+    
+    "type": "origins:active_self",
+    "cooldown": 30,
+    "key": {
+            "key": "key.use",
+            "continuous": false
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "resource": "blazeborn_changes:fire_resource",
+                "change": 50
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "playsound minecraft:block.furnace.fire_crackle player @a[distance=..15] ~ ~ ~ 1 1"
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "inverted": false,
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "inverted": false,
+                        "ingredient": {
+                            "tag": "blazeborn_changes:fuel2"
+                        }
+                    }
+                },
+                "if_action": {
+                        "type": "origins:execute_command",
+                        "command": "item replace entity @s weapon.mainhand with minecraft:bucket",
+                        "permission_level": 4
+                },
+                "else_action": {
+                        "type": "origins:execute_command",
+                        "command": "item replace entity @s weapon.offhand with minecraft:bucket",
+                        "permission_level": 4
+                }
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "tag": "blazeborn_changes:fuel2"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "tag": "blazeborn_changes:fuel2"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:resource",
+                "resource": "blazeborn_changes:fire_resource",
+                "comparison": "<",
+                "compare_to": 100
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+	    "bar_index": 1,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png"
+    }
+},
+"drain1":{
+
+    "type": "origins:action_over_time",
+    "entity_action": {
+    "type": "origins:change_resource",
+    "resource": "blazeborn_changes:fire_resource",
+    "change": -1
+    },
+    "interval": 4,
+    "condition": {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water",
+        "inverted": false
+    }
+    },
+    "drain2":{
+
+        "type": "origins:action_over_time",
+        "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "blazeborn_changes:fire_resource",
+        "change": -1
+        },
+        "interval": 50,
+        "condition": {
+            "type": "origins:in_rain"
+        }
+    },
+    "absorb":{
+
+        "type": "origins:action_over_time",
+        "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "blazeborn_changes:fire_resource",
+        "change": 1
+        },
+        "interval": 5,
+        "condition": {
+            "type": "origins:submerged_in",
+            "fluid": "minecraft:lava",
+            "inverted": false
+        }
+    },
+    "name": "§a§l§nIgneous Form",
+    "description": "With the primary power key, you can set yourself on fire. This costs fuel which can be refilled by eating fuel sources (Coal, lava buckets, etc) or standing in lava."
+}

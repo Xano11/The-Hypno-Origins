@@ -1,0 +1,74 @@
+{
+	"type": "origins:self_action_on_hit",
+	"entity_action": {
+    "type":"origins:and",
+    "actions":[
+        {
+            "type": "origins:delay",
+            "ticks": 1,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function raccoon:steal",
+                        "permission_level": 4
+                    }
+                ]
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 2,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "function raccoon:steal2",
+                        "permission_level": 4
+                    }
+                ]
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 3,
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "effect give @p[tag=raccoon] minecraft:glowing 7 0",
+                        "permission_level": 4
+                    }
+                ]
+            }
+        }
+    ]
+  },
+  "condition": {
+    "type": "origins:and",
+    "inverted": false,
+    "conditions": [
+        {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                     "type": "origins:ingredient",
+                     "ingredient": {
+                     "item": "minecraft:air"
+                                 }
+                            }
+        }
+    ]   
+},
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+		"bar_index": 1
+	},
+	"cooldown": 24000,
+	"name": "§a§l§nSnatch",
+	"description": "You snatch the item equipped in the mainhand of the entity that you attacked. (Higher chance to work whilst invisible)."
+}

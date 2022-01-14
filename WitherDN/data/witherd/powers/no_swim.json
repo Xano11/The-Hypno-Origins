@@ -1,0 +1,35 @@
+{
+	"type": "origins:multiple",
+	"sinking": {
+		"type": "origins:ignore_water"
+	},
+	"waterslow": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_total",
+			"value": -0.75
+		},
+		"condition": {
+			"type": "origins:fluid_height",
+			"fluid": "minecraft:water",
+			"comparison": ">=",
+			"compare_to": 0.3
+		}
+	},
+	"airtime":{
+		"type": "origins:modify_air_speed",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -0.85
+		},
+		"condition": {
+			"type": "origins:fluid_height",
+			"fluid": "minecraft:water",
+			"comparison": ">=",
+			"compare_to": 0.3
+		}
+	},
+	"name": "§c§l§nHollow inside",
+    "description": "You sink in water."
+}

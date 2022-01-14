@@ -1,0 +1,48 @@
+{
+    "type": "origins:active_self",
+    "hidden": false,
+    "cooldown": 100,
+    "condition": {
+        "type": "origins:or",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:equipped_item",
+                "inverted": false,
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "inverted": false,
+                    "ingredient": {
+                        "item": "minecraft:nether_star"
+                    }
+                }
+            },
+            {
+                "type": "origins:equipped_item",
+                "inverted": false,
+                "equipment_slot": "offhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "inverted": false,
+                    "ingredient": {
+                        "item": "minecraft:nether_star"
+                    }
+                }
+            }
+        ]
+    },
+    "key": "secondary",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "execute as @s run function voidtraveller:craftvoid"
+    },
+    "name": "§e§l§nCraft of the void",
+    "description": "Craft a void star using a nether star.",
+    "hud_render": {
+        "should_render": false,
+        "sprite_location": "origins:textures/gui/resource_bar.png",
+        "bar_index": 10
+    }
+}

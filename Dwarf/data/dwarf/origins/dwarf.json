@@ -1,0 +1,31 @@
+{
+    "powers": [
+        "dwarf:speed",
+        "dwarf:anti_bow",
+        "dwarf:extra_reach",
+        "dwarf:frail",
+        "dwarf:extra_crafting",
+        "dwarf:smolman",
+        "dwarf:sleep_well",
+        "origins:more_exhaustion",
+        "dwarf:rocket",
+        "dwarf:rocket_sec",
+        "dwarf:underground",
+        "dwarf:rocket_resource",
+        "dwarf:rocket_refill",
+        "dwarf:poor_swimmer",
+        "dwarf:nausea",
+        "dwarf:pickaxe1",
+        "dwarf:pickaxe2",
+        "dwarf:pickaxe3",
+        "dwarf:pickaxe4",
+        "dwarf:pickaxe5",
+        "dwarf:pickaxe6"
+		
+    ],
+    "icon": "minecraft:iron_pickaxe",
+    "order": 0,
+    "impact": 2,
+    "name": "Dwarf",
+    "description": "From a long line of Dwarfs you excell in mining and building."
+}

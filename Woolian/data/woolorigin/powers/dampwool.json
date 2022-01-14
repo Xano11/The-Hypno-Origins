@@ -1,0 +1,78 @@
+{
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "inverted": false,
+                    "comparison": "==",
+                    "compare_to": 1,
+                    "resource": "woolorigin:woolresource"
+                },
+                "if_action": {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "duration": 200,
+                        "show_particles": true,
+                        "show_icon": true,
+                        "effect": "minecraft:slowness",
+                        "amplifier": 4,
+                        "is_ambient": true
+                    }
+                }
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "inverted": false,
+                    "comparison": "==",
+                    "compare_to": 0,
+                    "resource": "woolorigin:woolresource"
+                },
+                "if_action": {
+                    "type": "origins:damage",
+                    "amount": 1,
+                    "source": {
+                        "bypasses_armor": false,
+                        "fire": false,
+                        "unblockable": true,
+                        "magic": false,
+                        "out_of_world": false,
+                        "name": "Hypothermia"
+                    }
+                }
+            }
+        ]
+    },
+    "name": "§c§l§nDamp Wool",
+    "description": "Your wool gets damp and heavy when wet!",
+    "condition": {
+        "conditions": [
+            {
+                "conditions": [
+                    {
+                        "type": "origins:fluid_height",
+                        "fluid": "minecraft:water",
+                        "inverted": false,
+                        "comparison": ">",
+                        "compare_to": 0
+                    },
+                    {
+                        "type": "origins:in_rain",
+                        "inverted": false
+                    }
+                ],
+                "type": "origins:or",
+                "inverted": false
+            }
+        ],
+        "type": "origins:and",
+        "inverted": false
+    },
+    "hidden": false
+}

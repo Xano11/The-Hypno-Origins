@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: 13 by C418", "color":"yellow"}

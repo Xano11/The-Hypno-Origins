@@ -1,0 +1,12 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "data modify entity @e[type=wolf,distance=0..30,limit=1,sort=random] AngryAt set from entity @s UUID"
+    },
+    "interval": 5,
+    "hidden": false,
+    "name": "§c§l§nSheep Herded",
+    "description": "Wolves will always be hostile to you, even tamed ones. They can't help themselves."
+}

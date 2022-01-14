@@ -1,0 +1,263 @@
+{
+    "type":"origins:multiple",
+"phase":{
+    "type": "origins:phasing",
+    "blacklist": true,
+    "render_type": "remove_blocks",
+    "view_distance": 10,
+    "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "origins:unphasable"
+    },
+    "phase_down_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:sneaking"
+            },
+            {
+                "type": "origins:on_block"
+            }
+        ]
+    },
+    "condition": {
+        "type":"origins:power_active",
+        "power":"samurai:phase_phase_toggle"
+    }
+},
+"phase_toggle":{
+    "type": "origins:toggle",
+    "active_by_default": false,
+    "key": {
+        "key": "key.origins.primary_active"
+    }
+},
+"color":{
+    "type":"origins:model_color",
+    "alpha":0.45,
+    "condition": {
+        "type":"origins:power_active",
+        "power":"samurai:phase_phase_toggle"
+    }
+},
+"fall":{
+    "type": "origins:invulnerability",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "fall"
+    },
+    "condition": {
+        "type":"origins:power_active",
+        "power":"samurai:phase_phase_toggle"
+    }
+},
+"revert_1":{
+    "type":"origins:self_action_when_hit",
+    "cooldown":120,
+    "hud_render":{
+        "should_render":true,
+        "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index":7
+    },
+    "entity_action":{
+      "type":"origins:and",
+      "actions":[
+          {
+            "type":"origins:execute_command",
+            "command":"/power remove @s samurai:phase_phase_toggle"
+          },
+          {
+            "type":"origins:delay",
+            "ticks":1,
+            "action":{
+            "type":"origins:execute_command",
+            "command":"/function samurai:tp_to_phase_coords"
+            }
+          },
+          {
+            "type":"origins:execute_command",
+            "command":"playsound minecraft:entity.enderman.hurt master @a[distance=..15] ~ ~ ~ 1 1"
+          },
+          {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:weakness",
+              "duration": 70,
+              "amplifier": 1
+            }
+          },
+          {
+            "type": "origins:apply_effect",
+            "effect": {
+              "effect": "minecraft:blindness",
+              "duration": 70,
+              "amplifier": 0
+            }
+          },          
+          {
+            "type": "origins:damage",
+            "amount": 4,
+            "source": {
+              "name": "magic",
+              "magic": true,
+              "bypasses_armor": true
+            }
+          },
+          {
+              "type":"origins:delay",
+              "ticks":120,
+              "action":{
+                "type":"origins:execute_command",
+                "command":"/power grant @s samurai:phase_phase_toggle"
+              }
+          }
+      ]
+    },
+    "condition": {
+        "type":"origins:power_active",
+        "power":"samurai:phase_phase_toggle"
+    }
+},
+"revert_2":{
+    "type":"origins:active_self",
+    "cooldown":1,
+    "hud_render":{
+        "should_render":false
+    },
+    "entity_action":{
+        "type":"origins:and",
+        "actions":[
+            {
+                "type":"origins:delay",
+                "ticks":65,
+                "action":{
+        "type":"origins:execute_command",
+        "command":"/function samurai:tp_to_phase_coords"
+                }
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"/power remove @s samurai:phase_phase_toggle"
+              },
+              {
+                "type":"origins:delay",
+                "ticks":65,
+                "action":{
+                "type":"origins:execute_command",
+                "command":"/power grant @s samurai:phase_phase_toggle"
+                }
+              },
+              {
+                "type":"origins:delay",
+                "ticks":65,
+                "action":{
+                "type":"origins:execute_command",
+                "command":"/playsound minecraft:block.respawn_anchor.deplete master @a[distance=..15] ~ ~ ~ 2 1.2"
+                }
+              },
+              {
+                "type":"origins:execute_command",
+                "command":"/playsound minecraft:block.portal.trigger master @a[distance=..15] ~ ~ ~ 1 1.25"
+                },
+              {
+                "type":"origins:delay",
+                "ticks":65,
+                "action":{
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:blindness",
+                  "duration": 30,
+                  "amplifier": 0
+                    }
+                }
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:slowness",
+                  "duration": 80,
+                  "amplifier": 5
+                    }
+              }
+        ]
+    },
+    "condition":{
+        "type":"origins:power_active",
+        "power":"samurai:phase_phase_toggle"
+    }
+},
+"summon_marker":{
+    "type":"origins:action_over_time",
+    "interval":2,
+    "rising_action":{
+      "type":"origins:and",
+      "actions":[
+        {
+        "type":"origins:execute_command",
+        "command":"function samurai:get_phase_coords"
+        },
+        {
+          "type":"origins:execute_command",
+        "command":"/playsound minecraft:block.respawn_anchor.charge master @a[distance=..15] ~ ~ ~ 1 0.3"
+        }
+      ]
+    },
+    "condition":{
+        "type":"origins:power_active",
+        "power":"samurai:phase_phase_toggle"
+    }
+},
+"marker_effects":{
+  "type":"origins:action_over_time",
+  "interval":2,
+  "entity_action":{
+    "type":"origins:execute_command",
+    "command":"/execute at @e[type=minecraft:armor_stand,tag=phase_marker] run particle minecraft:ash ~ ~1.5 ~ 0.14 0 0.14 .2 150"
+  }
+},
+"block_break":{
+  "type": "origins:prevent_block_selection",
+  "block_condition": {
+   "type":"origins:constant",
+   "value":true
+  },
+  "condition":{
+    "type":"origins:power_active",
+    "power":"samurai:phase_phase_toggle"
+  }
+},
+"block_use":{
+  "type": "origins:prevent_block_use",
+  "block_condition": {
+    "type": "origins:constant",
+   "value":true
+  },
+  "condition":{
+    "type":"origins:power_active",
+    "power":"samurai:phase_phase_toggle"
+  }
+},
+"scoreboards":{
+  "type":"origins:action_over_time",
+  "interval":40,
+  "entity_action":{
+    "type":"origins:and",
+    "actions":[
+      {
+        "type":"origins:execute_command",
+        "command":"/scoreboard objectives add x_phase dummy"
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"/scoreboard objectives add y_phase dummy"
+      },
+      {
+        "type":"origins:execute_command",
+        "command":"/scoreboard objectives add z_phase dummy"
+      }
+    ]
+  }
+},
+"name":"§a§l§nPrecognition",
+"description":"(Primary) you can use your time powers to see into the future and plan your attacks. When you enter precognition mode, you can't deal damage to anything, you can walk through walls, are slightly transparent, and don't take fall damage. But if you take any damage or manually exit this mode you revert back to your normal form at the exact spot you were when you activated the ability."
+}

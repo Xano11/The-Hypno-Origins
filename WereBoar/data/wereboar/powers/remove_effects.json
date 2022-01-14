@@ -1,0 +1,73 @@
+{
+    "type": "origins:action_over_time",
+    "condition": {
+        "type": "origins:resource",
+        "resource": "wereboar:resource",
+        "comparison": "==",
+        "compare_to": 20
+    },
+    "interval": 20,
+    "entity_action": {           
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:height 1 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:width 1 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:motion 1 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:reach 1 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:exhaust",
+                    "amount": 12
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "wereboar:health_resource",
+                    "change": -1
+                },
+                {
+                    "type": "origins:damage",
+                    "amount": 8,
+                    "source": {
+                      "name": "generic",
+                      "bypasses_armor": true,
+                      "unblockable": true
+                    }
+                  },
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        { 
+                            "effect": "minecraft:slowness",
+                            "duration": 300,
+                            "amplifier": 3,
+                            "show_icon": false,
+                            "show_particles": false
+                        },
+                        { 
+                            "effect": "minecraft:weakness",
+                            "duration": 300,
+                            "amplifier": 4,
+                            "show_icon": false,
+                            "show_particles": false
+                        }
+                    ]
+                }
+            ]
+        },
+    "hidden": true
+}

@@ -1,0 +1,16 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "addition",
+        "value": 0.06,
+        "name": "Increased sprinting speed"
+    },
+	"condition": {
+			"type": "origins:resource",
+			"resource": "*:blood_resource",
+			"comparison": ">=",
+			"compare_to": 75
+	},
+	"hidden": true
+}

@@ -1,0 +1,27 @@
+{
+		"type": "origins:modify_air_speed",
+		"modifier": {
+			"operation": "addition",
+			"value": 0.02
+		},
+		"condition": {
+			"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:in_rain"
+					},
+					{
+						"type": "origins:block_in_radius",
+						"block_condition": {
+						"type": "origins:in_tag",
+						"tag": "raiju:copper"
+						},
+						"radius": 3,
+						"shape": "cube",
+						"comparison": "==",
+						"compare_to": 0
+					}
+				]
+		},
+	"hidden": true
+}

@@ -1,0 +1,9 @@
+{
+	"type": "origins:modify_damage_dealt",
+	"modifier": {
+		"name": "Noodle arms",
+		"operation": "addition",
+		"value": -3.0
+	},
+	"hidden": true
+}

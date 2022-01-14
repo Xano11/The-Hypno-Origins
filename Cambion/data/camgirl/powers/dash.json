@@ -1,0 +1,139 @@
+
+{
+    "type":"origins:multiple",
+    
+    "resource":
+    {
+    "type": "origins:resource",
+    "min": 0,
+    "max": 7,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 0
+    }
+    },
+    "resource_gain":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "camgirl:dash_resource",
+        "change": 1
+        },
+        "interval": 15,
+        "condition": {
+            "type": "origins:sneaking"
+        }
+    },
+
+        "sounds": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:block.fire.ambient"
+        },
+        "condition": {
+            "type": "origins:sneaking"
+        },
+        "interval": 30
+    },
+
+    "particles_sneak":
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:small_flame ~ ~ ~ 0.2 0.2 0.2 0.01 20 normal",
+            "permission_level": 4
+        },
+        "interval": 10,
+        "condition": {
+            "type": "origins:sneaking"
+        }
+    },
+    "boost":
+    { 
+    "type": "origins:action_over_time",
+    "entity_action": {
+        
+        "type": "origins:add_velocity",
+        "z": 2,
+        "space": "local"
+    },
+    "interval": 2,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+        "type": "origins:resource",
+        "resource": "camgirl:dash_resource",
+        "comparison": "==",
+        "compare_to": 7
+        },
+        {
+        "type": "origins:fall_flying"
+        }
+        ]
+    }
+    },
+    "sound2": 
+    {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:play_sound",
+            "sound": "minecraft:block.lava.extinguish"
+        },
+        "interval": 2,
+      "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+        "type": "origins:resource",
+        "resource": "camgirl:dash_resource",
+        "comparison": "==",
+        "compare_to": 7
+        },
+        {
+        "type": "origins:fall_flying"
+        }
+        ]
+    }
+    },
+    "boost_cost":
+    { 
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "camgirl:dash_resource",
+            "change": -7
+        },
+        "interval": 2,
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+            "type": "origins:resource",
+            "resource": "camgirl:dash_resource",
+            "comparison": "==",
+            "compare_to": 7
+            },
+            {
+            "type": "origins:fall_flying"
+            }
+            ]
+        }
+        },
+    "elytra_dash":
+    {
+        "type": "origins:elytra_flight",
+        "render_elytra": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "camgirl:dash_resource",
+            "comparison": "==",
+            "compare_to": 7
+        }
+    },
+    "name": "§a§l§nFiery Dash",
+    "description": "Sneaking will accumulate heat and allow you after a few seconds to propel yourself in the air."
+}

@@ -1,0 +1,167 @@
+{
+    "type": "origins:multiple",
+    "wood-sword": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:wooden_sword"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "gold-sword": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:golden_sword"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "stone-sword": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:stone_sword"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "iron-sword": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:iron_sword"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "diamond-sword": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:diamond_sword"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "netherite-sword": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": 4,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:netherite_sword"
+            }
+          }
+        }
+      ]
+    }
+  },
+        "name": "§a§l§nSwords remind me of home",
+    "description": "you are skilled in the art of vanilla swords, making you deal extra damage with them!"
+}

@@ -1,0 +1,49 @@
+{
+    "type": "origins:attribute",
+    "modifiers": [
+        {
+            "operation": "addition",
+            "attribute": "minecraft:generic.armor",
+            "value": 20,
+            "name": "golem armor"
+        },
+        {
+            "operation": "addition",
+            "attribute": "minecraft:generic.armor_toughness",
+            "value": 12,
+            "name": "golem armor tough"
+        },
+        {
+            "operation": "addition",
+            "value": -0.03,
+            "attribute": "minecraft:generic.movement_speed",
+            "name": "golem speed"
+        },
+        {
+            "operation": "addition",
+            "attribute": "minecraft:generic.knockback_resistance",
+            "value": 1,
+            "name": "golem knockback resist"
+        },
+        {
+            "operation": "addition",
+            "value": 20,
+            "attribute": "minecraft:generic.max_health",
+            "name": "golem health"
+        },
+        {
+            "operation": "addition",
+            "value": 8,
+            "attribute": "minecraft:generic.attack_damage",
+            "name": "golem attack damage"
+        },
+        {
+            "operation": "addition",
+            "value": -2.4,
+            "attribute": "minecraft:generic.attack_speed",
+            "name": "golem attack speed"
+        }
+    ],
+    "name": "§a§l§nThick Skin",
+    "description": "Your solid iron skin makes you far tougher and more resilient."
+}

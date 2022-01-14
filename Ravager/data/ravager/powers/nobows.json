@@ -1,0 +1,16 @@
+{
+	"type": "origins:prevent_item_use",
+	"item_condition": {
+		"type": "origins:or",
+		"conditions": [
+		{	
+		"type": "origins:ingredient",
+		"ingredient": {
+			"tag": "ravager:cant_use"
+		}
+	}
+    ]
+	},
+	"name": "§c§l§nRavager only likes melee",
+    "description": "You no use bows."
+}

@@ -1,0 +1,22 @@
+{
+    "powers":[
+        "bat:flip",
+        "bat:echolocation",
+        "bat:mineshaftspawn",
+        "bat:flap",
+        "bat:weak",
+        "bat:light_armor",
+        "bat:small",
+        "bat:small2",
+        "bat:reach",
+        "bat:life_siphon",
+        "bat:night_vision",
+        "bat:daytime",
+        "origins:fall_immunity"
+    ],
+    "icon":"minecraft:black_dye",
+    "order":5,
+    "impact":3,
+    "name":"Bat",
+    "description":"Bats are able to fly and perch on ceilings, but be careful about being exposed to too much light."
+}

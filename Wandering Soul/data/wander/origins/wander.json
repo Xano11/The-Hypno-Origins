@@ -1,0 +1,21 @@
+{
+    "powers": [
+        "origins:phantomize",
+        "origins:phantomize_overlay",
+        "origins:phasing",
+        "wander:wander/desc/possess", 
+        "wander:wander/possession",
+		"origins:slow_falling",
+		"wander:wander/see_through",
+		"wander:wander/frail_body",
+		"wander:wander/desc/daylight"
+		
+    ],
+	"icon": {
+		"item": "minecraft:ghast_tear"
+	},
+	"order": 20,
+	"impact": 3,
+    "name": "Wandering Soul",
+    "description": "Neither the gates of heaven nor hell accepted you after death. You have been cursed and left wandering the land of the living. Perhaps you have unfinished business here?"
+}

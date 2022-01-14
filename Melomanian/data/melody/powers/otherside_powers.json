@@ -1,0 +1,275 @@
+{
+    "type": "origins:multiple",
+	"berry_bush": {
+		"type": "origins:invulnerability",
+		"damage_condition": {
+          "type": "origins:name",
+          "name": "sweetBerryBush"
+        }
+    },
+	"fox_eyes": {
+		"type": "origins:night_vision",
+		"strength": 0.3,
+		"condition": {
+		  "type": "origins:submerged_in",
+		  "fluid": "minecraft:water",
+		  "inverted": true
+		}
+	},
+	"fragile_fox": {
+		"type": "origins:attribute",
+  		"modifier": {
+   		 "attribute": "minecraft:generic.max_health",
+   		 "value": -8.0,
+   		 "operation": "addition"
+		}
+	},
+	"hungy": {
+		"type": "origins:modify_exhaustion",
+  		"modifier":{
+	  	 "value": 0.8,
+	  	 "operation": "multiply_base"
+		}
+	},
+	"jump_fox": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 1,
+		"max_stacks": 3,
+		"duration_per_stack": 11,
+		"effect": {
+			"effect": "minecraft:jump_boost",
+			"duration": 11,
+			"amplifier": 1,
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		}
+	},
+	"monch": {
+		"type": "origins:active_self",
+		"entity_action": {
+		"type": "origins:chance",
+		"action":
+			{    
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:entity.fox.bite player @a ~ ~ ~ 1 1 0",
+			"permission_level": 4
+			},
+			"chance": 0.1
+			},
+			"key": {
+			"key": "key.attack",
+			"continuous": false
+			},
+			"cooldown": 10,
+			"hud_render": {
+			"should_render": false
+		}
+},
+	"pounce_damage": {	
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+		"value": 0.08,
+		"operation": "multiply_base"
+		},
+		"condition": {
+		"type": "origins:fall_distance",
+		"comparison": ">",
+		"compare_to": "0"
+		}
+	},
+	"pounce": {
+		"type": "origins:active_self",
+		"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+			"type": "origins:execute_command",
+			"command": "particle minecraft:cloud ~ ~ ~ 0.5 0 0.5 0.2 20 normal",
+			"permission_level": 4
+			},
+			{    
+			"type": "origins:execute_command",
+			"command": "playsound minecraft:entity.fox.ambient player @a[distance=..20] ~ ~ ~ 1 1 1",
+			"permission_level": 4
+			},
+			{
+			"type": "origins:add_velocity",
+			"z": 0.5,
+			"space": "local"
+			},
+			{
+			"type": "origins:add_velocity",
+			"y": 0.5
+			},
+			{
+			"type": "origins:exhaust",
+			"amount": 0.6
+			}
+		]
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"cooldown": 50,
+		"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+		"bar_index": 23
+			}
+	},
+	"run_fox":{
+		"type":"origins:conditioned_attribute",
+		"modifier":{
+		   "attribute": "minecraft:generic.movement_speed",
+		   "value": 0.015,
+		   "operation": "addition"
+		},
+		"condition":
+		{
+		"type": "origins:health",
+		"comparison": "<",
+		"compare_to": 7
+		}
+	},
+	"speed_fox": {
+		"type":"origins:attribute",
+		"modifier":{
+		   "attribute": "minecraft:generic.movement_speed",
+		   "value": 0.02,
+		   "operation": "addition"
+		}
+	},
+	"fox_feet": {
+		"type": "origins:invulnerability",
+		"damage_condition": {
+			"type": "origins:name",
+			"name": "fall"
+		}
+	},
+	"yummy_berry": {
+		"type": "origins:modify_food",
+		"item_condition": {
+		"type": "origins:ingredient",
+		"ingredient":
+		  {
+		  "item": "minecraft:sweet_berries"
+		  }
+		},
+		"food_modifier":
+		{
+		 "operation": "addition",
+		 "value": 2.0
+		},
+		"saturation_modifier":
+		{
+		  "operation": "addition",
+		  "value": 1.0
+		}
+	},
+	"yummy_glowberry": {
+		"type": "origins:modify_food",
+		"item_condition": {
+		"type": "origins:ingredient",
+		"ingredient":
+		  {
+		  "item": "minecraft:glow_berries"
+		  }
+		},
+		"food_modifier":
+		{
+		 "operation": "addition",
+		 "value": 2.0
+		},
+		"saturation_modifier":
+		{
+		  "operation": "addition",
+		  "value": 1.0
+		},
+		"entity_action": {
+		  "type": "origins:chance",
+		  "action":
+		   {    
+		 "type": "origins:execute_command",
+		 "command": "effect give @s minecraft:glowing 10 1",
+		   "permission_level": 4
+		   },
+		   "chance": 0.1
+		   }
+	},
+	"fox_love": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s as @e[type=fox,distance=..20] run data modify entity @e[type=fox,limit=1,sort=nearest] Trusted append from entity @p[tag=foxy] UUID",
+					"permission_level": 4
+				}
+			]
+		}
+	},
+    "delete_otherside": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "melody:otherside_active",
+                "comparison": "==",
+                "compare_to": 195
+            },
+            "if_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/power remove @s melody:otherside_powers",
+                        "permission_level": 4
+                    },
+					{
+						"type": "origins:execute_command",
+      					"command": "tag @s remove foxy",
+      					"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "scale set pehkui:height 1 @s",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "scale set pehkui:width 1 @s",
+						"permission_level": 4
+					},
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/power remove @s melody:otherside_active",
+                        "permission_level": 4
+                    },
+                    {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:music_disc_otherside",
+                            "amount": 1
+                        }
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "/resource set @s melody:disc_cooldown 0",
+                        "permission_level": 4
+                    }
+                ]
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "melody:otherside_active",
+                "change": 1
+            }
+        }
+    }
+}

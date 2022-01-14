@@ -1,0 +1,172 @@
+{
+	"type": "origins:multiple",
+	"bark":{
+		"type": "origins:active_self",
+		"entity_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "playsound minecraft:entity.axolotl.idle_air master @a[distance=..15] ~ ~ ~ 50 1",
+						"permission_level": 4
+					}
+				]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.spectatorOutlines"
+			}
+		},
+	"bark_hell":{
+		"type": "origins:active_self",
+		"entity_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "playsound minecraft:entity.axolotl.idle_air master @a[distance=..15] ~ ~ ~ 50 1",
+						"permission_level": 4
+					}
+				]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.9",
+			"continuous": true
+			}
+		},
+	"water_squeak": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:choice",
+			"actions": [{
+					"element": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:entity.axolotl.idle_water",
+						"volume": 10,
+						"pitch": 1
+					},
+					"weight": 20
+				},
+				{
+					"element": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:entity.axolotl.swim",
+						"volume": 10,
+						"pitch": 1
+					},
+					"weight": 10
+				},
+				{
+					"element": {
+						"type": "origins:play_sound",
+						"sound": "minecraft:entity.axolotl.splash",
+						"volume": 10,
+						"pitch": 1
+					},
+					"weight": 5
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:fluid_height",
+			"fluid": "minecraft:water",
+			"comparison": ">",
+			"compare_to": 0.0
+		},
+		"interval": 140
+	},
+	"particles": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:choice",
+			"actions": [{
+					"element": {
+						"type": "origins:execute_command",
+						"command": "particle minecraft:spore_blossom_air ~ ~ ~ 1 1 1 100 50 normal",
+						"permission_level": 4
+					},
+					"weight": 10
+				},
+				{
+					"element": {
+						"type": "origins:execute_command",
+						"command": "particle minecraft:mycelium ~ ~ ~ 1 1 1 100 200 normal",
+						"permission_level": 4
+					},
+					"weight": 5
+				}
+			]
+		},
+		"interval": 60
+	},
+	"ambient_noise": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+            "type": "origins:chance",
+            "action":
+             {    
+			"type": "origins:play_sound",
+			"sound": "minecraft:entity.axolotl.idle_air",
+			"volume": 10,
+			"pitch": 1
+		},
+        "chance": 0.1
+	    },
+        "interval": 100
+    },
+    "bite": {
+        "type": "origins:active_self",
+         "entity_action": {
+         "type": "origins:chance",
+         "action":
+          {    
+          "type": "origins:execute_command",
+          "command": "playsound minecraft:entity.axolotl.attack master @a[distance=..15] ~ ~ ~ 50 1",
+          "permission_level": 4
+          },
+          "chance": 0.2
+          },
+          "key": {
+            "key": "key.attack",
+            "continuous": false
+          },
+          "cooldown": 10,
+          "hud_render": {
+            "should_render": false
+         }
+      },
+	"ouch": {
+		"type": "origins:self_action_when_hit",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.axolotl.hurt master @a[distance=..15] ~ ~ ~ 50 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "particle minecraft:spore_blossom_air ~ ~ ~ 1 1 1 100 500 normal",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "particle minecraft:mycelium ~ ~ ~ 1 1 1 100 200 normal",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 140,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+    "hidden": true
+}

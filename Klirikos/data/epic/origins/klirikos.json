@@ -1,0 +1,29 @@
+{
+	"powers":
+	[
+		"epic:magic_hands",
+		"epic:physically_weak",
+		"epic:magic_hands2",
+		"epic:magic_tagging",
+		"epic:icarus_speed",
+		"epic:sanctuary",
+		"epic:short",
+		"epic:short2",
+		"epic:undead_weakness",
+		"epic:lower_life_expectancy",
+		"epic:healer_particles",
+		"epic:slow",
+		"epic:mace",
+		"epic:mace2",
+		"epic:mace3",
+		"epic:mace4",
+		"epic:mace5",
+		"epic:mace6",
+		"epic:totem_sanctuary"
+	],
+	"icon": "minecraft:nether_star",
+	"order": 3,
+	"impact": 2,
+	"name": "Klirikos",
+	"description": "Klirikos are a race of adept healers. They can usually be seen in large groups of other people in order to provide support to them."
+}

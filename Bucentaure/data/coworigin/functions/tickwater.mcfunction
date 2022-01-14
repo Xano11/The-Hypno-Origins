@@ -1,0 +1,2 @@
+execute as @a[advancements={coworigin:cowwater=true}] run effect give @s minecraft:water_breathing 25 0 false
+execute as @a[advancements={coworigin:cowwater=true}] run advancement revoke @s only coworigin:cowwater

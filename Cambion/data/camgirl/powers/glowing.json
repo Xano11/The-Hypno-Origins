@@ -1,0 +1,19 @@
+{
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 2,
+    "max_stacks": 2,
+    "duration_per_stack": 10,
+    "effect": {
+    "effect": "minecraft:glowing",
+	"show_particles": false,
+    "duration": 10,
+    "amplifier": 1
+	},
+	"condition": {
+			"type": "origins:resource",
+			"resource": "*:blood_resource",
+			"comparison": ">=",
+			"compare_to": 100
+	},
+	"hidden": true
+}

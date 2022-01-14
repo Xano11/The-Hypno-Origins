@@ -1,0 +1,26 @@
+{
+  "powers": [
+    "origins:water_breathing",
+	"origins:water_vision",
+	"origins:aqua_affinity",
+	"origins:swim_speed",
+	"origins:like_water",
+	"origins:aquatic",
+	"origins:air_from_potions",
+    "oceankin:night_vision",
+    "oceankin:aquatic_body",
+    "oceankin:oceankin_team",
+    "oceankin:deity_respect",
+    "oceankin:body_of_water",
+    "oceankin:divinefear",
+    "oceankin:tidal_healing",
+	"oceankin:lunge",
+	"oceankin:fish_food",
+	"oceankin:water_sleep"
+  ],
+  "icon": "minecraft:heart_of_the_sea",
+  "order": 10,
+  "impact": 3,
+  "name": "Oceankin",
+  "description": "Blessed with the abilities of the ocean deities, you have taken to the water and are empowered by it."
+}

@@ -1,0 +1,26 @@
+{
+    "type":"origins:modify_damage_taken",
+    "modifier":{
+      "value": 1.0,
+      "operation":"multiply_total"
+    },
+    "damage_condition":{
+      "type":"origins:or",
+      "conditions":[
+        {
+          "type":"origins:name",
+          "name":"explosion.player"
+        },
+        {
+          "type":"origins:name",
+          "name":"explosion"
+        },
+        {
+          "type":"origins:name",
+          "name":"fireworks"
+        }
+      ]
+    },
+    "name": "§c§l§nExplosions Hurt",
+    "description": "You take more damage from explosions."
+  }

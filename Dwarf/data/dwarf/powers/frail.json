@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Nine lives health reduction",
+    "attribute": "minecraft:generic.max_health",
+    "value": -8.0,
+    "operation": "addition"
+  },
+  "name": "§c§l§nWeak body",
+  "description": "Being undead comes at the cost of health, -4 hearts."
+}

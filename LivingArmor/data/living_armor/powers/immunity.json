@@ -1,0 +1,9 @@
+{
+    "name": "§a§l§nSoul Fortitude",
+    "description": "Your soul is strong enough to resist nausea and slowness effects.",
+    "type": "origins:effect_immunity",
+    "effects": [
+        "minecraft:nausea",
+        "minecraft:slowness"
+    ]
+}

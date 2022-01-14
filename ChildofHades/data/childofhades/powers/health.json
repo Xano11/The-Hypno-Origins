@@ -1,0 +1,17 @@
+{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+    "name": "Heart",
+    "attribute": "minecraft:generic.max_health",
+    "value": 4,
+    "operation": "addition"
+  },
+    "condition": {
+    "type": "origins:dimension",
+    "dimension": "minecraft:the_nether"
+   },
+ 
+  "name": "§a§l§nExtra health",
+  "description": "You have two extra hearts in the Nether.",
+  "hidden": true
+}

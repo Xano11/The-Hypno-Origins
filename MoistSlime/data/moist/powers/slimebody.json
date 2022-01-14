@@ -1,0 +1,136 @@
+{
+    "type": "origins:multiple",
+    "fall_immunity": {
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "fall"
+        },
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -1
+        }
+    },
+    "size": {
+        "type": "origins:action_on_callback",
+        "entity_action_added": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:height 0.60 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:width 0.60 @s",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "scale reset pehkui:height @s",
+            "permission_level": 4
+        },
+        "entity_action_respawn": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:height 0.60 @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scale set pehkui:width 0.60 @s",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "execute_chosen_when_orb": true
+    },
+    "color": {
+        "type": "origins:model_color",
+        "red": 0.4,
+        "green": 0.8,
+        "blue": 0.4,
+        "alpha": 0.85
+    },
+    "land_particles":
+    {
+        "type": "origins:action_on_land",
+        "entity_action":
+        {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "particle minecraft:item_slime ~ ~ ~ .3 0 .3 1 10 normal"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "playsound minecraft:entity.slime.squish player @a[distance=..10] ~ ~ ~ .1 1"
+                }
+            ]
+        }
+    },
+    "jump_particles":
+    {
+        "type": "origins:active_self",
+        "cooldown": 20,
+        "hud_render":
+        {
+            "should_render": false,
+            "sprite_location": "origins:textures/gui/resource_bar.png",
+            "bar_index": 1
+        },
+        "condition":
+        {
+            "type": "origins:on_block",
+            "inverted": false
+        },
+        "entity_action":
+        {
+            "type": "origins:execute_command",
+            "permission_level": 4,
+            "command": "playsound minecraft:entity.slime.squish player @a[distance=..10] ~ ~ ~ .1 1"
+        },
+        "key":
+        {
+            "key": "key.jump"
+        }
+    },
+    "teamremove": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "team @e remove slime",
+            "permission_level": 4
+        },
+        "execute_chosen_when_orb": true
+    },
+    "teamjoinandleave": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "tag @s add slime",
+            "permission_level": 4
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove slime",
+            "permission_level": 4
+        },
+        "execute_chosen_when_orb": true
+    },
+    "effect_immunity": {
+        "type": "origins:effect_immunity",
+        "effects": [
+            "minecraft:regeneration",
+            "minecraft:poison"
+        ]
+    },
+    "name": "§e§l§nSlime",
+    "description": "Due to your Slime ancestors, you don't take fall damage and are half a block tall and immune to poison and regen"
+}

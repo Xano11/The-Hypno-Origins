@@ -1,0 +1,16 @@
+{
+	"type": "origins:modify_damage_taken",
+	"hidden": "false",
+	"name": "Fault Of Creation",
+	"description": "The higher beings of this world do not appreciate your unwarranted existance, as such you will take triple damage from lightning.",
+	"damage_condition": 
+	{
+		"type": "origins:name",
+		"name": "lightningBolt"
+	},
+	"modifier":
+	{
+		"operation": "multiply_base",
+		"value": 2
+	}
+}

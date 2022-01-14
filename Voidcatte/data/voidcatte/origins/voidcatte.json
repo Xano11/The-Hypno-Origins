@@ -1,0 +1,23 @@
+{
+	"powers": [
+			"voidcatte:beast",
+			"voidcatte:ender_chest",
+			"voidcatte:dash",
+			"voidcatte:launch",
+			"voidcatte:night_buffs",
+			"origins:fall_immunity",
+			"voidcatte:hydrophobe",
+			"voidcatte:rain",
+			"origins:carnivore",
+			"origins:no_shield",
+			"voidcatte:resource"
+	],
+	"icon": {
+		"item": "minecraft:ender_chest",
+		"tag": "{Enchantments:[{}]}"
+	},
+	"order": 0,
+	"impact": 2,
+	"name": "Voidcatte",
+	"description": "Protecter of the forest and anything inside, this little kitten is more of a beast than he looks!"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "execute at @s run particle minecraft:dripping_obsidian_tear ~-0.1 ~0.4 ~-0.2 0 0.1 0 1 10 normal"
+    },
+    "interval": 50,
+    "condition": {
+		"type": "origins:power_active",
+		"power": "scorpion:toggle"
+	},
+    "hidden": true
+}

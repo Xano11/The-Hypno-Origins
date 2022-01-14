@@ -1,0 +1,18 @@
+{
+    "type":"origins:multiple",
+
+    "permanent":{
+
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.95
+    },
+    "condition": {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water"
+    }
+    },
+    "name": "§c§l§nIncompetent Swimmer",
+    "description": "You're inconveniently slow at swimming."
+}

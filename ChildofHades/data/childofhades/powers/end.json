@@ -1,0 +1,33 @@
+{
+    "type": "origins:multiple",
+    "strength": {
+      "type": "origins:conditioned_attribute",
+      "modifier": {
+          "attribute": "minecraft:generic.attack_damage",
+          "operation": "addition",
+          "value": -3,
+          "name": "Decreased strength"
+      },
+      "tick_rate": 1,
+      "condition": {
+        "type": "origins:dimension",
+        "dimension": "minecraft:the_end"
+      }
+  },
+    "speed": {
+      "type": "origins:conditioned_attribute",
+      "modifier": {
+          "attribute": "minecraft:generic.movement_speed",
+          "operation": "addition",
+          "value": -0.04,
+          "name": "Decreased speed"
+      },
+      "tick_rate": 1,
+      "condition": {
+        "type": "origins:dimension",
+        "dimension": "minecraft:the_end"
+      }
+  },
+  "name": "Chaos Body",
+  "description": "You are in an unknown space, you feel as though your body became heavier and slower in this new area."
+  }

@@ -1,0 +1,124 @@
+{
+	"type": "origins:multiple",
+	"night":
+    {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 80,
+        "effects": [
+            {
+                "effect": "minecraft:regeneration",
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false,
+                "amplifier": 0
+            },
+            {
+                "effect": "minecraft:speed",
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false,
+                "amplifier": 2
+            },
+            {
+                "effect": "minecraft:jump_boost",
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false,
+                "amplifier": 1
+            }
+        ],
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:exposed_to_sky"
+                },
+                {
+                    "type": "origins:daytime",
+                    "inverted": true
+                }
+            ]
+        },
+        "hidden": true
+    },
+    "day":
+    {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 80,
+        "effects": [
+            {
+                "effect": "minecraft:hunger",
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false,
+                "amplifier": 0
+            },
+            {
+                "effect": "minecraft:slowness",
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": false,
+                "amplifier": 2
+            },
+			{
+                "effect": "minecraft:mining_fatigue",
+				"amplifier": 0,
+				"is_ambient": true,
+                "show_particles": false,
+                "show_icon" : false
+            }
+        ],
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:exposed_to_sky"
+                },
+                {
+                    "type": "origins:daytime",
+                    "inverted": false
+                },
+                {
+                    "type": "origins:in_rain",
+                    "inverted": true
+                }
+            ]
+        },
+        "hidden": true
+    },
+    "fire": {
+            "type": "origins:action_over_time",
+            "entity_action": {
+                "type": "origins:damage",
+                "amount": 3,
+                "source": {
+                  "name": "onFire",
+                  "fire": true,
+                  "bypasses_armor": false
+                }
+              },
+            "interval": 30,
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:exposed_to_sky"
+                    },
+                    {
+                        "type": "origins:daytime",
+                        "inverted": false
+                    },
+                    {
+                        "type": "origins:in_rain",
+                        "inverted": true
+                    }
+                ]
+            }
+    },
+    "name":"§e§l§nUsed to the Darkness",
+    "description":"During night time, you get permanent buffs from the moon. But, in the other hand, during the day you become weaker whilst exposed to the sun."
+}

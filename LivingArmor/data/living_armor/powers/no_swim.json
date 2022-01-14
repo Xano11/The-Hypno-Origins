@@ -1,0 +1,5 @@
+{
+    "type": "origins:ignore_water",
+    "description": "You're a set of armor and armors don't float.",
+    "name": "§c§l§nArmor Density"
+}

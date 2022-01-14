@@ -1,0 +1,12 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -8
+
+    },
+    "name": "§c§l§nWeak Body",
+    "description": "Because you're a small spider, you have 4 less hearts."
+}
+

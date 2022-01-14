@@ -1,0 +1,1296 @@
+{
+    "type": "origins:multiple",
+    "leather_armor": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": 0.06,
+            "name": "Increased sprinting speed"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:leather_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:leather_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:leather_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:leather_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "leather_armor_leap": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:smoke ~ ~ ~ 0.6 0.1 0.6 0.001 100",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.elder_guardian.curse player @s ~ ~ ~ 3 1.5",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:add_velocity",
+                    "z": 0.8,
+                    "space": "local"
+                },
+                {
+                    "type": "origins:add_velocity",
+                    "y": 0.5
+                },
+                {
+                    "type": "origins:exhaust",
+                    "amount": 0.6
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": false
+        },
+        "cooldown": 300,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "bar_index": 20
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:leather_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:leather_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:leather_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:leather_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "gold_armor": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 20,
+        "effect": {
+            "effect": "minecraft:haste",
+            "duration": 20,
+            "amplifier": 1,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "gold_armor_xp": {
+        "type": "origins:action_on_block_break",
+        "block_action": {
+            "type": "origins:chance",
+            "action": {
+                "type": "origins:execute_command",
+                "command": "summon minecraft:experience_orb"
+            },
+            "chance": 0.1
+        },
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "living_armor:stones"
+        },
+        "only_when_harvested": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "gold_armor_iron": {
+        "type": "origins:item_on_item",
+        "on_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:raw_iron"
+            }
+        },
+        "using_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:coal"
+            }
+        },
+        "using_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "on_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "entity_action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:iron_ingot",
+                            "amount": 3
+                        }
+                    },
+                    "weight": 10
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:iron_ingot",
+                            "amount": 2
+                        }
+                    },
+                    "weight": 25
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:iron_ingot",
+                            "amount": 1
+                        }
+                    },
+                    "weight": 65
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "gold_armor_gold": {
+        "type": "origins:item_on_item",
+        "on_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:raw_gold"
+            }
+        },
+        "using_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:coal"
+            }
+        },
+        "using_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "on_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "entity_action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:gold_ingot",
+                            "amount": 3
+                        }
+                    },
+                    "weight": 10
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:gold_ingot",
+                            "amount": 2
+                        }
+                    },
+                    "weight": 25
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:gold_ingot",
+                            "amount": 1
+                        }
+                    },
+                    "weight": 65
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "gold_armor_copper": {
+        "type": "origins:item_on_item",
+        "on_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:raw_copper"
+            }
+        },
+        "using_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:coal"
+            }
+        },
+        "using_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "on_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "entity_action": {
+            "type": "origins:choice",
+            "actions": [
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:copper_ingot",
+                            "amount": 3
+                        }
+                    },
+                    "weight": 10
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:copper_ingot",
+                            "amount": 2
+                        }
+                    },
+                    "weight": 25
+                },
+                {
+                    "element": {
+                        "type": "origins:give",
+                        "stack": {
+                            "item": "minecraft:copper_ingot",
+                            "amount": 1
+                        }
+                    },
+                    "weight": 65
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:golden_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "iron_armor": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 20,
+        "effect": {
+            "effect": "minecraft:strength",
+            "duration": 20,
+            "amplifier": 0,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "iron_armor_rage_active": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "living_armor:rage_resource",
+            "change": 5
+        },
+        "cooldown": 3600,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 1
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_boots"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "living_armor:rage_resource",
+                    "comparison": "<",
+                    "compare_to": 5
+                }
+            ]
+        }
+    },
+    "iron_armor_rage_powers": {
+        "type": "origins:target_action_on_hit",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:damage",
+                    "amount": 2,
+                    "source": {
+                        "name": "outOfWorld",
+                        "bypasses_armor": true,
+                        "unblockable": true
+                    }
+                },
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "head",
+                    "action": {
+                        "type": "origins:damage",
+                        "amount": 20,
+                        "ignore_unbreaking": false
+                    }
+                },
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "chest",
+                    "action": {
+                        "type": "origins:damage",
+                        "amount": 20,
+                        "ignore_unbreaking": false
+                    }
+                },
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "legs",
+                    "action": {
+                        "type": "origins:damage",
+                        "amount": 20,
+                        "ignore_unbreaking": false
+                    }
+                },
+                {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "feet",
+                    "action": {
+                        "type": "origins:damage",
+                        "amount": 20,
+                        "ignore_unbreaking": false
+                    }
+                }
+            ]
+        },
+        "cooldown": 0,
+        "hud_render": {
+            "should_render": false,
+            "bar_index": 5
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_boots"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "living_armor:rage_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "iron_armor_lose_resource": {
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "living_armor:rage_resource",
+            "change": -1
+        },
+        "cooldown": 0,
+        "hud_render": {
+            "should_render": false,
+            "bar_index": 5
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:iron_boots"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "living_armor:rage_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "chainmail_armor": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 20,
+        "effect": {
+            "effect": "minecraft:regeneration",
+            "duration": 100,
+            "amplifier": 0,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:chainmail_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:chainmail_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:chainmail_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:chainmail_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "chainmail_armor_heal": {
+        "type": "origins:active_self",
+        "cooldown": 900,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 1
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 3 0.5",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect give @e[distance=..5] minecraft:regeneration 5 1 true",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle illuminations:chorus_petal ~ ~1 ~ 1 0 1 0.01 100",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:chainmail_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:chainmail_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:chainmail_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:chainmail_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "diamond_armor": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 220,
+        "effect": {
+            "effect": "minecraft:night_vision",
+            "duration": 220,
+            "amplifier": 0,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "diamond_armor_glow": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "effect give @e[distance=1..20] minecraft:glowing 5 1",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @a[distance=..15] run playsound minecraft:block.amethyst_cluster.hit player @s ~ ~ ~ 1 0.5",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "cooldown": 1200,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 20
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:diamond_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "netherite_armor": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 0,
+        "max_stacks": 1,
+        "duration_per_stack": 20,
+        "effect": {
+            "effect": "minecraft:fire_resistance",
+            "duration": 20,
+            "amplifier": 0,
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "netherite_swim": {
+        "type": "origins:modify_lava_speed",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.5
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "netherite_swim_view": {
+        "type": "origins:lava_vision",
+        "s": 0,
+        "v": 10,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "head",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_helmet"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "chest",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_chestplate"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "legs",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_leggings"
+                        }
+                    }
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "feet",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:netherite_boots"
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "name": "§a§l§nSpecialized Armor",
+    "description": "The magic you use can bring out the latent properties of armor. Each full set of armor has different effects."
+}

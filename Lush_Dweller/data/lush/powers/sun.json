@@ -1,0 +1,69 @@
+{
+    "type": "origins:multiple",
+        "sunweak": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:apply_effect",
+            "effects": [{
+                    "effect": "minecraft:slowness",
+                    "amplifier": 1,
+                    "duration": 30,
+                    "show_particles": false,
+                    "show_icon": false
+                },
+                {
+                    "effect": "minecraft:weakness",
+                    "amplifier": 0,
+                    "duration": 30,
+                    "show_particles": false,
+                    "show_icon": false
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:exposed_to_sky"
+                },
+                {
+                    "type": "origins:daytime"
+                }
+            ]
+        },
+        "interval": 10
+        },
+    "sunsick": {
+        "type": "origins:stacking_status_effect",
+        "min_stacks": 1,
+        "max_stacks": 1,
+        "duration_per_stack": 100,
+        "effects": [
+            {
+                "effect": "minecraft:nausea",
+                "is_ambient": true,
+                "amplifier": 0,
+                "show_particles": false,
+                "show_icon": false
+            }
+        ],
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:in_block",
+                    "block_condition": {
+                        "type": "origins:height",
+                        "comparison": ">",
+                        "compare_to": 55
+                    }
+                },
+                {
+                    "type": "origins:exposed_to_sky",
+                    "inverted": false
+                }
+            ]
+        }
+    },
+    "name": "§c§l§nSun Burn",
+    "description": "When exposed to the sun you cant handle the heat causing you to move slower, deal less damage and have nausea."
+}

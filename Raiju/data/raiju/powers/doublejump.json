@@ -1,0 +1,115 @@
+{
+    "type":"origins:multiple",
+    "number_of_jumps": {
+      "type": "origins:resource",
+      "min": 0,
+      "max": 1,
+      "hud_render": {
+          "should_render": false
+      }
+    },
+    "jump_reset": {
+      "type":"origins:action_over_time",
+      "interval": 1,
+      "entity_action": {
+          "type": "origins:change_resource",
+          "resource": "*:*_number_of_jumps",
+          "change": 1000
+      },
+      "condition":{
+        "type":"origins:and",
+        "conditions":[
+        {
+        "type":"origins:on_block"
+        },
+        {
+            "type": "origins:predicate",
+            "predicate": "raiju:weather_thunderstorm",
+            "inverted": false
+        }
+    ]
+    }
+    },
+    "activating_jump": {
+      "type":"origins:active_self",
+      "key": {
+        "key":"key.jump"
+      },
+      "cooldown": 0,
+      "hud_render": {
+        "should_render": false
+      },
+      "condition": {
+        "type":"origins:and",
+        "conditions":[
+          {
+          "type":"origins:on_block",
+          "inverted": true
+          },
+          {
+            "type": "origins:resource",
+            "resource": "*:*_number_of_jumps",
+            "comparison": ">",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:predicate",
+            "predicate": "raiju:weather_thunderstorm",
+            "inverted": false
+          },
+          {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": "==",
+            "compare_to": 0
+          },
+          {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:lava",
+            "comparison": "==",
+            "compare_to": 0
+  
+          }
+        ]
+      },
+      "entity_action": {
+          "type": "origins:and",
+          "actions": [
+            {
+              "type": "origins:add_velocity",
+              "set": true,
+              "y": 1.2
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "particle minecraft:cloud ~ ~ ~ 0.5 0 0.5 0.01 20 normal",
+                "permission_level": 4
+            },
+            {
+              "type": "origins:execute_command",
+              "command": "particle visuality:charge ~ ~0.2 ~ 0.5 0 0.5 0.01 20 normal",
+                "permission_level": 4
+            },
+            {
+              "type": "origins:if_else",
+              "condition": {
+                "type": "origins:moving"
+              },
+              "if_action": {
+                "type": "origins:add_velocity",
+                "space":"local",
+                "z": 0.2
+              }
+            },
+            {
+              "type": "origins:change_resource",
+                "resource": "*:*_number_of_jumps",
+                "change": -1
+          }
+        ]
+      }
+    },
+    "name":"§a§l§nCloud Jump",
+    "description":"You can double jump during thunderstorms."
+  }
+  

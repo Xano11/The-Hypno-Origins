@@ -1,0 +1,27 @@
+{
+	"impact": 2,
+	"name": "Scorpion",
+	"description": "A predator of the sand.",
+	"icon": "minecraft:black_dye",
+	"powers": [
+		"scorpion:claws",
+		"scorpion:carapace",
+		"scorpion:poison",
+		"scorpion:swim",
+		"origins:hotblooded",
+		"origins:cat_vision",
+		"scorpion:desert",
+		"scorpion:short",
+		"origins:carnivore",
+		"origins:more_exhaustion",
+		"origins:no_shield",
+		"origins:arthropod",
+		"scorpion:leaves_pain",
+		"scorpion:toggle",
+		"scorpion:hp",
+		"scorpion:poison_particles"
+	],
+	"order": 7,
+	"unchoosable": false
+
+}

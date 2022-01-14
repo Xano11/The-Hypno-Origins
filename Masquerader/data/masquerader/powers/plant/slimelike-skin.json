@@ -1,0 +1,9 @@
+{
+  "name": "§e§l§nSwamp Plant",
+  "description": "Your have slime for skin",
+  "type": "origins:model_color",
+  "red": 0.4,
+  "green": 0.8,
+  "blue": 0.4,
+  "alpha": 1
+}

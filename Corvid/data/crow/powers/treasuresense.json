@@ -1,0 +1,213 @@
+{
+	"type": "origins:action_on_block_break",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [{
+				"type": "origins:chance",
+				"action": {
+					"type": "origins:and",
+					"actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:diamond 1",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered a diamond.\"}",
+            "permission_level": 4
+          }
+        ]
+				},
+				"chance": 0.0005
+			},
+			{
+				"type": "origins:chance",
+        "action": {
+          "type": "origins:and",
+          "actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:iron_nugget 1",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered a sliver of iron.\"}",
+            "permission_level": 4
+          }
+        ]
+        },
+				"chance": 0.02
+			},
+			{
+				"type": "origins:chance",
+        "action": {
+          "type": "origins:and",
+          "actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:gold_nugget 1",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered a sliver of gold.\"}",
+            "permission_level": 4
+          }
+        ]
+        },
+				"chance": 0.01
+			},
+			{
+				"type": "origins:chance",
+        "action": {
+          "type": "origins:and",
+          "actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:coal 1",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered a chunk of coal.\"}",
+            "permission_level": 4
+          }
+        ]
+        },
+				"chance": 0.02
+			},
+			{
+				"type": "origins:chance",
+        "action": {
+          "type": "origins:and",
+          "actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:lapis_lazuli 1",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered some lapis.\"}",
+            "permission_level": 4
+          }
+        ]
+        },
+				"chance": 0.008
+			},
+			{
+				"type": "origins:chance",
+        "action": {
+          "type": "origins:and",
+          "actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:redstone 2",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered some redstone powder.\"}",
+            "permission_level": 4
+          }
+        ]
+        },
+				"chance": 0.02
+			},
+			{
+				"type": "origins:chance",
+        "action": {
+          "type": "origins:and",
+          "actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:emerald 1",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered an emerald.\"}",
+            "permission_level": 4
+          }
+        ]
+        },
+				"chance": 0.001
+			},
+      {
+				"type": "origins:chance",
+        "action": {
+          "type": "origins:and",
+          "actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:iron_ingot 1",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered a chunk of iron.\"}",
+            "permission_level": 4
+          }
+        ]
+        },
+				"chance": 0.005
+			},
+      {
+				"type": "origins:chance",
+        "action": {
+          "type": "origins:and",
+          "actions":[{
+
+              "type": "origins:execute_command",
+              "command": "give @s minecraft:gold_ingot 1",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered a chunk of gold.\"}",
+            "permission_level": 4
+          }
+        ]
+        },
+				"chance": 0.0025
+			},
+      {
+				"type": "origins:chance",
+        "action": {
+          "type": "origins:and",
+          "actions":[{
+
+              "type": "origins:execute_command",
+              "command": "/give @s totem_of_undying{display:{Name:'[{\"text\":\"Dusty idol\",\"italic\":true,\"color\":\"#ffffcc\"}]',Lore:['[{\"text\":\"A dusty miniature statue made\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"of \",\"italic\":false,\"color\":\"white\"},{\"text\":\"gold\",\"color\":\"yellow\"},{\"text\":\" with \"},{\"text\":\"emerald eyes\",\"color\":\"green\"},{\"text\":\".\",\"color\":\"white\"}]','[{\"text\":\"Something tells you this\",\"italic\":false,\"color\":\"white\"}]','[{\"text\":\"should stay with you.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}]} 1",
+              "permission_level": 4
+
+          },
+          {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"Your senses discovered some sort of dusty miniature statue.\"}",
+            "permission_level": 4
+          }
+        ]
+        },
+				"chance": 0.000001
+			}
+		]
+	},
+  "block_condition":{
+    "type":"origins:block",
+    "block":"minecraft:stone"
+  },
+	"name": "§a§l§nSpecial technique",
+	"description": "Your keen senses allow you to identify and pull precious materials and treasures out of stone that others would miss."
+}

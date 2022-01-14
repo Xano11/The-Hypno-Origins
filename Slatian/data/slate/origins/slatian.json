@@ -1,0 +1,23 @@
+{
+	"powers": [
+		"slate:dash",
+		"slate:smolman",
+		"slate:shadow",
+		"slate:body",
+		"slate:particles",
+		"slate:friends",
+		"slate:no_friends",
+		"slate:natural_armor",
+		"slate:night_vision",
+		"slate:spawn",
+		"slate:carnivore",
+		"slate:water_vulnerability",
+		"slate:size",
+		"slate:lose_dust"
+	],
+	"icon": "minecraft:deepslate",
+	"order": 10,
+	"impact": 2,
+	"name": "Slatian",
+	"description": "Tales of the slatian have been told throughout many villages, in which many unaware miners have entered the slate caves only to never return."
+}

@@ -1,0 +1,13 @@
+{
+    "type": "origins:invulnerability",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+          "type": "origins:name",
+          "name": "sweetBerryBush"
+        }
+      ]
+    },
+    "hidden": true
+  }

@@ -1,0 +1,42 @@
+{
+	"type": "origins:active_self",
+	"name": "§a§l§nTorpedo",
+	"description": "Press your primary key to dash through the water.",
+	    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+        {
+            "type": "origins:add_velocity",
+            "z": 6.5,
+            "space": "local",
+            "set": true
+        }
+      ]
+    },
+	"condition": {
+		"type": "origins:or",
+		"conditions": [
+		  {
+			"type": "origins:fluid_height",
+			"fluid": "minecraft:water",
+			"comparison": ">",
+			"compare_to": 0.0
+		  },
+		  {
+			"type": "origins:in_rain"
+		  }
+		]
+		},
+       "hud_render": {
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+		"bar_index": 12,
+		"should_render": true
+	},
+
+	"cooldown": 400,
+
+	"key": {
+		"key": "key.origins.primary_active",
+		"continuous": false
+	}
+}

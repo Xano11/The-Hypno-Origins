@@ -1,0 +1,403 @@
+{
+    "type": "origins:multiple",
+    "good_soup": {
+        "type": "origins:action_when_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:choice",
+                "actions": [{
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:12b,EffectDuration:80}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:15b,EffectDuration:160}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:23b,EffectDuration:7}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:8b,EffectDuration:120}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:19b,EffectDuration:240}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:10b,EffectDuration:160}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:16b,EffectDuration:100}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:18b,EffectDuration:180}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:20b,EffectDuration:160}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "permission_level": 4,
+                            "command": "function mushy_origin:sussy_stew"
+                            },
+                        "weight": 5
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "permission_level": 4,
+                            "command": "function mushy_origin:sus_stew"
+                            },
+                        "weight": 5
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "permission_level": 4,
+                            "command": "function mushy_origin:good_soup"
+                            },
+                        "weight": 1
+                    }
+                ]
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+                "condition":
+                {
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:bowl"
+						}
+					}
+				}
+        },
+        "cooldown": 200,
+          "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 7
+            }
+        },
+    "bowl": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+        "type": "origins:actor_action",
+        "action": {
+            "type": "origins:equipped_item_action",
+            "equipment_slot": "mainhand",
+            "action": {
+                "type": "origins:consume",
+                "amount": 1
+            }
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+                "condition":
+                {
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:bowl"
+						}
+					}
+				}
+            },
+        "cooldown": 200,
+          "hud_render": {
+            "should_render": false
+        }
+    },
+    "bowl_two": {
+        "type": "origins:action_when_hit",
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+                "type": "origins:and",
+                "actions": [
+                        {
+                            "type": "origins:execute_command",
+					        "command": "playsound minecraft:entity.mooshroom.suspicious_milk master @a[distance=..15] ~ ~ ~ 100 1 1",
+					        "permission_level": 4
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "playsound minecraft:entity.axolotl.idle_air master @a[distance=..15] ~ ~ ~ 100 1.5 1",
+                            "permission_level": 4
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "mushy_origin:moisture_resource",
+                            "change": -50
+                        },
+                        {
+                            "type": "origins:exhaust",
+                            "amount": 40
+                        }
+                        ]
+                            
+                    }
+                },
+            "bientity_condition": {
+                "type": "origins:actor_condition",
+                    "condition":
+                    {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "item": "minecraft:bowl"
+                            }
+                        }
+                    }
+                },
+            "cooldown": 200,
+              "hud_render": {
+                "should_render": false
+            }
+        },
+        "self_relieving":{
+            "type": "origins:active_self",
+            "entity_action": {
+                    "type": "origins:choice",
+                    "actions": [{
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:12b,EffectDuration:80}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:15b,EffectDuration:160}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:23b,EffectDuration:7}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:8b,EffectDuration:120}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:19b,EffectDuration:240}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:10b,EffectDuration:160}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:16b,EffectDuration:100}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:18b,EffectDuration:180}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+					        "command": "give @s minecraft:suspicious_stew{Effects:[{EffectId:20b,EffectDuration:160}]}",
+					        "permission_level": 4
+                            },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "permission_level": 4,
+                            "command": "function mushy_origin:sussy_stew"
+                            },
+                        "weight": 5
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "permission_level": 4,
+                            "command": "function mushy_origin:sus_stew"
+                            },
+                        "weight": 5
+                    },
+                    {
+                        "element": {
+                            "type": "origins:execute_command",
+                            "permission_level": 4,
+                            "command": "function mushy_origin:good_soup"
+                            },
+                        "weight": 1
+                    }
+                    ]
+                },
+                "condition": {
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:bowl"
+						}
+					}
+				},
+            "cooldown": 200,
+            "hud_render": {
+                "should_render": false
+            },
+            "key": {
+                "key": "key.use"
+                }
+            },
+            "self_bowl":{
+                "type": "origins:active_self",
+                "entity_action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:equipped_item_action",
+                                "equipment_slot": "mainhand",
+                                "action": {
+                                    "type": "origins:consume",
+                                    "amount": 1
+                                }
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.mooshroom.suspicious_milk master @a[distance=..15] ~ ~ ~ 100 1 1",
+                                "permission_level": 4
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "playsound minecraft:entity.axolotl.idle_air master @a[distance=..15] ~ ~ ~ 100 1.5 1",
+                                "permission_level": 4
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "mushy_origin:moisture_resource",
+                                "change": -50
+                            },
+                            {
+                                "type": "origins:exhaust",
+                                "amount": 40
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_bowl",
+                                "operation": "set",
+                                "change": 0
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_bowl_two",
+                                "operation": "set",
+                                "change": 0
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_good_soup",
+                                "operation": "set",
+                                "change": 0
+                            }
+
+                        ]
+                    },
+                    "condition": {
+                        "type": "origins:equipped_item",
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "item": "minecraft:bowl"
+                            }
+                        }
+                    },
+                "cooldown": 200,
+                "hud_render": {
+                    "should_render": false
+                },
+                "key": {
+                    "key": "key.use"
+                    }
+                },
+        "name": "§e§l§nSuspicous Stewmaid",
+      "description": "When someone hits you with a bowl it gets filled with a random stew. You lose moisture and make weird sounds when it happens."
+}

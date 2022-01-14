@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Fragile health reduction",
+    "attribute": "minecraft:generic.max_health",
+    "value": -4.0,
+    "operation": "addition"
+  },
+  "name": "§c§l§nFragile Soul",
+  "description": "Your soul itself is not very resistant to damage."
+}

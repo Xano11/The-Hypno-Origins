@@ -1,0 +1,76 @@
+{
+    "type": "origins:multiple",
+
+  "attack_speed":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "addition",
+      "value": 0.2,
+      "name": "Increased attack speed"
+  },
+  "tick_rate": 10,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "karma:karma/toggle"
+}
+},
+"movement_speed":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": 0.03,
+      "name": "Increased sprinting speed"
+  },
+  "tick_rate": 10,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "karma:karma/toggle"
+}
+},
+"less_hp":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition",
+      "value": -4,
+      "name": "less hearts"
+  },
+  "tick_rate": 10,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "karma:karma/toggle",
+    "inverted": false
+}
+},
+"armor":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.armor",
+      "operation": "addition",
+      "value": -3,
+      "name": "Decreased armor"
+  },
+  "tick_rate": 10,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "karma:karma/toggle"
+}
+},
+"more_damage":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 3,
+      "name": "Increased damage"
+  },
+  "tick_rate": 10,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "karma:karma/toggle"
+}
+},
+"hidden": true
+}

@@ -1,0 +1,16 @@
+{
+	"type": "origins:self_action_on_kill",
+		"entity_action": {
+			"type": "origins:feed",
+			"food": 8,
+			"saturation": 1
+		},
+	"hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+        "bar_index": 4
+    },
+    "cooldown": 1200,
+	"name": "§c§l§nMan-Eating Demon",
+	"description": "You can't eat regular food. You can only recover hunger and saturation by killing (1 minute cooldown)."
+}

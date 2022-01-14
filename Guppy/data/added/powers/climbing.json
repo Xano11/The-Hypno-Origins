@@ -1,0 +1,27 @@
+{
+  "type": "origins:multiple",
+  "toggle": {
+    "type": "origins:toggle",
+    "key": {
+      "key": "key.origins.secondary_active",
+      "continuous": false
+    }
+  },
+  "climbing": {
+    "type": "origins:climbing",
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:collided_horizontally"
+        },
+        {
+          "type": "origins:power_active",
+          "power": "added:climbing_toggle"
+        }
+      ]
+    }
+  },
+  "name": "§a§l§nClimbing",
+  "description": "You can climb up any surface! Toggleable with the secondary key."
+}

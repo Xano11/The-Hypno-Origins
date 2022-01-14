@@ -1,0 +1,26 @@
+{
+	"powers": [
+		"sizeshifter:rocket",
+		"sizeshifter:growth_resource",
+		"sizeshifter:grow",
+		"sizeshifter:shrink",
+		"sizeshifter:size_0",
+		"sizeshifter:size_1",
+		"sizeshifter:size_2",
+		"sizeshifter:size_3",
+		"sizeshifter:size_4",
+		"sizeshifter:less_hungry",
+		"sizeshifter:robotic_limbs",
+		"sizeshifter:no_swim",
+		"sizeshifter:explosive_weakness",
+		"sizeshifter:hydrophobia",
+		"sizeshifter:hydrophobia_resource",
+		"sizeshifter:size_powers",
+		"sizeshifter:yellow_overlay"		
+	],
+	"icon": "minecraft:wither_skeleton_skull",
+	"order": 8,
+	"impact": 2,
+	"name": "Bone Dweller",
+	"description":"An ancient Robot of a once great species left in ruin, you are the last reminder of the past but are also a feat of almost seemingly futuristic technology, what you do next is down to the Bone gods."
+}

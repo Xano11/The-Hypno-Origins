@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: Mall by C418", "color":"dark_purple"}

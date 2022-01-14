@@ -1,0 +1,10 @@
+{
+  "type": "origins:modify_harvest",
+  "allow": true,
+  "block_condition": {
+    "type": "origins:in_tag",
+    "tag": "origins:natural_stone"
+  },
+  "name": "§a§l§nStrong Arms+",
+	"description": "Can mine stone with your fist, also you mine everything else slightly faster"
+}

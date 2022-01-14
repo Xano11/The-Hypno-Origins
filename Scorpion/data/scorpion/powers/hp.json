@@ -1,0 +1,11 @@
+{
+	"type": "origins:attribute",
+	"modifier": {
+		"name": "Natural Armor health bonus",
+		"attribute": "minecraft:generic.max_health",
+		"value": -4.0,
+		"operation": "addition"
+	},
+	"name": "§c§l§nWeak Exoskeleton",
+	"description": "Your body is weaker than others, granting you less hearts."
+}

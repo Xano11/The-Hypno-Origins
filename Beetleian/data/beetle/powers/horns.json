@@ -1,0 +1,60 @@
+{
+  "type": "origins:multiple",
+  "knockback": {
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+      "type": "origins:add_velocity",
+      "z": 2,
+      "y": 0.3
+    },
+    "cooldown": 150,
+    "hud_render": {
+      "should_render": true,
+      "bar_index": 3
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:air"
+            }
+          }
+        },
+        {
+          "type": "origins:sneaking",
+          "inverted": true
+        }
+      ]
+    }
+  },
+  "damage": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "generic.attack_damage",
+      "operation": "multiply_base",
+      "value": 2
+    },
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "item": "minecraft:air"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "name": "§a§l§nHorns",
+  "description": "If attacking while holding nothing you will use your horns to deal increased damage and knockback."
+}

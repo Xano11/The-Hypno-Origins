@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: Wait by C418", "color":"blue"}

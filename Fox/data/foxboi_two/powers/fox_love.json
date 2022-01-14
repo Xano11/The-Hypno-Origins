@@ -1,0 +1,15 @@
+{
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "execute at @s as @e[type=fox,distance=..20] run data modify entity @e[type=fox,limit=1,sort=nearest] Trusted append from entity @p[tag=foxy] UUID",
+                "permission_level": 4
+            }
+        ]
+    },
+    "hidden": true
+}

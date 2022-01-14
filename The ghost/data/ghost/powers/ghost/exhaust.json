@@ -1,0 +1,10 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+        "name": "Reduced exhaustion",
+        "operation": "multiply_base",
+        "value": 1
+    },
+	"name": "§c§l§nHungry.",
+	"description": "You need to eat more to sustain your body."
+}

@@ -1,0 +1,1 @@
+ give @s potion{CustomPotionColor:10792939,display:{Name:'[{"text":"Mixture for Chronos"}]'}} 1

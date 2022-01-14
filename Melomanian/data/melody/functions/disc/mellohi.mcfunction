@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: Mellohi by C418", "color":"light_purple"}

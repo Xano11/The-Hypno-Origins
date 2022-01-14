@@ -1,0 +1,13 @@
+{
+	"type":"origins:attribute",
+	"modifier":{
+	   "attribute": "minecraft:generic.movement_speed",
+	   "value": 0.03,
+	   "operation": "addition"
+	},
+	"name": "§a§l§nQuadruped",
+	"description": "Since you can run on all four legs, you are much faster than usual.",
+	"tick_rate": 2
+}
+
+

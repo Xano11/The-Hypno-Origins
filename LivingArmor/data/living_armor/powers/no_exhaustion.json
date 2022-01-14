@@ -1,0 +1,24 @@
+{
+  "type":"origins:multiple",
+    "no_exhaustion": {
+      "type": "origins:modify_exhaustion",
+      "modifier": {
+        "name": "exhaustion modifier",
+        "value": -2,
+        "operation": "multiply_base"
+      }
+    },
+    "no_sleep": {
+      "type": "origins:prevent_sleep",
+      "message": "Your soul cannot rest here"
+    },
+    "no_lungs": {
+        "type": "origins:invulnerability",
+        "damage_condition": {
+          "type": "origins:name",
+          "name": "drown"
+        }
+    },
+  "name": "§a§l§nUnwavering Sentinel",
+  "description": "With no physical body you no longer need to sleep or breathe, and you rarely eat. (You can use your primary near campfires to set your spawn)"
+  }

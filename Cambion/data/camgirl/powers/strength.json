@@ -1,0 +1,17 @@
+{
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "addition",
+			"value": 2,
+			"name": "lmao"
+		},
+	"tick_rate": 10,
+	"condition": {
+			"type": "origins:resource",
+			"resource": "*:blood_resource",
+			"comparison": ">=",
+			"compare_to": 95
+	},
+	"hidden": true
+}

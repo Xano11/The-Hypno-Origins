@@ -1,0 +1,23 @@
+{
+	"powers": [
+		"masquerader:plant/vine",
+		"masquerader:plant/trap",
+		"masquerader:plant/poison",
+		"masquerader:agile",
+		"masquerader:plant/photosynthesis",
+		"masquerader:plant/slimelike-skin",
+		"masquerader:notweapons",
+		"masquerader:nohelmet",
+		"masquerader:weakedsoul",
+		"masquerader:plant/fire",
+		"masquerader:plant/antivore",
+		"masquerader:plant/slimemask",
+		"masquerader:untransform"
+	],
+	"icon": "minecraft:slime_block",
+	"order": 10,
+	"impact": 3,
+	"name": "Swamp Monster",
+	"description": "A Masquerader that has harnessed the power of the a monster from a dark swamp to aid them in battle",
+	"unchoosable": true
+}

@@ -1,0 +1,30 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifiers": [
+		{
+			"attribute": "minecraft:generic.attack_damage",
+			"value": 2,
+			"operation": "multiply_total"
+	}
+    ],
+    "condition":
+	{
+		"type": "origins:and",
+		"conditions":
+		[
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition":
+				{
+					"type": "origins:ingredient",
+					"ingredient":
+					{
+						"item": "medievalweapons:golden_healing_staff"
+					}
+				}
+			}
+		]
+	},
+    "hidden": true
+}

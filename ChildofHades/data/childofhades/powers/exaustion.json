@@ -1,0 +1,15 @@
+{
+	"name": "§c§l§nExhaustion",
+	"description": "You exhaust while invisible",
+    "condition": {
+        "type": "origins:invisible"
+    },
+    "type": "origins:modify_exhaustion",
+    "modifiers": [
+        {
+            "operation": "addition",
+            "value": 10,
+            "name": "Exhaustion"
+        }
+    ]
+}

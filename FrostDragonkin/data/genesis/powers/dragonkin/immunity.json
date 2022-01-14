@@ -1,0 +1,19 @@
+{
+  "type": "origins:invulnerability",
+  "damage_condition":
+  {
+    "type": "origins:or",
+    "conditions":
+    [
+      {
+            "type": "origins:name",
+          "name": "dragonBreath"
+        },
+        {
+          "type": "origins:name",
+            "name": "freeze"
+      }
+      ]
+  },
+  "hidden": true
+}

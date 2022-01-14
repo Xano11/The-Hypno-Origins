@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier":{
+         "value": 1,
+         "operation": "multiply_base"
+         },
+      "name": "§c§l§nC h u n g u s",
+      "description": "He's a hungry boi"
+  }

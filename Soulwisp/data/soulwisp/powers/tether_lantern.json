@@ -1,0 +1,25 @@
+{
+	"type": "origins:stacking_status_effect",
+	"min_stacks": 0,
+	"max_stacks": 2,
+	"duration_per_stack": 20,
+	"effect": {
+		"effect": "minecraft:resistance",
+		"duration": 20,
+		"amplifier": 0,
+		"is_ambient": false,
+		"show_particles": false,
+		"show_icon": true
+	},
+	"condition": {
+		"type": "origins:equipped_item",
+		"equipment_slot": "offhand",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": {
+				"item":"minecraft:soul_lantern"
+			}
+		}
+	},
+	"hidden": true
+}

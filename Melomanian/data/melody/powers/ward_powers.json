@@ -1,0 +1,141 @@
+{
+	"type": "origins:multiple",
+	"pixels": {
+		"type": "origins:shader",
+		"shader": "minecraft:shaders/post/notch.json"
+	},
+	"healing": {
+		"type": "origins:self_action_on_kill",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:heal",
+					"amount": 5
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.player.levelup",
+					"pitch": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/particle minecraft:heart ~ ~1 ~ 0.5 0.5 0.5 0 10 force",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 100,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+			"bar_index": 9
+		},
+		"damage_condition": {
+			"type": "origins:amount",
+			"comparison": ">=",
+			"compare_to": 10
+		},
+		"condition": {
+			"type": "origins:health",
+			"comparison": "<=",
+			"compare_to": 19
+		}
+	},
+	"swordsman": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_speed",
+			"operation": "addition",
+			"value": 1
+		}
+	},
+	"tough_skin": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.armor",
+			"operation": "addition",
+			"value": 12
+		}
+	},
+	"bad_archer": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:crossbow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:long_bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:recurve_bow"
+					}
+				}
+			]
+		}
+	},
+	"no_regen": {
+		"type": "origins:disable_regen"
+	},
+	"delete_ward": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:ward_active",
+				"comparison": "==",
+				"compare_to": 251
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:ward_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:ward_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_ward",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:ward_active",
+				"change": 1
+			}
+		}
+	}
+}

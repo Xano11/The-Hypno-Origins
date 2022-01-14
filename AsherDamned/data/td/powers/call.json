@@ -1,0 +1,84 @@
+{
+    "type": "origins:multiple",
+
+    "give_tag": {
+        "type": "origins:action_on_callback",
+        "entity_action_chosen": {
+            "type": "origins:execute_command",
+            "command": "tag @s add damn",
+            "permission_level": 4
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "tag @s remove damn",
+            "permission_level": 4
+        },
+        "execute_chosen_when_orb": true
+    },
+
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+            "bar_index": 6
+        }
+    },
+
+    "hit1": {
+    "type": "origins:action_when_hit",
+    "bientity_action": {
+        "type": "origins:actor_action",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "say @a[limit=1,sort=nearest,distance=1..,tag=damn]"
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:actor_condition",
+            "condition": {
+                "type": "origins:gamemode",
+                "gamemode": "survival"
+                }
+            }
+        },
+
+    "hit2": {
+        "type": "origins:action_when_hit",
+        "bientity_action": {
+            "type": "origins:target_action",
+            "action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 1
+                }
+            },
+            "bientity_condition": {
+                "type": "origins:actor_condition",
+                "condition": {
+                    "type": "origins:gamemode",
+                    "gamemode": "survival"
+                }
+            }
+        },
+
+    "you_called": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "origin set @s origins:origin td:damn2"
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "==",
+            "compare_to": 3
+        }
+    },
+
+    "name": "§e§l§nYou Called?",
+    "description": "Getting hit by a player will make them say your name, getting hit 3 times within 30 seconds will make you change..."
+}

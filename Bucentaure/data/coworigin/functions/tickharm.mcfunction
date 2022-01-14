@@ -1,0 +1,2 @@
+execute as @a[advancements={coworigin:cowharm=true}] run effect give @s minecraft:instant_damage 1 0 false
+execute as @a[advancements={coworigin:cowharm=true}] run advancement revoke @s only coworigin:cowharm

@@ -1,0 +1,599 @@
+{
+	"name": "§e§l§nStatic Discharge",
+	"description": "You gain static charge while you are airborne. A lightning strike occurs when you hit someone on the ground, when someone on the ground hits you, or when you land with full charge.",
+	
+	"type": "origins:multiple",
+	
+	"touches_ground_charged": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"rising_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:damage",
+					"amount": 10,
+					"source": {
+						"name": "lightningBolt",
+						"bypasses_armor": false,
+						"unblockable": true
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "summon minecraft:lightning_bolt ~ ~ ~",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:change_resource",
+					  "resource": "inkbat:ressource",
+					  "change": -600
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 2,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 3,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				}
+			]
+		},
+
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:in_block_anywhere",
+							"block_condition": {
+								"type": "origins:block",
+								"block": "minecraft:water"
+							}
+						},
+						{
+							"type": "origins:on_block"
+						}
+					]
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:ressource",
+					"comparison": "==",
+					"compare_to": 600
+				},
+				{
+					"type": "origins:predicate",
+					"predicate": "inkbat:weather_thunderstorm",
+					"inverted": true
+				}
+			]
+		}
+	},
+	
+	"touches_ground_without_full_charge_damage": {
+		"type": "origins:damage_over_time",
+		"interval": 20,
+		"onset_delay": 1,
+		"damage": 1,
+		"damage_easy": 0.5,
+		"damage_source": {
+			"name": "lightningBolt"
+		},
+		"protection_enchantment": "minecraft:fire_protection",
+		"protection_effectiveness": 0.5,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:in_block_anywhere",
+							"block_condition": {
+								"type": "origins:block",
+								"block": "minecraft:water"
+							}
+						},
+						{
+							"type": "origins:on_block"
+						}
+					]
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:ressource",
+					"comparison": "<",
+					"compare_to": 600
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "minecraft:fire_resistance",
+					"inverted": true
+				},
+				{
+					"type": "origins:in_rain",
+					"inverted": true
+				}
+			]
+		}
+	},
+	
+	"tgwfc_clear_charge": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"entity_action": {
+				"type": "origins:change_resource",
+				  "resource": "inkbat:ressource",
+				  "change": -600
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:in_block_anywhere",
+							"block_condition": {
+								"type": "origins:block",
+								"block": "minecraft:water"
+							}
+						},
+						{
+							"type": "origins:on_block"
+						}
+					]
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:ressource",
+					"comparison": "<",
+					"compare_to": 600
+				}
+			]
+		}
+	},
+	
+	"clear_charge_in_rain": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:change_resource",
+					  "resource": "inkbat:ressource",
+					  "change": -600
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:exposed_to_sky"
+				},
+				{
+					"type": "origins:predicate",
+					"predicate": "inkbat:weather_rain"
+				},
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:ressource",
+					"comparison": ">=",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	
+	"player_hits_ground_entity": {
+		"type": "origins:target_action_on_hit",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:ressource",
+					"comparison": "==",
+					"compare_to": 600
+				}
+			]
+		},
+		"target_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:in_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:water"
+					}
+				},
+				{
+					"type": "origins:on_block"
+				},
+				{
+					"type": "origins:command",
+					"command": "data get entity @s RootVehicle.Entity.OnGround",
+					"comparison": "==",
+					"compare_to": 1,
+					"permission_level": 2
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=spider,nbt={OnGround:1b},sort=nearest,limit=1] if data entity @s Passengers",
+					"comparison": "==",
+					"compare_to": 1,
+					"permission_level": 2
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:damage",
+					"amount": 10,
+					"source": {
+						"name": "lightningBolt",
+						"bypasses_armor": false,
+						"unblockable": true,
+						"out_of_world": true
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "summon minecraft:lightning_bolt ~ ~ ~",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:change_resource",
+					  "resource": "inkbat:ressource",
+					  "change": -600
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 2,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 3,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": true,
+			"bar_index": 2
+		}
+},
+"change_resource": {
+	"type": "origins:self_action_on_hit",
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"resource": "inkbat:ressource",
+				"comparison": "==",
+				"compare_to": 600
+			}
+		]
+	},
+	"target_condition": {
+		"type": "origins:or",
+		"conditions": [
+			{
+				"type": "origins:in_block",
+				"block_condition": {
+					"type": "origins:block",
+					"block": "minecraft:water"
+				}
+			},
+			{
+				"type": "origins:on_block"
+			},
+			{
+				"type": "origins:command",
+				"command": "data get entity @s RootVehicle.Entity.OnGround",
+				"comparison": "==",
+				"compare_to": 1,
+				"permission_level": 2
+			},
+			{
+				"type": "origins:command",
+				"command": "execute at @s as @e[type=spider,nbt={OnGround:1b},sort=nearest,limit=1] if data entity @s Passengers",
+				"comparison": "==",
+				"compare_to": 1,
+				"permission_level": 2
+			}
+		]
+	},
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:delay",
+				"ticks": 1,
+				"action": {
+					"type": "origins:and",
+					"actions": [
+						{
+							"type": "origins:change_resource",
+							"resource": "inkbat:ressource",
+							"change": -600	
+						}
+					]
+				}
+			}
+		]
+	},
+	"cooldown": 0,
+	"hud_render": {
+		"should_render": false,
+		"bar_index": 2
+}
+},
+
+	"ground_entity_hits_player": {
+		"type": "origins:attacker_action_when_hit",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:ressource",
+					"comparison": "==",
+					"compare_to": 600
+				}
+			]
+		},
+		"target_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:in_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:water"
+					}
+				},
+				{
+					"type": "origins:on_block"
+				},
+				{
+					"type": "origins:command",
+					"command": "data get entity @s RootVehicle.Entity.OnGround",
+					"comparison": "==",
+					"compare_to": 1,
+					"permission_level": 2
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:damage",
+					"amount": 10,
+					"source": {
+						"name": "lightningBolt",
+						"bypasses_armor": false,
+						"unblockable": true
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "summon minecraft:lightning_bolt ~ ~ ~",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:change_resource",
+					  "resource": "inkbat:ressource",
+					  "change": -600
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 2,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				},
+				{
+					"type": "origins:delay",
+					"ticks": 3,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:execute_command",
+								"command": "execute as @e[type=minecraft:item,distance=..15] run data modify entity @s Invulnerable set value 1",
+								"permission_level": 4
+							}
+						]
+					}
+				}
+			]
+		},
+	"cooldown": 0,
+	"hud_render": {
+		"should_render": true,
+		"bar_index": 2
+	}
+	},
+	"change_resource2": {
+		"type": "origins:self_action_when_hit",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "inkbat:ressource",
+					"comparison": "==",
+					"compare_to": 600
+				}
+			]
+		},
+		"target_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:in_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:water"
+					}
+				},
+				{
+					"type": "origins:on_block"
+				},
+				{
+					"type": "origins:command",
+					"command": "data get entity @s RootVehicle.Entity.OnGround",
+					"comparison": "==",
+					"compare_to": 1,
+					"permission_level": 2
+				},
+				{
+					"type": "origins:command",
+					"command": "execute at @s as @e[type=spider,nbt={OnGround:1b},sort=nearest,limit=1] if data entity @s Passengers",
+					"comparison": "==",
+					"compare_to": 1,
+					"permission_level": 2
+				}
+			]
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+						"type": "origins:and",
+						"actions": [
+							{
+								"type": "origins:change_resource",
+								"resource": "inkbat:ressource",
+								"change": -600	
+							}
+						]
+					}
+				}
+			]
+		},
+		"cooldown": 0,
+		"hud_render": {
+			"should_render": false,
+			"bar_index": 2
+	}
+	}
+}

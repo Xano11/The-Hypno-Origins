@@ -1,0 +1,114 @@
+{
+	"name": "Iron-Averse",
+	"description": "§c§l§nYou take damage if you have iron equipped. Additionally, you take extra damage when hit by iron weapons.",
+	"type": "origins:multiple",
+	"equipped": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:damage",
+			"amount": 1,
+			"source": {
+				"name": "onFire",
+				"bypasses_armor": true
+			}
+		},
+		"interval": 15,
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "head",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "mebukan:iron"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "chest",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "mebukan:iron"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "legs",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "mebukan:iron"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "feet",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "mebukan:iron"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "mebukan:iron"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "mebukan:iron"
+						}
+					}
+				},
+				{
+					"type": "origins:block_in_radius",
+					"block_condition": {
+						"type": "origins:in_tag",
+						"tag": "mebukan:iron"
+					},
+					"radius": 1,
+					"shape": "cube",
+					"comparison": ">=",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"attacked": {
+		"type": "origins:modify_damage_taken",
+		"bientity_condition": {
+			"type": "origins:actor_condition",
+			"condition": {
+				"type": "origins:equipped_item",
+				"equipment_slot": "mainhand",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"tag": "mebukan:iron"
+					}
+				}
+			}
+		},
+		"modifier": {
+			"name": "Weak to iron",
+			"operation": "addition",
+			"value": 10
+		}
+	}
+}

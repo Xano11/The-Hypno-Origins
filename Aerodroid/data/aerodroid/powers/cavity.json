@@ -1,0 +1,11 @@
+{
+  "type": "origins:inventory",
+  "name": "container.shulker_inventory_power",
+  "drop_on_death": true,
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous": false
+  },
+  "name": "§a§l§nChest on the Fly",
+  "description": "Inside you is a chest cavity that allows for some extra storage. Opening it takes some hunger."
+}

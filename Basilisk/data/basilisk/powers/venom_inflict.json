@@ -1,0 +1,123 @@
+{
+"type":"origins:multiple",
+   "poison_inflict": { 
+        "type": "origins:target_action_on_hit",
+        "entity_action": {
+            "type":"origins:and",
+            "actions":[
+                {
+                    "type":"origins:execute_command",
+                    "command":"power grant @s[tag=!basilisk] basilisk:venom_effects",
+                    "permission_level": 4
+                },
+                {
+                    "type":"origins:execute_command",
+                    "command":"playsound minecraft:entity.axolotl.swim player @s ~ ~ ~ 3 0.7",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "basilisk:venom_inflict_cooldown",
+                    "change": -96
+                },
+                {
+                    "type": "origins:exhaust",
+                    "amount": 6
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "basilisk:venom_inflict_cooldown",
+                        "comparison": "==",
+                        "compare_to": 96
+                    }
+                ]
+            },
+        
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        } 
+    }, 
+    "resource_lost": { 
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+            "type": "origins:change_resource",
+            "resource": "basilisk:venom_inflict_cooldown",
+            "change": -96
+                }
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                    {
+                        "type": "origins:resource",
+                        "resource": "basilisk:venom_inflict_cooldown",
+                        "comparison": "==",
+                        "compare_to": 96
+                    }
+                ]
+            },
+        
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        } 
+    },
+    "cooldown":  
+    { 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 96,
+        "start_value": 0,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 20
+        }  
+    },
+    "gain_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "basilisk:venom_inflict_cooldown",
+        "change": 1
+    },
+    "interval": 100
+},
+"gain_resource_potion": 
+{
+    "type": "origins:action_on_item_use",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "basilisk:venom_inflict_cooldown",
+        "change": 24
+    },
+        "item_condition": {
+            "type": "origins:or",
+            "conditions": [
+        {
+        "type": "origins:nbt",
+        "nbt": "{Potion: \"minecraft:poison\"}}"
+        },
+        {
+            "type": "origins:nbt",
+            "nbt": "{Potion: \"minecraft:strong_poison\"}}"
+        },
+        {
+            "type": "origins:nbt",
+            "nbt": "{Potion: \"minecraft:long_poison\"}}"
+        }
+    ]
+}
+},
+        "name": "§a§l§nVenom",
+        "description": "Using your venomous fangs, you can inflict a long-lasting poison."
+}

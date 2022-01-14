@@ -1,0 +1,73 @@
+{
+    "type": "origins:multiple",
+
+    "weak_soul": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "Max health increase",
+            "attribute": "minecraft:generic.max_health",
+            "value": -8,
+            "operation": "addition"
+        }
+    },
+
+    "no_fall_or_fire_damage": {
+        "type":"origins:modify_damage_taken",
+        "modifier":{
+        "value": -1,
+        "operation":"multiply_total"
+        },
+        "damage_condition":{
+            "type":"origins:or",
+            "conditions":[
+            {
+            "type":"origins:name",
+            "name":"lava"
+            },
+            {
+            "type":"origins:name",
+            "name":"onFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"inFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"hotFloor"
+            },
+            {
+            "type":"origins:name",
+            "name":"fall"
+            }
+            ]
+        }
+    },
+
+    "no_armor": {
+        "type": "origins:restrict_armor",
+        "head": {
+            "type": "origins:armor_value",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "chest": {
+            "type": "origins:armor_value",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "legs": {
+            "type": "origins:armor_value",
+            "comparison": ">",
+            "compare_to": 0
+        },
+        "feet": {
+            "type": "origins:armor_value",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+
+    "name": "§e§l§nGhost Things",
+    "description": "Due to you being dead, your soul has grown weak making you have 4 less hearts than normal but you can't take fall damage, wear armor or burn due to you not having a body"
+}

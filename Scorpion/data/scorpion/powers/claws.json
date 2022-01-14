@@ -1,0 +1,22 @@
+{
+    "type": "origins:modify_damage_dealt",
+    "damage_condition": {
+        "type": "origins:attacker",
+        "entity_condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:air"
+                }
+            }
+        }
+    },
+    "modifier": {
+		"operation": "addition",
+		"value": 3
+    },
+        "name": "§a§l§nClaws",
+	"description": "Your sharp claws help in hand to hand combat, and can break leaves with ease."
+}

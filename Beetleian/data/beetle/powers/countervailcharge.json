@@ -1,0 +1,12 @@
+{
+	"type": "origins:self_action_when_hit",
+
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "resource change @p beetle:countervail 1",
+		"permission_level": 4
+	},
+	"cooldown": 0,
+
+	"hidden": true
+}

@@ -1,0 +1,11 @@
+{
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "speed increase",
+            "attribute": "minecraft:generic.movement_speed",
+            "value": 0.2,
+            "operation": "multiply_total"
+        },
+    "name": "§a§l§nLegs come with their perk",
+    "description": "Now that you have working legs, you move 20% faster"
+}

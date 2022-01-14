@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": -0.5
+    },
+    "name": "§c§l§nThick Thighs",
+    "description":"Your thick thighs make swimming very hard, making you swim 50% slower"
+}

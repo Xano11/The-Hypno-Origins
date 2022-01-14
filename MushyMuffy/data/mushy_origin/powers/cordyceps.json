@@ -1,0 +1,24 @@
+{
+    "type": "origins:multiple",
+    "team_add": {
+        "type": "origins:action_over_time",
+        "interval": 20,
+        "entity_action": {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "function mushy_origin:cordyceps"
+                }
+        },
+    "team_leave": {
+        "type": "origins:action_over_time",
+        "interval": 30,
+        "entity_action": {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "function mushy_origin:leave_cordyceps"
+            }
+        },
+    
+    "name":"§a§l§nCordyceps",
+    "description":"The living dead (zombies) aren't agressive towards you."
+}

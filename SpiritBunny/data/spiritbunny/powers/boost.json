@@ -1,0 +1,71 @@
+{
+    "type": "origins:multiple",
+    "name": "§a§l§nBoost",
+    "description": "[Primary] You have the ability to lauch yourself three times when fully charged. Each boost sends you a decent distance in the direction you are looking. Each boost takes 5 seconds to recharge and can be used individually when the other boosts are not fully charged.",
+    "active": {
+        "type": "origins:active_self",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+                    "type": "origins:resource",
+                    "resource": "*:*_resource",
+                    "comparison": "!=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:fall_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                }
+            ]
+        },
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 8
+        },
+        "cooldown": 5,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:add_velocity",
+                    "z": 1.5,
+                    "space": "local"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.illusioner.cast_spell master @a[distance=..20] ~ ~ ~ 1000 2",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:change_resource",
+                    "change": -1,
+                    "resource": "*:*_resource"
+                }
+            ]
+        }
+    },
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "start_value": 3,
+        "hud_render": {
+            "should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 15
+        }
+    },
+    "aot": {
+        "type": "origins:action_over_time",
+        "interval": 100,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 1
+        }
+    }
+}

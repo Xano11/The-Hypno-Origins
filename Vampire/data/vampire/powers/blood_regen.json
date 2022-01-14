@@ -1,0 +1,35 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+        "type": "origins:heal",
+        "amount": 1
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "vampire:blood_bar",
+                "change": -30
+            }
+        ]
+    },
+    "interval": 15,
+    "condition": {
+    "type": "origins:and",
+    "conditions": [
+        {
+            "type": "origins:resource",
+            "resource": "vampire:blood_bar",
+            "comparison": ">=",
+            "compare_to": 50
+        },
+        {
+            "type": "origins:health",
+            "comparison": "<",
+            "compare_to": 20
+        }
+    ]
+},
+"hidden": true
+}

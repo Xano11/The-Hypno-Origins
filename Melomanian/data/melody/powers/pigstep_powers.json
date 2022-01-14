@@ -1,0 +1,299 @@
+{
+	"type": "origins:multiple",
+	"angy": {
+		"type": "origins:active_self",
+		"entity_action": {
+		"type": "origins:and",
+		"actions": [
+		{
+		  "type": "origins:damage",
+		  "amount": 4,
+		  "source": {
+			"name": "Brute energy",
+			"unblockable": true,
+			"bypasses_armor": true
+		}
+		},
+		{
+		  "type": "origins:apply_effect",
+		  "effects":[
+		{
+			"effect": "minecraft:speed",
+			"duration": 200,
+			"amplifier": 1
+		},
+		{
+			"effect":"minecraft:resistance",
+			"duration": 200,
+			"amplifier": 3
+		},
+		{
+			"effect": "minecraft:hunger",
+			"duration": 300,
+			"amplifier": 3
+		}
+		]
+		},
+	
+		{
+		  "type": "origins:play_sound",
+		  "sound": "minecraft:entity.piglin_brute.angry"
+	  	}
+		]
+		},
+	  "cooldown": 1200,
+	  "hud_render": {
+		  "should_render": true,
+		  "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+		  "bar_index": 7
+	  },
+	"key": {
+		"key": "key.origins.secondary_active"
+		}
+	},
+	"tough_skin":{
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 2,
+		"duration_per_stack": 20,
+		"effect": {
+				"effect": "minecraft:resistance",
+				"amplifier": 2,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			}
+	},
+	"armorless":{
+		"type": "origins:restrict_armor",
+		"head": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 0
+		},
+		"chest": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 0
+		},
+		"legs": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 0
+		},
+		"feet": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	},
+	"zombie_piglin_fire_immunity": {
+		"type": "origins:invulnerability",
+		"damage_condition": {
+			"type": "origins:fire"
+		},
+		"condition": {
+			"type": "origins:dimension",
+			"dimension": "minecraft:overworld"
+		}
+	},
+	"tough_guy": {
+		"type": "origins:attribute",
+  		"modifier": {
+   		 "attribute": "minecraft:generic.max_health",
+   		 "value": 4.0,
+   		 "operation": "addition"
+		}
+	},
+	"gold_axe": {
+		"type": "origins:action_on_hit",
+		"bientity_action": {
+			"type": "origins:target_action",
+			"action": {
+				"type": "origins:damage",
+				"amount": 25,
+				"source": {
+					"name": "player",
+					"bypasses_armor": false
+				}
+			}
+		},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "mainhand",
+			"item_condition": {
+				"type": "origins:ingredient",
+				"ingredient": {
+					"item": "minecraft:golden_axe"
+					}
+				}
+			},
+			"cooldown": 20,
+			"hud_render": {
+			"should_render": false
+		}
+	},
+	"weapon": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "multiply_total",
+			"value": -0.99
+		}
+	},
+	"breaking": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": -1
+		}
+	},
+	"bonk_brain": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:trident"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:crossbow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:long_bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:recurve_bow"
+					}
+				}
+			]
+		}
+	},
+	"frens": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"permission_level": 4,
+					"command": "team join nether @e[type=minecraft:piglin]"
+				},
+				{
+					"type": "origins:execute_command",
+					"permission_level": 4,
+					"command": "team join nether @e[type=minecraft:piglin_brute]"
+				},
+				{
+					"type": "origins:execute_command",
+					"permission_level": 4,
+					"command": "team join nether @e[type=minecraft:zombified_piglin]"
+				}
+			]
+		}
+	},
+	"flames": {
+		"type": "origins:particle",
+		"particle": "minecraft:flame",
+		"frequency": 4
+	},
+	"hates_water": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:execute_command",
+			"command": "/power grant @s origins:water_vulnerability",
+			"permission_level": 4
+		},
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/power remove @s origins:water_vulnerability",
+			"permission_level": 4
+		}
+	},
+	"hates_veggies": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:execute_command",
+			"command": "/power grant @s origins:origins:carnivore",
+			"permission_level": 4
+		},
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/power remove @s origins:origins:carnivore",
+			"permission_level": 4
+		}
+	},
+	"delete_pigstep": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:pigstep_active",
+				"comparison": "==",
+				"compare_to": 148
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:pigstep_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:pigstep_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"permission_level": 4,
+						"command": "team leave nether @s"
+					},
+					{
+						"type": "origins:execute_command",
+						"permission_level": 4,
+						"command": "team remove nether"
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_pigstep",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:pigstep_active",
+				"change": 1
+			}
+		}
+	}
+}

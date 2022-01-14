@@ -1,0 +1,11 @@
+{
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "origins:shields"
+    }
+  },
+  "name": "§c§l§nClaw Hands",
+  "description": "Your genetically modified body is physically unable to hold a shield."
+}

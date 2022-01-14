@@ -1,0 +1,10 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "item replace entity @s armor.head with sea_lantern{display:{Name:'{\"text\":\"Sea Serpent Mask\",\"color\":\"dark_blue\",\"italic\":true,\"underlined\":true}'},HideFlags:127,Enchantments:[{id:\"minecraft:binding_curse\",lvl:1s},{id:\"minecraft:vanishing_curse\",lvl:1s}]} 1",
+        "permission_level": 4
+    },
+    "interval": 1,
+    "hidden": true
+}

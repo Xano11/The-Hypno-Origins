@@ -1,0 +1,192 @@
+{
+	"name": "§e§l§nLunar Attunement",
+	"description": "During the night, you gain the power of the moon. You become more agile, able to leap and do more damage with bows. You are able to breath in water. You deal less damage and fear flames.",
+	"type": "origins:multiple",
+	"lunar_leap": {
+		"type": "origins:active_self",
+		"cooldown": 100,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+			"bar_index": 1
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:add_velocity",
+					"space": "local",
+					"z": 1
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.ender_dragon.flap",
+					"pitch": 1.5
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night"
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"lunar_weakness": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "addition",
+			"value": -4,
+			"name": "Lunar Weakness"
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night"
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"lunar_swiftness": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "addition",
+			"value": 0.04,
+			"name": "Lunar Swiftness"
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night"
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"lunar_resistance": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 40,
+		"effect": {
+			"effect": "water_breathing",
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night"
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"lunar_archery": {
+		"type": "origins:modify_projectile_damage",
+		"modifier": {
+			"operation": "addition",
+			"value": 4
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night"
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"lunar_vulnerability": {
+		"type": "origins:modify_damage_taken",
+		"modifier": {
+			"name": "Lunar Vulnerability",
+			"value": 2.0,
+			"operation": "multiply_base"
+		},
+		"damage_condition": {
+			"type": "origins:fire"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night"
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	}
+}

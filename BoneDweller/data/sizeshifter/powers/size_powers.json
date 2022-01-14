@@ -1,0 +1,205 @@
+{
+    "type": "origins:multiple",
+        "big_jump": {
+        "type": "origins:modify_jump",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.35
+        },
+        "condition": {
+                "type": "origins:resource",
+                "resource": "sizeshifter:growth_resource",
+                "comparison": "==",
+                "compare_to": 4
+            }
+        },
+        "heavyweight": {
+            "type": "origins:modify_falling",
+            "velocity": 0.35,
+            "take_fall_damage": false,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "sizeshifter:growth_resource",
+                "comparison": "==",
+                "compare_to": 4
+            }
+        },
+        "kinda_big_jump": {
+        "type": "origins:modify_jump",
+        "modifier": {
+            "operation": "addition",
+            "value": 0.15
+        },
+        "condition": {
+                "type": "origins:resource",
+                "resource": "sizeshifter:growth_resource",
+                "comparison": "==",
+                "compare_to": 3
+            }
+        },
+        "kinda_heavyweight": {
+            "type": "origins:modify_falling",
+            "velocity": 0.15,
+            "take_fall_damage": true,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "sizeshifter:growth_resource",
+                "comparison": "==",
+                "compare_to": 4
+            }
+        },
+        "kinda_featherweight": {
+            "type": "origins:modify_falling",
+            "velocity": 0.04,
+            "take_fall_damage": true,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "sizeshifter:growth_resource",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        },
+        "featherweight": {
+            "type": "origins:modify_falling",
+            "velocity": 0.01,
+            "take_fall_damage": false,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "sizeshifter:growth_resource",
+                "comparison": "<=",
+                "compare_to": 0
+            }
+        },
+        "climber": {
+            "type": "origins:climbing",
+            "hold_condition": {
+                "type": "origins:and",
+                "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                    {
+                        "type": "origins:block_collision",
+                        "offset_x": 0.01,
+                        "offset_z": 0.01,
+                        "offset_y": 0
+                    },
+                    {
+                        "type": "origins:block_collision",
+                        "offset_x": -0.01,
+                        "offset_z": -0.01,
+                        "offset_y": 0
+                    }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "sizeshifter:growth_resource",
+                    "comparison": "<=",
+                    "compare_to": 1
+                }
+                ]
+            },
+            "condition": {
+                "type": "origins:and",
+                "conditions": [
+                {
+                    "type": "origins:collided_horizontally"
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "sizeshifter:growth_resource",
+                    "comparison": "<=",
+                    "compare_to": 0
+                }
+                ]
+            }
+        },
+        "giant": {
+            "type": "origins:conditioned_attribute",
+            "modifier": {
+                "attribute": "minecraft:generic.max_health",
+                "operation": "addition",
+                "value": 10,
+                "name": "giant health"
+            },
+            "tick_rate": 20,
+            "condition": {
+                    "type": "origins:resource",
+                    "resource": "sizeshifter:growth_resource",
+                    "comparison": "==",
+                    "compare_to": 4
+                }
+        },
+        "large": {
+            "type": "origins:conditioned_attribute",
+            "modifier": {
+                "attribute": "minecraft:generic.max_health",
+                "operation": "addition",
+                "value": 4,
+                "name": "large health"
+            },
+            "tick_rate": 20,
+            "condition": {
+                    "type": "origins:resource",
+                    "resource": "sizeshifter:growth_resource",
+                    "comparison": "==",
+                    "compare_to": 3
+                }
+        },
+        "small": {
+            "type": "origins:conditioned_attribute",
+            "modifier": {
+                "attribute": "minecraft:generic.max_health",
+                "operation": "addition",
+                "value": -4,
+                "name": "small health"
+            },
+            "tick_rate": 20,
+            "condition": {
+                    "type": "origins:resource",
+                    "resource": "sizeshifter:growth_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+        },
+        "tiny": {
+            "type": "origins:conditioned_attribute",
+            "modifier": {
+              "attribute": "minecraft:generic.max_health",
+              "operation": "addition",
+              "value": -10,
+              "name": "tiny health"
+            },
+            "tick_rate": 20,
+            "condition": {
+                    "type": "origins:resource",
+                    "resource": "sizeshifter:growth_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                }
+        },
+        "no_positives": {
+            "type": "origins:effect_immunity",
+            "effects": [
+                "minecraft:night_vision",
+                "minecraft:invisibility",
+                "minecraft:jump_boost",
+                "minecraft:fire_resistance",
+                "minecraft:speed",
+                "minecraft:water_breathing",
+                "minecraft:regeneration",
+                "minecraft:strength",
+                "minecraft:luck",
+                "minecraft:slow_falling"
+                ],
+            "condition": {
+                    "type": "origins:resource",
+                    "resource": "sizeshifter:growth_resource",
+                    "comparison": "==",
+                    "compare_to": 4
+            }
+        },
+    	"name": "§e§l§nSize Matters",
+	"description": "Changing size comes with it's benefits and cons.\n§aPros: at minimum size you fall slowly and can climb, at maximum size you can jump much higher and have much more hp\n§r§cCons: at smaller sizes you have less health, when at maximum size you're immune to potion effects"
+    }

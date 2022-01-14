@@ -1,0 +1,123 @@
+{
+	"type": "origins:multiple",
+	"black_and_white": {
+		"type": "origins:shader",
+		"shader": "minecraft:shaders/post/pencil.json"
+	},
+	"gun": {
+		"type": "origins:modify_projectile_damage",
+		"modifier": {
+			"operation": "addition",
+			"value": 8.0
+		},
+		"target_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:glowing",
+				"duration": 600,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			}
+		}
+	},
+	"weak": {
+		"type": "origins:effect_immunity",
+		"effects": [
+			"minecraft:strength"
+		]
+	},
+	"weak2": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "addition",
+			"value": -8
+		}
+	},
+	"weak3": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.armor",
+			"value": -6.0,
+			"operation": "addition"
+		}
+	},
+	"cumstrophobia": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 6,
+		"max_stacks": 361,
+		"duration_per_stack": 10,
+		"effects": [
+			{
+				"effect": "minecraft:blindness",
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": true
+			},
+			{
+				"effect": "minecraft:slowness",
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": true
+			}
+		],
+		"condition": {
+			"type": "origins:block_collision",
+			"offset_x": 0,
+			"offset_y": 1,
+			"offset_z": 0
+		}
+	},
+	"fit": {
+		"type": "origins:modify_exhaustion",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -0.5
+		}
+	},
+	"delete_stal": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:stal_active",
+				"comparison": "==",
+				"compare_to": 150
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:stal_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:stal_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_stal",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:stal_active",
+				"change": 1
+			}
+		}
+	}
+}

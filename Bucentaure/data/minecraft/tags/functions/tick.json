@@ -1,0 +1,22 @@
+{
+    "replace": false,
+    "values": [
+        "coworigin:tickfall",
+        "coworigin:tickstrength",
+        "coworigin:tickfireres",
+        "coworigin:tickharm",
+        "coworigin:tickheal",
+        "coworigin:tickinvis",
+        "coworigin:tickjump",
+        "coworigin:ticknight",
+        "coworigin:tickpoison",
+        "coworigin:tickregen",
+        "coworigin:tickslow",
+        "coworigin:tickswift",
+        "coworigin:tickturtle",
+        "coworigin:tickwater",
+        "coworigin:tickweak",
+        "coworigin:tickstrength",
+        "coworigin:sacredcow"
+    ]
+}

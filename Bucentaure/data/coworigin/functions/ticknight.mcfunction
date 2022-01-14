@@ -1,0 +1,2 @@
+execute as @a[advancements={coworigin:cownight=true}] run effect give @s minecraft:night_vision 15 0 false
+execute as @a[advancements={coworigin:cownight=true}] run advancement revoke @s only coworigin:cownight

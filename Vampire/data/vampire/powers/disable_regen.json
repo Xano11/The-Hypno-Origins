@@ -1,0 +1,17 @@
+{
+    "type":"origins:multiple",
+    "regen":
+    { 
+        "type": "origins:disable_regen"
+    },
+    "hunger":
+        {
+            "type": "origins:modify_exhaustion",
+            "modifier": {
+                "name": "No exhaustion",
+                "operation": "multiply_base",
+                "value": -999
+            }
+        },
+        "hidden": true
+}

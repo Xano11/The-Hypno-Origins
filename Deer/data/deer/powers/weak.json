@@ -1,0 +1,10 @@
+{
+    "type":"origins:attribute",
+    "modifier":{
+        "attribute":"minecraft:generic.max_health",
+        "operation":"addition",
+        "value":-4
+    },
+    "name":"§c§l§nWeak",
+    "description":"You have 8 hearts"
+}

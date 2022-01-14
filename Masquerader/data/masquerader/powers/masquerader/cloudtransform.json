@@ -1,0 +1,59 @@
+{
+	"type": "origins:active_self",
+	"entity_action":
+	{
+		"type": "origins:if_else",
+		"condition":
+		{
+			"type": "origins:or",
+			"conditions":
+			[
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition":
+					{
+						"type": "origins:ingredient",
+						"ingredient":
+						{
+							"item": "minecraft:ghast_tear"
+						}
+					}
+				}
+			]
+		},
+		"if_action":
+		{
+			"type": "origins:and",
+			"actions":
+			[
+				{
+					"type": "origins:execute_command",
+					"command": "clear @p ghast_tear 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "origin set @s origins:origin masquerader:cloud",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:block.beacon.activate master @a ~ ~ ~ 3 2",
+					"permission_level": 4
+				}
+			]
+		}
+	},
+	"cooldown": 0.1,
+	"hud_render":
+	{
+		"should_render": true,
+	    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+	    "bar_index": 16
+	},
+	"key": "key.pickItem",
+
+	"name": "Transform: Cloud",
+	"description": "Harness the power of the winds and gain the body of a cloud - Ghast Tear"
+}

@@ -1,0 +1,96 @@
+{
+	"type": "origins:multiple",
+	"soulkill": {
+		"type": "origins:self_action_on_kill",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "witherd:ressource",
+			"change": 10
+		},
+		"cooldown": 240
+	},
+	"soulleak": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "witherd:ressource",
+			"change": -2
+		},
+		"interval": 200
+	},
+	"soulweak": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": -25,
+		"max_stacks": 10,
+		"duration_per_stack": 20,
+		"effects": [{
+				"effect": "minecraft:weakness",
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": true,
+				"amplifier": 1
+			},
+			{
+				"effect": "minecraft:mining_fatigue",
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": true,
+				"amplifier": 2
+			},
+			{
+				"effect": "minecraft:slowness",
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": true,
+				"amplifier": 3
+			}
+		],
+		"condition": {
+			"type": "origins:or",
+			"conditions": [{
+				"type": "origins:resource",
+				"resource": "witherd:ressource",
+				"comparison": "<=",
+				"compare_to": 10
+			}]
+		}
+	},
+	"soulabsorb": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "witherd:ressource",
+			"change": 2
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [{
+					"type": "origins:on_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:soul_sand"
+					}
+				},
+				{
+					"type": "origins:on_block",
+					"block_condition": {
+						"type": "origins:block",
+						"block": "minecraft:soul_soil"
+					}
+				}
+			]
+		},
+		"interval": 20
+	},
+	"soulhit": {
+		"type": "origins:self_action_on_hit",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "witherd:ressource",
+			"change": 3
+		},
+		"cooldown": 120
+	},
+	"name": "§e§l§nSoul Hungry",
+    "description": "You need souls for you to survive"
+}

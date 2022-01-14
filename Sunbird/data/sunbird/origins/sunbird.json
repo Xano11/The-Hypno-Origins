@@ -1,0 +1,36 @@
+{
+	"powers": [
+		"sunbird:rebirth",
+		"sunbird:reborn_resource",
+		"sunbird:ascent",
+		"sunbird:flame_particles",
+		"sunbird:fewer_hearts",
+		"sunbird:rejuvenation",
+		"sunbird:reborn_death",
+		"sunbird:winged",
+		"sunbird:landing",
+		"sunbird:gliding",
+		"sunbird:gliding_toggle",
+		"sunbird:water_weakness",
+		"sunbird:bad_swimming",
+		"sunbird:fire_adept",
+		"sunbird:helios_blessing",
+		"sunbird:golden_diet",
+		"sunbird:radiant_call",
+		"sunbird:radiant_plus",
+		"sunbird:fresh_air",
+		"sunbird:rejuvenation_sleep",
+		"sunbird:ultimate",
+		"sunbird:hydrophobe",
+		"sunbird:hydrophobe_plus",
+		"origins:fire_immunity",
+		"sunbird:colddmg"
+	],
+	"icon": {
+		"item": "minecraft:glistering_melon_slice"
+	},
+	"order": 1,
+	"impact": 2,
+	"name": "Sunbird",
+	"description": "A legendary bird born from the ashes. Absolutely not a phoenix, this is called Sunbird. S-u-n-b-i-r-d, Ok? Calling this phoenix is an offense against the world in general."
+}

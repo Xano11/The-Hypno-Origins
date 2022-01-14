@@ -1,0 +1,22 @@
+{
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "value": -4,
+        "operation": "addition"
+    },
+    "name": "§c§l§nWeak",
+    "description": "You are weak in the overworld",
+    "hidden": false,
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:dimension",
+                "inverted": false,
+                "dimension": "minecraft:overworld"
+            }
+        ]
+    }
+}

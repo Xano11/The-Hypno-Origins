@@ -1,0 +1,8 @@
+{
+	"type": "origins:effect_immunity",
+	"effect": [
+		"minecraft:wither"
+	],
+	"name": "§a§l§nBlack Blood",
+	"description": "You have been born from the ruler of death, and so your blood gives you immunity to the wither effect."
+}

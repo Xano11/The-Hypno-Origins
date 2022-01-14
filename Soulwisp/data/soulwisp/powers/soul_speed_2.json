@@ -1,0 +1,19 @@
+{
+	"type": "origins:conditioned_attribute",
+	"modifier": {
+		"attribute": "generic.movement_speed",
+		"operation": "addition",
+		"value": 0.07
+	},
+		"condition": {
+			"type": "origins:equipped_item",
+			"equipment_slot": "feet",
+			"item_condition": {
+				"type": "origins:enchantment",
+				"enchantment": "minecraft:soul_speed",
+				"comparison": "==",
+				"compare_to": "2"
+			}
+		},
+	"hidden": true
+}

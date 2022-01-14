@@ -1,0 +1,48 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+        "type": "origins:damage",
+        
+        "amount": 10,
+        "source": {
+            "name": "lightningBolt",
+            "bypasses_armor": true,
+	        "unblockable": true
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "summon lightning_bolt",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"The Gods are unsatisfied.\",\"bold\":true,\"italic\":true,\"color\":\"gold\"}",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.elder_guardian.curse player @s ~ ~ ~ 1 2",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "power remove @s exodian:result1",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "hidden": true
+}

@@ -1,0 +1,140 @@
+{
+	"type": "origins:multiple",
+	"particles": {
+		"type": "origins:particle",
+		"particle": "minecraft:angry_villager",
+		"frequency": 4
+	},
+	"unwieldy": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": [{
+					"item": "minecraft:bow"
+				},
+				{
+					"item": "minecraft:crossbow"
+				},
+				{
+					"item": "medievalweapons:long_bow"
+				},
+				{
+					"item": "medievalweapons:recurve_bow"
+				},
+				{
+					"item": "minecraft:trident"
+				},
+				{
+					"item": "medievalweapons:wooden_javelin"
+				},
+				{
+					"item": "medievalweapons:stone_javelin"
+				},
+				{
+					"item": "medievalweapons:iron_javelin"
+				},
+				{
+					"item": "medievalweapons:golden_javelin"
+				},
+				{
+					"item": "medievalweapons:diamond_javelin"
+				},
+				{
+					"item": "medievalweapons:netherite_javelin"
+				},
+				{
+					"item": "medievalweapons:wooden_francisca"
+				},
+				{
+					"item": "medievalweapons:stone_francisca"
+				},
+				{
+					"item": "medievalweapons:iron_francisca"
+				},
+				{
+					"item": "medievalweapons:golden_francisca"
+				},
+				{
+					"item": "medievalweapons:diamond_francisca"
+				},
+				{
+					"item": "medievalweapons:netherite_francisca"
+				},
+				{
+					"item": "minecraft:shield"
+				},
+				{
+					"item": "medievalweapons:wooden_healing_staff"
+				},
+				{
+					"item": "medievalweapons:stone_healing_staff"
+				},
+				{
+					"item": "medievalweapons:iron_healing_staff"
+				},
+				{
+					"item": "medievalweapons:golden_healing_staff"
+				},
+				{
+					"item": "medievalweapons:diamond_healing_staff"
+				},
+				{
+					"item": "medievalweapons:netherite_healing_staff"
+				}
+			]
+		}
+	},
+	"damage": {
+		"type": "origins:damage_over_time",
+		"interval": 1,
+		"onset_delay": 1,
+		"damage": 14,
+		"damage_easy": 14,
+		"damage_source": {
+			"name": "thorns",
+			"unblockable": false,
+			"bypasses_armor": false
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "ravager:stunned_resource",
+			"comparison": ">=",
+			"compare_to": 97
+				}
+		},
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 100,
+		"start_value": 100,
+		"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+		"bar_index": 3
+		}
+	},
+	"drain": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "ravager:stunned_resource",
+			"change": -1
+		},
+		"interval": 1
+	},
+	"remove": {
+        "type": "origins:action_over_time",
+		"entity_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s ravager:stunned",
+            "permission_level": 4
+		},
+		"interval": 1,
+        "condition": {
+        "type": "origins:resource",
+        "resource": "ravager:stunned_resource",
+        "comparison": "==",
+        "compare_to": 0
+        }
+	}	
+}

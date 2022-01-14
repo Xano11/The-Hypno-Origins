@@ -1,0 +1,14 @@
+{
+  "type": "origins:elytra_flight",
+  "render_elytra": true,
+
+  "name": "§a§l§nDragon Wings",
+  "description": "You have the wings of your ancestors. Take to the skies.",
+
+  "badges": [
+    {
+      "sprite": "origins:textures/gui/badge/active.png",
+      "text": "Press space bar while elytra flying to boost."
+    }
+  ]
+}

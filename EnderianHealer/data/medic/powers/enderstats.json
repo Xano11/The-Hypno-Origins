@@ -1,0 +1,22 @@
+{
+  "type": "origins:multiple",
+  "self": {
+    "type": "origins:invisibility",
+    "render_armor": false
+  },
+  "others": {
+    "type": "origins:prevent_entity_render"
+  },
+  "others2": {
+    "type": "origins:prevent_block_selection",
+    "condition": {
+      "type": "origins:sneaking",
+      "inverted": true
+    }
+  },
+  "shader": {
+    "type": "origins:shader",
+    "shader": "minecraft:shaders/post/invert.json"
+  },
+  "hidden": true
+}

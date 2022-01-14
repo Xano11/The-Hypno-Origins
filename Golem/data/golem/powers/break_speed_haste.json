@@ -1,0 +1,21 @@
+{
+    "type": "origins:modify_break_speed",
+    "modifier": {
+        "operation": "addition",
+        "name": "break speed",
+        "value": 0.2
+    },
+    "block_condition": {
+        "type": "origins:in_tag",
+        "inverted": true,
+        "tag": "golem:unbreakable"
+    },
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "inverted": false,
+        "comparison": ">",
+        "compare_to": 0,
+        "resource": "golem:haste"
+    }
+}

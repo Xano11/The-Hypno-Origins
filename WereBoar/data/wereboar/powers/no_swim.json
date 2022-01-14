@@ -1,0 +1,35 @@
+{
+    "type":"origins:multiple",
+
+    "permanent":{
+
+    "type": "origins:modify_swim_speed",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.95
+    },
+    "condition": {
+        "type": "origins:status_effect",
+        "effect": "minecraft:conduit_power",
+        "min_amplifier": 0,
+        "inverted": true
+    }
+    },
+    "conduit":
+    {
+
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.20
+        },
+        "condition": {
+            "type": "origins:status_effect",
+            "effect": "minecraft:conduit_power",
+            "min_amplifier": 0,
+            "inverted": false
+        }
+    },
+    "name": "§c§l§nSturdy",
+    "description": "You are so heavy you won't be able to swim without Depth Strider."
+}

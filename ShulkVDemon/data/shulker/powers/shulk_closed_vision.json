@@ -1,0 +1,16 @@
+{
+	"type": "origins:shader",
+	"shader": "minecraft:shaders/post/sobel.json",
+	"condition": {
+		"type": "origins:or",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"comparison": "==",
+				"resource": "shulker:shulk_resource_hiding",
+				"compare_to": 1
+			}
+		]
+	},
+	"hidden": true
+}

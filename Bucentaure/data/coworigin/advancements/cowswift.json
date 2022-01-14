@@ -1,0 +1,31 @@
+{
+    "display": {
+        "frame": "goal",
+        "icon": {
+            "item": "minecraft:milk_bucket"
+        },
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true,
+        "title": "Fast-Acting Flavor",
+        "background": "minecraft:milk_bucket",
+        "description": "moo"
+    },
+    "rewards": {},
+    "requirements": [
+        [
+            "swiftcrit"
+        ]
+    ],
+    "criteria": {
+        "swiftcrit": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item": {
+                    "item": "minecraft:milk_bucket",
+                    "nbt": "{tag:cowswift}"
+                }
+            }
+        }
+    }
+}

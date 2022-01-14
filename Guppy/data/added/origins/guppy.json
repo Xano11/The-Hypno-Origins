@@ -1,0 +1,25 @@
+{
+	"powers": [
+		"added:climbing",
+		"added:inchtall",
+		"added:inchspeed",
+		"added:inchreach",
+		"origins:water_breathing",
+        "added:wet_eyes",
+        "origins:aqua_affinity",
+        "origins:swim_speed",
+        "origins:like_water",
+        "origins:aquatic",
+        "origins:conduit_power_on_land",
+        "origins:air_from_potions",
+        "added:hold_breath",
+        "added:less_fish",
+        "added:small_heart",
+        "added:small_stomach"
+	],
+	"icon": "minecraft:cooked_salmon",
+	"order": 10,
+	"impact": 3,
+	"name": "Guppy",
+	"description": "A very small merling."
+}

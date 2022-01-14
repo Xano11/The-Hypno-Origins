@@ -1,0 +1,117 @@
+{
+	"type": "origins:multiple",
+	"create_blood":
+    {
+        "type": "origins:self_action_on_hit",
+            "entity_action": {
+                "type":"origins:and",
+                "actions":[
+                    {
+                "type": "origins:execute_command",
+                "command": "function vampire:bloodgive"
+                    },
+                    {
+                        "type": "origins:execute_command",
+                        "command": "clear @s minecraft:glass_bottle 1"
+                    }
+                ]
+            },
+            "cooldown": 40,
+            "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "tag": "vampire:daggers"
+                        }
+                    }
+                  },
+                  {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "offhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:glass_bottle"
+                        }
+                    }
+                  }
+            ]
+        },
+        "hidden": true
+    },
+    "drinking":
+    {
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "vampire:blood_bar",
+            "change": 250
+        },
+            "item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{CustomPotionColor:7536640,display:{Name:'[{\"text\":\"Blood\",\"italic\":false,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Extracted from its victim, this is a vampire fine beverage.\",\"italic\":false}]']},HideFlags:1,CustomPotionEffects:[{Id:22,Duration:0,Amplifier:0,Ambient:1b},{Id:9,Duration:300,Ambient:1b}]}"
+            },
+            "hidden": true
+        },
+        "splash":
+        {
+            "type": "origins:item_on_item",
+            "on_item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{CustomPotionColor:7536640,display:{Name:'[{\"text\":\"Blood\",\"italic\":false,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Extracted from its victim, this is a vampire fine beverage.\",\"italic\":false}]']},HideFlags:1,CustomPotionEffects:[{Id:22,Duration:0,Amplifier:0,Ambient:1b},{Id:9,Duration:300,Ambient:1b}]}"
+            },
+            "using_item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:gunpowder"
+                }
+            },
+            "using_item_action": {
+                "type": "origins:consume",
+                "amount": 1
+            },
+            "on_item_action": {
+                "type": "origins:consume",
+                "amount": 1
+            },
+            "entity_action": {
+                    "type": "origins:execute_command",
+                    "command": "function vampire:bloodsplash",
+                    "permission_level": 4
+            }
+        },
+        "arrow":
+        {
+            "type": "origins:item_on_item",
+            "on_item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:arrow"
+                }
+            },
+            "using_item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{CustomPotionColor:7536640,display:{Name:'[{\"text\":\"Blood\",\"italic\":false,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Extracted from its victim, this is a vampire fine beverage.\",\"italic\":false}]']},HideFlags:1,CustomPotionEffects:[{Id:22,Duration:0,Amplifier:0,Ambient:1b},{Id:9,Duration:300,Ambient:1b}]}"
+            },
+            "using_item_action": {
+                "type": "origins:consume",
+                "amount": 1
+            },
+            "on_item_action": {
+                "type": "origins:consume",
+                "amount": 1
+            },
+            "entity_action": {
+                    "type": "origins:execute_command",
+                    "command": "function vampire:bloodarrow",
+                    "permission_level": 4
+            }
+        },
+    "name":"§a§l§nBlood Thirsty",
+    "description":"With a bottle in your offhand and a dagger in your mainhand, you can collect blood by attacking them. Drinking blood regenerates your blood bar."
+}

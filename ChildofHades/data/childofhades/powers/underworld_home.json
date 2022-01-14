@@ -1,0 +1,19 @@
+{
+	"type": "origins:multiple",
+	"spawn": {
+		"type": "origins:modify_player_spawn",
+		"dimension": "minecraft:the_nether"
+	},
+	"fire": {
+		"type": "origins:modify_damage_taken",
+		"damage_condition": {
+			"type": "origins:fire"
+		},
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -0.8
+		}
+	},
+	"name": "§e§l§nUnderworld Home",
+	"description": "Your home is the underworld so you will naturally spawn in the nether but you also take reduced fire damage."
+}

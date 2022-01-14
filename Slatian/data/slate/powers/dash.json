@@ -1,0 +1,270 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+        {
+        "type": "origins:add_velocity",
+            "z": 2,
+            "space": "local",
+            "set": true
+        },
+		{
+			"type": "origins:execute_command",
+            "command": "execute at @s run playsound minecraft:entity.illusioner.cast_spell master @a[distance=..4] ~ ~ ~ 1 1.4",
+            "permission_level": 4
+		},
+		{
+			"type": "origins:execute_command",
+            "command": "execute at @s run playsound minecraft:entity.phantom.death master @a[distance=..4] ~ ~ ~ 1 1.4",
+            "permission_level": 4
+		},
+		{
+			"type": "origins:execute_command",
+            "command": "effect give @s minecraft:invisibility 1 0 true",
+            "permission_level": 4
+		},
+		{
+			"type": "origins:execute_command",
+            "command": "effect give @s minecraft:resistance 1 0 true",
+            "permission_level": 4
+		},
+		{
+			"type": "origins:execute_command",
+			"command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+			"permission_level": 4
+		},
+		{
+			"type": "origins:execute_command",
+            "command": "execute at @s run particle dust .33 .34 .33 1 ~ ~-1 ~ 0.5 1.4 0.5 0 500",
+            "permission_level": 4
+		},
+        {
+            "type": "origins:execute_command",
+            "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+            "permission_level": 4
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 1,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 1,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 2,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 2,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 3,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 3,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 4,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 4,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 5,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 5,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 6,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 6,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 7,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 7,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 8,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 8,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 9,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 9,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+        {
+        "type": "origins:delay",
+        "ticks": 10,
+        "action": {
+            "type": "origins:execute_command",
+            "command": "effect give @e[distance=1..2] minecraft:instant_damage 1 1 true",
+            "permission_level": 4
+        }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 10,
+            "action": {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+                "permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 18,
+            "action": {
+                "type": "origins:execute_command",
+				"command": "execute at @s run playsound minecraft:entity.illusioner.cast_spell master @a[distance=..4] ~ ~ ~ 1 1.4",
+				"permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 18,
+            "action": {
+				"type": "origins:execute_command",
+				"command": "execute at @s run playsound minecraft:entity.phantom.hurt master @a[distance=..4] ~ ~ ~ 1 1.4",
+				"permission_level": 4
+            }
+        },
+		{
+            "type": "origins:delay",
+            "ticks": 18,
+            "action": {
+				"type": "origins:execute_command",
+				"command": "particle minecraft:dust 0.33 0.34 0.33 2 ~ ~ ~ 0.3 1.3 0.3 0 50 normal",
+				"permission_level": 4
+            }
+        }
+    ]
+    },
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+        "bar_index": 22
+    },
+    "key": {
+        "key": "key.origins.primary_active",
+
+        "continuous": false
+    },
+    "cooldown": 200,
+    "hidden": false,
+    "name": "§a§l§nDust-Dash",
+    "description": "You transform into shards of slate and dash forward, hurting any living entity in your path."
+}

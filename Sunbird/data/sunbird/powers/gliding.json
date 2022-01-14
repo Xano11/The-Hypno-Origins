@@ -1,0 +1,31 @@
+{
+	"type": "origins:stacking_status_effect",
+	"min_stacks": 0,
+	"max_stacks": 1,
+	"duration_per_stack": 12,
+	"effect": {
+		"effect": "minecraft:slow_falling",
+		"duration": 1,
+		"amplifier": 0,
+		"is_ambient": true,
+		"show_particles": false,
+		"show_icon": true
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:power_active",
+				"power": "sunbird:gliding_toggle"
+			},
+			{
+				"type": "origins:resource",
+				"resource": "sunbird:reborn_resource",
+				"comparison": "==",
+				"compare_to": 1
+			}
+		]
+	},
+	"name": "§a§l§nGliding",
+	"description": "When on baby form you are able to glide, which means that you can fall slowly."
+}

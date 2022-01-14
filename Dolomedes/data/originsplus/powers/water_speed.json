@@ -1,0 +1,16 @@
+{
+	"type": "origins:conditioned_attribute",
+  "modifier": {
+    "name": "Additional speed when on water",
+	"attribute": "minecraft:generic.movement_speed",
+    "value": 0.3,
+    "operation": "addition"
+	},
+  "condition": {
+	"type": "origins:fluid_height",
+	"fluid": "minecraft:water",
+	"comparison": ">",
+	"compare_to": 0
+	},
+  "hidden": true
+}

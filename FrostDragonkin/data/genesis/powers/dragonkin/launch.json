@@ -1,0 +1,70 @@
+{
+	"type": "origins:multiple",
+	"boost": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:add_velocity",
+					"z": 0.065,
+					"space": "local",
+					"set": false
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fuel",
+					"change": -10
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:fall_flying"
+				},
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fuel",
+					"comparison": "!=",
+					"compare_to": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.sprint",
+			"continuous": true
+		}
+	},
+	"fuel": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 100,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+			"bar_index": 8
+		}
+	},
+	"refuel": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "*:*_fuel",
+			"change": 20
+		},
+		"interval": 20
+	},
+	"elytra": {
+		"type": "origins:elytra_flight",
+		"render_elytra": true
+	},
+	"name": "§a§l§nPropellor",
+	"description": "You can propel yourself forward while flying!",
+	"hidden": true
+}

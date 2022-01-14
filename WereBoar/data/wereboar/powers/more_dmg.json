@@ -1,0 +1,42 @@
+{
+    "type":"origins:multiple",
+
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 300,
+        "start_value": 300,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 19
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s wereboar:more_dmg"
+        }
+        
+},
+
+"remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "wereboar:more_dmg",
+        "change": -20
+    },
+    "interval": 20
+},
+
+"more_dmg":
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "name": "more dmg",
+        "operation": "multiply_total",
+        "value": 0.25
+    }
+},
+"hidden": true
+}

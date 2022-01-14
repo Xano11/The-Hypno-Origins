@@ -1,0 +1,1 @@
+give @p egg{display:{Name:'[{"text":"Soul Vulture Egg","italic":false,"color":"light_purple"}]'},Enchantments:[{}]} 1

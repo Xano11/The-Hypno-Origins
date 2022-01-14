@@ -1,0 +1,27 @@
+{
+    "type": "origins:fire_projectile",
+    "entity_type": "minecraft:small_fireball",
+    "cooldown": 600,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+        "bar_index": 16
+    },
+    "count": 12,
+    "divergence": 70,
+    "interval": 1,
+    "speed": 0.05,
+    "tag": "{Item: {id: 'minecraft:blaze_powder', Count: 1b}}",
+    "key":"key.origins.secondary_active",
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+                            
+                            {
+                                "type": "origins:sneaking",
+                                "inverted": true
+                            }
+        ]
+    },
+    "name": "§a§l§nFire Breath",
+    "description": "You can breath fire using the secondary ability key."   
+}

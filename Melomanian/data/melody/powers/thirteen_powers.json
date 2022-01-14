@@ -1,0 +1,572 @@
+{
+	"type": "origins:multiple",
+	"invisible": {
+		"type": "origins:invisibility",
+		"render_armor": false,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:thirteen_powers_material",
+			"comparison": "==",
+			"compare_to": 0
+		}
+
+	},
+	"fragile_soul": {
+		"type": "origins:attribute",
+  		"modifier": {
+   		 "attribute": "minecraft:generic.max_health",
+   		 "value": -10.0,
+   		 "operation": "addition"
+		}
+	},
+	"possess": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:command",
+				"command": "/execute if entity @s[team=possessed]",
+				"comparison": "==",
+				"compare_to": 0
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/team add possessed",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/team modify possessed collisionRule pushOwnTeam",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/team join possessed @s",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/scoreboard objectives add possess dummy",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/execute store result score @s possess run data get entity @s UUID[0]",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/data modify entity @e[type=!minecraft:player,limit=1,sort=nearest,distance=..3,type=!minecraft:wither,type=!minecraft:ender_dragon] NoAI set value 1",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power grant @e[type=!minecraft:player,limit=1,sort=nearest,distance=..3,type=!minecraft:wither,type=!minecraft:ender_dragon] melody:thirteen_possessed",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/execute store result score @e[limit=1,sort=nearest,type=!minecraft:player,distance=..3,team=possessed] possess run data get entity @s UUID[0]",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/teleport @s @e[type=!minecraft:player,limit=1,sort=nearest,team=possessed]",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:thirteen_powers_is_possessing 1",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/team leave @s",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @e[type=!minecraft:player,limit=1,sort=nearest,distance=..3,team=possessed] melody:thirteen_possessed",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/tp ^ ^ ^-4",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/scoreboard players reset @s possess",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:thirteen_powers_is_possessing 0",
+						"permission_level": 4
+					}
+				]
+			}
+		},
+		"cooldown": 20,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "/execute if entity @e[type=!minecraft:player,distance=..3,type=!minecraft:wither,type=!minecraft:ender_dragon]",
+					"comparison": ">",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_material",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"is_possessing": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"start_value": 0
+	},
+	"no_possession": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"rising_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/team leave @s",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/scoreboard players reset @s possess",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/resource set @s melody:thirteen_powers_is_possessing 0",
+					"permission_level": 4
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:and",
+					"conditions": [
+						{
+							"type": "origins:command",
+							"command": "/execute if entity @e[type=!minecraft:player,limit=1,sort=nearest,distance=..3,team=possessed]",
+							"comparison": "==",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:command",
+							"command": "/execute if entity @s[team=possessed]",
+							"comparison": "!=",
+							"compare_to": 0
+						}
+					]
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_material",
+					"comparison": "!=",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"leave_team": {
+		"type": "origins:action_on_callback",
+		"entity_action_removed": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/team leave @s",
+				"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/scoreboard players reset @s possess",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/resource set @s melody:thirteen_powers_is_possessing 0",
+					"permission_level": 4
+				}
+			]
+			
+		}
+	},
+	"immortal": {
+		"type": "origins:modify_damage_taken",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:thirteen_powers_material",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	},
+	"translucent": {
+		"type": "origins:model_color",
+		"alpha": 0.6
+	},
+	"material": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"start_value": 0
+	},
+	"materialise": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"rising_action": {
+			"type": "origins:execute_command",
+			"command": "/resource set @s melody:thirteen_powers_material 1",
+			"permission_level": 4
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "/resource set @s melody:thirteen_powers_material 0",
+			"permission_level": 4
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:status_effect",
+					"effect": "minecraft:instant_damage",
+					"min_amplifier": 0
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "minecraft:poison",
+					"min_amplifier": 0
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "minecraft:slowness",
+					"min_amplifier": 0
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "minecraft:weakness",
+					"min_amplifier": 0
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "minecraft:blindness",
+					"min_amplifier": 0
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "minecraft:unluck",
+					"min_amplifier": 0
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "minecraft:wither",
+					"min_amplifier": 0
+				}
+			]
+		}
+	},
+	"immaterial": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "/execute if entity @s[team=possessed]",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_material",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"no_harm_possessed": {
+		"type": "origins:modify_damage_dealt",
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:thirteen_powers_is_possessing",
+			"comparison": ">",
+			"compare_to": 0
+		},
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		},
+		"target_condition": {
+			"type": "origins:power",
+			"power": "melody:thirteen_possessed"
+		}
+	},
+	"no_projectile": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:crossbow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:long_bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:recurve_bow"
+					}
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_is_possessing",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_material",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"flying": {
+		"type": "origins:creative_flight",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:command",
+							"command": "/execute as @e[team=possessed,type=!minecraft:player,distance=..3] if score @s possess = @p[team=possessed,distance=..3] possess if entity @s[type=minecraft:ghast]",
+							"comparison": ">",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:command",
+							"command": "/execute as @e[team=possessed,type=!minecraft:player,distance=..3] if score @s possess = @p[team=possessed,distance=..3] possess if entity @s[type=minecraft:blaze]",
+							"comparison": ">",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:command",
+							"command": "/execute as @e[team=possessed,type=!minecraft:player,distance=..3] if score @s possess = @p[team=possessed,distance=..3] possess if entity @s[type=minecraft:parrot]",
+							"comparison": ">",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:command",
+							"command": "/execute as @e[team=possessed,type=!minecraft:player,distance=..3] if score @s possess = @p[team=possessed,distance=..3] possess if entity @s[type=minecraft:vex]",
+							"comparison": ">",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:command",
+							"command": "/execute as @e[team=possessed,type=!minecraft:player,distance=..3] if score @s possess = @p[team=possessed,distance=..3] possess if entity @s[type=minecraft:bat]",
+							"comparison": ">",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:command",
+							"command": "/execute as @e[team=possessed,type=!minecraft:player,distance=..3] if score @s possess = @p[team=possessed,distance=..3] possess if entity @s[type=minecraft:phantom]",
+							"comparison": ">",
+							"compare_to": 0
+						},
+						{
+							"type": "origins:command",
+							"command": "/execute as @e[team=possessed,type=!minecraft:player,distance=..3] if score @s possess = @p[team=possessed,distance=..3] possess if entity @s[type=minecraft:bee]",
+							"comparison": ">",
+							"compare_to": 0
+						}
+					]
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_is_possessing",
+					"comparison": ">",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"lava_walker": {
+		"type": "origins:walk_on_fluid",
+		"fluid": "minecraft:lava",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "/execute as @e[team=possessed,type=!minecraft:player,distance=..3] if score @s possess = @p[team=possessed,distance=..3] possess if entity @s[type=minecraft:strider]",
+					"comparison": ">",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_is_possessing",
+					"comparison": ">",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"no_food": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:food"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_is_possessing",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_material",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"no_exhaustion": {
+		"type": "origins:modify_exhaustion",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": -1
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_is_possessing",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:thirteen_powers_material",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+		}
+	},
+	"delete_thirteen": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:thirteen_active",
+				"comparison": "==",
+				"compare_to": 178
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:thirteen_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:thirteen_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_13",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:thirteen_active",
+				"change": 1
+			}
+		}
+	}
+}

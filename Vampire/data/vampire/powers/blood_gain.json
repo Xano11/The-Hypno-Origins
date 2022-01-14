@@ -1,0 +1,10 @@
+{
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "vampire:blood_bar",
+        "change": 50
+    },
+    "cooldown": 1,
+    "hidden": true
+}

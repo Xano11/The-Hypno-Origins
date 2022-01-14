@@ -1,0 +1,37 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_total",
+        "value": -0.4
+    },
+    "tick_rate": 10,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+            "type": "origins:in_block",
+            "block_condition": {
+                "type": "origins:and",
+                "conditions": [
+                    {
+                        "type": "origins:movement_blocking"
+                    },
+                    {
+                        "type": "origins:offset",
+                        "y": 1,
+                        "condition": {
+                            "type": "origins:movement_blocking"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "origins:power_active",
+            "power": "soulwisp:wisp_form"
+        }
+        ]
+    },
+    "hidden": true
+}

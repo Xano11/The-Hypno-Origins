@@ -1,0 +1,10 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "*:shulk_teleport_resource",
+        "change": -1
+    },
+    "interval": 40,
+    "hidden": true
+}

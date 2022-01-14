@@ -1,0 +1,10 @@
+{
+	"type": "origins:effect_immunity",
+	"effect": "minecraft:mining_fatigue",
+  	"condition": {
+		  "type": "origins:submerged_in",
+		  "fluid": "minecraft:water"
+	},
+    "name": "§a§l§nFriend of the Ocean",
+	"description": "As one of the many aquatic creatures inhabiting the oceans, you can freely enter the hidden monuments... If you make it past the hostile Guardians. But mining in won't be an issue!"
+}

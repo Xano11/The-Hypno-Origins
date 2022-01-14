@@ -1,0 +1,17 @@
+{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "name": "decreased movement",
+      "attribute": "minecraft:generic.movement_speed",
+      "value": -0.04,
+      "operation": "addition"
+  },
+  "condition": {
+    "type": "origins:resource",
+    "resource": "*:shulk_teleport_resource",
+    "comparison": "<=",
+    "compare_to": 2
+  },
+  "name": "§c§l§nWeight",
+	"description": "You move 40% slower overall"
+}

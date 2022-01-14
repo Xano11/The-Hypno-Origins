@@ -1,0 +1,55 @@
+{
+	"type": "origins:multiple",
+	"attack_increase": {
+		"type": "origins:modify_damage_dealt",
+		"damage_condition": {
+			"type": "origins:attacker",
+			"entity_condition": {
+				"type": "origins:block_in_radius",
+				"block_condition": {
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:block",
+							"block": "minecraft:bee_nest"
+						},
+						{
+							"type": "origins:block",
+							"block": "minecraft:beehive"
+						}
+					]
+				},
+				"radius": 7
+			}
+		},
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 0.5
+		}
+	},
+	"hive_sleep": {
+		"type": "origins:prevent_sleep",
+		"block_condition": {
+			"type": "origins:adjacent",
+			"adjacent_condition": {
+				"type": "origins:or",
+				"conditions": [
+					{
+						"type": "origins:block",
+						"block": "minecraft:honeycomb_block"
+					},
+					{
+						"type": "origins:block",
+						"block": "minecraft:honey_block"
+					}
+				]
+			},
+			"comparison": ">=",
+			"compare_to": 2.0,
+			"inverted": true
+		},
+		"message": "You can only sleep in a hive"
+	},
+	"name": "§a§l§nHive Home",
+	"description": "You deal 1.5x damage when near a beehive, but can only sleep if the head of your bed is next to at least 2 honey blocks or honeycomb blocks."	
+}

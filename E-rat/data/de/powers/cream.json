@@ -1,0 +1,133 @@
+{
+    "type": "origins:multiple",
+
+	"slime_ball": {
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+        "type": "origins:chance",
+        "chance": 0.15,
+        "action": {
+        "type": "origins:and",
+        "actions": [
+        {
+        "type": "origins:execute_command",
+        "command": "/summon item ~ ~ ~ {PickupDelay:100,Item:{id:slime_ball,Count:1}}",
+        "permission_level": 4
+        },
+        {
+        "type": "origins:execute_command",
+        "command": "playsound minecraft:entity.slime.hurt voice @s",
+        "permission_level": 4
+                    }
+                ]
+            }
+        },
+        "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">=",
+            "compare_to": 2.0
+        },
+            "cooldown": 0,
+            "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "love_ball": {
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+        "type": "origins:chance",
+        "chance": 0.05,
+        "action": {
+            "type": "origins:and",
+            "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "/summon item ~ ~ ~ {PickupDelay:100,Item:{id:\"minecraft:slime_ball\",Count:1b,tag:{display:{Name:'{\"text\":\"Love Cream\",\"color\":\"light_purple\",\"bold\":true,\"italic\":true}',Lore:['{\"text\":\"What could it do...?\",\"color\":\"white\",\"italic\":true}']},Enchantments:[{}]}}}",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.slime.hurt_small voice @s ~ ~ ~ 2 1.5",
+                "permission_level": 4
+                }
+            ]
+        }
+    },
+        "damage_condition": {
+        "type": "origins:amount",
+        "comparison": ">=",
+        "compare_to": 2.0
+    },
+    "cooldown": 0,
+    "hud_render": {
+        "should_render": false
+        }
+    },
+
+    "magma_cream": {
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+        "type": "origins:chance",
+        "chance": 0.15,
+        "action": {
+        "type": "origins:and",
+        "actions": [
+        {
+        "type": "origins:execute_command",
+        "command": "/summon item ~ ~ ~ {PickupDelay:100,Item:{id:magma_cream,Count:1}}",
+        "permission_level": 4
+        },
+        {
+        "type": "origins:execute_command",
+        "command": "playsound minecraft:entity.slime.hurt voice @s",
+        "permission_level": 4
+            }
+            ]
+            }
+        },
+        "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">=",
+            "compare_to": 6.0
+        },
+            "cooldown": 0,
+            "hud_render": {
+            "should_render": false
+            }
+        },
+
+        "magma_love_cream": {
+            "type": "origins:self_action_when_hit",
+            "entity_action": {
+            "type": "origins:chance",
+            "chance": 0.05,
+            "action": {
+            "type": "origins:and",
+            "actions": [
+            {
+            "type": "origins:execute_command",
+            "command": "/summon item ~ ~ ~ {PickupDelay:100,Item:{id:\"minecraft:magma_cream\",Count:1b,tag:{display:{Name:'{\"text\":\"Love Cream\",\"color\":\"light_purple\",\"bold\":true,\"italic\":true}',Lore:['{\"text\":\"What could it do...?\",\"color\":\"white\",\"italic\":true}']},Enchantments:[{}]}}}",
+            "permission_level": 4
+            },
+            {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:entity.slime.hurt_small voice @s ~ ~ ~ 2 1.5",
+            "permission_level": 4
+            }
+            ]
+            }
+            },
+            "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">=",
+            "compare_to": 6.0
+            },
+            "cooldown": 0,
+            "hud_render": {
+            "should_render": false
+            }
+            },
+	"name": "§e§l§nCreamy",
+	"description": "When taking damage you have a chance to produce different creams, some of the cream seems pretty healthy for snakes... wonder what's that's for!"
+}

@@ -1,0 +1,44 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:add_velocity",
+        "y": 4
+      },
+      {
+	"type": "origins:exhaust",
+	"interval": 20,
+  "amount": 12
+  },
+  {"type": "origins:play_sound",
+    "sound": "minecraft:entity.parrot.fly"
+  },
+  {
+    "type": "origins:apply_effect",
+    "effect": {
+      "effect": "minecraft:levitation",
+      "duration": 25,
+      "amplifier": 0
+    }
+  }
+    ]
+  },
+  "condition": {
+    "type": "origins:food_level",
+    "comparison": "<=",
+    "compare_to": 8,
+    "inverted": true
+  },
+  "cooldown": 20,
+  "hud_render": {
+    "should_render": false
+  },
+  "name": "§a§l§nRise",
+  "description": "Propel yourself into the sky at the cost of some hunger.",
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": true
+  }
+}

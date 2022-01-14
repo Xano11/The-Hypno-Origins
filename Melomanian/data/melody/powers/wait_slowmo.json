@@ -1,0 +1,65 @@
+{
+	"type": "origins:multiple",
+	"timer": {
+		"type": "origins:cooldown",
+		"cooldown": 200,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"trigger": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:trigger_cooldown",
+			"power": "melody:wait_slowmo_timer"
+		}
+	},
+	"slow_down": {
+		"type": "origins:attribute",
+		"modifier": {
+			"name": "Slow motion",
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_total",
+			"value": -0.5
+		}
+	},
+	"slow_falling": {
+		"type": "origins:modify_falling",
+		"velocity": 0.01
+	},
+	"effect": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:execute_command",
+			"command": "/particle minecraft:electric_spark ~ ~1 ~ 0.125 0.125 0.125 1 10 force",
+			"permission_level": 4
+		}
+	},
+	"remove_entity": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:delay",
+			"ticks": 200,
+			"action": {
+				"type": "origins:execute_command",
+				"command": "/power remove @s melody:wait_slowmo",
+				"permission_level": 4
+			}
+		}
+	},
+	"remove_player": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "/power remove @s melody:wait_slowmo",
+			"permission_level": 4
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:wait_slowmo_timer",
+			"comparison": "==",
+			"compare_to": 200
+		}
+	}
+}

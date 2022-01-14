@@ -1,0 +1,32 @@
+{
+    "type": "origins:target_action_on_hit",
+    "cooldown": 20,
+    "entity_action": {
+        "type": "origins:add_velocity",
+        "space": "world",
+        "y": "0.35"
+    },
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:sprinting",
+                "inverted": true
+            },
+            {
+                "type": "origins:fall_distance",
+                "inverted": false,
+                "comparison": ">",
+                "compare_to": 0
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+	"bar_index": 16,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png"
+    },
+    "description": "Your attacks have extra knockback, and your critical hits can launch enemies into the air.",
+    "name": "§a§l§nHeavyweight"
+}

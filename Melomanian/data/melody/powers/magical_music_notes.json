@@ -1,0 +1,517 @@
+{
+	"type": "origins:multiple",
+	"c_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/c_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:armor_stand ~ ~1.5 ~ {Tags:['Cnote'],ArmorItems:[{},{},{},{id:'minecraft:red_concrete',Count:1b}],Invisible:1,Small:1,DisabledSlots:2096896}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[tag=Cnote,distance=0..2] melody:magical_music_launch",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.1"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"d_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/d_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:armor_stand ~ ~1.5 ~ {Tags:['Dnote'],Invisible:1,ArmorItems:[{},{},{},{id:'minecraft:orange_concrete',Count:1b}],Small:1,DisabledSlots:2096896}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[tag=Dnote,distance=0..2] melody:magical_music_launch",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.2"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"e_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/e_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:armor_stand ~ ~1.5 ~ {Tags:['Enote'],Invisible:1,ArmorItems:[{},{},{},{id:'minecraft:yellow_concrete',Count:1b}],Small:1,DisabledSlots:2096896}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[tag=Enote,distance=0..2] melody:magical_music_launch",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.3"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"f_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/f_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:armor_stand ~ ~1.5 ~ {Tags:['Fnote'],Invisible:1,ArmorItems:[{},{},{},{id:'minecraft:lime_concrete',Count:1b}],Small:1,DisabledSlots:2096896}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[tag=Fnote,distance=0..2] melody:magical_music_launch",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.4"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"g_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/g_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:armor_stand ~ ~1.5 ~ {Tags:['Gnote'],Invisible:1,ArmorItems:[{},{},{},{id:'minecraft:green_concrete',Count:1b}],Small:1,DisabledSlots:2096896}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[tag=Gnote,distance=0..2] melody:magical_music_launch",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.5"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"a_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/a_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:armor_stand ~ ~1.5 ~ {Tags:['Anote'],Invisible:1,ArmorItems:[{},{},{},{id:'minecraft:light_blue_concrete',Count:1b}],Small:1,DisabledSlots:2096896}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[tag=Anote,distance=0..2] melody:magical_music_launch",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.6"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"b_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/b_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:armor_stand ~ ~1.5 ~ {Tags:['Bnote'],Invisible:1,ArmorItems:[{},{},{},{id:'minecraft:blue_concrete',Count:1b}],Small:1,DisabledSlots:2096896}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[tag=Bnote,distance=0..2] melody:magical_music_launch",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.7"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"c_two_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/c2_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:armor_stand ~ ~1.5 ~ {Tags:['C2note'],Invisible:1,ArmorItems:[{},{},{},{id:'minecraft:pink_concrete',Count:1b}],Small:1,DisabledSlots:2096896}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[tag=C2note,distance=0..2] melody:magical_music_launch",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.8"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"d_two_tone": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:tones/d2_tone",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:armor_stand ~ ~1.5 ~ {Tags:['D2note'],Invisible:1,ArmorItems:[{},{},{},{id:'minecraft:purple_concrete',Count:1b}],Small:1,DisabledSlots:2096896}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[tag=D2note,distance=0..2] melody:magical_music_launch",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.9"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:note_block"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_state",
+					"comparison": "!=",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:magical_music_noteblock",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"hidden": true
+}

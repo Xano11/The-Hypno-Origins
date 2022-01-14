@@ -1,0 +1,113 @@
+{
+	"type": "origins:multiple",
+	"absorption": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:absorption"
+	},
+	"bad_omen": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:bad_omen"
+	},
+	"blindess": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:blindness"
+	},
+	"conduit_power": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:conduit_power"
+	},
+	"fire_resistance": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:fire_resistance"
+	},
+	"dolphins_grace": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:dolphins_grace"
+	},
+	"glowing": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:glowing"
+	},
+	"haste": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:haste"
+	},
+	"health_boost": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:health_boost"
+	},
+	"hero_of_the_village": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:hero_of_the_village"
+	},
+	"hunger": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:hunger"
+	},
+	"instant_damage": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:instant_damage"
+	},
+	"instant_health": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:instant_health"
+	},
+	"invisibility": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:invisibility"
+	},
+	"levitation": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:levitation"
+	},
+	"luck": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:luck"
+	},
+	"mining_fatigue": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:mining_fatigue"
+	},
+	"nausea": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:nausea"
+	},
+	"night_vision": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:night_vision"
+	},
+	"poison": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:poison"
+	},
+	"saturation": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:saturation"
+	},
+	"slow_falling": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:slow_falling"
+	},
+	"slowness": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:slowness"
+	},
+	"unluck": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:unluck"
+	},
+	"water_breathing": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:water_breathing"
+	},
+	"weakness": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:weakness"
+	},
+	"wither": {
+		"type": "origins:effect_immunity",
+		"effect": "minecraft:wither"
+	},
+	"name": "§e§l§nImmunised",
+	"description": "You are immune to all other potion effects."
+}

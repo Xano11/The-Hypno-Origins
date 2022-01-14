@@ -1,0 +1,40 @@
+{
+	"type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:if_else",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "minecraft:music_discs"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:is_empty",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			],
+			"inverted": true
+		},
+		"if_action": {
+			"type": "origins:play_sound",
+			"sound": "minecraft:block.wooden_button.click_on"
+		}
+	},
+	"cooldown": 5,
+	"hud_render": {
+		"should_render": false
+	},
+	"key": {
+		"key": "key.origins.primary_active"
+	},
+	"hidden": true
+}

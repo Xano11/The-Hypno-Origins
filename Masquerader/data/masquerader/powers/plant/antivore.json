@@ -1,0 +1,8 @@
+{
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+	"type": "origins:food"
+  },
+  "name": "§c§l§nAntivore",
+  "description":"You can't eat human food"
+}

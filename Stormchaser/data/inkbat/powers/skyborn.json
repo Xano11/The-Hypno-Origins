@@ -1,0 +1,62 @@
+{
+	"name": "§e§l§nSkyborn",
+	"description": "You open your eyes and find yourself at the top of the world. Don't worry, you float.",
+	
+	"type": "origins:multiple",
+	
+	"callbacks": {
+		"type": "origins:action_on_callback",
+		"entity_action_chosen": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute in minecraft:overworld run tp @s ~ 260 ~",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "inkbat:static_discharge_charge_cooldown"
+				}
+			]
+		},
+		"entity_action_added": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute in minecraft:overworld run tp @s ~ 260 ~",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "inkbat:static_discharge_charge_cooldown"
+				}
+			]
+		},
+		"entity_action_respawned": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "execute in minecraft:overworld run tp @s ~ 260 ~",
+					"permission_level": 2
+				},
+				{
+					"type": "origins:trigger_cooldown",
+					"power": "inkbat:static_discharge_charge_cooldown"
+				}
+			]
+		},
+		"entity_action_lost": {
+			"type": "origins:execute_command",
+			"command": "effect clear @s",
+			"permission_level": 2
+		},
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "effect clear @s",
+			"permission_level": 2
+		}
+	}
+}

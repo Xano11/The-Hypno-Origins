@@ -1,0 +1,265 @@
+{
+	"type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 100,
+        "hud_render": {
+		"should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+        "bar_index": 17
+    }
+    },
+	"over_time": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+		"type": "origins:change_resource",
+		"resource": "*:shadow_resource",
+		"change": 1
+    },
+    "interval": 10,
+	"condition": {
+	"type": "origins:and",
+	"conditions": [
+    {
+      "type": "origins:in_block_anywhere",
+        "block_condition": {
+		"type": "origins:light_level",
+		"light_type": "sky",
+		"comparison": "<",
+		"compare_to": 5
+		}
+    },
+    {      
+      "type": "origins:in_block_anywhere",
+        "block_condition": {
+		"type": "origins:light_level",
+		"light_type": "block",
+		"comparison": "<",
+		"compare_to": 5
+		}
+    }
+  ]
+}
+	},
+	"death": {
+    
+    "type": "origins:action_on_callback",
+    "entity_action_chosen": {
+        "type": "origins:change_resource",
+    "resource": "*:shadow_resource",
+    "change": -100
+    },
+    "entity_action_respawned": {
+        "type": "origins:change_resource",
+    "resource": "*:shadow_resource",
+    "change": -100
+    },
+    "execute_chosen_when_orb": true
+	},
+	"possession_failed": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.illusioner.cast_spell master @a[distance=..4] ~ ~ ~ 1 1.4",
+                    "permission_level": 4
+					}
+                },
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.phantom.death master @a[distance=..4] ~ ~ ~ 1 1.4",
+                    "permission_level": 4
+					}
+                },
+                {
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle dust .33 .34 .33 1 ~ ~-1 ~ 0.5 1.4 0.5 0 500",
+                    "permission_level": 4
+					}
+                },
+				{
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run team join slate",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:shadow_resource",
+                    "comparison": ">",
+                    "compare_to": 0
+        }
+    },
+	"possession_end": {
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.illusioner.cast_spell master @a[distance=..4] ~ ~ ~ 1 1.4",
+                    "permission_level": 4
+					}
+                },
+				{
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.phantom.death master @a[distance=..4] ~ ~ ~ 1 1.4",
+                    "permission_level": 4
+					}
+                },
+                {
+					"type": "origins:delay",
+					"ticks": 1,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle dust .33 .34 .33 1 ~ ~-1 ~ 0.5 1.4 0.5 0 500",
+                    "permission_level": 4
+					}
+                },
+				{
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run team leave @s",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:shadow_resource",
+            "comparison": "<=",
+            "compare_to": 0
+        }
+    },
+	"possession_model": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+		"type": "origins:and",
+		"conditions": [
+		{
+			"type": "origins:resource",
+            "resource": "*:shadow_resource",
+            "comparison": ">",
+            "compare_to": 0
+		},
+		{      
+			"type": "origins:power_active",
+			"power": "slate:shadow_toggle"
+		}
+	]
+	}
+    },
+	"shadow_active_timer": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:shadow_resource",
+            "change": -1
+        },
+		"condition": {
+		"type": "origins:and",
+		"conditions": [
+		{
+			"type": "origins:resource",
+            "resource": "*:shadow_resource",
+            "comparison": ">",
+            "compare_to": 0
+		},
+		{      
+			"type": "origins:power_active",
+			"power": "slate:shadow_toggle"
+		}
+	]
+	}
+	},
+	"shadow_friends": {
+	"type": "origins:action_over_time",
+	"entity_action": {
+	"type": "origins:execute_command",
+	"command": "execute as @e[distance=..8] run team join slate",
+	"permission_level": 4
+	},
+	"interval": 5,
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+		{
+			"type": "origins:resource",
+            "resource": "*:shadow_resource",
+            "comparison": ">",
+            "compare_to": 0
+		},
+		{      
+			"type": "origins:power_active",
+			"power": "slate:shadow_toggle"
+		}
+	]
+	}
+	},
+	"toggle":{
+      "type":"origins:toggle",
+	  "active_by_default": false,
+      "key":{
+         "key":"key.origins.secondary_active",
+         "continuous":false
+      }
+	},
+	"shadow_status_effects": {
+        "type": "origins:stacking_status_effect",
+		"min_stacks": 2,
+		"max_stacks": 2,
+		"duration_per_stack": 10,
+		"effects": [
+        {
+            "effect": "minecraft:speed",
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": false
+        }
+    ],
+        "condition": {
+		"type": "origins:and",
+		"conditions": [
+		{
+			"type": "origins:resource",
+            "resource": "*:shadow_resource",
+            "comparison": ">",
+            "compare_to": 0
+		},
+		{      
+			"type": "origins:power_active",
+			"power": "slate:shadow_toggle"
+		}
+	]
+	}	
+    },
+	"name": "§a§l§nDust Form",
+	"description": "Using your secondary you can enter your dust form, gaining speed and avoiding mob detection. This drains your slate matter when above ground and can only be generated in dark areas. You will also lose dust when taking more than half a heart of damage."
+}

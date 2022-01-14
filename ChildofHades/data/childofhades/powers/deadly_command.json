@@ -1,0 +1,20 @@
+{
+	"type": "origins:active_self",
+	"cooldown": 360,
+	"hud_render": {
+		"should_render": true,
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+    "bar_index": 0
+	},
+	"key": {
+		"key": "key.origins.primary_active",
+		"continuous": true
+	},
+	"entity_action": {
+		"type": "origins:execute_command",
+		"permission_level": 4,
+		"command": "summon area_effect_cloud ~ ~3 ~ {Passengers:[{id:\"minecraft:husk\",HandItems:[{id:\"minecraft:iron_sword\",Count:1b,tag:{Enchantments:[{id:\"minecraft:fire_aspect\",lvl:1s}]}},{}],HandDropChances:[0.085F,0.085F]},{id:\"minecraft:husk\",HandItems:[{id:\"minecraft:iron_sword\",Count:1b,tag:{Enchantments:[{id:\"minecraft:fire_aspect\",lvl:1s}]}},{}],HandDropChances:[0.085F,0.085F]},{id:\"minecraft:husk\",HandItems:[{id:\"minecraft:iron_sword\",Count:1b,tag:{Enchantments:[{id:\"minecraft:fire_aspect\",lvl:1s}]}},{}],HandDropChances:[0.085F,0.085F]}]}"
+	},
+	"name": "§a§l§nDeadly Command",
+	"description": "You can reanimate old corpses and have them fight for you, with fire aspect swords."
+}

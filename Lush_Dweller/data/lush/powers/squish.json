@@ -1,0 +1,86 @@
+{
+"type": "origins:multiple",
+    "squish": {
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "scale set pehkui:height 0.25",
+		"permission_level": 4
+		},
+	"condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 2
+        },
+	"interval": 10
+	},
+	"squish_two": {
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "scale set pehkui:height 0.47",
+		"permission_level": 4
+		},
+	"condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "<=",
+            "compare_to": 2
+        },
+	"interval": 20
+	},
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+	"drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": -1
+            },
+            "interval": 40,
+            "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "land": {
+        "type": "origins:action_on_land",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 3
+        },
+        "condition": {
+            "type": "origins:fall_distance",
+            "comparison": ">",
+            "compare_to": 18
+        }
+    },
+    "brain_damage": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "effect give @s weakness 2 4 true",
+            "permission_level": 4
+            },
+        "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_resource",
+                "comparison": ">=",
+                "compare_to": 2
+            },
+        "interval": 10
+    },
+    "name": "§e§l§nSquish",
+    "description": "If you fall from a high place you will deform for a short period."
+}

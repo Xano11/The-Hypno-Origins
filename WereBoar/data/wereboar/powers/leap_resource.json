@@ -1,0 +1,25 @@
+{
+    "type":"origins:multiple",
+
+    "resource":{
+    "type": "origins:resource",
+    "min": 0,
+    "max": 300,
+    "start_value": 0,
+    "hud_render": {
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+        "bar_index": 15
+    }
+    },
+    "gain_resource": 
+    {
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "wereboar:leap_resource_resource",
+        "change": 2
+    },
+    "interval": 5
+    },
+    "hidden": true
+}

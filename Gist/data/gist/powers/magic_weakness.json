@@ -1,0 +1,24 @@
+{
+    "name": "§c§l§nSplit Soul",
+    "description": "Magical attacks strike both your soul and the soul of your Gist, causing you to take massively increased damage.",
+
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:name",
+                "name": "magic"
+            },
+            {
+                "type": "origins:name",
+                "name": "indirectMagic"
+            }
+        ]
+    },
+    "modifier": {
+        "name": "gist magic damage increase",
+        "operation": "multiply_total",
+        "value": 1.25
+    }
+}

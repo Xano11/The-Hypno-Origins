@@ -1,0 +1,21 @@
+{
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 20,
+    "effect": {
+        "is_ambient": false,
+        "show_particles": false,
+        "show_icon": false,
+        "effect": "minecraft:haste",
+        "duration": 500
+    },
+    "condition": {
+        "type": "origins:dimension",
+        "inverted": false,
+        "dimension": "void:void_dimension"
+    },
+    "hidden": true,
+    "name": "Haste",
+    "description": "Haste in void."
+}

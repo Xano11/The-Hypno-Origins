@@ -1,0 +1,25 @@
+{
+	"powers": [
+		"ravager:dash",
+		"ravager:roar",
+		"ravager:army",
+		"ravager:health",
+		"ravager:strong",
+		"ravager:entitycramming",
+		"ravager:slow",
+		"ravager:friends",
+		"ravager:size",
+		"ravager:extrafood",
+		"ravager:slowswim",
+		"ravager:slowmining",
+		"ravager:nobows"
+	],
+	"icon": {
+		"item": "minecraft:ravager_spawn_egg",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"order": 11,
+	"impact": 3,
+	"name": "Ravager",
+	"description": "You were once a regular villager until you were kidnapped by illagers who used their dark magics to turn you into what you are now. A Ravager. A behemoth who brings fear to all villagerkind through brute strength alone."
+}

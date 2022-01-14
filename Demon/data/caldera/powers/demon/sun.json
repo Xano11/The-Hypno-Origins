@@ -1,0 +1,45 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:apply_effect",
+        "effects": 
+            [{
+                "effect": "minecraft:wither",
+                "duration": 20,
+				"is_ambient": true,
+                "show_particles": false,
+                "show_icon" : false
+            },
+			{
+                "effect": "minecraft:mining_fatigue",
+                "duration": 20,
+				"amplifier": 2,
+				"is_ambient": true,
+                "show_particles": false,
+                "show_icon" : false
+            },
+			{
+				"effect": "minecraft:instant_damage",
+                "duration": 20,
+				"amplifier": 0,
+				"is_ambient": true,
+                "show_particles": false,
+                "show_icon" : false
+			},
+			{
+                "effect": "minecraft:hunger",
+                "duration": 20,
+				"amplifier": 9,
+				"is_ambient": true,
+                "show_particles": false,
+                "show_icon" : false
+            }]
+    
+    },
+    "interval": 10,
+    "condition": {
+        "type": "origins:exposed_to_sun"
+      },
+  "name":"§c§l§nExtreme Heliophobia",
+  "description":"As a demon, you'll weaken and take intense amount of damage from being exposed to sun."
+}

@@ -1,0 +1,27 @@
+{
+	"powers": [
+		"origins:aqua_affinity",
+		"origins:water_vision",
+		"origins:like_water",
+		"origins:swim_speed",
+		"niki:deep_breath",
+		"niki:water_not_land",
+		"niki:play_dead",
+		"niki:no_mining_fatigue",
+		"niki:riptide_boost",
+		"niki:impaled",
+		"niki:impaled_melee",
+		"niki:motion",
+		"niki:small",
+		"niki:small2",
+		"niki:low_health",
+		"origins:aquatic"
+		
+		
+	],
+	"icon": "minecraft:brain_coral",
+	"order": 66,
+	"impact": 2,
+	"name": "Axolotl",
+	"description": "The Axolotl are curious creatures that prefers the water over land."
+}

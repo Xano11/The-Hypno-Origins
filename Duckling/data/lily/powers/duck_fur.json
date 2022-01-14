@@ -1,0 +1,30 @@
+{
+  "type":"origins:modify_damage_taken",
+  "modifier":{
+    "value": 1.5,
+    "operation":"multiply_total"
+  },
+  "damage_condition":{
+    "type":"origins:or",
+    "conditions":[
+      {
+        "type":"origins:name",
+        "name":"lava"
+      },
+      {
+        "type":"origins:name",
+        "name":"onFire"
+      },
+      {
+        "type":"origins:name",
+        "name":"inFire"
+      },
+      {
+        "type":"origins:name",
+        "name":"hotFloor"
+      }
+    ]
+  },
+	"name": "§a§l§nDuck Fur",
+	"description": "Your body is made up of fur that's very flammable, fire does 2.5x dmg to you."
+}

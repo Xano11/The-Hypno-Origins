@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "origins": [
+    "masquerader:masquerader",
+    "masquerader:golem",
+    "masquerader:plant",
+    "masquerader:fish",
+    "masquerader:cloud",
+    "masquerader:bird"
+  ]
+}

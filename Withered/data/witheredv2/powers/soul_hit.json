@@ -1,0 +1,10 @@
+{
+	"type": "origins:self_action_on_hit",
+	"entity_action": {
+        "type": "origins:change_resource",
+	    "resource": "witheredv2:ressource",
+	    "change": 3
+	},
+    "hidden": true,
+	"cooldown": 20
+}

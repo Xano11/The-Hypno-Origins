@@ -1,0 +1,11 @@
+{
+    "type": "origins:prevent_item_use",
+    "name": "§c§l§nWeak Wings",
+    "description": "You cannot use fireworks as your wings are thin and weak.",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:firework_rocket"
+      }
+    }
+  }

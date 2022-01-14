@@ -1,0 +1,11 @@
+{
+	"name": "§c§l§nEphemeral",
+	"description": "Your body is made from starlight, not being quite stable. You have two less hearts",
+	"type": "origins:attribute",
+	"modifier": {
+		"name": "Ephemeral",
+		"attribute": "minecraft:generic.max_health",
+		"value": -4,
+		"operation": "addition"
+	}
+}

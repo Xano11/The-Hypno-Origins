@@ -1,0 +1,15 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:exhaust",
+        "amount": 1.5
+    },
+    "cooldown": 1,
+    "key": {
+        "key": "key.origins.secondary_active"
+    },
+    "hud_render": {
+        "should_render": false
+    },
+	"hidden": true
+}

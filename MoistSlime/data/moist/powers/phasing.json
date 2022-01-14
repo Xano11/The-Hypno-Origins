@@ -1,0 +1,22 @@
+{
+    "name": "§a§l§nSlime Body",
+    "description": "Your Slime body can slip through transparent blocks.",
+    "type": "origins:phasing",
+    "render_type": "blindness",
+    "view_distance": 5,
+    "block_condition": {
+    "type": "origins:in_tag",
+    "tag": "*:phase"
+	},
+    "phase_down_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:sneaking"
+            },
+            {
+                "type": "origins:on_block"
+            }
+        ]
+    }
+}

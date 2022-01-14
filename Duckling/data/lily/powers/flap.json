@@ -1,0 +1,32 @@
+{
+    "type": "origins:active_self",
+    "name": "§a§l§nFlap",
+    "description": "Flap within the air ! (exhausts you quite quickly, however)",
+    "hidden": false,
+    "cooldown": 7,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:exhaust",
+                "amount": 2
+            },
+            {
+                "type": "origins:add_velocity",
+                "y": 0.45
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.bat.takeoff"
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+    "key": {
+        "key": "key.jump",
+        "continuous": true
+    }
+}

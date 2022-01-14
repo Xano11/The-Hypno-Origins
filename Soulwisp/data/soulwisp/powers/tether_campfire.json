@@ -1,0 +1,36 @@
+{
+	"type": "origins:stacking_status_effect",
+	"min_stacks": 0,
+	"max_stacks": 2,
+	"duration_per_stack": 20,
+	"effects": [
+	{
+		"effect": "minecraft:regeneration",
+		"duration": 20,
+		"amplifier": 1,
+		"is_ambient": false,
+		"show_particles": false,
+		"show_icon": false
+	},
+	{
+		"effect": "minecraft:saturation",
+		"duration": 20,
+		"amplifier": 1,
+		"is_ambient": false,
+		"show_particles": false,
+		"show_icon": false
+	}
+	],
+	"condition": {
+		"type": "origins:block_in_radius",
+		"block_condition": {
+			"type": "origins:block",
+			"block": "minecraft:soul_campfire"
+		},
+		"radius": 3,
+		"shape": "cube",
+		"comparison": ">=",
+		"compare_to": 1
+	},
+	"hidden": true
+}

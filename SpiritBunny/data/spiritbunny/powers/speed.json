@@ -1,0 +1,13 @@
+{
+	"type":"origins:attribute",
+	"modifier":{
+	   "attribute": "minecraft:generic.movement_speed",
+	   "value": 0.03,
+	   "operation": "addition"
+	},
+	"name": "§a§l§nyour the prey",
+	"description": "so your used to running.",
+	"tick_rate": 2
+}
+
+

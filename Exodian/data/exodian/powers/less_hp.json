@@ -1,0 +1,12 @@
+{
+    "type": "origins:attribute",
+    
+    "modifiers": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": -4
+    },
+    "name":"§c§l§nSmall heart",
+    "description":"Being smaller comes with the downside of being slighly weaker. (-2 heart)"  
+}
+  

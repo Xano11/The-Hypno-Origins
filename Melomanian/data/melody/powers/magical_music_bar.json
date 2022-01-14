@@ -1,0 +1,67 @@
+{
+	"type": "origins:resource",
+	"min": 0,
+	"max": 100,
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+		"bar_index": 13,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:magical_music_bar",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	},
+	"start_value": 0,
+	"max_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "/resource set @s melody:magical_music_bar 0",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "/particle minecraft:flash ~ ~ ~ 0 0 0 0 1 force",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "/particle minecraft:totem_of_undying ~ ~ ~ 1 1 1 1 1000 force",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "/particle minecraft:end_rod ~ ~ ~ 1 1 1 0.5 200 force",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "/playsound minecraft:entity.firework_rocket.large_blast ambient @a[distance=0..16] ~ ~ ~ 1 1",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "/playsound minecraft:entity.firework_rocket.twinkle ambient @a[distance=0..16] ~ ~ ~ 1 1",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "/effect give @a[distance=0..32] minecraft:regeneration 20 1",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:trigger_cooldown",
+				"power": "melody:magical_music_state"
+			}
+		]
+	},
+	"hidden": true
+}

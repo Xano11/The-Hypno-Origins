@@ -1,0 +1,78 @@
+{
+	"type": "origins:multiple",
+	"freeze": {
+		"type": "origins:freeze"
+	},
+	"noregen": {
+		"type": "origins:disable_regen"
+	},
+	"frozen_skin": {
+		"type": "origins:model_color",
+		"red": 0.5,
+		"green": 0.5,
+		"alpha": 1
+	},
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 400,
+		"start_value": 400,
+		"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+		"bar_index": 0
+		}
+	},
+	"drain": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "genesis:frozen_resource",
+			"change": -20
+		},
+		"interval": 20
+	},
+	"frostburn": {
+			"type":"origins:modify_damage_taken",
+			"modifier":{
+			  "value": 2,
+			  "operation":"multiply_total"
+			},
+			"damage_condition":{
+			  "type":"origins:or",
+			  "conditions":[
+				{
+				  "type":"origins:name",
+				  "name":"lava"
+				},
+				{
+				  "type":"origins:name",
+				  "name":"onFire"
+				},
+				{
+				  "type":"origins:name",
+				  "name":"inFire"
+				},
+				{
+				  "type":"origins:name",
+				  "name":"freeze"
+				}
+			  ]
+			}
+		},
+	"remove": {
+        "type": "origins:action_over_time",
+		"entity_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s genesis:frozen",
+            "permission_level": 4
+		},
+		"interval": 1,
+        "condition": {
+        "type": "origins:resource",
+        "resource": "genesis:frozen_resource",
+        "comparison": "==",
+        "compare_to": 0
+        }
+	}	
+}

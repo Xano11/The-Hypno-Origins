@@ -1,0 +1,463 @@
+{
+    "name": "§e§l§nGist Form",
+    "description": "Being a spirit allows your Gist to swim through the air, unobstructed by physical objects. The Gist also takes reduced damage from physical attacks, although magical damage is significantly more potent. Furthermore, the Gist has sharp claws, increasing it's attack damage when not using a weapon.",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": "Toggle air swimming, bound to [secondary]"
+        }
+    ],
+
+    "type": "origins:multiple",
+    "0.2": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.2,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 2
+                }                
+            ]
+        }
+    },
+    "0.3": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.3,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 3
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 5
+                }                
+            ]
+        }
+    },
+    "0.4": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.4,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 6
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 8
+                }
+            ]
+        }
+    },
+    "0.45": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.45,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 9
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 11
+                }
+            ]
+        }
+    },
+    "0.5": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.5,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 12
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 40
+                }                
+            ]
+        }
+    },
+    "0.55": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.55,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 41
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 60
+                }                
+            ]
+        }
+    },
+    "0.6": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.6,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 61
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 80
+                }                
+            ]
+        }
+    },
+    "0.65": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.65,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 81
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 90
+                }                
+            ]
+        }
+    },
+    "0.7": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.7,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 91
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 105
+                }                
+            ]
+        }
+    },
+    "0.75": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.75,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 106
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 111
+                }                
+            ]
+        }
+    },
+    "0.8": {
+        "type": "origins:overlay",
+        "draw_mode": "nausea",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "draw_phase": "above_hud",
+        "strength": 0.8,
+        "red": 1,
+        "green": 0.2,
+        "blue": 0.1,
+        "hide_with_hud": true,
+        "visible_in_third_person": true,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_form_resource",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": ">=",
+                    "compare_to": 112
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "*:demon_overlay_resource",
+                    "comparison": "<=",
+                    "compare_to": 120
+                }                
+            ]
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "type": "origins:multiple",
+    "name": "§a§l§nArachno Leap",
+    "description": "A massive leap that is useful in traveling.",
+    "o___0": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 3
+        },
+        "hidden": true,
+        "hud_render": {
+            "should_render": false,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 16
+        },
+        "cooldown": 600,
+        "key": "key.origins.secondary_active",
+        "condition": {
+            "type": "origins:and",
+            "inverted": false,
+            "conditions": [
+                {
+                   "type": "origins:fluid_height",
+                   "fluid": "minecraft:water",
+                   "comparison": "==",
+                   "compare_to": 0,
+                   "inverted": true
+                   },
+                   {
+                   "type": "origins:sneaking",
+                   "inverted": true
+                   }
+            ]
+        }
+    },
+    "o___1": {
+        "type": "origins:active_self",
+        "name": "Arachno Leap",
+        "description": "Leap",
+        "hidden": true,
+        "cooldown": 600,
+        "entity_action": {
+            "type": "origins:add_velocity",
+            "space": "local",
+            "x": 0,
+            "y": 1,
+            "z": 3
+        },
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 16
+        },
+        "condition": {
+            "type": "origins:and",
+            "inverted": false,
+            "conditions": [
+                {
+                   "type": "origins:fluid_height",
+                   "fluid": "minecraft:water",
+                   "comparison": "==",
+                   "compare_to": 0,
+                   "inverted": true
+                   },
+                   {
+                   "type": "origins:sneaking",
+                   "inverted": true
+                   }
+            ]
+        },
+        "key": "key.origins.secondary_active"
+    }
+}

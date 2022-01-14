@@ -1,0 +1,11 @@
+{
+    "replace": false,
+    "values": [
+      "medievalweapons:wooden_dagger",
+      "medievalweapons:golden_dagger",
+      "medievalweapons:stone_dagger",
+      "medievalweapons:iron_dagger",
+      "medievalweapons:diamond_dagger",
+      "medievalweapons:netherite_dagger"
+    ]
+  }

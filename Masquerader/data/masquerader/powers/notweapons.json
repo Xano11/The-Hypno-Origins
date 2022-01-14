@@ -1,0 +1,176 @@
+{
+  "type": "origins:multiple",
+  "anti-trident": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+        "item": "minecraft:trident"
+      }
+    }
+  },
+  "anti-wood-axe": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": -30,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:wooden_axe"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "anti-gold-axe": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": -30,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:golden_axe"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "anti-stone-axe": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": -30,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:stone_axe"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "anti-iron-axe": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": -30,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:iron_axe"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "anti-diamond-axe": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": -30,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:diamond_axe"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "anti-netherite-axe": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "value": -30,
+      "operation": "addition"
+    },
+    "condition":
+    {
+      "type": "origins:and",
+      "conditions":
+      [
+        {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition":
+          {
+            "type": "origins:ingredient",
+            "ingredient":
+            {
+              "item": "minecraft:netherite_axe"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "name": "§c§l§nSwords Only",
+  "description": "You can't use axes or tridents as weapons"
+}

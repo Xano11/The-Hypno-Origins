@@ -1,0 +1,18 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type":"origins:and",
+        "actions":[
+        {
+                 "type":"origins:execute_command",
+                 "command":"tag @s add invis",
+                 "permission_level":4
+        }
+]
+    },
+    "interval": 5,
+    "condition": {
+        "type": "origins:sneaking"
+    },
+    "hidden": true
+}

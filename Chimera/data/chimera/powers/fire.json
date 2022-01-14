@@ -1,0 +1,31 @@
+{
+  "type":"origins:modify_damage_taken",
+  "modifier":{
+    "value": 2,
+    "operation":"multiply_total"
+  },
+  "damage_condition":{
+    "type":"origins:or",
+    "conditions":[
+      {
+        "type":"origins:name",
+        "name":"lava"
+      },
+      {
+        "type":"origins:name",
+        "name":"onFire"
+      },
+      {
+        "type":"origins:name",
+        "name":"inFire"
+      },
+      {
+        "type":"origins:name",
+        "name":"hotFloor"
+      }
+    ]
+  },
+  "hidden": false,
+  "name": "§c§l§nPyrophobia",
+  "description": "Being made of multiple creatures that die from fire didn't really mix well together. You take triple damage from fire."
+}

@@ -1,0 +1,28 @@
+{
+	"loading_priority": 10,
+	"powers": [
+		"origins:water_breathing",
+		"origins:water_vision",
+		"merling_changes:trident",
+		"merling_changes:trident_thrown",
+		"merling_changes:merling_grace",
+		"origins:aqua_affinity",
+		"origins:swim_speed",
+		"origins:like_water",
+		"origins:aquatic",
+		"origins:conduit_power_on_land",
+		"origins:air_from_potions",
+		"origins:claustrophobia",
+		"origins:more_kinetic_damage",
+		"merling_changes:water_dash",
+		"merling_changes:callback",
+		"merling_changes:lovers",
+		"merling_changes:particles",
+		"merling_changes:resource",
+		"merling_changes:elytra_toggle",
+		"merling_changes:elytra"
+	],
+	"icon": "minecraft:cod",
+	"order": 3,
+	"impact": 1
+}

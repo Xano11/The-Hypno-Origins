@@ -1,0 +1,18 @@
+{
+	"powers": [
+		"origins:light_armor",
+		"origins:elytra",
+		"crow:treasuresense",
+		"crow:drop_gold_on_death",
+		"crow:gold_rush",
+		"origins:fragile",
+		"origins:lay_eggs",
+		"origins:fresh_air",
+		"crow:luck_effect"	
+	],
+	"icon": "minecraft:wither_rose",
+	"order": 4,
+	"impact": 2,
+	"name": "Crow",
+	"description": "A lucky corvid set out to find treasure"
+}

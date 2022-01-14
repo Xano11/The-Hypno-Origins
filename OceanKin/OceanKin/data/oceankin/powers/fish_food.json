@@ -1,0 +1,34 @@
+{
+	"name": "§c§l§nFish Food",
+	"description": "You can only eat fish, either cooked or raw. Though those shiny apples do taste good...",
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+    	"type": "origins:and",
+    	"conditions":[
+    		{
+    			"type": "origins:food"
+    		},
+    		{
+    			"type": "origins:ingredient",
+    			"ingredient":{
+    				"tag": "minecraft:fishes"
+    			},
+    			"inverted": true
+		},
+    		{
+    			"type": "origins:ingredient",
+    			"ingredient":{
+    				"item": "minecraft:golden_apple"
+    			},
+    			"inverted": true
+		},
+    		{
+    			"type": "origins:ingredient",
+    			"ingredient":{
+    				"item": "minecraft:enchanted_golden_apple"
+    			},
+    			"inverted": true
+    		}
+    	]
+    }
+}

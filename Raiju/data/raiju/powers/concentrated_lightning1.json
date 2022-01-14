@@ -1,0 +1,165 @@
+{
+    "type":"origins:active_self",
+    "entity_action":{
+        "type":"origins:and",
+        "actions":[
+            {
+                "type":"origins:execute_command",
+                "command":"power grant @e[limit=1,sort=nearest,distance=2..10,type=!painting,type=!item,type=!item_frame,type=!armor_stand,type=!villager] raiju:lightning_dmg",
+                "permission_level":4
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "power remove @e raiju:lightning_dmg",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:exhaust",
+                "amount": 6
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"effect give @e[limit=1,sort=nearest,distance=2..10,type=!painting,type=!item,type=!item_frame,type=!armor_stand,type=!villager] minecraft:slowness 3 3 true",
+                "permission_level":4
+            },
+            {
+                "type": "origins:change_resource",
+                  "resource": "raiju:ressource",
+                  "change": -60
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 11,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type":"origins:execute_command",
+                            "command":"power grant @e[limit=1,sort=nearest,distance=2..10,type=!painting,type=!item,type=!item_frame,type=!armor_stand,type=!villager] raiju:lightning_dmg",
+                            "permission_level":4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 12,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "power remove @e[limit=1,sort=nearest,distance=2..10,type=!painting,type=!item,type=!item_frame,type=!armor_stand,type=!villager] raiju:lightning_dmg",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },
+             {
+                "type": "origins:delay",
+                "ticks": 11,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "effect give @e[limit=1,sort=nearest,distance=2..10,type=!painting,type=!item,type=!item_frame,type=!armor_stand,type=!villager] minecraft:slowness 3 3 true",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+             },
+            {
+                "type": "origins:delay",
+                "ticks": 21,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "power grant @e[limit=1,sort=nearest,distance=2..10,type=!painting,type=!item,type=!item_frame,type=!armor_stand,type=!villager] raiju:lightning_dmg",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },            {
+                "type": "origins:delay",
+                "ticks": 22,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "power remove @e[limit=1,sort=nearest,distance=2..10,type=!painting,type=!item,type=!item_frame,type=!armor_stand,type=!villager] raiju:lightning_dmg",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 21,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "effect give @e[limit=1,sort=nearest,distance=2..10,type=!painting,type=!item,type=!item_frame,type=!armor_stand,type=!villager] minecraft:slowness 3 3 true",
+                            "permission_level": 4
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "cooldown": 0,
+    "hud_render":{
+        "should_render":true,
+        "sprite_location":"origins:textures/gui/resource_bar.png",
+        "bar_index":2
+    },
+        "condition": {
+            "type": "origins:and",
+			"conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "raiju:ressource",
+                                    "comparison": "==",
+                                    "compare_to": 60
+                                },
+                                {
+                                    "type": "origins:sneaking",
+                                    "inverted": false
+                                },
+                                {
+                                    "type": "origins:block_in_radius",
+                                    "block_condition": {
+                                    "type": "origins:in_tag",
+                                    "tag": "raiju:copper"
+                                    },
+                                    "radius": 3,
+                                    "shape": "cube",
+                                    "comparison": "==",
+                                    "compare_to": 0
+                                },
+                                {
+                                    "type": "origins:predicate",
+                                    "predicate": "inkbat:weather_thunderstorm",
+                                    "inverted": true
+                                }
+            ]
+        },      
+    "key":{
+        "key":"key.origins.primary_active"
+    },
+    "hidden": true
+}

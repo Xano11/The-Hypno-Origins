@@ -1,0 +1,2 @@
+execute as @e[type=marker] if score @s x = @p x if score @s y = @p y if score @s z = @p z at @s run forceload remove ~ ~ ~ ~
+execute as @e[type=marker] if score @s x = @p x if score @s y = @p y if score @s z = @p z run kill @s

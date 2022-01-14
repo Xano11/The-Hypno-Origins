@@ -1,0 +1,42 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+	"type": "origins:and",
+	"actions": [
+		{
+		"type": "origins:execute_command",
+		"command": "spawnpoint @s",
+		"permission_level": 4
+		},
+		{
+		"type": "origins:execute_command",
+		"command": "tellraw @s {\"text\":\"Respawn point set\"}",
+		"permission_level": 4
+		}
+	]
+  },
+  "hud_render": {
+    "should_render": false
+  },
+  "cooldown": 200,
+  "condition": {
+	"type": "origins:and",
+	"conditions": [
+		{
+		   "type": "origins:block_in_radius",
+		   "block_condition": {
+			   "type": "origins:block",
+			   "block": "minecraft:campfire"
+		   },
+		   "radius": 3,
+		   "shape": "cube"
+		},
+		{
+		   "type": "origins:dimension",
+		   "dimension": "minecraft:overworld"
+		}
+	]
+  },
+  "key": "secondary",  
+  "hidden": true
+}

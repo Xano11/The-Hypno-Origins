@@ -1,0 +1,13 @@
+{
+  "type": "origins:invulnerability",
+  "damage_condition": {
+    "type": "origins:fire"
+  },
+  "condition": {
+		"type": "origins:resource",
+		"resource": "*:blood_resource",
+		"comparison": ">=",
+		"compare_to": 25
+    },
+	"hidden": true
+}

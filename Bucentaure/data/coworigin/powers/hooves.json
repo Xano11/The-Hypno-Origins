@@ -1,0 +1,31 @@
+{
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:or",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:ingredient",
+                "inverted": false,
+                "ingredient": {
+                    "item": "minecraft:bow"
+                }
+            },
+            {
+                "type": "origins:ingredient",
+                "inverted": false,
+                "ingredient": {
+                    "item": "minecraft:crossbow"
+                }
+            },
+            {
+                "type": "origins:ingredient",
+                "inverted": false,
+                "ingredient": {
+                    "item": "minecraft:ender_pearl"
+                }
+            }
+        ]
+    },
+    "hidden": true
+}

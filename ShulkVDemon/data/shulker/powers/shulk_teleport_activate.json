@@ -1,0 +1,22 @@
+{
+	"name": "Teleport",
+	"description": "§a§l§nCan become invisible for 4 seconds moving at regular player speed but after coming out you have slowness 1 for 2 seconds",
+    "type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:change_resource",
+		"resource": "*:shulk_teleport_resource",
+		"change": 4,
+		"condition": {
+			"type": "origins:resource",
+			"comparison": "==",
+			"resource": "shulker:shulk_resource_hiding",
+			"compare_to": 0
+		}
+	},
+		"cooldown": 600,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+			"bar_index": 11
+			}
+}

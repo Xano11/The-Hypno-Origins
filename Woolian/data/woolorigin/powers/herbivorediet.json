@@ -1,0 +1,13 @@
+{
+    "type": "origins:prevent_item_use",
+    "hidden": true,
+    "name": "§c§l§nHerbivore",
+    "description": "You can only eat vegetables.",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "inverted": false,
+        "ingredient": {
+            "tag": "origins:meat"
+        }
+    }
+}

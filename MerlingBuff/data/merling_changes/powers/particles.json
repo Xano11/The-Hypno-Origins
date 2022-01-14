@@ -1,0 +1,9 @@
+{
+    "type": "origins:self_action_when_hit",
+    "entity_action":  {
+        "type": "origins:execute_command",
+        "command": "execute at @s run particle illuminations:prismarine_crystal ~ ~ ~ 0.4 0.4 0.4 0.1 1",
+        "permission_level": 4
+    },
+    "cooldown": 20
+}

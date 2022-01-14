@@ -1,0 +1,22 @@
+{
+  "powers": [
+    "genesis:dragonkin/frostthrower",
+    "genesis:dragonkin/dragon_flight",
+    "genesis:dragonkin/launch",
+    "genesis:dragonkin/dragon_scales",
+    "genesis:dragonkin/carnivore",
+    "genesis:dragonkin/immunity",
+    "genesis:dragonkin/ranger",
+    "genesis:dragonkin/dragon_body",
+    "genesis:dragonkin/cold_skin",
+    "genesis:dragonkin/particles",
+    "genesis:dragonkin/light_armor",
+    "genesis:dragonkin/permafrost",
+    "genesis:dragonkin/temp"
+  ],
+  "icon": "minecraft:powder_snow_bucket",
+  "order": 1,
+  "impact": 2,
+  "name":"Frost Dragonkin",
+  "description": "You are one of the 5 great elemental dragons... Ice; Where the others went is unknown."
+}

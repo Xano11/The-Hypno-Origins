@@ -1,0 +1,10 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+	    "type": "origins:change_resource",
+	    "resource": "dwarf:rocket_resource",
+	    "change": 1
+	},
+	"interval": 20,
+	"hidden": true
+}

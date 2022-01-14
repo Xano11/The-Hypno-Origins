@@ -1,0 +1,66 @@
+{
+	"type": "origins:multiple",
+	"name": "§a§l§nBurrow",
+	"description": "You can burrow through sand, gravel, and powdered concrete with ease by toggling your primary ability. This is exhausting however.",
+	"phase": {
+		"type": "origins:phasing",
+		"condition": {
+			"type": "origins:power_active",
+			"power": "scorpion:swim_toggle"
+		},
+		"blacklist": false,
+		"render_type": "blindness",
+		"view_distance": 10,
+		"block_condition": {
+			"type": "origins:in_tag",
+			"tag": "scorpion:sand"
+		},
+		"phase_down_condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:sneaking"
+				},
+				{
+					"type": "origins:on_block"
+				}
+			]
+		},
+		"exhaustion": {
+			"type": "origins:exhaust",
+			"interval": 20,
+			"exhaustion": 2.0,
+			"condition": {
+				"type": "origins:power_active",
+				"power": "scorpion:swim_toggle"
+			}
+		}
+	},
+	"baswim": {
+		"type": "origins:swimming",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:fluid_height",
+					"fluid": "minecraft:water",
+					"comparison": ">",
+					"compare_to": 0.0,
+					"inverted": true
+				},
+				{
+					"type": "origins:in_block",
+					"block_condition": {
+						"type": "origins:in_tag",
+						"tag": "scorpion:sand"
+					}
+				}
+			]
+		}
+	},
+	"toggle": {
+		"type": "origins:toggle",
+		"active_by_default": false,
+		"key": {
+			"key": "key.origins.primary_active"
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{
+    "type": "origins:multiple",
+
+    "no_fall_or_fire_damage": {
+        "type":"origins:modify_damage_taken",
+        "modifier":{
+        "value": -1,
+        "operation":"multiply_total"
+        },
+        "damage_condition":{
+            "type":"origins:or",
+            "conditions":[
+            {
+            "type":"origins:name",
+            "name":"lava"
+            },
+            {
+            "type":"origins:name",
+            "name":"onFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"inFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"hotFloor"
+            },
+            {
+            "type":"origins:name",
+            "name":"fall"
+            }
+            ]
+        }
+    },
+
+    "weak_soul": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "Max health increase",
+            "attribute": "minecraft:generic.max_health",
+            "value": -4,
+            "operation": "addition"
+        }
+    },
+
+
+    "name": "§a§l§nPartially Ghost Things",
+    "description": "Due to you being still kinda dead so you have 2 less hearts, you can't take fall damage or burn but since you have a body, you can now wear armor"
+}

@@ -1,0 +1,52 @@
+{
+    "type": "origins:active_self",
+    "name": "§a§l§nWither Charge",
+    "description": "You channel the charge of a Bedrock Edition Wither, allowing you to perform its dash.",
+    "cooldown": 370,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:add_velocity",
+                "space": "local",
+                "set": false,
+                "z": 1.5
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "effect give @e[distance=1..7] minecraft:instant_damage"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "effect give @e[distance=1..7] minecraft:wither 10 0"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "playsound minecraft:entity.wither.break_block ambient @s ~ ~ ~ 0.9 0.9"
+            },
+            {
+                "type": "origins:change_resource",
+                  "resource": "witheredv2:ressource",
+                  "change": -50
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 18
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "witheredv2:ressource",
+        "comparison": ">=",
+        "compare_to": 50
+    },
+    "key": {
+        "key": "primary",
+        "continuous": false
+    }
+}

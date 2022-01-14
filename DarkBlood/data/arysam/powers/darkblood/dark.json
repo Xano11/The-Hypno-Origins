@@ -1,0 +1,130 @@
+{
+    "type": "origins:multiple",
+
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 40,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 4
+        }
+    },
+
+    "gain": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:change_resource",
+			    "resource": "*:darkblood/dark_resource",
+			    "change": 2
+            }
+        }
+    },
+
+    "activate": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+			        "resource": "*:darkblood/dark_resource2",
+			        "change": 2
+                },
+                {
+                    "type": "origins:change_resource",
+			        "resource": "*:darkblood/graze_resource",
+			        "change": 20
+                },
+                {
+                    "type": "origins:change_resource",
+			        "resource": "*:darkblood/dark_resource",
+			        "change": -40
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active"
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:darkblood/dark_resource",
+            "comparison": "==",
+            "compare_to": 40
+        }
+    },
+
+    "resource2": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+
+    "drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:darkblood/dark_resource2",
+            "change": -1
+        },
+        "interval": 200,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:darkblood/dark_resource2",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+
+    "invisibility": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:darkblood/dark_resource2",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+
+    "speed": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": 0.06,
+            "name": "Increased sprinting speed"
+        },
+        "tick_rate": 2,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:darkblood/dark_resource2",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+
+    "particles": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute at @s run particle minecraft:squid_ink ~ ~1 ~ 0.01 0.01 0.01 0.001 10"
+        },
+        "interval": 5,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:darkblood/dark_resource2",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+
+    "name": "§a§l§nDark Burst",
+    "description": "When your killing spree reaches a high enough level, your blood rages within darkness, granting you temporary buffs. Needs full DARK BURST bar for such."
+}

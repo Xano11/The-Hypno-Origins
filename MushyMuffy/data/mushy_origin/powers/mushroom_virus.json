@@ -1,0 +1,279 @@
+{
+    "type": "origins:multiple",
+        "parasite_host":{
+            "type": "origins:disable_regen"
+        },
+        "shivers": {
+            "type": "origins:shaking"
+        },
+        "hunger": {
+                "type": "origins:stacking_status_effect",
+                "min_stacks": 0,
+                "max_stacks": 1,
+                "duration_per_stack": 100,
+                "tick_rate": 20,
+                "effect": {
+                    "effect": "minecraft:hunger",
+                    "is_ambient": true,
+                    "show_particles": true,
+                    "show_icon": true
+                }
+        },
+        "mushy_pov": {
+            "type": "origins:overlay",
+            "texture": "minecraft:textures/block/crimson_fungus.png",
+            "strength": 1,
+            "red": 1.0,
+            "green": 1.0,
+            "blue": 1.0,
+            "draw_mode": "texture",
+            "draw_phase": "above_hud",
+            "hide_with_hud": false,
+            "visible_in_third_person": false,
+            "hidden": true
+        },
+        "unsuitable_con": {
+            "type": "origins:conditioned_attribute",
+            "modifier":{
+                "attribute": "minecraft:generic.max_health",
+                "value": -4.0,
+                "operation": "addition"
+            }
+        },
+        "unsuitable_dex": {
+            "type":"origins:conditioned_attribute",
+            "modifier":{
+               "attribute": "minecraft:generic.movement_speed",
+               "value": -0.04,
+               "operation": "addition"
+            }
+        },
+        "unsuitable_str": {
+            "type": "origins:modify_damage_dealt",
+            "modifier": {
+                "operation": "addition",
+                "value": -4
+            }
+        },
+        "unsuitable_archer": {
+            "type": "origins:modify_projectile_damage",
+            "modifier": {
+                "operation": "addition",
+                "value": -4.0
+            }
+        },
+        "no_fork": {
+            "type": "origins:prevent_item_use",
+            "item_condition": {
+                "type": "origins:or",
+                "conditions": [
+                    {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:trident"
+                        }
+                    },
+                    {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "minecraft:shield"
+                        }
+                    },
+                    {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "waystones:pocket_wormhole"
+                        }
+                    },
+                    {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "waystones:abyss_watcher"
+                        }
+                    },
+                    {
+                        "type": "origins:ingredient",
+                        "ingredient": {
+                            "item": "waystones:local_void"
+                        }
+                    }
+                ]
+            }
+        },
+        "slow_air" : {
+            "type": "origins:modify_air_speed",
+            "modifier": {
+                "operation": "multiply_total",
+                "value": -0.5
+            }
+        },
+        "leg_control": {
+            "type": "origins:modify_jump",
+            "modifier": {
+                "value": -1,
+                "operation": "addition"
+            }
+        },
+        "jumpy": {
+            "type": "origins:action_over_time",
+            "entity_action": {
+                            "type": "origins:add_velocity",
+                            "y": 0.6
+                        },
+            "interval": 15
+        },
+        "pain": {
+            "type": "origins:action_over_time",
+            "entity_action": {
+                "type": "origins:choice",
+                "actions": [{
+                        "element": {
+                            "type": "origins:add_velocity",
+                            "x": 1.0
+                        },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:add_velocity",
+                            "x": -1.0
+                        },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:add_velocity",
+                            "z": 1.0
+                        },
+                        "weight": 10
+                    },
+                    {
+                        "element": {
+                            "type": "origins:add_velocity",
+                            "z": -1.0
+                        },
+                        "weight": 10
+                    }
+                ]
+            },
+            "interval": 30
+        },
+        "tasty": {
+        "type": "origins:action_when_hit",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                    {
+                        "effect": "minecraft:nausea",
+                        "amplifier": 0,
+                        "duration": 200
+                    },
+                    {
+                        "effect": "minecraft:hunger",
+                        "amplifier": 0,
+                        "duration": 200
+                    }
+                    ]
+                }
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "virus": {
+        "type": "origins:attacker_action_when_hit",
+        "entity_action": {
+            "type": "origins:chance",
+            "action":
+             {    
+                "type": "origins:execute_command",
+                "command": "power grant @s mushy_origin:mushroom_virus",
+                "permission_level": 4
+        },
+        "chance": 0.33
+        },
+        "cooldown": 1,
+            "hud_render": {
+                "should_render": false
+        }
+    },
+    "ouch": {
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+                "type": "origins:and",
+                "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle minecraft:spore_blossom_air ~ ~ ~ 1 1 1 100 1000 normal",
+                                "permission_level": 4
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "particle minecraft:mycelium ~ ~ ~ 1 1 1 100 400 normal",
+                                "permission_level": 4
+                            }
+                        ]
+                    },
+            "cooldown": 60,
+            "hud_render": {
+                "should_render": false
+            }
+        },
+        "prison": {
+            "type": "origins:resource",
+            "min": 0,
+            "max": 15,
+            "start_value": 15,
+            "hud_render": {
+                "should_render": true,
+                "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+                "bar_index": 8
+            }
+        },
+        "freedom": {
+            "type": "origins:action_over_time",
+            "interval": 20,
+            "entity_action": {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:resource",
+                    "resource": "*:*_prison",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:execute_command",
+                            "command": "power remove @s mushy_origin:mushroom_virus",
+                            "permission_level": 4
+                        },
+                        {
+							"type": "origins:execute_command",
+							"command": "tag @s remove fungal",
+							"permission_level": 4
+						},
+                        {
+                            "type": "origins:execute_command",
+                            "command": "playsound minecraft:entity.mooshroom.shear master @a[distance=..15] ~ ~ ~ 50 1",
+                            "permission_level": 4
+                        },
+                        {
+                            "type": "origins:execute_command",
+                            "command": "playsound minecraft:block.composter.empty master @a[distance=..15] ~ ~ ~ 50 1",
+                            "permission_level": 4
+                        }
+                    ]
+                },
+                "else_action": {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_prison",
+                    "change": -1
+                }
+            }
+    }       
+}

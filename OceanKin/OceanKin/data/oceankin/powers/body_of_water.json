@@ -1,0 +1,48 @@
+{
+  "type": "origins:multiple",
+  "weakness_and_slowness": {
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 0,
+    "max_stacks": 1,
+    "duration_per_stack": 120,
+    "effects": [
+      {
+        "effect": "minecraft:weakness",
+        "amplifier": 1,
+        "duration": 120,
+        "show_particles": false,
+        "is_ambient": false,
+        "show_icon": true
+      },
+      {
+        "effect": "minecraft:slowness",
+        "amplifier": 0,
+        "duration": 120,
+        "show_particles": false,
+        "is_ambient": false,
+        "show_icon": true
+      }
+    ],
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether"
+    }
+  },
+  "damage": {
+    "type": "origins:damage_over_time",
+    "interval": 100,
+    "onset_delay": 1,
+    "damage": 1,
+    "damage_source": {
+      "name": "onFire",
+      "unblockable": true,
+      "bypasses_armor": true
+    },
+    "condition": {
+      "type": "origins:dimension",
+      "dimension": "minecraft:the_nether"
+    }
+  },
+  "name": "§c§l§nBody of Water",
+  "description": "In the nether you begin to evaporate, gaining weakness and slowness and gradually taking damage."
+}

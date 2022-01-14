@@ -1,0 +1,132 @@
+{
+    "type": "origins:multiple",
+    "swim": {
+		"type": "origins:swimming",
+		"condition": {
+			"type": "origins:in_block",
+			"block_condition": {
+				"type": "origins:block",
+				"block": "minecraft:lava"
+			}
+		}
+	},
+	"vision": {
+		"type": "origins:lava_vision",
+		"s": 3,
+		"v": 13
+	},
+    "mine_speed": {
+        "type": "origins:modify_break_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 4
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:lava"
+                },
+                {      
+                    "type": "origins:on_block",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "strong_burns": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "addition",
+			"value": 3,
+			"name": "on fire"
+				},
+		"tick_rate": 20
+	},
+    "axoeatl": {
+        "type": "apugli:edible_item",
+        "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+            "item": "minecraft:axolotl_bucket"
+            }
+        },
+        "food_component": {
+            "hunger": 4,
+            "saturation": 1,
+            "meat": true
+        },
+        "use_action": "eat",
+        "return_stack": {
+            "item": "minecraft:water_bucket",
+            "amount": 1
+            }
+        },
+
+        "slime_ball": {
+            "type": "origins:self_action_when_hit",
+            "entity_action": {
+            "type": "origins:chance",
+            "chance": 0.15,
+            "action": {
+            "type": "origins:and",
+            "actions": [
+            {
+            "type": "origins:execute_command",
+            "command": "/summon item ~ ~ ~ {PickupDelay:100,Item:{id:magma_cream,Count:1}}",
+            "permission_level": 4
+            },
+            {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:entity.slime.hurt voice @s",
+            "permission_level": 4
+            }
+            ]
+            }
+            },
+            "damage_condition": {
+            "type": "origins:amount",
+            "comparison": ">=",
+            "compare_to": 2.0
+            },
+            "cooldown": 0,
+            "hud_render": {
+            "should_render": false
+            }
+            },
+            "love_ball": {
+                "type": "origins:self_action_when_hit",
+                "entity_action": {
+                "type": "origins:chance",
+                "chance": 0.05,
+                "action": {
+                "type": "origins:and",
+                "actions": [
+                {
+                "type": "origins:execute_command",
+                "command": "/summon item ~ ~ ~ {PickupDelay:100,Item:{id:\"minecraft:magma_cream\",Count:1b,tag:{display:{Name:'{\"text\":\"Love Cream\",\"color\":\"light_purple\",\"bold\":true,\"italic\":true}',Lore:['{\"text\":\"What could it do...?\",\"color\":\"white\",\"italic\":true}']},Enchantments:[{}]}}}",
+                "permission_level": 4
+                },
+                {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.slime.hurt_small voice @s ~ ~ ~ 2 1.5",
+                "permission_level": 4
+                }
+                ]
+                }
+                },
+                "damage_condition": {
+                "type": "origins:amount",
+                "comparison": ">=",
+                "compare_to": 2.0
+                },
+                "cooldown": 0,
+                "hud_render": {
+                "should_render": false
+                }
+                },
+    "name": "§a§l§nLava Adapted",
+    "description": "Due to your body being adapted to lava, You can swim in lava, You can see in it and you mine regular speed in lava"
+}

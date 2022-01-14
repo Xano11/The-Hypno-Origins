@@ -1,0 +1,11 @@
+{
+	"type": "origins:self_action_on_kill",
+		"entity_action": {
+			"type": "origins:feed",
+			"food": 4,
+			"saturation": 1
+		},
+    "cooldown": 1,
+	"name": "§e§l§nSoul Harvester",
+	"description": "You feed off the souls of those you kill, refusing any other sustenance."
+}

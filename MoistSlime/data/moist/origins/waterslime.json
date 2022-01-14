@@ -1,0 +1,24 @@
+{
+	"powers": [
+		"moist:water/adapted",
+		"moist:water/hookshot",
+		"extraorigins:jockey",
+		"moist:water/propulsion",
+		"moist:phasing",
+		"moist:slimebody",
+		"moist:water/moisture",
+		"moist:water/transform",
+		"moist:longarms",
+		"moist:water/fire",
+		"moist:water/moist_friends",
+		"origins:aquatic"
+	],
+	"icon": {
+		"item": "minecraft:slime_ball",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"order": 10,
+	"impact": 3,
+	"name": "Water Slime",
+	"description": "a Slime fused with water making it adapted to the element"
+}

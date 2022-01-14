@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "origins": [
+    "crystal:crystal_guardian",
+	"lush:lusherian",
+	"shine:shine",
+	"slate:slatian"
+  ]
+}

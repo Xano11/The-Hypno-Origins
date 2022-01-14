@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+      "minecraft:bow",
+      "minecraft:crossbow",
+      "medievalweapons:long_bow",
+      "medievalweapons:recurve_bow"
+    ]
+  }

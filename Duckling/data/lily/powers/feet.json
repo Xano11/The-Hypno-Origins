@@ -1,0 +1,10 @@
+{
+    "type": "origins:walk_on_fluid",
+    "name": "§a§l§nWebbed Feet",
+    "description": "Your feets are able to push against the water making you able to walk on water.",
+    "fluid": "minecraft:water",
+    "condition": {
+        "type": "origins:power_active",
+        "power": "lily:toggle"
+    }
+}

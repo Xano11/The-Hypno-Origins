@@ -1,0 +1,10 @@
+{
+  "type": "origins:inventory",
+  "name": "§a§l§nDuck Bill",
+  "description": "Ducks use their teeths in thir bills to hold on to items, you can keep your items inside your duck bills",
+  "drop_on_death": false,
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous": false
+  }
+}

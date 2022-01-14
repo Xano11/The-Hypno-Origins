@@ -1,0 +1,152 @@
+{
+	"type": "origins:multiple",
+	"potion_immunity": {
+		"type": "origins:effect_immunity",
+		"effects": [
+			"minecraft:strength",
+			"minecraft:speed",
+			"minecraft:jump_boost",
+			"minecraft:resistance",
+			"minecraft:hunger",
+			"minecraft:poison",
+			"minecraft:luck",
+			"minecraft:hero_of_the_village"
+		]
+	},
+	"poisonous": {
+		"type": "origins:target_action_on_hit",
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:poison",
+				"duration": 100,
+				"amplifier": 1
+			}
+		},
+		"cooldown": 100,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+			"bar_index": 18
+		},
+		"damage_condition": {
+			"type": "origins:projectile",
+			"inverted": true
+		}
+	},
+	"thunder": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:execute_command",
+			"command": "/weather rain 96",
+			"permission_level": 4
+		},
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/weather clear",
+			"permission_level": 4
+		}
+	},
+	"sadness": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/effect give @e[distance=0.1..5] minecraft:slowness 16",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/effect give @e[distance=0.1..5] minecraft:weakness 16",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/effect give @e[distance=0.1..5] minecraft:unluck 60",
+					"permission_level": 4
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:command",
+			"command": "/execute if entity @e[distance=0.1..5]",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	},
+	"unlucky": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 20,
+		"effects": [
+			{
+				"effect": "minecraft:unluck",
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			}
+			
+		]
+	},
+	"desaturated": {
+		"type": "origins:shader",
+		"shader": "minecraft:shaders/post/desaturate.json"
+	},
+	"slowness": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"value": -0.02,
+			"operation": "addition"
+		}
+	},
+	"delete_mellohi": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:mellohi_active",
+				"comparison": "==",
+				"compare_to": 96
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:mellohi_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:mellohi_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_mellohi",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:mellohi_active",
+				"change": 1
+			}
+		}
+	}
+}

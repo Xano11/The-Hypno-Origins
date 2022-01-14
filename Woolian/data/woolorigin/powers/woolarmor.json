@@ -1,0 +1,26 @@
+{
+    "type": "origins:conditioned_attribute",
+    "name": "§a§l§nDense Wool",
+    "hidden": false,
+    "tick_rate": 20,
+    "condition": {
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "comparison": ">",
+                "resource": "woolorigin:woolresource",
+                "compare_to": 0,
+                "inverted": false
+            }
+        ],
+        "type": "origins:and",
+        "inverted": false
+    },
+    "modifier": {
+        "operation": "addition",
+        "attribute": "minecraft:generic.armor",
+        "name": "Wool Armor",
+        "value": 4
+    },
+    "description": "Your Wool Provides a defensive bonus. However it also weighs you down, making you exhaust quicker."
+}

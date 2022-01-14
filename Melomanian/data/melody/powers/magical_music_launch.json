@@ -1,0 +1,305 @@
+{
+	"type": "origins:multiple",
+	"initiate": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/spreadplayers ~ ~ 4 16 false @s",
+						"permission_level": 4
+					},
+					"ticks": 1
+				},
+				{
+					"type": "origins:if_else_list",
+					"actions": [
+						{
+							"condition": {
+								"type": "origins:command",
+								"command": "/execute if entity @s[tag=Cnote]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							"action": {
+								"type": "origins:apply_effect",
+								"effect": {
+									"effect": "minecraft:levitation",
+									"duration": 80,
+									"amplifier": 1,
+									"is_ambient": true,
+									"show_particles": false,
+									"show_icon": false
+								}
+							}
+						},
+						{
+							"condition": {
+								"type": "origins:command",
+								"command": "/execute if entity @s[tag=Dnote]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							"action": {
+								"type": "origins:apply_effect",
+								"effect": {
+									"effect": "minecraft:levitation",
+									"duration": 80,
+									"amplifier": 2,
+									"is_ambient": true,
+									"show_particles": false,
+									"show_icon": false
+								}
+							}
+						},
+						{
+							"condition": {
+								"type": "origins:command",
+								"command": "/execute if entity @s[tag=Enote]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							"action": {
+								"type": "origins:apply_effect",
+								"effect": {
+									"effect": "minecraft:levitation",
+									"duration": 80,
+									"amplifier": 3,
+									"is_ambient": true,
+									"show_particles": false,
+									"show_icon": false
+								}
+							}
+						},
+						{
+							"condition": {
+								"type": "origins:command",
+								"command": "/execute if entity @s[tag=Fnote]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							"action": {
+								"type": "origins:apply_effect",
+								"effect": {
+									"effect": "minecraft:levitation",
+									"duration": 80,
+									"amplifier": 4,
+									"is_ambient": true,
+									"show_particles": false,
+									"show_icon": false
+								}
+							}
+						},
+						{
+							"condition": {
+								"type": "origins:command",
+								"command": "/execute if entity @s[tag=Gnote]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							"action": {
+								"type": "origins:apply_effect",
+								"effect": {
+									"effect": "minecraft:levitation",
+									"duration": 80,
+									"amplifier": 5,
+									"is_ambient": true,
+									"show_particles": false,
+									"show_icon": false
+								}
+							}
+						},
+						{
+							"condition": {
+								"type": "origins:command",
+								"command": "/execute if entity @s[tag=Anote]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							"action": {
+								"type": "origins:apply_effect",
+								"effect": {
+									"effect": "minecraft:levitation",
+									"duration": 80,
+									"amplifier": 6,
+									"is_ambient": true,
+									"show_particles": false,
+									"show_icon": false
+								}
+							}
+						},
+						{
+							"condition": {
+								"type": "origins:command",
+								"command": "/execute if entity @s[tag=Bnote]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							"action": {
+								"type": "origins:apply_effect",
+								"effect": {
+									"effect": "minecraft:levitation",
+									"duration": 80,
+									"amplifier": 7,
+									"is_ambient": true,
+									"show_particles": false,
+									"show_icon": false
+								}
+							}
+						},
+						{
+							"condition": {
+								"type": "origins:command",
+								"command": "/execute if entity @s[tag=C2note]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							"action": {
+								"type": "origins:apply_effect",
+								"effect": {
+									"effect": "minecraft:levitation",
+									"duration": 80,
+									"amplifier": 8,
+									"is_ambient": true,
+									"show_particles": false,
+									"show_icon": false
+								}
+							}
+						},
+						{
+							"condition": {
+								"type": "origins:command",
+								"command": "/execute if entity @s[tag=D2note]",
+								"comparison": "==",
+								"compare_to": 1
+							},
+							"action": {
+								"type": "origins:apply_effect",
+								"effect": {
+									"effect": "minecraft:levitation",
+									"duration": 80,
+									"amplifier": 9,
+									"is_ambient": true,
+									"show_particles": false,
+									"show_icon": false
+								}
+							}
+						}
+					]
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/execute if entity @s[tag=Cnote] run summon firework_rocket ~ ~0.4 ~ {LifeTime:1,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;11743532]}]}}},Silent:1}",
+						"permission_level": 4
+					},
+					"ticks": 39
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/execute if entity @s[tag=Dnote] run summon firework_rocket ~ ~0.4 ~ {LifeTime:1,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;15435844]}]}}},Silent:1}",
+						"permission_level": 4
+					},
+					"ticks": 39
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/execute if entity @s[tag=Enote] run summon firework_rocket ~ ~0.4 ~ {LifeTime:1,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;14602026]}]}}},Silent:1}",
+						"permission_level": 4
+					},
+					"ticks": 39
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/execute if entity @s[tag=Fnote] run summon firework_rocket ~ ~0.4 ~ {LifeTime:1,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;4312372]}]}}},Silent:1}",
+						"permission_level": 4
+					},
+					"ticks": 39
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/execute if entity @s[tag=Gnote] run summon firework_rocket ~ ~0.4 ~ {LifeTime:1,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;3887386]}]}}},Silent:1}",
+						"permission_level": 4
+					},
+					"ticks": 39
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/execute if entity @s[tag=Anote] run summon firework_rocket ~ ~0.4 ~ {LifeTime:1,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;6719955]}]}}},Silent:1}",
+						"permission_level": 4
+					},
+					"ticks": 39
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/execute if entity @s[tag=Bnote] run summon firework_rocket ~ ~0.4 ~ {LifeTime:1,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;2437522]}]}}},Silent:1}",
+						"permission_level": 4
+					},
+					"ticks": 39
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/execute if entity @s[tag=C2note] run summon firework_rocket ~ ~0.4 ~ {LifeTime:1,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;14188952]}]}}},Silent:1}",
+						"permission_level": 4
+					},
+					"ticks": 39
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/execute if entity @s[tag=D2note] run summon firework_rocket ~ ~0.4 ~ {LifeTime:1,FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;8073150]}]}}},Silent:1}",
+						"permission_level": 4
+					},
+					"ticks": 39
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/particle minecraft:flash ~ ~ ~ 0 0 0 0 1 force",
+						"permission_level": 4
+					},
+					"ticks": 40
+				},
+				{
+					"type": "origins:delay",
+					"action": {
+						"type": "origins:execute_command",
+						"command": "/kill @s",
+						"permission_level": 4
+					},
+					"ticks": 40
+				}
+			]
+		}
+	},
+	"trail": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "/particle minecraft:ambient_entity_effect ~ ~ ~ 0.1 0.1 0.1 10 10 force",
+			"permission_level": 4
+		},
+		"interval": 10
+	},
+	"hidden": true
+}

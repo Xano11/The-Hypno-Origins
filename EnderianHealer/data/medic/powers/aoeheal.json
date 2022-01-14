@@ -1,0 +1,30 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:execute_command",
+        "command": "summon area_effect_cloud ~ ~0.1 ~ {Particle:\"happy_villager\",Radius:1.5f,RadiusPerTick:0.1f,Duration:30,Effects:[{Id:10b,Amplifier:1b,Duration:140,ShowParticles:1b}]}"
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "playsound minecraft:entity.evoker.prepare_summon master @a ~ ~ ~ 1 1.5"
+      }
+    ]
+  },
+  "condition": {
+    "type": "origins:sneaking"
+  },
+  "cooldown": 500,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+    "bar_index": 4
+  },
+  "key": {
+    "key": "key.origins.secondary_active"
+  },
+  "name": "§a§l§nDispersed Healing",
+  "description": "You can deconcentrate your healing magic by sneaking in order to heal in a radius, however, this healing will take longer to take full effect."
+}

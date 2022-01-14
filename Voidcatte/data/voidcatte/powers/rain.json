@@ -1,0 +1,26 @@
+{
+    "type": "origins:stacking_status_effect",
+    "min_stacks": -10,
+    "max_stacks": 10,
+    "duration_per_stack": 10,
+    "effects": [
+      {
+        "effect": "minecraft:slowness",
+        "is_ambient": true,
+        "show_particles": false,
+        "show_icon": true,
+        "amplifier": 1
+      }
+    ],
+    "condition": {
+      "type": "origins:and",
+      "conditions": [
+        {
+          "type": "origins:in_rain",
+          "inverted": false
+        }
+      ]
+    },
+    "name": "§c§l§nWet Fur",
+    "description": "Rainy weather makes your fur wet after staying out for a little bit. This slows you down."
+  }

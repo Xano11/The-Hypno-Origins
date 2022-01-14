@@ -1,0 +1,12 @@
+{
+    "type": "origins:modify_break_speed",
+    "block_condition": {
+        "type": "origins:movement_blocking"
+    },
+    "modifier": {
+        "operation": "multiply_base",
+        "value": -0.2
+    },
+    "name": "§c§l§nUnfortunate Design",
+    "description":"You don't have arms making it harder to mine, you mine 20% slower"
+}

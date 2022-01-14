@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifier": {
+      "value": 0.5,
+      "operation": "multiply_base"
+    },
+    "name": "§c§l§nHungry.",
+    "description": "You need to eat more to use your abilities."
+  }

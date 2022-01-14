@@ -1,0 +1,17 @@
+{
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:attacker",
+        "entity_condition": {
+            "type": "origins:entity_group",
+            "group": "arthropod"
+        }
+    },
+    "modifier": {
+        "name": "more arachnid dmg",
+        "operation": "multiply_total",
+        "value": 2
+    },
+    "name": "§c§l§nArachnophobe",
+	"description": "Arthropods scare you. Like, alot."
+}

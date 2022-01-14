@@ -1,0 +1,46 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+        "type": "origins:damage",
+        
+        "amount": 4,
+        "source": {
+            "name": "anvil",
+            "bypasses_armor": true,
+            "unblockable": true
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:item minecraft:deepslate ~ ~1 ~ 0.4 0.5 0.4 0.1 100",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:apply_effect",
+                "effect": {
+                    "effect": "minecraft:blindness",
+                    "duration": 100,
+                    "amplifier": 0,
+                    "is_ambient": false,
+                    "show_particles": false,
+                    "show_icon": true
+                }
+            },
+            {
+                "type": "origins:apply_effect",
+                "effect": {
+                    "effect": "minecraft:slowness",
+                    "duration": 100,
+                    "amplifier": 3,
+                    "is_ambient": false,
+                    "show_particles": false,
+                    "show_icon": true
+                }
+            }
+            
+        ]
+    }
+}

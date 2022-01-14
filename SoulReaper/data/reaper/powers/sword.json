@@ -1,0 +1,21 @@
+{
+	"type": "origins:modify_damage_dealt",
+	"modifier": {
+		"operation": "multiply_base",
+		"value": -0.8,
+		"name": "no swords"
+	},
+	"condition": {
+  	   "type": "origins:equipped_item",
+  	   "equipment_slot": "mainhand",
+  	   "item_condition": {
+		"type": "origins:ingredient",
+		"ingredient": {
+			"tag": "fabric:swords"
+		}
+	   }
+	},
+	"name": "§c§l§nUnyielded Blade",
+	"description": "Your boney hands are not fit for throwing bladed weaponry, and thus won't be dealing much damage with swords"
+}
+

@@ -1,0 +1,1 @@
+give @s suspicious_stew{display:{Name:'{"text":"Good Soup","color":"light_purple"}',Lore:['{"text":"*sppppsss \\"mmmMH oh my god yes\\" *SLpsss \\"MMMHmhm"}']},Enchantments:[{}],Effects:[{EffectId:10b,EffectDuration:400},{EffectId:11b,EffectDuration:1200},{EffectId:12b,EffectDuration:1200},{EffectId:22b,EffectDuration:2400}]}

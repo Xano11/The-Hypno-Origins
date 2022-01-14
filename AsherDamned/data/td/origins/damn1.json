@@ -1,0 +1,14 @@
+{
+	"powers": [
+		"td:phase",
+		"td:jump",
+		"td:call",
+		"td:ghost_things",
+		"td:home"
+	],
+	"icon": "minecraft:bone",
+	"order": 10,
+	"impact": 2,
+	"name": "The Damned",
+	"description": "Lets skip the tears and start on the whole..y'know, Being dead thing!"
+}

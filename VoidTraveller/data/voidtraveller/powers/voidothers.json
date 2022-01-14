@@ -1,0 +1,54 @@
+{
+    "type": "origins:active_self",
+    "key": "secondary",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "execute as @s run function voidtraveller:sendvoid"
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 200,
+                "action": {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "execute as @s run function voidtraveller:sendvoidback"
+                }
+            }
+        ]
+    },
+    "cooldown": 1200,
+    "hud_render": {
+        "should_render": true,
+        "bar_index": 3,
+        "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+    "condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:command",
+                "command": "execute if data entity @s {SelectedItem:{tag:{voidshard:true}}}",
+                "comparison": ">=",
+                "compare_to": "1",
+                "permission_level": 4,
+                "inverted": false
+            },
+            {
+                "type": "origins:command",
+                "command": "execute if data entity @s Inventory[{Slot:-106b,tag:{voidshard:1b}}]",
+                "comparison": ">=",
+                "compare_to": "1",
+                "permission_level": 4,
+                "inverted": false
+            }
+        ],
+        "inverted": true
+    },
+    "name": "§a§l§nVoid Shock",
+    "description": "Send other entities to the void!",
+    "hidden": false
+}

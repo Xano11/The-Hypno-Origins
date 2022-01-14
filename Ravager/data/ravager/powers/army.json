@@ -1,0 +1,143 @@
+{
+    "type": "origins:multiple",
+    "summon": {
+		"type": "origins:active_self",
+		"cooldown": 900,
+		"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+		"bar_index": 7
+		},
+		"key": {
+			"key": "key.loadToolbarActivator",
+			"continuous": true
+		},
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "summon area_effect_cloud ~ ~ ~ {Passengers:[{id:\"minecraft:pillager\",Tags:[\"ravager\"],HandItems:[{id:\"minecraft:crossbow\",Count:1b},{}]},{id:\"minecraft:pillager\",Tags:[\"ravager\"],HandItems:[{id:\"minecraft:crossbow\",Count:1b},{}]},{id:\"minecraft:vindicator\",Tags:[\"ravager\"],HandItems:[{id:\"minecraft:iron_axe\",Count:1b,tag:{RepairCost:99,Damage:6}},{}]}]}",
+			"permission_level": 4
+		}
+	},
+    "tame": {
+		"type": "origins:active_self",
+		"cooldown": 5,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+			"key": "key.sneak",
+			"continuous": true
+		},
+        "entity_action": {                
+                "type": "origins:execute_command",
+                "command": "tag @e[type=minecraft:pillager,distance=..5] add ravager",
+                "permission_level": 4
+            }
+        },
+	"teleport": {
+		"type": "origins:active_self",
+		"cooldown": 300,
+		"hud_render": {
+		"should_render": false
+		},
+		"key": {
+			"key": "key.spectatorOutlines",
+			"continuous": true
+		},
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "tp @e[type=!player,tag=ravager] @p",
+			"permission_level": 4
+		}
+	},
+    "create_tag":
+    {
+        "type": "origins:action_on_callback",
+        "execute_chosen_when_orb": true,
+        "entity_action_added":
+        {
+            "type": "origins:execute_command",
+            "permission_level": 4,
+            "command": "tag @s add ravager"
+        },
+        "entity_action_removed":
+        {
+            "type": "origins:execute_command",
+            "permission_level": 4,
+            "command": "tag @s remove ravager"
+        }
+    },
+	"target":{
+        "type": "origins:target_action_on_hit",
+        "cooldown": 200,
+        "entity_action":
+        {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @s add self"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "execute at @e[type=!player,tag=ravager,distance=..20] run summon snowball ~ ~2.5 ~ {Tags:[\"aggro.init\"],CustomPotionEffects:[{Id:6b,Amplifier:1b,Duration:5}],Motion:[0.0,-1.0,0.0]}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "execute as @e[tag=aggro.init] run data modify entity @s Owner set from entity @e[tag=self,limit=1] UUID"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @s remove self"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @e remove aggro.init"
+                }
+            ]
+        }
+    },
+    "attacker":
+    {
+        "type": "origins:attacker_action_when_hit",
+        "cooldown": 200,
+        "entity_action":
+        {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @s add self"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "execute at @e[type=!player,tag=ravager,distance=..20] run summon snowball ~ ~2.5 ~ {Tags:[\"aggro.init\"],Motion:[0.0,-1.0,0.0]}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "execute as @e[tag=aggro.init] run data modify entity @s Owner set from entity @e[tag=self,limit=1] UUID"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @s remove self"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @e remove aggro.init"
+                }
+            ]
+        }
+    },
+    "name": "§a§l§nIllager Army",
+	"description": "Summons 2 Pillagers and 1 Vindicator or Crouch to tame nearby naturally spawned Pillagers"
+}

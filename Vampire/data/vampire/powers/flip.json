@@ -1,0 +1,51 @@
+{
+    "type":"origins:multiple",
+    "shader":{
+        "type":"origins:shader",
+        "shader":"minecraft:shaders/post/flip.json",
+        "condition":{
+            "type": "origins:block_collision",
+            "offset_x": 0,
+            "offset_y": 0.1,
+            "offset_z": 0
+        }
+    },
+    "levitate":{
+        "type":"origins:action_over_time",
+        "entity_action":{
+            "type":"origins:apply_effect",
+            "effect":{
+                "effect":"minecraft:levitation",
+                "duration":100,
+                "amplifier":0,
+                "show_particles":false,
+                "show_icon":false,
+                "is_ambient":true
+            }
+        },
+        "interval":1,
+        "condition":{
+            "type": "origins:block_collision",
+            "offset_x": 0,
+            "offset_y": 0.1,
+            "offset_z": 0
+        }
+    },
+    "stoplevitation":{
+        "type":"origins:action_over_time",
+        "entity_action":{
+            "type":"origins:clear_effect",
+            "effect":"minecraft:levitation"
+        },
+        "interval":1,
+        "condition":{
+            "type": "origins:block_collision",
+            "offset_x": 0,
+            "offset_y": 0.1,
+            "offset_z": 0,
+            "inverted":true
+        }
+    },
+    "name":"§a§l§nInvert",
+    "description":"When there is a block directly above you, you flip and hang on it. The inverted camera can be toggled normal by pressing F4."
+}

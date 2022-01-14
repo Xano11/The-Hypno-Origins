@@ -1,0 +1,11 @@
+{
+	"type": "origins:attribute",
+	"modifier": {
+		"name": "Wolf strength from Origin power",
+		"attribute": "minecraft:generic.attack_damage",
+		"operation": "addition",
+		"value": 1
+	},
+	"name": "§a§l§nDOG POG",
+	"description": "bonks do more damage"
+}

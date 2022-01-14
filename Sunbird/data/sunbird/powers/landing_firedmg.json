@@ -1,0 +1,34 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+        "type": "origins:damage",
+        
+        "amount": 7,
+        "source": {
+            "name": "onFire",
+            "bypasses_armor": true,
+            "fire": true
+                }
+            },
+            {
+                "type": "origins:set_on_fire",
+                "duration": 4
+            },
+            {
+                "type": "origins:delay",
+                      "ticks": 1,
+                      "action": {
+                          "type": "origins:and",
+                          "actions": {
+                               "type": "origins:execute_command",
+                               "command": "power remove @s sunbird:landing_firedmg",
+                               "permission_level": 4
+                }
+              } 
+            }
+        ]
+    }
+}

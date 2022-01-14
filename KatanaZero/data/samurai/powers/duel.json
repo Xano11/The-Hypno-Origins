@@ -1,0 +1,147 @@
+{
+"type":"origins:multiple",
+"katana_buff":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "multiply_total",
+      "value": 1,
+      "name": "Increased longsword damage"
+  },
+  "tick_rate": 5,
+  "condition": {
+        "type":"origins:equipped_item",
+        "equipment_slot":"mainhand",
+        "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+        "item": "medievalweapons:iron_long_sword"
+      }
+    }
+  }
+},
+"durability":{
+  "type":"origins:self_action_on_hit",
+  "cooldown":1,
+  "hud_render":{
+    "should_render":false
+  },
+  "entity_action":{
+    "type":"origins:chance",
+    "action":{
+      "type":"origins:and",
+      "actions":[
+        {
+          "type":"origins:delay",
+          "ticks":1,
+          "action":{
+          "type":"origins:execute_command",
+    "command":"/clear @s medievalweapons:iron_long_sword 1"
+          }
+        },
+        {
+          "type":"origins:execute_command",
+    "command":"/playsound minecraft:item.shield.break master @a[distance=..5] ~ ~ ~ 1 1"
+        }
+      ]
+    },
+    "chance":0.10
+  },
+  "condition": {
+    "type":"origins:equipped_item",
+    "equipment_slot":"mainhand",
+    "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "medievalweapons:iron_long_sword"
+    }
+  }
+ }
+},
+"cant_use_bows":{
+  "type":"origins:prevent_item_use",
+  "item_condition": {
+    "type":"origins:or",
+    "conditions":[
+      {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "minecraft:bow"
+    }
+  },
+  {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "minecraft:crossbow"
+    }
+  },
+  {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "minecraft:trident"
+    }
+  }
+    ]
+  }
+},
+"no_axes":{
+  "type":"origins:stacking_status_effect",
+  "max_stacks":1,
+  "min_stacks":0,
+  "duration_per_stack":20,
+  "effect": {
+    "effect": "minecraft:weakness",
+    "is_ambient": true,
+    "show_particles": false,
+    "show_icon": false,
+    "amplifier":200
+},
+"condition":{
+  "type":"origins:equipped_item",
+  "equipment_slot":"mainhand",
+  "item_condition": {
+    "type":"origins:or",
+    "conditions":[
+      {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "minecraft:wooden_axe"
+    }
+  },
+  {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "minecraft:stone_axe"
+    }
+  },
+  {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "minecraft:golden_axe"
+    }
+  },
+  {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "minecraft:iron_axe"
+    }
+  },
+  {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "minecraft:diamond_axe"
+    }
+  },
+  {
+    "type": "origins:ingredient",
+    "ingredient": {
+        "item": "minecraft:netherite_axe"
+    }
+  }
+    ]
+  }
+}
+},
+"name":"§e§l§nTrue Samruai",
+"description":"You deal double damage with iron long swords/katanas but there is also a 10% chance that the sword will break instantly on use and you cannot fight with axes"
+}

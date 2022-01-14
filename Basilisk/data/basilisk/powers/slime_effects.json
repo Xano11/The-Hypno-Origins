@@ -1,0 +1,60 @@
+{
+    "type":"origins:multiple",
+
+    "stoned":
+{
+	"type": "origins:model_color",
+	"red": 0.25,
+	"green": 0.25,
+	"blue": 0.25,
+	"alpha": 1
+},
+
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 600,
+        "start_value": 600,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 19
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s basilisk:slime_effects"
+        }
+        
+},
+"particles":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "particle minecraft:block minecraft:stone ~ ~0.5 ~ 0.5 0.5 0.5 0.01 10",
+		"permission_level": 4
+	},
+    "interval": 20
+},
+"remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "basilisk:slime_effects_resource",
+        "change": -20
+    },
+    "interval": 20
+},
+
+"less_dmg":
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "name": "less dmg",
+        "operation": "multiply_total",
+        "value": -0.25
+    }
+},
+"hidden": true
+}

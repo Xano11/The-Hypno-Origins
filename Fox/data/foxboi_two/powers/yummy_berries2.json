@@ -1,0 +1,31 @@
+{
+  "type": "origins:modify_food",
+  "item_condition": {
+  "type": "origins:ingredient",
+  "ingredient":
+    {
+    "item": "minecraft:glow_berries"
+    }
+  },
+  "food_modifier":
+  {
+   "operation": "addition",
+   "value": 2.0
+  },
+  "saturation_modifier":
+  {
+    "operation": "addition",
+    "value": 1.0
+  },
+  "entity_action": {
+    "type": "origins:chance",
+    "action":
+     {    
+   "type": "origins:execute_command",
+   "command": "effect give @s minecraft:glowing 10 1",
+     "permission_level": 4
+     },
+     "chance": 0.1
+     },
+  "hidden": true
+}

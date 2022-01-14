@@ -1,0 +1,101 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "scale set pehkui:height 1.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "scale set pehkui:width 1.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "scale set pehkui:reach 1.5 @s"
+            }
+        ]
+    },
+    "entity_action_removed": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "scale set pehkui:height 1 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "scale set pehkui:width 1 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "scale set pehkui:reach 1 @s"
+            }
+        ]
+    },
+    "execute_chosen_when_orb": true,
+    "name": "§e§l§nGigantism",
+    "description": "You are significantly larger than most origins. As a result of your massive size, you are unable to fit into armor or use tools correctly.",
+    "entity_action_respawned": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "scale set pehkui:height 1.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "scale set pehkui:width 1.5 @s"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "scale set pehkui:reach 1.2 @s"
+            },
+            {
+                "type": "origins:heal",
+                "amount": 20
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:command",
+                    "inverted": true,
+                    "comparison": "==",
+                    "compare_to": 1,
+                    "permission_level": 4,
+                    "command": "/gamerule keepInventory"
+                },
+                "if_action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "golem:resistance",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "golem:haste",
+                            "change": -300
+                        },
+                        {
+                            "type": "origins:change_resource",
+                            "resource": "golem:strength",
+                            "change": -300
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

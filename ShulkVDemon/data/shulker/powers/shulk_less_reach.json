@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+      "name": "reqused attack reach increase",
+      "attribute": "reach-entity-attributes:attack_range",
+      "value": -1,
+      "operation": "addition"
+  },
+  "name": "§c§l§nNot A Fighter",
+	"description": "You have 2 less blocks of combat reach"
+}

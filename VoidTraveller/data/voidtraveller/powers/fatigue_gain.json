@@ -1,0 +1,17 @@
+{
+    "type": "origins:action_over_time",
+    "name": "§c§l§nFatigue Gain",
+    "description": "You gain fatigue whilst not being in the void. This will accumulate and end up weakening you.",
+    "hidden": true,
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "voidtraveller:fatigue_resource",
+        "change": 1
+    },
+    "condition": {
+        "type": "origins:dimension",
+        "inverted": false,
+        "dimension": "minecraft:overworld"
+    }
+}

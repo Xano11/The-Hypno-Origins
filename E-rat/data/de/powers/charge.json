@@ -1,0 +1,145 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+		"min": 0,
+		"max": 1400,
+		"start_value": 0,
+		"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/resource_bar.png",
+		"bar_index": 2
+		}
+	},
+
+    "gain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+			"resource": "de:charge_resource",
+			"change": 5
+        },
+        "interval": 10,
+        "condition": {
+            "type": "origins:or",
+            "conditions":[
+                    {
+                        "type": "origins:in_rain"
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "tag": "de:charged"
+                    },
+                    "radius": 3,
+                    "shape": "cube",
+                    "comparison": ">=", 
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+
+    "better_gain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+			"resource": "de:charge_resource",
+			"change": 5
+        },
+        "interval": 20,
+        "condition": {
+        "type": "origins:block_in_radius",
+            "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "de:charged"
+            },
+            "radius": 3,
+            "shape": "cube",
+            "comparison": ">=", 
+            "compare_to": 2
+        }
+    },
+
+    "even_better_gain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+			"resource": "de:charge_resource",
+			"change": 5
+        },
+        "interval": 30,
+        "condition": {
+        "type": "origins:block_in_radius",
+            "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "de:charged"
+            },
+            "radius": 3,
+            "shape": "cube",
+            "comparison": ">=", 
+            "compare_to": 3
+        }
+    },
+
+    "best_gain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+			"resource": "de:charge_resource",
+			"change": 5
+        },
+        "interval": 40,
+        "condition": {
+        "type": "origins:block_in_radius",
+            "block_condition": {
+            "type": "origins:in_tag",
+            "tag": "de:charged"
+            },
+            "radius": 3,
+            "shape": "cube",
+            "comparison": ">=", 
+            "compare_to": 4
+        }
+    },
+
+    "drain2": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "de:charge_resource",
+            "change": -10
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">",
+            "compare_to": 0.0
+        }
+    },
+
+    "drain": {
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "de:charge_resource",
+        "change": -10
+    },
+    "interval": 10,
+    "condition": {
+    "type": "origins:block_in_radius",
+        "block_condition": {
+        "type": "origins:in_tag",
+        "tag": "de:rod"
+        },
+        "radius": 3,
+        "shape": "cube",
+        "comparison": ">=", 
+        "compare_to": 1
+        }
+    },
+    "name": "§e§l§nCharge Bar",
+    "description": "Charge is required to use all your abilities. All types of copper give you charge, so do thunderstorms but watch out for those pesky lightning rods and water because they will drain your charge faster than you possibly could gain it."
+}

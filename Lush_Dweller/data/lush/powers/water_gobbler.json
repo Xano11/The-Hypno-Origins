@@ -1,0 +1,103 @@
+{
+    "type": "origins:multiple",
+        "water_resource": {
+            "type": "origins:resource",
+            "min": 0,
+            "max": 1,
+            "start_value": 0,
+            "hud_render": {
+                "bar_index": 10,
+                "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png"
+            }
+    },
+    "gobbler": {
+        "type": "origins:action_on_item_use",
+        "entity_action": {
+        "type": "origins:and",
+            "actions": [
+            {
+            "type": "origins:change_resource",
+            "resource": "*:*_water_resource",
+            "change": 1
+        },
+        {
+        "type": "origins:execute_command",
+        "command": "playsound minecraft:ambient.underwater.enter player @a ~ ~ ~ 1 1",
+        "permission_level": 4
+        }
+        ]
+        },
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:potion"
+            }
+        }
+    },
+    "bloated": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:width 0.62",
+            "permission_level": 4
+            },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_water_resource",
+            "comparison": "==",
+            "compare_to": 1
+            },
+        "interval": 20
+    },
+    "deflate": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "scale set pehkui:width 0.55",
+            "permission_level": 4
+            },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "lush:water",
+            "comparison": "==",
+            "compare_to": 0
+            },
+        "interval": 20
+    },
+    "remove_fire": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+            {
+            "type": "origins:extinguish"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "*:*_water_resource",
+                "change": -1
+            },
+            {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:ambient.underwater.exit player @a ~ ~ ~ 1 1",
+            "permission_level": 4
+            }
+        ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_water_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "cooldown": 1,
+        "key": {
+            "key": "key.saveToolbarActivator"
+        },
+        "hud_render": {
+            "should_render": false
+        },
+        "name": "§a§l§nSponge like",
+        "description": "You can absorb water into your body and release it to put your self out if on fire."
+    }
+}

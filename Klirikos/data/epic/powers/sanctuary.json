@@ -1,0 +1,58 @@
+{
+	"name": "§a§l§nSanctuary",
+	"description": "Heal every entity within a small radius for a decent amount at the expense of four of your food level. Also, using a totem will give better effects, but at the cost of using it.",
+	"type": "origins:active_self",
+	"cooldown": 160,
+	"hud_render": {
+	  "should_render":true,
+	  "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+	  "bar_index": 1
+	},
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [ 		
+		{
+		  "type": "origins:execute_command",
+		  "command": "playsound minecraft:entity.evoker.cast_spell master @a[distance=..5] ~ ~ ~ 1 1",
+		  "permission_level": 4
+		},
+		{
+		  "type": "origins:execute_command",
+		  "command": "effect give @e[distance=..5] minecraft:instant_health 1 1 true",
+		  "permission_level": 4
+		},
+		{
+		  "type": "origins:execute_command",
+		  "command": "summon area_effect_cloud ~ ~ ~ {Particle:happy_villager,Radius:5f,Duration:1}",
+		  "permission_level": 4
+		},
+		{
+      		  "type":"origins:feed",
+      		  "food": -8,
+      		  "saturation": 2.4
+    }
+	  ]
+
+	},
+	"condition": {
+		"type": "origins:and",
+        "inverted": true,
+        "conditions": [
+			{
+		"type": "origins:equipped_item",
+		"equipment_slot": "mainhand",
+		"item_condition": {
+		  "type": "origins:ingredient",
+		  "ingredient": {
+			"item": "minecraft:totem_of_undying"
+		  }
+		}
+	}
+	]
+	  },
+		"key": "primary"	
+}
+
+
+
+

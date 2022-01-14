@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: Strad by C418", "color":"white"}

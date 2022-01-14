@@ -1,0 +1,41 @@
+{
+    "type": "origins:action_over_time",
+    "name": "§c§l§nUninsulated",
+    "description": "When you don't have your Wool Coat, you have permanent Slowness 1 and Weakness 1 from cold breezes. Additionally, fire hurts your exposed skin more and you take damage when wet because of hypothermia.",
+    "interval": 20,
+    "entity_action": {
+        "effects": [
+            {
+                "effect": "minecraft:slowness",
+                "duration": 50,
+                "amplifier": 0,
+                "is_ambient": false,
+                "show_particles": false,
+                "show_icon": true
+            },
+            {
+                "is_ambient": false,
+                "show_icon": true,
+                "effect": "minecraft:weakness",
+                "amplifier": 0,
+                "duration": 50,
+                "show_particles": false
+            }
+        ],
+        "type": "origins:apply_effect"
+    },
+    "condition": {
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "comparison": "<",
+                "resource": "woolorigin:woolresource",
+                "compare_to": 1,
+                "inverted": false
+            }
+        ],
+        "type": "origins:and",
+        "inverted": false
+    },
+    "hidden": false
+}

@@ -1,0 +1,11 @@
+{
+    "type": "origins:attribute",
+      "modifier": {
+          "attribute": "generic.armor",
+          "operation": "addition",
+          "value": 5
+    },
+    "name": "§a§l§nArmored.",
+    "description": "You have 5 additional armor points due to your armored body."
+  }
+  

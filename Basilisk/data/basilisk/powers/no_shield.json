@@ -1,0 +1,11 @@
+{
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "origins:shields"
+    }
+  },
+  "name": "§c§l§nSerpentine Body",
+  "description": "Your serpent body unallows you to use shields correctly."
+}

@@ -1,0 +1,62 @@
+{
+    "type": "origins:active_self",
+    "name": "§a§l§nRocket Boots",
+    "description": "You have rocket boots that allow you to propel yourself upwards and forwards.",
+    "hidden": false,
+    "cooldown": 2,
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type":"origins:execute_command",
+                "command":"particle minecraft:flame ~ ~ ~ 0.1 0.1 0.1 0.01 3 force @a[distance=..30]",
+                "permission_level":4
+            },
+            {
+                "type": "origins:add_velocity",
+                "y": 0.17
+            },
+			{
+                "type": "origins:add_velocity",
+                "z": 0.0001,
+				"space": "local"
+            },
+            {
+                "type": "origins:play_sound",
+                "sound": "minecraft:entity.firework_rocket.launch"
+            },
+            {
+                "type": "origins:change_resource",
+                  "resource": "dwarf:rocket_resource",
+                  "change": -1
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": false,
+        "sprite_location": "origins:textures/gui/resource_bar.png"
+    },
+    "condition": {
+            "type": "origins:and",
+            "inverted": false,
+            "conditions": [
+                {
+        "type": "origins:resource",
+        "resource": "dwarf:rocket_resource",
+        "comparison": ">",
+        "compare_to": 0
+    }, 
+    {
+        "type": "origins:fluid_height",
+        "fluid": "minecraft:water",
+        "comparison": "==",
+        "compare_to": 0,
+        "inverted": false
+        }
+    ]
+    },
+    "key": {
+        "key": "key.origins.primary_active",
+        "continuous": true
+    }
+}

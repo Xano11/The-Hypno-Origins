@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: Far by C418", "color":"green"}

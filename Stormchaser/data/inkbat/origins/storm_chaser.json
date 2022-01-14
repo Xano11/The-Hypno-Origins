@@ -1,0 +1,25 @@
+{
+	"powers": [
+		"inkbat:skyborn",
+		"inkbat:fly",
+		"inkbat:fly2",
+		"inkbat:airborne_adaptation",
+		"inkbat:static_discharge",
+		"inkbat:spark",
+		"inkbat:adrenaline_addict",
+		"inkbat:item_magnetism",
+		"inkbat:ressource",
+		"inkbat:ressource_gain_passive",
+		"inkbat:ressource_gain_gold",
+		"inkbat:ressource_gain_diamond",
+		"inkbat:ressource_gain_iron",
+		"inkbat:ressource_gain_leather",
+		"inkbat:ressource_gain_chainmail",
+		"inkbat:ressource_gain_netherite"
+    ],
+    "icon": "minecraft:string",
+    "order": 12,
+    "impact": 3,
+	"name": "Storm Chaser",
+	"description": "People of the skies. Their agility in the air and the energy flow within allows them to dominate everything under the storm."
+}

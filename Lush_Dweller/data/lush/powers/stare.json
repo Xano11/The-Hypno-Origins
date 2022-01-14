@@ -1,0 +1,20 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:execute_command",
+    "command": "playsound minecraft:ambient.cave player @a ~ ~ ~ 3 0",
+    "permission_level": 4
+  },
+  "cooldown": 1,
+  "hud_render": {
+    "should_render": false,
+    "bar_index": 8
+  },
+  "key": {
+    "key": "key.spectatorOutlines",
+    "continuous": false
+  },
+  "name": "Intimidate",
+  "description": "Scare the fuck out of people.",
+  "hidden": true
+}

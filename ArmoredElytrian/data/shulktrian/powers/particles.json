@@ -1,0 +1,19 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+        {
+        "type": "origins:execute_command",
+        "command": "particle minecraft:flame ~ ~ ~ 1 0.3 1 0.01 100",
+        "permission_level": 4
+        },
+        {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:item minecraft:deepslate ~ ~ ~ 1 0.3 1 0.01 100",
+            "permission_level": 4
+        }
+    ]
+},
+    "interval": 4
+}

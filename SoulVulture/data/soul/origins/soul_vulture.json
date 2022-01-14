@@ -1,0 +1,24 @@
+{
+	"powers": [
+		"soul:soul_feed",
+		"soul:airdamage",
+		"soul:big_hungry",
+		"soul:wings",
+		"soul:soul_particle",
+		"soul:no_eat",
+		"soul:sun_debuff",
+		"soul:egg",
+		"soul:launch",
+		"soul:explosion",
+		"origins:nether_spawn",
+		"soul:resource",
+		"soul:extra_resource",
+		"soul:pickup",
+		"soul:pocketfeed"
+	],
+	"icon": "minecraft:soul_sand",
+	"order": 10,
+	"impact": 3,
+	"name": "Soul Vulture",
+	"description": "Born in the soul sand valleys, you kill and devour others souls for you own benefit, able to manipulate them."
+}

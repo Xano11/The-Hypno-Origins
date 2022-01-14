@@ -1,0 +1,27 @@
+{
+	"type": "origins:active_self",
+	"cooldown": 6000,
+	"hud_render": {
+	  "should_render":true,
+	  "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+	  "bar_index": 0
+	},
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [ 		
+		{
+		  "type": "origins:execute_command",
+		  "command": "tag @s add yeet",
+		  "permission_level": 4
+		},
+		{
+		  "type": "origins:execute_command",
+		  "command": "playsound minecraft:block.anvil.destroy player @a[distance=..15] ~ ~ ~ 1 0.5",
+		  "permission_level": 4
+		}
+	  ]
+	},
+		"name": "§a§l§nHomerun",
+		"description": "With your second ability, you prepare a massive hit that will launch your ennemies (or friends !)",
+		"key": "secondary"	
+}

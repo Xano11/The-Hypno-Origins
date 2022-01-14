@@ -1,0 +1,55 @@
+{
+	"condition": {
+		"type": "origins:power_active",
+		"power": "scorpion:toggle"
+	},
+	"type": "origins:target_action_on_hit",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [{
+				"type": "origins:apply_effect",
+				"effect": {
+					"effect": "minecraft:poison",
+					"amplifier": 0,
+					"duration": 400
+				}
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "playsound minecraft:entity.silverfish.step ambient @a ~ ~ ~ 1"
+			},
+			{
+				"type": "origins:delay",
+				"ticks": 400,
+				"action": {
+					"type": "origins:and",
+					"actions": [{
+							"type": "origins:execute_command",
+							"command": "playsound minecraft:block.conduit.ambient ambient @a ~ ~ ~ 1"
+						},
+						{
+							"type": "origins:execute_command",
+							"command": "particle minecraft:dripping_obsidian_tear ~ ~ ~"
+						},
+						{
+							"type": "origins:damage",
+							"amount": 5,
+							"source": {
+								"name": "explosion",
+								"bypasses_armor": true,
+								"unblockable": true
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+	"cooldown": 1200,
+	"hud_render": {
+		"should_render": true,
+		"bar_index": 5
+	},
+	"name": "§a§l§nDelayed Poison",
+	"description": "You inject your stinger into an entity you hit, after your poison reaches the heart it deals more damage. You can choose to not activate this ability by toggling your secondary."
+}

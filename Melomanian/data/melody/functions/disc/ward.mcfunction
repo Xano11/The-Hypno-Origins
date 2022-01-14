@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: Ward by C418", "color":"dark_green"}

@@ -1,0 +1,11 @@
+{
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:ingredient",
+    "ingredient": {
+      "tag": "origins:shields"
+    }
+  },
+  "name": "§c§l§nShieldless",
+  "description": "Your natural defence does not require the use of a shield."
+}

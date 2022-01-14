@@ -1,0 +1,7 @@
+{
+  "type": "origins:modify_player_spawn",
+  "dimension": "minecraft:the_nether",
+  "structure": "minecraft:nether_fossil",
+  "name": "§e§l§nNether Rebirth",
+  "description": "Soul sand valleys are where the Souls come back to life..."
+}

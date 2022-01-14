@@ -1,0 +1,269 @@
+{
+	"type": "origins:multiple",
+	"time_bubble": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @e[distance=0.1..16] melody:wait_slowmo",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/playsound minecraft:item.trident.thunder ambient @a[distance=..4] ~ ~ ~ 2",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 800,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+			"bar_index": 1
+		},
+		"key": {
+			"key": "key.origins.secondary_active"
+		},
+		"condition": {
+			"type": "origins:sneaking",
+			"inverted": true
+		}
+	},
+	"set_teleport": {
+		"type": "origins:resource",
+		"max": 0,
+		"min": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"start_value": 0
+	},
+	"back_in_time": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/summon minecraft:area_effect_cloud ~ ~ ~ {Duration:220}",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/execute store result entity @e[type=minecraft:area_effect_cloud,limit=1,sort=nearest] Rotation[0] float 1 run data get entity @s Rotation[0] 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/execute store result entity @e[type=minecraft:area_effect_cloud,limit=1,sort=nearest] Rotation[1] float 1 run data get entity @s Rotation[1] 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/scoreboard objectives add back dummy",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/execute store result score @s back run data get entity @s UUID[0]",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/execute store result score @e[limit=1,sort=nearest,type=minecraft:area_effect_cloud] back run data get entity @s UUID[0]",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:block.beacon.activate",
+					"pitch": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/resource set @s melody:wait_powers_set_teleport 1",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 200,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+			"bar_index": 17
+		},
+		"key": {
+			"key": "key.origins.secondary_active"
+		},
+		"condition": {
+			"type": "origins:sneaking"
+		}
+	},
+	"back_teleport": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"rising_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/execute as @e[type=minecraft:area_effect_cloud] run execute at @a if score @p back = @s back run teleport @p @s",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/scoreboard players reset @s back",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:block.beacon.deactivate",
+					"pitch": 2
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/resource set @s melody:wait_powers_set_teleport 0",
+					"permission_level": 4
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:command",
+					"command": "/resource get @s melody:wait_powers_back_in_time",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:wait_powers_set_teleport",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+			
+		}
+	},
+	"back_remove": {
+		"type": "origins:action_on_callback",
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/scoreboard players reset @s back",
+			"permission_level": 4
+		}
+	},
+	"time_travel": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "/gamerule randomTickSpeed 200"
+				}
+			]
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "/gamerule randomTickSpeed 20"
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:clock"
+						}
+					}
+				},
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "offhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:clock"
+						}
+					}
+				}
+			]
+		}
+	},
+	"default_tick_speed": {
+		"type": "origins:action_on_callback",
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/gamerule randomTickSpeed 20"
+		},
+		"entity_action_respawned": {
+			"type": "origins:execute_command",
+			"command": "/gamerule randomTickSpeed 20"
+		}
+	},
+	"insomnia": {
+		"type": "origins:prevent_sleep",
+		"message": "You don't need to sleep. You can speed up time to skip the night!",
+		"set_spawn_point": false
+	},
+	"fragile_fox": {
+		"type": "origins:attribute",
+  		"modifier": {
+   		 "attribute": "minecraft:generic.max_health",
+   		 "value": -6.0,
+   		 "operation": "addition"
+		}
+	},
+	"delete_wait": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:wait_active",
+				"comparison": "==",
+				"compare_to": 238
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:wait_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:wait_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_wait",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:wait_active",
+				"change": 1
+			}
+		}
+	}
+}

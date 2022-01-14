@@ -1,0 +1,23 @@
+{
+    "type": "origins:modify_damage_dealt",
+    "damage_condition": {
+        "type": "origins:attacker",
+        "entity_condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "*:weapons"
+                }
+            },
+            "inverted": false
+        }
+    },
+    "modifier": {
+        "operation": "addition",
+        "value": -20
+    },
+	"name": "§c§l§nTribal Weapons",
+    "description": "You deal more damage with spear type weapons but deal less with everything else."
+}

@@ -1,0 +1,54 @@
+{
+	"type": "origins:multiple",
+	"uppermoon":{
+    "type": "origins:action_over_time",
+    "entity_action": {
+  "type": "origins:apply_effect",
+  "effects": [{
+			"effect":"minecraft:regeneration",
+			"duration": 200,
+			"amplifier": 1,
+			"is_ambient": true,
+			"show_particle": false,
+			"show_icon": false
+		  },
+		  {
+			"effect":"minecraft:strength",
+			"duration": 200,
+			"is_ambient": true,
+			"show_particle": false,
+			"show_icon": false
+		  }]
+		},
+	"condition": {
+			"type": "origins:resource",
+			"resource": "caldera:demon/kill_count",
+			"comparison": ">=",
+			"compare_to": 500
+	},
+	"interval": 100	
+	},
+	"lesserdemon":{
+    "type": "origins:action_over_time",
+    "entity_action": {
+  "type": "origins:apply_effect",
+  "effects": [{
+			"effect":"minecraft:regeneration",
+			"duration": 200,
+			"is_ambient": true,
+			"show_particle": false,
+			"show_icon": false
+		  },
+		  {
+			"effect":"minecraft:speed",
+			"duration": 200,
+			"is_ambient": true,
+			"show_particle": false,
+			"show_icon": false
+		  }]
+		},
+	"interval": 100
+	},
+  "name": "§a§l§nDemonic Physique",
+    "description": "Your physical prowess and recovery exceeds that of a regular human. You get stronger the more you kill."
+}

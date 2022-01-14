@@ -1,0 +1,34 @@
+{
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 20,
+    "max_stacks": 20,
+    "duration_per_stack": 10,
+    "effects": [
+        {
+            "effect": "minecraft:haste",
+            "is_ambient": true,
+            "amplifier": 1,
+            "show_particles": false,
+            "show_icon": false
+        }
+    ],
+	"condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:in_block",
+                "block_condition": {
+                    "type": "origins:height",
+                    "comparison": "<=",
+                    "compare_to": 55
+                }
+            },
+            {
+                "type": "origins:exposed_to_sky",
+                "inverted": true
+            }
+        ]
+    },
+	"name": "§a§l§nMining Addict",
+	"description": "You've spent time in the caves and they've become your area of expertise. When lower than 55 in the y axis, you acquire haste. But spending too much time in y=55 and higher will give you nausea."
+}

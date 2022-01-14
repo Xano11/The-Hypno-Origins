@@ -1,0 +1,9 @@
+{
+  "type": "origins:invulnerability",
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "lightningBolt"
+  },
+  "name": "§a§l§nLightning Beast",
+  "description": "Created at its source, you are immune to lightning damage."
+}

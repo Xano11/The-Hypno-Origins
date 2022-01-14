@@ -1,0 +1,17 @@
+{
+    "type": "origins:action_on_block_break",
+    "hidden": true,
+    "condition": {
+        "type": "origins:resource",
+        "inverted": false,
+        "comparison": ">",
+        "compare_to": 0,
+        "resource": "golem:haste"
+    },
+    "only_when_harvested": false,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "golem:haste",
+        "change": -1
+    }
+}

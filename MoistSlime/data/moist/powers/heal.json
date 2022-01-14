@@ -1,0 +1,24 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:heal",
+                "amount": 3            
+            },
+            {
+                "type": "origins:delay",
+                      "ticks": 1,
+                      "action": {
+                          "type": "origins:and",
+                          "actions": {
+                               "type": "origins:execute_command",
+                               "command": "power remove @s moist:heal",
+                               "permission_level": 4
+                }
+              } 
+            }
+        ]
+    }
+}

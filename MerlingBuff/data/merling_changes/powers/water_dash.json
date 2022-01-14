@@ -1,0 +1,77 @@
+{
+	"type":"origins:multiple",
+	
+	"dash": {
+	"type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:add_velocity",
+				"z": 2.5,
+				"space": "local"
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "playsound minecraft:entity.dolphin.play master @a[distance=..20] ~ ~ ~ 10 2",
+				"permission_level": 4
+			},
+			{
+                "type": "origins:change_resource",
+                "resource": "merling_changes:resource",
+                "change": -100
+            }
+
+		]
+	},
+	"cooldown": 0,
+	"hud_render": {
+		"should_render": false,
+		"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+		"bar_index": 10
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:fall_flying"
+			},
+			{
+				"type": "origins:resource",
+				"resource": "merling_changes:resource",
+				"comparison": "==",
+				"compare_to": 100
+			}
+		]
+	},
+	"key": {
+		"key": "key.origins.secondary_active"
+	}
+	},
+	"resource_gain":{
+		
+            "type": "origins:action_over_time",
+            "entity_action": {
+            "type": "origins:and",
+			"actions": [
+                {
+                "type": "origins:change_resource",
+                "resource": "merling_changes:resource",
+                "change": 2
+            	}
+            ]
+            },
+            "interval": 4,
+            "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+					"type": "origins:submerged_in",
+					"fluid": "minecraft:water"
+				}
+            ]
+		}
+	},
+	"name":"§a§l§nMerling Aquatic Dash",
+	"description": "As the acrobat of the oceans, you have learned an old technique to propel yourself in the air after accumulating energy from the water. (Secondary ability key)"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "origins:stacking_status_effect",
+  "min_stacks": 0,
+  "max_stacks": 1,
+  "duration_per_stack": 20,
+  "effect": {
+    "effect": "minecraft:jump_boost",
+    "duration": 9999,
+    "amplifier": 0,
+    "show_particles": false,
+    "show_icon": false
+  },
+  "hidden": true
+}

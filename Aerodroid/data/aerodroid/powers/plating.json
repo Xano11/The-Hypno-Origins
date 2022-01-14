@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Fragile health reduction",
+    "attribute": "minecraft:generic.armor",
+    "value": 6.0,
+    "operation": "addition"
+  },
+  "name": "§a§l§nThick Plating",
+  "description": "Your metal skin allows for better protection, giving you 3 extra armor"
+}

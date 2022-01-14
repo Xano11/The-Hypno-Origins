@@ -1,0 +1,24 @@
+{
+    "type":"origins:active_self",
+    "entity_action":{
+        "type":"origins:and",
+        "actions":[
+            {
+                "type":"origins:execute_command",
+                "command":"execute if entity @a[distance=3..50] run playsound minecraft:block.beacon.power_select ambient @s ~ ~ ~ 1 0.5 1",
+                "permission_level":4
+            }
+        ]
+    },
+    "cooldown":60,
+    "hud_render":{
+        "should_render":true,
+        "sprite_location":"origins:textures/gui/resource_bar.png",
+        "bar_index":2
+    },
+    "key":{
+        "key":"key.origins.secondary_active"
+    },
+    "name":"§a§l§nSensitive Awareness",
+    "description":"By pressing your main power key, you detect players in a 50 block radius."
+}

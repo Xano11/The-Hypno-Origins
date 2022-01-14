@@ -1,0 +1,189 @@
+{
+	"type": "origins:multiple",
+	"speed": {
+		"type": "origins:conditioned_attribute",
+		"tick_rate": 10,
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "multiply_base",
+			"value": 0.4
+		},
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water",
+			"inverted": true
+		}
+	},
+	"milk_lover": {
+		"type": "origins:action_on_item_use",
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"is_ambient": false,
+				"show_particles": false,
+				"show_icon": true,
+				"effect": "minecraft:resistance",
+				"duration": 1200
+			}
+		},
+		"item_condition": {
+			"type": "origins:ingredient",
+			"inverted": false,
+			"ingredient": {
+				"item": "minecraft:milk_bucket"
+			}
+		}
+	},
+	"jump": {
+		"type": "origins:modify_jump",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 0.8
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				},
+				{
+					"type": "origins:sprinting"
+				}
+			]
+		}
+	},
+	"nocturnal": {
+		"type": "origins:night_vision",
+		"strength": 0.3,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:cat_active",
+			"comparison": "!=",
+			"compare_to": 0
+		}
+	},
+	"four_feet": {
+		"type": "origins:invulnerability",
+		"damage_condition": {
+			"type": "origins:name",
+			"name": "fall"
+		}
+	},
+	"sharp_claws": {
+		"type": "origins:target_action_on_hit",
+		"entity_action": {
+			"type": "origins:damage",
+			"amount": 4,
+			"source": {
+				"name": "player"
+			}
+		},
+		"cooldown": 60,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+			"bar_index": 2
+		},
+		"damage_condition": {
+			"type": "origins:projectile",
+			"inverted": true
+		}
+	},
+	"weak": {
+		"type": "origins:modify_damage_taken",
+		"modifier": {
+			"operation": "addition",
+			"value": 2
+		}
+	},
+	"weak_arms": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": -0.9
+		},
+		"block_condition": {
+			"type": "origins:and",
+			"inverted": false,
+			"conditions": [
+				{
+					"type": "origins:in_tag",
+					"inverted": false,
+					"tag": "origins:natural_stone"
+				},
+				{
+					"type": "origins:adjacent",
+					"inverted": false,
+					"comparison": ">",
+					"compare_to": 2,
+					"adjacent_condition": {
+						"type": "origins:in_tag",
+						"inverted": false,
+						"tag": "origins:natural_stone"
+					}
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:or",
+			"conditions": [
+			{
+			"type": "origins:status_effect",
+			"inverted": true,
+			"effect": "minecraft:resistance"
+		},
+		{
+				"type": "origins:status_effect",
+				"inverted": true,
+				"effect": "minecraft:resistance"
+				}
+			]
+		}	
+	},
+	"delete_cat": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:cat_active",
+				"comparison": "==",
+				"compare_to": 185
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:cat_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:cat_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_cat",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:cat_active",
+				"change": 1
+			}
+		}
+	}
+}

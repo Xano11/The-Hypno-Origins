@@ -1,0 +1,138 @@
+{
+    "type":"origins:multiple",
+
+    "craft":
+{
+    "type": "origins:item_on_item",
+    "on_item_condition": {
+        "type": "origins:and",
+		"conditions": [
+        {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:snow_block"
+            }
+        },
+        {
+            "type": "origins:amount",
+            "comparison": ">=",
+            "compare_to": 16
+        }
+    ]
+    },
+    "using_item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:carved_pumpkin"
+        }
+    },
+    "using_item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "on_item_action": {
+        "type": "origins:consume",
+        "amount": 16
+    },
+    "entity_action": {
+            "type": "origins:execute_command",
+            "command": "give @s carved_pumpkin{display:{Name:'[{\"text\":\"Pocket\",\"italic\":false,\"color\":\"gold\"},{\"text\":\" S\"},{\"text\":\"n\",\"color\":\"white\"},{\"text\":\"o\",\"color\":\"gold\"},{\"text\":\"w\",\"color\":\"white\"},{\"text\":\"m\",\"color\":\"gold\"},{\"text\":\"a\",\"color\":\"white\"},{\"text\":\"n\",\"color\":\"gold\"}]',Lore:['[{\"text\":\"We dont know \",\"italic\":false,\"color\":\"white\"},{\"text\":\"why\",\"bold\":true},{\"text\":\", but vultures love snowmen.\",\"bold\":false}]']},Enchantments:[{}]} 1",
+            "permission_level": 4
+    }
+},
+"use":
+{
+    "type": "origins:active_self",
+    "cooldown": 300,
+    "key": {
+        "key": "key.use",
+        "continuous": true
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "playsound minecraft:entity.generic.eat player @a[distance=..12] ~ ~ ~ 1 1"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "soul:resource",
+                "change": 1
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "inverted": false,
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:nbt",
+                        "nbt": "{display:{Name:'[{\"text\":\"Pocket\",\"italic\":false,\"color\":\"gold\"},{\"text\":\" S\"},{\"text\":\"n\",\"color\":\"white\"},{\"text\":\"o\",\"color\":\"gold\"},{\"text\":\"w\",\"color\":\"white\"},{\"text\":\"m\",\"color\":\"gold\"},{\"text\":\"a\",\"color\":\"white\"},{\"text\":\"n\",\"color\":\"gold\"}]',Lore:['[{\"text\":\"We dont know \",\"italic\":false,\"color\":\"white\"},{\"text\":\"why\",\"bold\":true},{\"text\":\", but vultures love snowmen.\",\"bold\":false}]']},Enchantments:[{}]}"
+                    }
+                },
+                "if_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                "else_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                }
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": true,
+	"bar_index": 5,
+        "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png"
+    },
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{display:{Name:'[{\"text\":\"Pocket\",\"italic\":false,\"color\":\"gold\"},{\"text\":\" S\"},{\"text\":\"n\",\"color\":\"white\"},{\"text\":\"o\",\"color\":\"gold\"},{\"text\":\"w\",\"color\":\"white\"},{\"text\":\"m\",\"color\":\"gold\"},{\"text\":\"a\",\"color\":\"white\"},{\"text\":\"n\",\"color\":\"gold\"}]',Lore:['[{\"text\":\"We dont know \",\"italic\":false,\"color\":\"white\"},{\"text\":\"why\",\"bold\":true},{\"text\":\", but vultures love snowmen.\",\"bold\":false}]']},Enchantments:[{}]}"
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:nbt",
+                            "nbt": "{display:{Name:'[{\"text\":\"Pocket\",\"italic\":false,\"color\":\"gold\"},{\"text\":\" S\"},{\"text\":\"n\",\"color\":\"white\"},{\"text\":\"o\",\"color\":\"gold\"},{\"text\":\"w\",\"color\":\"white\"},{\"text\":\"m\",\"color\":\"gold\"},{\"text\":\"a\",\"color\":\"white\"},{\"text\":\"n\",\"color\":\"gold\"}]',Lore:['[{\"text\":\"We dont know \",\"italic\":false,\"color\":\"white\"},{\"text\":\"why\",\"bold\":true},{\"text\":\", but vultures love snowmen.\",\"bold\":false}]']},Enchantments:[{}]}"
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:health",
+                "inverted": false,
+                "comparison": "<",
+                "compare_to": 40
+            }
+        ]
+    }
+},
+"name": "§a§l§nHe likee snacks.",
+    "description": "Using 16 metric cubes of snow and a pumpkin, you can create your favorite soul snack : Pocket Snowmen."
+}

@@ -1,0 +1,19 @@
+{
+	"loading_priority": 10,
+	"powers": [
+		"origins:fire_immunity",
+		"origins:nether_spawn",
+		"origins:burning_wrath",
+		"origins:hotblooded",
+		"origins:water_vulnerability",
+		"origins:flame_particles",
+		"origins:damage_from_snowballs",
+		"origins:damage_from_potions",
+		"blazeborn_changes:fire_resource",
+		"blazeborn_changes:fire_toggle",
+		"blazeborn_changes:on_fire"
+	],
+	"icon": "minecraft:blaze_powder",
+	"order": 3,
+	"impact": 1
+}

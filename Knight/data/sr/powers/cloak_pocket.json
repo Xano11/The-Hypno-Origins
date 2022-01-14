@@ -1,0 +1,6 @@
+{
+    "type": "origins:inventory",
+    "drop_on_death": false,
+	"name": "§a§l§nCloak Pocket",
+	"description": "You have 9 inventory slots in your cloak that you keep on death"
+}

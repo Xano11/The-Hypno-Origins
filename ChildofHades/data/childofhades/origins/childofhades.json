@@ -1,0 +1,28 @@
+{
+	"powers": [
+		"childofhades:blessing_of_nyx",
+		"childofhades:black_blood",
+		"childofhades:deadly_command",
+		"childofhades:tartarus_body",
+		"childofhades:blessing_of_thanatos",
+		"childofhades:underworld_home",
+		"childofhades:curse_of_apollo",
+		"childofhades:curse_of_demeter",
+		"childofhades:sibling_rivalry",
+		"childofhades:outcasted",
+		"childofhades:huskaffinity",
+		"childofhades:horsespeedbuff",
+		"childofhades:health",
+		"childofhades:helm_of_darkness",
+		"childofhades:exhaustion",
+		"childofhades:cold_sensitive",
+		"childofhades:lightningweak",
+		"childofhades:mace",
+		"childofhades:end"
+	],
+	"icon": "minecraft:netherite_helmet",
+	"order": 10,
+	"impact": 3,
+	"name": "Child of Hades",
+	"description": "You are the Child of Hades and was raised by him in your early years in your life. You must be weary, for the other gods look down upon you because of you being the Child of Hades."
+}

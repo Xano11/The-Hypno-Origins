@@ -1,0 +1,27 @@
+{
+	"type": "origins:attribute",
+	"modifiers": [
+	{
+		"attribute": "minecraft:generic.attack_damage",
+		"operation": "addition",
+		"value": 6
+	},
+	{
+		"attribute": "minecraft:generic.attack_speed",
+		"operation": "multiply_total",
+		"value": -0.50
+	},
+	{
+		"attribute": "minecraft:generic.armor",
+		"operation": "addition",
+		"value": 8
+	},
+	{
+		"attribute": "minecraft:generic.movement_speed",
+		"operation": "multiply_base",
+		"value": -0.40
+	}
+	],
+	"name": "§e§l§nBulky",
+	"description": "Your hits are slower, but more Impactful. Your skin gives you defence, but you move slower. (50% slower hits, 6 extra attack damage, 8 extra armour points, 40% less movement speed)"
+}

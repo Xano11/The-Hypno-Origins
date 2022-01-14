@@ -1,0 +1,33 @@
+{
+    "display": {
+        "frame": "goal",
+        "icon": {
+            "item": "minecraft:milk_bucket"
+        },
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true,
+        "title": "Potion Flavor",
+        "background": "minecraft:milk_bucket",
+        "description": "moo"
+    },
+    "rewards": {
+        "function": "coworigin:resturtle"
+    },
+    "requirements": [
+        [
+            "turtlepotcrit3"
+        ]
+    ],
+    "criteria": {
+        "turtlepotcrit3": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item": {
+                    "item": "minecraft:potion",
+                    "potion": "minecraft:strong_turtle_master"
+                }
+            }
+        }
+    }
+}

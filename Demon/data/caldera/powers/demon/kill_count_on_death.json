@@ -1,0 +1,9 @@
+{
+"type": "origins:action_on_callback",
+"entity_action_respawned":	{
+	"type": "origins:change_resource",
+		"resource": "caldera:demon/kill_count",
+		"change": -500
+  },
+"hidden": true
+}

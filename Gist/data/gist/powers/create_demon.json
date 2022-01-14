@@ -1,0 +1,103 @@
+{
+    "name": "§e§l§nMortal Coil",
+    "description": "The mortal coil is the tether which keeps the Gist connected to your soul and allows you to control it. If you or your Gist dies then the mortal coil will shatter, leaving you with no Gist to control.",
+    
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 2,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "create_red": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "execute as @s run function gist:demon_entity/create_red"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:hatred_resource",
+                    "change": -10,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        {
+                            "effect": "minecraft:slowness",
+                            "duration": 30,
+                            "amplifier": 9,
+                            "show_particles": false,
+                            "show_icon": false
+                        },
+                        {
+                            "effect": "minecraft:jump_boost",
+                            "duration": 30,
+                            "amplifier": 128,
+                            "show_particles": false,
+                            "show_icon": false
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "create_blue": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_resource",
+            "comparison": "==",
+            "compare_to": 2
+        },
+        "rising_action": {
+            "type": "origins:execute_command",
+            "command": "execute as @s run function gist:demon_entity/create_blue"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:hatred_resource",
+                    "change": -10,
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effects": [
+                        {
+                            "effect": "minecraft:slowness",
+                            "duration": 30,
+                            "amplifier": 9,
+                            "show_particles": false,
+                            "show_icon": false
+                        },
+                        {
+                            "effect": "minecraft:jump_boost",
+                            "duration": 30,
+                            "amplifier": 128,
+                            "show_particles": false,
+                            "show_icon": false
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

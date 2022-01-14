@@ -1,0 +1,10 @@
+{
+    "type": "origins:shaking",
+    "condition": {
+			"type": "origins:resource",
+			"resource": "*:blood_resource",
+			"comparison": "==",
+			"compare_to": 100
+	},
+	"hidden": true
+}

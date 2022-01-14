@@ -1,0 +1,32 @@
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "addition",
+        "value": -3
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+          "type": "origins:in_block_anywhere",
+            "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "sky",
+            "comparison": ">=",
+            "compare_to": 10
+            }
+        },
+        {      
+          "type": "origins:in_block_anywhere",
+            "block_condition": {
+            "type": "origins:light_level",
+            "light_type": "block",
+            "comparison": ">=",
+            "compare_to": 10
+            }
+        }
+      ]
+    },
+        "name": "§c§l§nPhotophobic",
+        "description": "You do less -3 damage whilst exposed to high light levels."
+}

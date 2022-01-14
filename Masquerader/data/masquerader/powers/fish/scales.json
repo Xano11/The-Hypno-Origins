@@ -1,0 +1,10 @@
+{
+	"name": "§a§l§nSerpent Scales",
+	"description":"Your scales protect you from dangers",
+  "type": "origins:attribute",
+  "modifier": {
+    "attribute": "minecraft:generic.armor",
+    "value": 4.0,
+    "operation": "addition"
+  }
+}

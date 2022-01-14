@@ -1,0 +1,26 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:frosted_ice replace minecraft:water"
+	},
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:sneaking",
+				"inverted": true
+			},
+			{
+				"type": "origins:fluid_height",
+				"fluid": "minecraft:water",
+				"comparison": ">",
+				"compare_to": 0.0,
+				"inverted": true
+			}
+		]
+	},
+	"interval": 4,
+	"name": "§a§l§nPermafrost Walker",
+	"description": "You have permanent Frost Walker in a 3 block radius."
+}

@@ -1,0 +1,22 @@
+{
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+      "type": "origins:projectile",
+      "projectile": "minecraft:spectral_arrow"      
+        },
+        {
+          "type": "origins:projectile",
+          "projectile": "minecraft:arrow"      
+        }
+      ]
+    },
+    "modifier": {
+      "value": 1,
+      "operation": "multiply_base"
+    },
+    "name": "§c§l§nWereboar Trauma",
+    "description": "You hate projectiles because they make you remember the arrows that the piglins would shoot at you."
+  }

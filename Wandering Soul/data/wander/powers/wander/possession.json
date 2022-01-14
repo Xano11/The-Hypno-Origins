@@ -1,0 +1,308 @@
+{
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+		"start_value": 120,
+        "hud_render": {
+            "should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+			"bar_index": 4
+        }
+    },
+    "possess": {
+        "type": "origins:active_self",
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "cooldown": 20,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run tag @e[limit=1,type=!player,type=!eye_of_ender,type=!item,type=!fireball,type=!ender_dragon,type=!potion,type=!leash_knot,type=!arrow,type=!snowball,type=!experience_orb,type=!experience_bottle,type=!firework_rocket,type=!falling_block,type=!tnt,type=!ender_pearl,type=!small_fireball,type=!painting,type=!wither,type=!wither_skull,type=!lightning_bolt,type=!area_effect_cloud,type=!dragon_fireball,type=!egg,type=!evoker_fangs,type=!llama_spit,type=!shulker_bullet,type=!spectral_arrow,type=!trident,type=!origins:enderian_pearl,distance=..4.5,sort=nearest] add possessTarget",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run data merge entity @e[tag=possessTarget,limit=1,distance=..6.5] {NoAI:1,Silent:1,Invulnerable:1}",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run team join ghost",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @e[tag=possessTarget,limit=1,distance=..8] run team join ghost",
+                    "permission_level": 4
+                },
+				{
+					"type": "origins:if_else",
+					"condition": {
+						"type": "origins:command",
+						"command": "execute if entity @e[tag=possessTarget,distance=..4.5]",
+						"comparison": ">=",
+						"compare_to": 1
+					},
+					"if_action": {
+						"type": "origins:change_resource",
+						"resource": "*:ghost/possession_toggle",
+						"change": 1
+					}
+				}
+            ]
+        },
+        "condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:ghost/possession_resource",
+					"comparison": ">=",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:resource",
+					"resource": "*:ghost/possession_toggle",
+					"comparison": "==",
+					"compare_to": 0
+				}
+			]
+        }
+    },
+	"timer": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "*:ghost/possession_toggle",
+				"comparison": "==",
+				"compare_to": 1
+			},
+			"if_action": {
+				"type": "origins:change_resource",
+				"resource": "*:ghost/possession_resource",
+				"change": -1
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "*:ghost/possession_resource",
+				"change": 2
+			}
+        }
+    },
+	"strength": {
+        "type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 10,
+		"duration_per_stack": 20,
+		"effect": {
+			"effect": "minecraft:strength",
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": true
+		},
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:ghost/possession_toggle",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+	"toggle":{
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": false
+        }
+	},
+	"disable": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "*:ghost/possession_toggle",
+				"comparison": "==",
+				"compare_to": 1
+			},
+			"if_action": {
+				"type": "origins:delay",
+				"ticks": 1,
+				"action": {
+					"type": "origins:change_resource",
+					"resource": "*:ghost/possession_toggle",
+					"change": -1
+				}
+			}
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		}
+	},
+	"friends": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "execute as @e[distance=..8] run team join ghost",
+			"permission_level": 4
+		},
+		"interval": 5,
+		"condition": {
+            "type": "origins:resource",
+            "resource": "*:ghost/possession_toggle",
+            "comparison": "==",
+            "compare_to": 1
+        }
+	},
+	"cancel": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"rising_action": {
+			"type": "origins:change_resource",
+			"resource": "*:ghost/possession_toggle",
+			"change": "-1"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:ghost/possession_resource",
+			"comparison": "==",
+			"compare_to": "0"
+		}
+	},
+    "end": {
+        "type": "origins:action_over_time",
+        "interval": 5,
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [{
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run data merge entity @e[tag=possessTarget,limit=1,distance=..8] {NoAI:0,Silent:0,Invulnerable:0}",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @s run team leave @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @e[tag=possessTarget,limit=1,distance=..8] run team leave @s",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run tag @e[limit=1,distance=..8,tag=possessTarget] remove possessTarget",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:ghost/possession_toggle",
+            "comparison": "==",
+            "compare_to": 0
+        }
+    },
+	"failed": {
+        "type": "origins:active_self",
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "cooldown": 0,
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+					"type": "origins:delay",
+					"ticks": 7,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.illusioner.mirror_move master @a[distance=..4] ~ ~ ~ 1 1.4",
+                    "permission_level": 4
+					}
+                },
+				{
+					"type": "origins:delay",
+					"ticks": 7,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run playsound minecraft:entity.vex.charge master @a[distance=..4] ~ ~ ~ 1 1.4",
+                    "permission_level": 4
+					}
+                },
+                {
+					"type": "origins:delay",
+					"ticks": 7,
+					"action": {
+                    "type": "origins:execute_command",
+                    "command": "execute at @s run particle dust .1 .4 .5 1 ~ ~-1 ~ 0.5 1.4 0.5 0 500",
+                    "permission_level": 4
+					}
+                }
+            ]
+        },
+        "condition": {
+			"type": "origins:resource",
+			"resource": "*:ghost/possession_resource",
+			"comparison": "<",
+			"compare_to": 20
+		}
+    },
+	"avoid_burn": {
+		"type": "origins:burn",
+		"interval": 20,
+		"burn_duration": 6,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:exposed_to_sun"
+				},
+				{
+					"type": "origins:resource",
+					"resource": "*:ghost/possession_toggle",
+					"comparison": ">",
+					"compare_to": 0,
+					"inverted": true
+				}
+			]
+		}
+	},
+    "tp_active_timer": {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute as @s run tp @e[tag=possessTarget,limit=1,distance=..6.5] ~ ~ ~ ~ ~",
+            "permission_level": 4
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:ghost/possession_toggle",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "possession_model": {
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:ghost/possession_toggle",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "hidden": true
+}

@@ -1,0 +1,10 @@
+{
+    "type": "origins:night_vision",
+    "strength": 1.0,
+    "condition": {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water"
+    },
+    "name": "§a§l§nWet Eyes",
+    "description": "Your vision underwater is perfect."
+}

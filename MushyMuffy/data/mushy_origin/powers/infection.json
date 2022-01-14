@@ -1,0 +1,166 @@
+{
+	"type": "origins:multiple",
+    "grant":{
+	"type": "origins:active_self",
+	"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "power grant @e[distance=..5] mushy_origin:mushroom_virus",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "tag @e[distance=..5] add fungal",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:exhaust",
+					"amount": 100
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "mushy_origin:moisture_resource",
+					"operation": "set",
+					"change": 0
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "particle minecraft:spore_blossom_air ~ ~ ~ 1 1 1 100 1000 normal",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "particle minecraft:mycelium ~ ~ ~ 1 1 1 100 400 normal",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "particle minecraft:sneeze ~ ~ ~ 1 1 1 0.5 500 normal",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.generic.explode master @a[distance=..15] ~ ~ ~ 10 1.5",
+					"permission_level": 4
+				}
+			]
+	},
+	"cooldown": 2700,
+	"hud_render": {
+		"should_render": true,
+                "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+                "bar_index": 8
+	},
+	"key": {
+		"key": "key.origins.primary_active"
+		}
+	},
+	"virus_immune": {
+			"type": "origins:action_over_time",
+				"entity_action": {
+					"type": "origins:and",
+					"actions": [
+						{
+							"type": "origins:execute_command",
+							"command": "power remove @s mushy_origin:mushroom_virus",
+							"permission_level": 4
+						},
+						{
+							"type": "origins:execute_command",
+							"command": "tag @s remove fungal",
+							"permission_level": 4
+						}
+						]
+					},
+					"condition": {
+						"type": "origins:power",
+						"power": "mushy_origin:mushroom_virus"
+					},
+				"interval": 1
+		},
+		"gain": {
+			"type": "origins:action_over_time",
+			"condition": {
+				"type": "origins:and",
+				"inverted": false,
+				"conditions": [
+					{
+						"type": "origins:command",
+						"inverted": false,
+						"comparison": ">=",
+						"compare_to": 1,
+						"permission_level": 4,
+						"command": "execute if entity @e[distance=..10,tag=fungal]"
+					},
+					{
+						"type": "origins:resource",
+						"resource": "mushy_origin:moisture_resource",
+						"comparison": "<",
+						"compare_to": 300
+					}
+				]
+			},
+			"interval": 5,
+			"entity_action": {
+				"type": "origins:change_resource",
+				"resource": "mushy_origin:moisture_resource",
+				"change": 5
+			}
+		},
+		"lose": {
+			"type": "origins:action_over_time",
+			"condition": {
+				"type": "origins:and",
+				"inverted": false,
+				"conditions": [
+					{
+						"type": "origins:command",
+						"inverted": false,
+						"comparison": ">=",
+						"compare_to": 1,
+						"permission_level": 4,
+						"command": "execute if entity @e[distance=..10,tag=fungal]"
+					},
+					{
+						"type": "origins:resource",
+						"resource": "mushy_origin:moisture_resource",
+						"comparison": ">",
+						"compare_to": 300
+					}
+				]
+			},
+			"interval": 5,
+			"entity_action": {
+				"type": "origins:change_resource",
+				"resource": "mushy_origin:moisture_resource",
+				"change": -5
+			}
+		},
+		"saturation": {
+			"type": "origins:action_over_time",
+			"condition": {
+				"type": "origins:and",
+				"inverted": false,
+				"conditions": [
+					{
+						"type": "origins:command",
+						"inverted": false,
+						"comparison": ">=",
+						"compare_to": 1,
+						"permission_level": 4,
+						"command": "execute if entity @e[distance=..10,tag=fungal]"
+					}
+				]
+			},
+			"interval": 40,
+			"entity_action": {
+				"type": "origins:feed",
+    			"food": 1,
+    			"saturation": 0.5
+			}
+		},			
+	"name": "§e§l§nInfection",
+	"description": "Spread your spores amongst everyone! It does hurt alot however."
+}

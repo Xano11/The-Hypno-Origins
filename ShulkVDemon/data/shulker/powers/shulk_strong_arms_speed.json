@@ -1,0 +1,9 @@
+{
+  "type": "origins:modify_break_speed",
+  "modifier": {
+    "name": "Strong Arms stone break speed bonus",
+    "value": 0.06,
+    "operation": "addition"
+  },
+  "hidden": true
+}

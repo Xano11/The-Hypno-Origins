@@ -1,0 +1,119 @@
+{
+	"type": "origins:multiple",
+	"elytra": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:execute_command",
+			"command": "/power grant @s origins:elytra",
+			"permission_level": 4
+		},
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/power remove @s origins:elytra",
+			"permission_level": 4
+		}
+	},
+	"launch": {
+		"type": "origins:launch",
+		"cooldown": 400,
+		"speed": 4,
+		"hud_render": {
+			"should_render": true,
+			"bar_index": 4
+		},
+		"sound": "minecraft:entity.parrot.fly",
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": true
+		}
+	},
+	"brittle_bones": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:execute_command",
+			"command": "/power grant @s origins:more_kinetic_damage",
+			"permission_level": 4
+		},
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/power remove @s origins:more_kinetic_damage",
+			"permission_level": 4
+		}
+	},
+	"claustrophobia": {
+		"type": "origins:action_on_callback",
+		"entity_action_added": {
+			"type": "origins:execute_command",
+			"command": "/power grant @s origins:claustrophobia",
+			"permission_level": 4
+		},
+		"entity_action_removed": {
+			"type": "origins:execute_command",
+			"command": "/power remove @s origins:claustrophobia",
+			"permission_level": 4
+		}
+	},
+	"delete_chirp": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:chirp_active",
+				"comparison": "==",
+				"compare_to": 185
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:chirp_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:delay",
+						"action": {
+							"type": "origins:execute_command",
+							"command": "/power grant @s origins:elytra",
+							"permission_level": 4
+						},
+						"ticks": 1
+					},
+					{
+						"type": "origins:delay",
+						"action": {
+							"type": "origins:execute_command",
+							"command": "/power remove @s origins:elytra",
+							"permission_level": 4
+						},
+						"ticks": 2
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:chirp_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_chirp",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:chirp_active",
+				"change": 1
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"powers": [
+				"karma:karma/dash",
+				"karma:karma/exhaust",
+				"karma:karma/particles",
+				"karma:karma/defence",
+				"karma:karma/offense",
+				"karma:karma/toggle",
+				"karma:karma/active"
+	],
+	"icon": "minecraft:nether_star",
+	"order": 7,
+	"impact": 3,
+	"unchoosable": false,
+	"name": "Karma",
+	"description": "The balance."
+}

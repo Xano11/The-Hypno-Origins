@@ -1,0 +1,24 @@
+{
+  "condition": {
+    "type": "origins:resource",
+    "resource": "beetle:wingedcondition",
+    "comparison": "==",
+    "compare_to": 0
+	},
+    "type": "origins:active_self",
+    "entity_action": {
+    "type": "origins:change_resource",
+    "resource": "beetle:wingedcondition",
+    "change": 1
+    },
+    "cooldown": 5,
+    "hud_render": {
+        "should_render": true,
+        "bar_index": 5
+    },
+    "key": {
+    "key": "key.saveToolbarActivator",
+    "continuous": false
+    },
+    "hidden": true
+}

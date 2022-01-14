@@ -1,0 +1,277 @@
+{
+	"type": "origins:multiple",
+	"toggle": {
+		"type": "origins:toggle",
+		"key": {
+			"key": "key.saveToolbarActivator",
+			"continuous": false
+		}
+	},
+
+	"extra_drainage": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "*:water/moisture_resource",
+			"change": -10
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:power_active",
+					"power": "*:*_toggle"
+				},
+				{
+					"type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0.0,
+					"inverted": true
+				},
+				{
+					"type": "origins:status_effect",
+                    "effect": "minecraft:water_breathing",
+                    "min_amplifier": 0,
+                    "inverted": true
+				}
+			]
+		}
+	},
+
+	"climb_up": {
+		"type": "origins:climbing",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:power_active",
+					"power": "*:*_toggle"
+				},
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				}
+			]
+		},
+		"allow_holding": false
+	},
+
+	"hover": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:levitation",
+				"duration": 10,
+				"amplifier": -1,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			},
+			"condition": {
+				"type": "origins:power_active",
+				"power": "*:*_toggle"
+			}
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "effect clear @s levitation",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:sprinting",
+					"inverted": true
+				},
+				{
+					"type": "origins:power_active",
+					"power": "*:*_toggle"
+				},
+				{
+					"type": "origins:sneaking",
+					"inverted": true
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				}
+			]
+		}
+	},
+
+	"hover_down": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:apply_effect",
+			"effect": {
+				"effect": "minecraft:slow_falling",
+				"duration": 10,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false,
+				"amplifier": 2
+			},
+			"condition": {
+				"type": "origins:power_active",
+				"power": "*:*_toggle"
+			}
+		},
+		
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "effect clear @s slow_falling",
+			"permission_level": 2
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:or",
+					"conditions": [
+						{
+							"type": "origins:power_active",
+							"power": "*:*_toggle"
+						},
+						{
+							"type": "origins:sneaking"
+						}
+					]
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				}
+
+			]
+		}
+	},
+
+	"glide_speed": {
+		"type": "origins:modify_air_speed",
+		"modifier": {
+			"operation": "multiply_total",
+			"value": 1.5
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "*:*_toggle"
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:sprinting"
+				}
+			]
+		}
+	},
+
+	"particle_fly": {
+		"type": "origins:action_over_time",
+		"interval": 2,
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "particle minecraft:rain ~ ~-1 ~ 0.3 0.3 0.3 0.1 40 normal @a",
+			"permission_level": 4
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:power_active",
+					"power": "*:*_toggle"
+				},
+				{
+					"type": "origins:on_block",
+					"inverted": true
+				},
+				{
+					"type": "origins:gamemode",
+					"gamemode": "spectator",
+					"inverted": true
+				}
+			]
+		}
+	},
+
+	"reset_fall": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:set_fall_distance",
+			"fall_distance": 0
+		},
+		"condition": {
+			"type": "origins:power_active",
+			"power": "*:*_toggle"
+		}
+	},
+
+	"clear": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "effect clear @s minecraft:slow_falling"
+		},
+		"condition": {
+			"type": "origins:power_active",
+			"power": "*:*_toggle",
+			"inverted": true
+		}
+	},
+
+	"increase_attack_range": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "reach-entity-attributes:attack_range",
+			"operation": "addition",
+			"value": 2
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"inverted": true
+		}
+	},
+	
+	"increase_reach": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "reach-entity-attributes:reach",
+			"operation": "addition",
+			"value": 1
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"inverted": true
+		}
+	},
+	
+	"mining_speed_in_air": {
+		"type": "origins:modify_break_speed",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 4
+		},
+		"condition": {
+			"type": "origins:on_block",
+			"inverted": true
+		}
+	},
+
+	"name": "§a§l§nWater Propulsion",
+	"description": "You can shoot water out of your body floating you upwards!!! go up by holding space, down by crouching or glide by sprinting, using this will drain your moisture quickly"
+}

@@ -1,0 +1,22 @@
+{
+	"powers": [
+		"origins:vegetarian",
+		"deer:oh_deer_god_drawback",
+		"deer:oh_deer_god",
+		"deer:forest_native",
+		"deer:forrest_gump",
+		"deer:sensitive_awareness",
+		"deer:food_bonus",
+		"deer:weak",
+		"deer:jump_bonus",
+		"deer:golden_deficiency",
+		"deer:wolf_hate",
+		"deer:callback",
+		"deer:deer_dash"
+	],
+	"icon": "minecraft:mutton",
+	"order": 4,
+	"impact": 3,
+	"name": "Deer",
+	"description": "Inhabitant of the forests and galloper of the wild, they are serene beasts that are quite mobile"
+}

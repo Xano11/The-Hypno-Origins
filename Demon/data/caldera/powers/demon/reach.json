@@ -1,0 +1,19 @@
+{
+  "type": "origins:attribute",
+  "modifiers": [
+    {
+      "name": "Extra Reach block reach",
+      "attribute": "reach-entity-attributes:reach",
+      "value": 0,
+      "operation": "addition"
+    },
+    {
+      "name": "Extra Reach entity reach",
+      "attribute": "reach-entity-attributes:attack_range",
+      "value": -0.5,
+      "operation": "addition"
+    }
+  ],
+  "name": "§c§l§nClose Combatant",
+  "description": "You are used to hand-to-hand combat. You can't use shields and have slightly lower attack range."
+}

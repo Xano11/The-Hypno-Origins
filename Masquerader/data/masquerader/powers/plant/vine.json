@@ -1,0 +1,44 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:raycast",
+    "distance": 16,
+    "block": true,
+    "entity": true,
+    "shape_type": "collider",
+    "fluid_handling": "none",
+    "bientity_action": {
+        "type": "origins:target_action",
+        "action": {
+          "type": "origins:apply_effect",
+          "effect": {
+          "effect": "minecraft:poison",
+          "duration": 100,
+          "amplifier": 0
+          }
+        }
+      },
+    "hit_action": {
+        "type": "origins:swing_hand",
+        "hand": "OFF_HAND"
+    },
+  "before_action": {
+      "type": "origins:execute_command",
+      "command": "playsound minecraft:entity.slime.squish player @a[distance=..10]"
+  },
+"command_at_hit": "particle minecraft:dust 0 0.76078431372 0.36862745098 .4 ~ ~ ~ 0 0 0 0.0 1 normal @a",
+"command_along_ray": "particle minecraft:dust 0 0.76078431372 0.36862745098 .4 ~ ~ ~ 0 0 0 0.0 20 normal",
+"command_step": 1,
+"command_along_ray_only_on_hit": false
+},
+  "cooldown": 75,
+  "hud_render": {
+    "should_render": true,
+    "bar_index": 8
+  },
+  "key": {
+    "key": "key.origins.primary_active"
+  },
+  "name": "§a§l§nPoison Vine",
+  "description": "Launch a vine that poisons anything it hits"
+}

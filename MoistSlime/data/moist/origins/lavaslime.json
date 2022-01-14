@@ -1,0 +1,24 @@
+{
+	"powers": [
+		"moist:lava/adapted",
+		"moist:lava/hookshot",
+		"extraorigins:jockey",
+		"moist:phasing",
+		"moist:lava/fire_fists",
+		"moist:slimebody",
+		"moist:lava/moisture",
+		"moist:lava/transform",
+		"moist:lava/home",
+		"moist:longarms",
+		"moist:lava/water",
+		"origins:aquatic"
+	],
+	"icon": {
+		"item": "minecraft:magma_cream",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"order": 10,
+	"impact": 3,
+	"name": "Lava Slime",
+	"description": "a Slime fused with lava making it adapted to the element"
+}

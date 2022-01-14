@@ -1,0 +1,14 @@
+{
+    "type": "origins:model_color",
+    "red": 0.9,
+    "green": 0.05,
+	"blue": 0.05,
+    "alpha": 1,
+	"condition": {
+		"type": "origins:resource",
+		"resource": "*:blood_resource",
+		"comparison": ">=",
+		"compare_to": 100
+    },
+	"hidden": true
+}

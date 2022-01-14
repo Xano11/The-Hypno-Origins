@@ -1,0 +1,30 @@
+{
+	"type": "origins:action_over_time",
+	"interval": 20,
+	"entity_action": {
+		"type": "origins:if_else",
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:disc_cooldown",
+			"comparison": "==",
+			"compare_to": 120
+		},
+		"if_action": {
+			"type": "origins:execute_command",
+			"command": "/resource set @s melody:disc_cooldown -1",
+			"permission_level": 4
+		},
+		"else_action": {
+			"type": "origins:change_resource",
+			"resource": "melody:disc_cooldown",
+			"change": 1
+		}
+	},
+	"condition": {
+		"type": "origins:resource",
+		"resource": "melody:disc_cooldown",
+		"comparison": ">=",
+		"compare_to": 0
+	},
+	"hidden": true
+}

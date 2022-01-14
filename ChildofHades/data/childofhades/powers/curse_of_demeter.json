@@ -1,0 +1,35 @@
+{
+  "type": "origins:prevent_item_use",
+  "item_condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:or",
+        "conditions": [
+          {
+            "type": "origins:ingredient",
+            "ingredient": {
+              "tag": "origins:meat"
+            }
+          },
+          {
+            "type": "origins:meat"
+          }
+        ],
+        "inverted": true
+      },
+      {
+        "type": "origins:food"
+      },
+      {
+        "type": "origins:ingredient",
+        "ingredient": {
+          "tag": "origins:ignore_diet"
+        },
+        "inverted": true
+      }
+    ]
+  },
+  "name": "§c§l§nCursed by Demeter",
+  "description": "You were cursed by Demeter since she still had her grudge with Hades marrying her daughter. Causing you to only be able to eat meat."
+}

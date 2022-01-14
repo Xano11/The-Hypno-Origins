@@ -1,0 +1,40 @@
+{
+	"type": "origins:multiple",
+	"night_dash":
+    {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+                {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:block.end_portal_frame.fill player @s ~ ~ ~ 1 0.6"
+                },
+				{
+					"type": "origins:add_velocity",
+					"space": "local",
+					"z": 1.5
+				},
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:dust_color_transition 1 0 1 1 0 0 1 ~ ~ ~ 1 1 1 1 1000"
+                }
+			]
+		},
+		"key": {
+			"key": "key.origins.primary_active"
+		},
+		"condition": {
+			"type": "origins:sneaking",
+			"inverted": true
+		},
+"cooldown": 400,
+"hud_render": {
+	"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+	"bar_index": 0,
+	"should_render": true
+}
+},
+    "name":"§a§l§nFeline Dash",
+    "description":"A dash ability that launches you forward."
+}

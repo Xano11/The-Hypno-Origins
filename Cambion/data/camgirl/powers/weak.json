@@ -1,0 +1,16 @@
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "name": "weak",
+        "operation": "multiply_total",
+        "value": 0.5
+    },
+    "condition":
+    {      
+        "type": "origins:resource",
+          "resource": "*:blood_resource",
+          "comparison": "<=",
+          "compare_to": 20
+    },
+    "hidden": true
+}

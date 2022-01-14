@@ -1,0 +1,21 @@
+{
+    "type": "origins:action_on_land",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+        "type": "origins:execute_command",
+        "command": "particle minecraft:flame ~ ~ ~ 1 0 1 1 100"
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "power grant @e[distance=0.1..4] sunbird:landing_firedmg"
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:fall_distance",
+        "comparison": ">",
+        "compare_to": 7
+    }
+}

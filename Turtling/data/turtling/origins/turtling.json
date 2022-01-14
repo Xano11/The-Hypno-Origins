@@ -1,0 +1,24 @@
+{
+	"powers": [
+		"origins:aquatic",
+		"origins:vegetarian",
+		"origins:more_exhaustion",
+		"origins:water_breathing",
+		"turtling:adaptive_lungs",
+		"origins:aqua_affinity",
+		"origins:like_water",
+		"origins:swim_speed",
+		"origins:water_vision",
+		"turtling:water_legs",
+		"turtling:shielded",
+		"origins:no_shield",
+		"turtling:shell_storage",
+		"turtling:shell_storage_sound",
+		"turtling:tortlesize"
+	],
+	"icon": "minecraft:scute",
+	"order": 9,
+	"impact": 2,
+	"name": "Turtling",
+	"description": "Turtlings are evolved decendents of Sea Turtles with the ability to conquer both land and sea."
+}

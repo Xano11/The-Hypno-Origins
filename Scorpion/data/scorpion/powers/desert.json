@@ -1,0 +1,7 @@
+{
+	"type": "origins:modify_player_spawn",
+	"dimension": "minecraft:overworld",
+	"biome": "minecraft:desert",
+	"name": "§e§l§nDesert inhabitant",
+	"description": "Your natural spawn is in a desert."
+}

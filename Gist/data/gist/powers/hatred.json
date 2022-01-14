@@ -1,0 +1,194 @@
+{
+    "name": "§e§l§nHatred",
+    "description": "Hatred is the power source for your Gist, and it can be gained passively over time, as well as by engaging in combat. Reaching 0 hatred causes you to become exhausted, preventing you from summoning your Gist. Exhaustion can only be removed by sleeping.",
+
+    "type": "origins:multiple",
+    "resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1200,
+        "start_value": 600,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+            "bar_index": 15,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:demon_cooldown",
+                "comparison": "==",
+                "compare_to": 0
+            }
+        },
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:exhaustion_resource",
+                    "change": 1,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "title @s actionbar {\"text\":\"You begin to feel exhausted...\",\"color\":\"red\",\"italic\":true}"
+                },
+                {
+                    "type": "origins:if_else",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "*:create_demon_resource",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "if_action": {
+                        "type": "origins:execute_command",
+                        "command": "execute as @s run function gist:demon/deactivate"
+                    },
+                    "else_action": {
+                        "type": "origins:change_resource",
+                        "resource": "*:create_demon_resource",
+                        "change": 0,
+                        "operation": "set"
+                    }
+                }
+            ]
+        }
+    },
+    "gain": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "gist:demon_resource",
+            "comparison": "==",
+            "compare_to": 0
+        },
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_resource",
+            "change": 6,
+            "operation": "add"
+        }
+    },
+    "drain": {
+        "type": "origins:action_over_time",
+        "interval": 10,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "gist:demon_resource",
+            "comparison": "==",
+            "compare_to": 1
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "*:*_resource",
+                    "change": "-4",
+                    "operation": "add"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource operation @s gist:hatred_resource -= @s def.gist.count"
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:moving"
+                                    },
+                                    {
+                                        "type": "origins:swimming"
+                                    }
+                                ]
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_resource",
+                                "change": "-7",
+                                "operation": "add"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:in_block",
+                                "block_condition": {
+                                    "type": "origins:block",
+                                    "block": "minecraft:air",
+                                    "inverted": true
+                                }
+                            },
+                            "action": {
+                                "type": "origins:change_resource",
+                                "resource": "*:*_resource",
+                                "change": "-14",
+                                "operation": "add"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "attack": {
+        "type": "origins:self_action_on_hit",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "gist:demon_resource",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": "10",
+                "operation": "add"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": "-6",
+                "operation": "add"
+            }
+        },
+        "cooldown": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "take_damage": {
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "gist:demon_resource",
+                "comparison": "==",
+                "compare_to": 0
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": "60",
+                "operation": "add"
+            },
+            "else_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_resource",
+                "change": "-12",
+                "operation": "add"
+            }
+        },
+        "cooldown": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    }
+}

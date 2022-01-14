@@ -1,0 +1,105 @@
+{
+	"type": "origins:multiple",
+	"hot_as_fuck": {
+		"type": "origins:burn",
+		"interval": 1,
+		"burn_duration": 10,
+		"condition": {
+			"type": "origins:submerged_in",
+			"fluid": "minecraft:water",
+			"inverted": true
+			}
+		},
+	"need_for_burns": {
+        "type":"origins:modify_damage_taken",
+        "modifier":{
+        "value": 1,
+        "operation":"multiply_total"
+        },
+        "damage_condition":{
+            "type":"origins:or",
+            "conditions":[
+            {
+            "type":"origins:name",
+            "name":"lava"
+            },
+            {
+            "type":"origins:name",
+            "name":"onFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"inFire"
+            },
+            {
+            "type":"origins:name",
+            "name":"hotFloor"
+            }
+            ]
+        }
+    },
+	"particles": {
+		"type": "origins:particle",
+		"particle": "minecraft:falling_dripstone_lava",
+		"frequency": 10
+	},
+	"red_tint": {
+		"type": "origins:model_color",
+		"blue": 0.01,
+		"red": 0.5,
+		"green": 0.01,
+		"alpha": 1
+	},
+	"resource": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 400,
+		"start_value": 400,
+		"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+		"bar_index": 7
+		}
+	},
+	"drain": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moist:lava/burned_resource",
+			"change": -1
+		},
+		"interval": 1
+	},
+	"drain_water": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "moist:lava/burned_resource",
+			"change": -4
+		},
+		"interval": 1,
+		"condition": {
+			"type": "origins:fluid_height",
+			"fluid": "minecraft:lava",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	},
+	"remove": {
+        "type": "origins:action_over_time",
+		"entity_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @e[limit=1,sort=nearest,distance=..1] moist:lava/burned",
+            "permission_level": 4
+		},
+		"interval": 1,
+        "condition": {
+        "type": "origins:resource",
+        "resource": "moist:lava/burned_resource",
+        "comparison": "==",
+        "compare_to": 0
+        }
+	},
+	"name": "YOUR BURNED IDIOT",
+	"description": "A SLIME SQUIRTED ON YOU"
+}

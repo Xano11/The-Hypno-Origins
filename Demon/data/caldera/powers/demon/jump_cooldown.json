@@ -1,0 +1,10 @@
+{
+	"type": "origins:action_over_time",
+	"interval": 240,
+	"entity_action": {
+		"type": "origins:change_resource",
+		"resource": "caldera:demon/jump_count",
+		"change": 1
+	},
+	"hidden": true
+}

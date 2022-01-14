@@ -1,0 +1,22 @@
+{
+  "type": "origins:active_self",
+   "entity_action": {
+   "type": "origins:chance",
+   "action":
+    {    
+	"type": "origins:execute_command",
+	"command": "playsound minecraft:entity.fox.bite player @a ~ ~ ~ 1 1 0",
+    "permission_level": 4
+    },
+    "chance": 0.1
+    },
+	"hidden": true,
+    "key": {
+      "key": "key.attack",
+      "continuous": false
+    },
+	"cooldown": 10,
+    "hud_render": {
+      "should_render": false
+   }
+}

@@ -1,0 +1,17 @@
+{
+    "replace": false,
+    "values": [
+        "minecraft:command_block",
+        "minecraft:repeating_command_block",
+        "minecraft:chain_command_block",
+        "minecraft:structure_block",
+        "minecraft:structure_void",
+        "minecraft:jigsaw",
+        "minecraft:barrier",
+        "minecraft:end_portal_frame",
+        "minecraft:end_portal",
+        "minecraft:nether_portal",
+        "minecraft:end_gateway",
+        "minecraft:bedrock"
+    ]
+}

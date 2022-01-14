@@ -1,0 +1,25 @@
+{
+  "type": "origins:restrict_armor",
+  "head": {
+    "type": "origins:armor_value",
+    "comparison": ">",
+    "compare_to": 0
+  },
+  "chest": {
+    "type": "origins:armor_value",
+    "comparison": ">",
+    "compare_to": 30
+  },
+  "legs": {
+    "type": "origins:armor_value",
+    "comparison": ">",
+    "compare_to": 30
+  },
+  "feet": {
+    "type": "origins:armor_value",
+    "comparison": ">",
+    "compare_to": 30
+  },
+  "name": "§c§l§nNo Helmet",
+	"description": "You aren't able to wear helmets due to your head already being reserved for your current mask"
+}

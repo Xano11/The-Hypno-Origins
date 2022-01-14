@@ -1,0 +1,8 @@
+{
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:meat",
+        "inverted": false
+    },
+    "hidden": true
+}

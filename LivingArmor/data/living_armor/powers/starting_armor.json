@@ -1,0 +1,23 @@
+{   
+  "type": "origins:starting_equipment",
+  "stacks": [
+    {
+      "item": "minecraft:leather_helmet",
+      "slot":39
+    },
+    {
+      "item": "minecraft:leather_chestplate",
+      "slot":38
+    },
+    {
+      "item": "minecraft:leather_leggings",
+      "slot":37
+    },
+    {
+      "item": "minecraft:leather_boots",
+      "slot":36
+    }
+  ],
+  "name": "§a§l§nInnate Defense",
+  "description": "When you spawn you will start with leather armor"
+}

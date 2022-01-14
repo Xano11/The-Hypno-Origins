@@ -1,0 +1,28 @@
+{
+    "hidden": true,
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [{
+                "type": "origins:add_velocity",
+                "space": "local",
+                "z": 0.8
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove targetlush"
+                }
+            }
+        ]
+    },
+    "interval": 1,
+    "condition": {
+        "type": "origins:command",
+        "command": "execute if entity @s[tag=targetlush]",
+        "comparison": "==",
+        "compare_to": 1
+    }
+}

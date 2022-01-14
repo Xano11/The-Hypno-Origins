@@ -1,0 +1,67 @@
+{
+	"type": "origins:multiple",
+	"toggle": {
+		"type": "origins:toggle",
+		"key": {
+			"key": "key.saveToolbarActivator",
+			"continuous": false
+		}
+	},
+	
+	"extra_drainage": {
+		"type": "origins:action_over_time",
+		"interval": 5,
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "*:lava/moisture_resource",
+			"change": -5
+		},
+		"condition": {
+            "type": "origins:and",
+            "conditions": [{
+            	"type": "origins:fluid_height",
+            	"fluid": "minecraft:lava",
+            	"comparison": ">",
+            	"compare_to": 0.0,
+            	"inverted": true
+            },
+            {
+                "type": "origins:status_effect",
+                "effect": "minecraft:fire_resistance",
+                "min_amplifier": 0,
+                "inverted": true
+            },
+			{
+				"type": "origins:power_active",
+				"power": "*:*_toggle"
+			}
+        ]
+    }
+    },
+
+	"hot_as_fuck": {
+		"type": "origins:burn",
+		"interval": 1,
+		"burn_duration": 1,
+		"condition": {
+			"type": "origins:power_active",
+			"power": "*:*_toggle"
+		}
+	},
+
+	"strong_burning": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "addition",
+			"value": 3,
+			"name": "on fire"
+				},
+		"tick_rate": 20,
+        "target_condition": {
+            "type": "origins:on_fire"
+        }
+	},	
+	"name": "§a§l§nFlaming Fury",
+	"description": "Toggling the fire fists on will make everyone you hit that is on fire take double damage, whilst draining your moisture"
+}

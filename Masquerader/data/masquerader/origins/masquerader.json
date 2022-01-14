@@ -1,0 +1,19 @@
+{
+	"powers": [
+		"masquerader:agile",
+		"masquerader:masquerader/addiction",
+		"masquerader:notweapons",
+		"masquerader:nohelmet",
+		"masquerader:masquerader/nomask",
+		"masquerader:masquerader/rocktransform",
+		"masquerader:masquerader/planttransform",
+		"masquerader:masquerader/fishtransform",
+		"masquerader:masquerader/cloudtransform",
+		"masquerader:masquerader/birdtransform"
+	],
+	"icon": "minecraft:player_head",
+	"order": 10,
+	"impact": 3,
+	"name": "Masquerader",
+	"description": "Collect the souls of slain monsters in the form of mask, use the masks to transform yourself and gain their ability's"
+}

@@ -1,0 +1,33 @@
+{
+  "type": "origins:modify_food",
+  "item_condition": {
+  "type": "origins:ingredient",
+  "ingredient":
+    {
+    "item": "minecraft:glow_berries"
+    }
+  },
+  "food_modifier":
+  {
+   "operation": "addition",
+   "value": 5
+  },
+  "saturation_modifier":
+  {
+    "operation": "addition",
+    "value": 0.6
+  },
+  "entity_action": {
+    "type": "origins:chance",
+    "action":
+     {    
+   "type": "origins:execute_command",
+   "command": "effect give @s minecraft:glowing 10 0 true",
+     "permission_level": 4
+     },
+     "chance": 0.1
+     },
+  	"name": "§a§l§nYummer",
+	"description": "Extra food and saturation from Lush food.",
+	"hidden": true
+}

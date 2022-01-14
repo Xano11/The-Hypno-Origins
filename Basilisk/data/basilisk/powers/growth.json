@@ -1,0 +1,439 @@
+{
+    "type":"origins:multiple",
+
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "start_value": 0,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+            "bar_index": 19
+        }        
+},
+"gain_growth": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "basilisk:growth_resource",
+        "change": 1
+    },
+    "interval": 1200
+},
+"baby_speed":
+{
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": -0.02,
+            "name": "Decreased sprinting speed"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+            {
+            "type": "origins:resource",
+            "resource": "basilisk:growth_resource",
+            "comparison": ">=",
+            "compare_to": 0
+            },
+            {
+                "type": "origins:resource",
+                "resource": "basilisk:growth_resource",
+                "comparison": "<=",
+                "compare_to": 30
+            }
+    ]
+}
+},
+"baby_hp":
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "name": "decreased hp",
+        "attribute": "minecraft:generic.max_health",
+        "value": -10,
+        "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+        "type": "origins:resource",
+        "resource": "basilisk:growth_resource",
+        "comparison": ">=",
+        "compare_to": 0
+        },
+        {
+            "type": "origins:resource",
+            "resource": "basilisk:growth_resource",
+            "comparison": "<=",
+            "compare_to": 30
+        }
+]
+}
+},
+"baby_reach":
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "name": "reqused attack reach increase",
+        "attribute": "reach-entity-attributes:attack_range",
+        "value": -1,
+        "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+        "type": "origins:resource",
+        "resource": "basilisk:growth_resource",
+        "comparison": ">=",
+        "compare_to": 0
+        },
+        {
+            "type": "origins:resource",
+            "resource": "basilisk:growth_resource",
+            "comparison": "<=",
+            "compare_to": 30
+        }
+]
+}
+},
+"baby_size":
+{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "scale set 0.7 @s"
+        },
+        "interval": 20,
+        "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+        "type": "origins:resource",
+        "resource": "basilisk:growth_resource",
+        "comparison": ">=",
+        "compare_to": 0
+        },
+        {
+            "type": "origins:resource",
+            "resource": "basilisk:growth_resource",
+            "comparison": "<=",
+            "compare_to": 30
+        }
+]
+}
+},
+"child_speed":
+{
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": -0.01,
+            "name": "Decreased sprinting speed"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "basilisk:growth_resource",
+                    "comparison": ">",
+                    "compare_to": 30
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "basilisk:growth_resource",
+                        "comparison": "<=",
+                        "compare_to": 60
+                    }
+    ]
+}
+},
+"child_hp":
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "name": "decreased hp",
+        "attribute": "minecraft:generic.max_health",
+        "value": -6,
+        "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "basilisk:growth_resource",
+                "comparison": ">",
+                "compare_to": 30
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "basilisk:growth_resource",
+                    "comparison": "<=",
+                    "compare_to": 60
+                }
+]
+}
+},
+"child_damage":
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 1,
+        "name": "Increased dmg"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "basilisk:growth_resource",
+                "comparison": ">",
+                "compare_to": 30
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "basilisk:growth_resource",
+                    "comparison": "<=",
+                    "compare_to": 60
+                }
+]
+}
+},
+"child_size":
+{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "scale set 0.85 @s"
+        },
+        "interval": 20,
+        "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+        "type": "origins:resource",
+        "resource": "basilisk:growth_resource",
+        "comparison": ">",
+        "compare_to": 30
+        },
+        {
+            "type": "origins:resource",
+            "resource": "basilisk:growth_resource",
+            "comparison": "<=",
+            "compare_to": 60
+        }
+]
+}
+},
+"youngadult_speed":
+{
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": 0.01,
+            "name": "Decreased sprinting speed"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "basilisk:growth_resource",
+                    "comparison": ">",
+                    "compare_to": 60
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "basilisk:growth_resource",
+                        "comparison": "<=",
+                        "compare_to": 90
+                    }
+    ]
+}
+},
+"youngadult_damage":
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 2,
+        "name": "Increased dmg"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "basilisk:growth_resource",
+                "comparison": ">",
+                "compare_to": 60
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "basilisk:growth_resource",
+                    "comparison": "<=",
+                    "compare_to": 90
+                }
+]
+}
+},
+"youngadult_size":
+{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "scale set 1 @s"
+        },
+        "interval": 20,
+        "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+        "type": "origins:resource",
+        "resource": "basilisk:growth_resource",
+        "comparison": ">",
+        "compare_to": 60
+        },
+        {
+            "type": "origins:resource",
+            "resource": "basilisk:growth_resource",
+            "comparison": "<=",
+            "compare_to": 90
+        }
+]
+}
+},
+"adult_speed":
+{
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": 0.02,
+            "name": "Decreased sprinting speed"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "basilisk:growth_resource",
+                    "comparison": ">",
+                    "compare_to": 90
+                    },
+                    {
+                        "type": "origins:resource",
+                        "resource": "basilisk:growth_resource",
+                        "comparison": "<=",
+                        "compare_to": 120
+                    }
+    ]
+}
+},
+"adult_hp":
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "name": "decreased hp",
+        "attribute": "minecraft:generic.max_health",
+        "value": 6,
+        "operation": "addition"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "basilisk:growth_resource",
+                "comparison": ">",
+                "compare_to": 90
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "basilisk:growth_resource",
+                    "comparison": "<=",
+                    "compare_to": 120
+                }
+]
+}
+},
+"adult_damage":
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 3,
+        "name": "Decreased dmg"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "basilisk:growth_resource",
+                "comparison": ">",
+                "compare_to": 90
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "basilisk:growth_resource",
+                    "comparison": "<=",
+                    "compare_to": 120
+                }
+]
+}
+},
+"adult_size":
+{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "scale set 1.2 @s"
+        },
+        "interval": 20,
+        "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+        "type": "origins:resource",
+        "resource": "basilisk:growth_resource",
+        "comparison": ">",
+        "compare_to": 90
+        },
+        {
+            "type": "origins:resource",
+            "resource": "basilisk:growth_resource",
+            "comparison": "<=",
+            "compare_to": 120
+        }
+]
+}
+},
+"name": "§e§l§nGrowth",
+	"description": "The longer you stay alive, the older you get. Evolving (happens every 30 mins) gives you better stats and attributes."
+}

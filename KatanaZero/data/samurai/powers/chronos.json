@@ -1,0 +1,188 @@
+{
+  "type":"origins:multiple",
+"bar":{
+  "type": "origins:resource",
+  "min": 0,
+  "max": 50,
+  "hud_render": {
+      "should_render": true,
+      "bar_index":19,
+      "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+  },
+  "start_value":50
+},
+"craft":{
+  "type":"origins:action_over_time",
+  "interval":5,
+  "entity_action":{
+    "type":"origins:execute_command",
+    "command":"function samurai:craft"
+  },
+  "condition":{
+    "type":"origins:command",
+    "command":"execute as @e[type=item,limit=1,distance=..4,nbt={Item:{id:\"minecraft:sugar\"}},sort=nearest] at @s if entity @e[distance=0.01..0.4,type=item,nbt={Item:{id:\"minecraft:magma_cream\"}}] if entity @e[distance=0.01..0.4,type=item,nbt={Item:{id:\"minecraft:potion\"}}] if entity @e[distance=0.01..0.4,type=item,nbt={Item:{id:\"minecraft:sweet_berries\"}}]",
+    "comparison":">=",
+    "compare_to":1
+  }
+},
+"drink":{
+  "type":"origins:action_over_time",
+  "interval":20,
+  "entity_action":{
+    "type":"origins:change_resource",
+    "resource":"samurai:chronos_bar",
+    "change":7
+  },
+  "condition": {
+    "type": "origins:status_effect",
+    "effect": "minecraft:wither",
+    "min_amplifier": 4
+}
+},
+"down_passive":{
+  "type":"origins:action_over_time",
+  "interval":240,
+  "entity_action":{
+    "type":"origins:change_resource",
+    "resource":"samurai:chronos_bar",
+    "change":-1
+  }
+},
+"callback":{
+  "type":"origins:action_on_callback",
+  "entity_action_respawned":{
+    "type":"origins:change_resource",
+    "resource":"samurai:chronos_bar",
+    "change":100
+  }
+},
+"down_on_hit":{
+  "type":"origins:self_action_when_hit",
+  "cooldown":20,
+  "hud_render":{
+    "should_render":false
+  },
+  "entity_action":{
+    "type":"origins:change_resource",
+    "resource":"samurai:chronos_bar",
+    "change":-2
+  }
+},
+"effect_1":{
+  "type":"origins:stacking_status_effect",
+  "max_stacks":5,
+  "min_stacks":-1,
+  "duration_per_stack":20,
+  "effect":{
+            "effect": "minecraft:slowness",
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+         },
+         "condition":{
+           "type":"origins:resource",
+           "resource":"samurai:chronos_bar",
+           "comparison":"<=",
+           "compare_to":40
+         }
+    },
+    "effect_2":{
+      "type":"origins:stacking_status_effect",
+      "max_stacks":5,
+      "min_stacks":-1,
+      "duration_per_stack":20,
+      "effects":[
+        {
+                "effect": "minecraft:weakness",
+                "is_ambient": true,
+                "show_particles": false,
+                "show_icon": true
+             },
+             {
+              "effect": "minecraft:slowness",
+              "is_ambient": true,
+              "show_particles": false,
+              "show_icon": true,
+              "amplifier":1
+             }
+            ],
+             "condition":{
+               "type":"origins:resource",
+               "resource":"samurai:chronos_bar",
+               "comparison":"<=",
+               "compare_to":30
+             }
+        },
+        "effect_3":{
+          "type":"origins:stacking_status_effect",
+          "max_stacks":5,
+          "min_stacks":-1,
+          "duration_per_stack":20,
+          "effects":[
+            {
+                    "effect": "minecraft:weakness",
+                    "is_ambient": true,
+                    "show_particles": false,
+                    "show_icon": true,
+                    "amplifier":1
+                 },
+                 {
+                  "effect": "minecraft:slowness",
+                  "is_ambient": true,
+                  "show_particles": false,
+                  "show_icon": true,
+                  "amplifier":2
+                 }
+                ],
+                 "condition":{
+                   "type":"origins:resource",
+                   "resource":"samurai:chronos_bar",
+                   "comparison":"<=",
+                   "compare_to":20
+                 }
+            },
+            "effect_4":{
+              "type":"origins:stacking_status_effect",
+              "max_stacks":5,
+              "min_stacks":-1,
+              "duration_per_stack":20,
+              "effects":[
+                {
+                        "effect": "minecraft:weakness",
+                        "is_ambient": true,
+                        "show_particles": false,
+                        "show_icon": true,
+                        "amplifier":2
+                     },
+                     {
+                      "effect": "minecraft:nausea",
+                      "is_ambient": true,
+                      "show_particles": false,
+                      "show_icon": true,
+                      "amplifier":1
+                   },
+                   {
+                    "effect": "minecraft:wither",
+                    "is_ambient": true,
+                    "show_particles": false,
+                    "show_icon": true,
+                    "amplifier":1
+                 },
+                     {
+                      "effect": "minecraft:slowness",
+                      "is_ambient": true,
+                      "show_particles": false,
+                      "show_icon": true,
+                      "amplifier":2
+                     }
+                    ],
+                     "condition":{
+                       "type":"origins:resource",
+                       "resource":"samurai:chronos_bar",
+                       "comparison":"<=",
+                       "compare_to":5
+                     }
+                },
+                "name":"§c§l§nChronos Medication",
+                "description":"Your powers are derived from the Chronos Medication, not taking Chronos for long periods of time will make you start to become weak (taking damage makes you require more Chronos). You can craft Chronos Medication by throwing a sweet berry, sugar, magma cream, and water bottle ontop of eachother on the ground"
+}

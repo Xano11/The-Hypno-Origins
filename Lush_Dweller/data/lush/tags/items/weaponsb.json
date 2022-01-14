@@ -1,0 +1,17 @@
+{
+    "replace": false,
+    "values": [
+      "medievalweapons:wooden_lance",
+      "medievalweapons:stone_lance",
+      "medievalweapons:golden_lance",
+      "medievalweapons:iron_lance",
+      "medievalweapons:diamond_lance",
+      "medievalweapons:netherite_lance",
+      "medievalweapons:wooden_javelin",
+      "medievalweapons:stone_javelin",
+      "medievalweapons:golden_javelin",
+      "medievalweapons:iron_javelin",
+      "medievalweapons:diamond_javelin",
+      "medievalweapons:netherite_javelin"
+    ]
+  }

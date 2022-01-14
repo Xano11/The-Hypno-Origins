@@ -1,0 +1,19 @@
+{
+	"type": "origins:target_action_on_hit",
+	"entity_action": {
+		"type": "origins:apply_effect",
+		"effect": {
+			"effect": "minecraft:poison",
+			"duration": 60,
+			"amplifier": 1
+		}
+	},
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+		"bar_index": 10
+	},
+	"cooldown": 200,
+	"name": "§a§l§nPoisonous Sting",
+	"description": "Your attacks apply poison 2 for 3 seconds with a cooldown of 10 seconds."
+}

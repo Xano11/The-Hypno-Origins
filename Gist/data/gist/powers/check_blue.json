@@ -1,0 +1,142 @@
+{
+    "name": "§a§l§nRenovation",
+    "description": "Your Gist can be upgraded to be more powerful with another ritual. This ritual requires a full bar of hatred, and must be performed in the nether.",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "To perform the ritual:\nStand on a fully charged respawn anchor\nsurrounded by soul fire, with a glass block 4\nblocks above the anchor in order to contain\nthe spirit. Breaking the glass will force the\nGist to be sucked into your soul. "
+        }
+    ],
+
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "*:create_demon_resource",
+        "change": 2,
+        "operation": "set"
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:hatred_resource",
+                "comparison": ">=",
+                "compare_to": 1200
+            },
+            {
+                "type": "origins:dimension",
+                "dimension": "minecraft:the_nether"
+            },
+            {
+                "type": "origins:on_block",
+                "block_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:block",
+                            "block": "minecraft:respawn_anchor"
+                        },
+                        {
+                            "type": "origins:block_state",
+                            "property": "charges",
+                            "comparison": "==",
+                            "compare_to": 4
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 1,
+                            "y": 0,
+                            "z": 0,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:soul_fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 1,
+                            "y": 0,
+                            "z": 1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:soul_fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 1,
+                            "y": 0,
+                            "z": -1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:soul_fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 0,
+                            "y": 0,
+                            "z": 1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:soul_fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 0,
+                            "y": 0,
+                            "z": -1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:soul_fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": -1,
+                            "y": 0,
+                            "z": 0,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:soul_fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": -1,
+                            "y": 0,
+                            "z": 1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:soul_fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": -1,
+                            "y": 0,
+                            "z": -1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:soul_fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 0,
+                            "y": 4,
+                            "z": 0,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:glass"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Heavy Shell",
+  "description": "Your heavy shell limits your mobility both on land and in water.",
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Tailwind speed bonus",
+    "attribute": "minecraft:generic.movement_speed",
+    "value": -0.015,
+    "operation": "addition"
+  }
+}

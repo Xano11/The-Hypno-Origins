@@ -1,0 +1,22 @@
+{
+	"powers": [
+		"td:phase2",
+		"td:possession",
+		"td:jump",
+		"td:shmove",
+		"td:ghost_things2",
+		"td:home",
+		"td:water_sucks",
+		"td:undead",
+		"td:death"
+	],
+	"icon": {
+		"item": "minecraft:skeleton_skull",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"order": 10,
+	"impact": 2,
+	"name": "The Damned",
+	"description": "Looks like your not invisible anymore!",
+	"unchoosable": true
+}

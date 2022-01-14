@@ -1,0 +1,18 @@
+{
+	"powers": [
+		"sr:movement_abilities",
+		"sr:cloak_pocket",
+		"sr:sword",
+		"sr:smaller",
+		"sr:flammable",
+		"origins:arthropod"
+	],
+	"icon": {
+		"item": "minecraft:stone_sword",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"order": 1,
+	"impact": 2,
+	"name": "Rejected Vessel",
+	"description": "A being of void ready for adventure"
+}

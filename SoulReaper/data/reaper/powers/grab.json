@@ -1,0 +1,57 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+      "type": "origins:and",
+		  "actions": [{
+        "type": "origins:execute_command",
+        "command": "function grab:start_ray",
+        "permission_level": 4
+    },
+    {
+      "type": "origins:delay",
+            "ticks": 3,
+            "action": {
+                "type": "origins:and",
+                "actions": {
+                     "type": "origins:execute_command",
+                     "command": "execute at @p run function reaper:surge2",
+                     "permission_level": 4
+      }
+    } 
+  },
+  {
+    "type": "origins:delay",
+          "ticks": 5,
+          "action": {
+              "type": "origins:and",
+              "actions": {
+                   "type": "origins:execute_command",
+                   "command": "execute at @p run function reaper:surge3",
+                   "permission_level": 4
+    }
+  } 
+  },
+  {
+    "type": "origins:delay",
+          "ticks": 5,
+          "action": {
+              "type": "origins:and",
+              "actions": {
+                   "type": "origins:execute_command",
+                   "command": "execute at @p run function reaper:surge4",
+                   "permission_level": 4
+    }
+  } 
+  }
+      ]
+    },
+  "cooldown": 400,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+    "bar_index": 15
+  },
+  "key": "primary",
+  "name": "§a§l§nSoul Rupture",
+  "description": "You extend a soul chain that latches onto entities you aim towards, pulling them in. This causes a rupture in their soul, damaging them over time."
+}

@@ -1,0 +1,24 @@
+{
+    "type":"origins:active_self",
+    "entity_action":{
+        "type":"origins:and",
+        "actions":[
+            {
+                "type":"origins:execute_command",
+                "command":"execute in minecraft:overworld run weather thunder",
+                "permission_level":4
+            }
+        ]
+    },
+    "cooldown":72000,
+    "hud_render":{
+        "should_render":true,
+        "sprite_location":"origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+        "bar_index":9
+    },
+    "key":{
+        "key":"key.origins.secondary_active"
+    },
+    "name":"§a§l§nLightning Charged",
+    "description":"You can summon thunderstorms every hour with your secondary ability."
+}

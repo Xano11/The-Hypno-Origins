@@ -1,0 +1,10 @@
+{
+  "type":"origins:action_over_time",
+  "interval":60,
+  "entity_action":{
+    "type":"origins:execute_command",
+    "command":"/tag @s add samurai"
+  },
+  "name":"§c§l§nI don't eat",
+  "description":"more hunger cuz bad at game lmao"
+}

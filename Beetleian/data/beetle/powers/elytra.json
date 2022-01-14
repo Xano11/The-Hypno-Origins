@@ -1,0 +1,11 @@
+{
+  "condition": {
+    "type": "origins:resource",
+    "resource": "beetle:wingedcondition",
+    "comparison": "==",
+    "compare_to": 1
+	},
+  "type": "origins:elytra_flight",
+  "render_elytra": true,
+  "hidden": true
+}

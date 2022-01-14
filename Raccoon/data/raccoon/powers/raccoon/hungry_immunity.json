@@ -1,0 +1,8 @@
+{
+    "name": "§a§l§nLord of the Trash",
+    "description": "Your digested track makes you immune to the hunger effect",
+    "type": "origins:effect_immunity",
+    "effects": [
+        "minecraft:hunger"
+    ]
+}

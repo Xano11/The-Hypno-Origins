@@ -1,0 +1,25 @@
+{
+	"powers":[
+	"chimera:hungy",
+	"chimera:fall_immunity",
+	"chimera:pounce",
+	"chimera:no_shield",
+	"chimera:speed",
+	"chimera:fire",
+	"chimera:big_size",
+	"chimera:less_health",
+	"chimera:sprint_jump",
+	"chimera:cat_vision",
+	"chimera:jump",
+	"chimera:petrify",
+	"chimera:eyes",
+	"chimera:fire_breath",
+	"chimera:syphon",
+	"chimera:callback"
+	],
+	"icon": "minecraft:bone",
+	"order": 17,
+	"impact": 2,
+	"name": "Chimera",
+	"description": "The Chimera is a genetically modified beast made up of many different creatures. Being part cat, part dragon, and 100% abomination, you have many different abilities and weaknesses both developed on purpose and accident by your creators."
+}

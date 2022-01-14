@@ -1,0 +1,34 @@
+{
+    "type":"origins:multiple",
+    
+    "drain1":{
+
+    "type": "origins:action_over_time",
+    "entity_action": {
+    "type": "origins:change_resource",
+    "resource": "*:blood_resource",
+    "change": -1
+    },
+    "interval": 4,
+    "condition": {
+        "type": "origins:submerged_in",
+        "fluid": "minecraft:water",
+        "inverted": false
+    }
+    },
+    "drain2":{
+
+        "type": "origins:action_over_time",
+        "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "*:blood_resource",
+        "change": -1
+        },
+        "interval": 30,
+        "condition": {
+            "type": "origins:in_rain"
+        }
+    },
+    "name": "Draining.",
+    "description": "Water seems to take away souls from you. Isn't that funny."
+}

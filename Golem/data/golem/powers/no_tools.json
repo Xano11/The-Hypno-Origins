@@ -1,0 +1,21 @@
+{
+    "type": "origins:modify_break_speed",
+    "condition": {
+        "type": "origins:equipped_item",
+        "inverted": false,
+        "equipment_slot": "mainhand",
+        "item_condition": {
+            "type": "origins:harvest_level",
+            "inverted": false,
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "modifier": {
+        "operation": "addition",
+        "name": "tool break speed",
+        "value": -1
+    },
+    "name": "§a§l§nBrute Force",
+    "description": "You possess incredible strength, able to break blocks and kill mobs with your bare hands."
+}

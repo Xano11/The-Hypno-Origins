@@ -1,0 +1,33 @@
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 6,
+        "name": "trident"
+        },
+    "tick_rate": 20,
+      "entity_condition": {
+          "type": "origins:equipped_item",
+          "equipment_slot": "mainhand",
+          "item_condition": {
+            "type": "origins:and",
+			"conditions": [
+				{
+              "type": "origins:ingredient",
+              "ingredient": {
+                  "item": "minecraft:trident"
+              }
+            },
+            {
+                "type": "origins:enchantment",
+                "enchantment": "minecraft:channeling",
+                "comparison": ">=",
+                "compare_to": 1
+            }
+        ]
+          }
+      },
+      "name": "§a§l§nTrident of the storms",
+      "description": "You like tridents due to their ability to channel lightning. For that reason, you deal more damage with them. But, other weapons are less effective."
+}

@@ -1,0 +1,19 @@
+{
+	"type": "origins:modify_food",
+	"item_condition": 
+	{
+		"type": "origins:ingredient",
+		"ingredient": {
+			"item": "minecraft:dried_kelp"
+		}
+	},
+	"food_modifier": {
+		"operation": "multiply_base",
+		"value": 1
+	},
+	"saturation_modifier": {
+		"operation": "multiply_base",
+		"value": 0
+	},
+	"hidden": true
+}

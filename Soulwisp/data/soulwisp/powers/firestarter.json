@@ -1,0 +1,9 @@
+{
+	"type": "origins:starting_equipment",
+    "stack": {
+    	"item": "minecraft:soul_torch",
+    	"slot": 0
+    },
+    "recurrent": true,
+	"hidden": true
+}

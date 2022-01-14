@@ -1,0 +1,29 @@
+{
+    "type": "origins:active_self",
+    "entity_action": {
+        "type": "origins:and",
+			"actions": [
+                {
+                    "type": "origins:ender_chest"
+                },
+                {
+					"type": "origins:play_sound",
+					"sound": "minecraft:block.ender_chest.open"
+				}
+
+]
+            },
+    "condition": {
+        "type": "origins:sneaking",
+        "inverted": false
+    },
+    "cooldown": 0,
+    "key": {
+    "key": "key.origins.secondary_active"
+    },
+    "hud_render": {
+        "should_render": false
+    },
+    "name":"§a§l§nEnder Link",
+    "description":"You can access an ender chest with your secondary power key."
+}

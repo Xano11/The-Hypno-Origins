@@ -1,0 +1,72 @@
+{
+    "type":"origins:multiple",
+    "stake":{
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+            "type": "origins:damage",
+            "amount": 3,
+            "source": {
+              "name": "cramming",
+              "bypasses_armor": true
+            }
+          },
+          "damage_condition": {
+            "type": "origins:attacker",
+            "entity_condition": {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                  "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "vampire:wooden"
+                    }
+              }      
+        }
+    },
+          "cooldown": 20
+    },
+    "stake_chestplate":{
+        "type": "origins:self_action_when_hit",
+        "entity_action": {
+            "type": "origins:damage",
+            "amount": 2,
+            "source": {
+              "name": "cramming",
+              "bypasses_armor": true
+            }
+          },
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+         {
+          "damage_condition": {
+            "type": "origins:attacker",
+            "entity_condition": {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                  "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "vampire:wooden"
+                    }
+              }      
+        }
+    }
+  },
+    {
+        "type": "origins:equipped_item",
+        "equipment_slot": "chest",
+        "item_condition": {
+            "type": "origins:ingredient",
+              "ingredient": {
+                  "tag": "vampire:chestplate"
+              }
+        } 
+      }
+    ]
+},
+          "cooldown": 50
+    },
+    "name":"§c§l§nScared of the wood",
+    "description":"Wooden weapons deal much more damage to you."
+}

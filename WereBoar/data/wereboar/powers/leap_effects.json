@@ -1,0 +1,106 @@
+{
+    "type":"origins:multiple",
+
+
+
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "z": 2.5,
+                    "space": "local"
+                },
+                {
+                    "type": "origins:delay",
+                    "ticks": 1,
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power remove @s wereboar:leap_effects",
+                                "permission_level": 4
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+        
+},
+"particles_fire":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "particle minecraft:flame ~ ~1 ~ 0.5 0.7 0.5 0.1 10 normal",
+		"permission_level": 4
+	},
+    "interval": 4
+},
+"particles_red":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "particle minecraft:dust 1 0 0 1 ~ ~1 ~ 0.5 0.7 0.5 1 10 normal",
+		"permission_level": 4
+	},
+    "interval": 4
+},
+"gain_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "wereboar:leap_effects_resource",
+        "change": 20
+    },
+    "interval": 5
+},
+"cant_swim":
+{
+    "type": "origins:ignore_water"
+},
+
+"cant_jump":
+{
+    "type": "origins:modify_jump",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -1
+    }
+},
+"no_arrow_dmg":
+{
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+      "type": "origins:or",
+      "conditions": [
+        {
+      "type": "origins:projectile",
+      "projectile": "minecraft:spectral_arrow"      
+        },
+        {
+          "type": "origins:projectile",
+          "projectile": "minecraft:arrow"      
+        }
+      ]
+    },
+    "modifier": {
+      "value": -1,
+      "operation": "multiply_total"
+    }
+},
+"hidden": true
+}

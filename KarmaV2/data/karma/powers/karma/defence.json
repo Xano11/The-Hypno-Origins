@@ -1,0 +1,130 @@
+{
+    "type": "origins:multiple",
+
+  "attack_speed":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "addition",
+      "value": -0.10,
+      "name": "Decreased attack speed"
+  },
+  "tick_rate": 10,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "karma:karma/toggle",
+    "inverted": true
+}
+},
+"movement_speed":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.movement_speed",
+      "operation": "addition",
+      "value": -0.02,
+      "name": "Decreased sprinting speed"
+  },
+  "tick_rate": 10,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "karma:karma/toggle",
+    "inverted": true
+}
+},
+"armor":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.armor",
+      "operation": "addition",
+      "value": 4,
+      "name": "Increased armor"
+  },
+  "tick_rate": 10,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "karma:karma/toggle",
+    "inverted": true
+}
+},
+"armor2":{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.armor_toughness",
+        "operation": "addition",
+        "value": 2,
+        "name": "Increased armor"
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "karma:karma/toggle",
+      "inverted": true
+  }
+},
+"less_damage":{
+  "type": "origins:conditioned_attribute",
+  "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": -3,
+      "name": "Decreased damage"
+  },
+  "tick_rate": 10,
+  "condition": {
+    "type": "origins:power_active",
+    "power": "karma:karma/toggle",
+    "inverted": true
+}
+},
+"anti_knockback":{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.knockback_resistance",
+        "operation": "addition",
+        "value": 1000,
+        "name": "No kb"
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "karma:karma/toggle",
+      "inverted": true
+  }
+  },
+  "more_hp":{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 4,
+        "name": "more hearts"
+    },
+    "tick_rate": 10,
+    "condition": {
+      "type": "origins:power_active",
+      "power": "karma:karma/toggle",
+      "inverted": true
+  }
+  },
+  "regen":{
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 5,
+    "max_stacks": 5,
+    "duration_per_stack": 20,
+    "effects": [
+        {
+            "effect": "minecraft:regeneration",
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": true
+        }
+    ],
+    "condition": {
+        "type": "origins:power_active",
+        "power": "karma:karma/toggle",
+        "inverted": true
+    }
+},
+"name": "§a§l§nThe angel and it's evil.",
+"description": "You can toggle between two modes : An offensive mode that excels in dealing damage, but suffers from low resistance or a tank that deals less damage."
+}

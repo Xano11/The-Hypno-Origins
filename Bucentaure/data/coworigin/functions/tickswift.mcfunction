@@ -1,0 +1,2 @@
+execute as @a[advancements={coworigin:cowswift=true}] run effect give @s minecraft:speed 25 0 false
+execute as @a[advancements={coworigin:cowswift=true}] run advancement revoke @s only coworigin:cowswift

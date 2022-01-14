@@ -1,0 +1,44 @@
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "team add cordyceps",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "team join cordyceps @s",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tag @s add mush_lover",
+                "permission_level": 4
+            }
+        ]
+    },
+    "entity_action_lost": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "team leave @s",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "team remove cordyceps",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "tag @s remove mush_lover",
+                "permission_level": 4
+            }
+        ]
+    },
+    "hidden": true
+}

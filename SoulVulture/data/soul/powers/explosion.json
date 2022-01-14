@@ -1,0 +1,10 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "function soul:explosion",
+		"permission_level": 4
+    },
+    "interval": 20,
+	"hidden": true
+}

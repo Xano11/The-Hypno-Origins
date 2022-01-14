@@ -1,0 +1,12 @@
+{
+	"type": "origins:modify_exhaustion",
+    "modifier": {
+    	"operation": "multiply_base",
+    	"value": 0.8
+    },
+	"condition": {
+    	"type": "origins:power_active",
+    	"power": "soulwisp:wisp_form"
+	},
+	"hidden": true
+}

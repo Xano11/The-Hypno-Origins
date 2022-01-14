@@ -1,0 +1,8 @@
+{
+  "type": "origins:modify_player_spawn",
+  "dimension": "the_nether",
+  "dimension_distance_multiplier": 0.125,
+  "spawn_strategy": "center",
+  "name": "§e§l§nBanished",
+  "description": "Your devil/human mix is looked down upon. You spawn in hell but have been banished. Find your way out."
+}

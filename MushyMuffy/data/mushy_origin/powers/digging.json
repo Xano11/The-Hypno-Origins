@@ -1,0 +1,117 @@
+{
+    "type": "origins:multiple",
+    "phase": {
+        "type": "origins:phasing",
+        "render_type": "blindness",
+        "view_distance": 5,
+        "block_condition": {
+            "type": "origins:in_tag",
+            "tag": ":dirt"
+        },
+        "phase_down_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:on_block"
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "*:*_toggle",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "no_suf": {
+        "type":"origins:modify_damage_taken",
+        "modifier":{
+        "value": -1.00,
+        "operation":"multiply_total"
+                },
+                "damage_condition":{
+                "type":"origins:and",
+                "conditions":[
+                    {
+                    "type": "origins:name",
+                    "name": "inWall"
+                    },
+                    {
+                    "type": "origins:amount",
+                    "comparison": "==",
+                    "compare_to": 1
+                    }
+                ]
+            }
+        },
+    "exhaustion": {
+        "type": "origins:exhaust",
+        "interval": 20,
+        "exhaustion": 2.0,
+        "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_toggle",
+                "comparison": "==",
+                "compare_to": 1
+        }
+    },
+    "slow_dig": {
+        "type": "origins:conditioned_attribute",
+        "modifier":{
+            "attribute": "minecraft:generic.movement_speed",
+            "value": -0.06,
+            "operation": "addition"
+        },
+        "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_toggle",
+                "comparison": "==",
+                "compare_to": 1
+        }
+    },
+    "toggle": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+		    "bar_index": 2
+        }
+    },
+    "toggle2": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:resource",
+                "resource": "*:*_toggle",
+                "comparison": "==",
+                "compare_to": 1
+            },
+            "if_action": {
+                "type": "origins:change_resource",
+                "resource": "*:*_toggle",
+                "change": -1
+            },
+        "else_action": {
+            "type": "origins:change_resource",
+            "resource": "*:*_toggle",
+            "change": 1
+        }
+    },
+    "cooldown": 2,
+    "hud_render": {
+        "should_render": false
+        },
+        "key": {
+            "key": "key.saveToolbarActivator",
+            "continuous": false
+        }
+    },
+    "name": "§a§l§nBurrow",
+    "description": "You can burrow through dirt, mycelium, and moss by toggling your primary ability. This is a slow and exhausting process."
+}

@@ -1,0 +1,28 @@
+{
+    "impact": 3,
+    "unchoosable": false,
+    "name": "VoidTraveller",
+    "description": "Travel between dimensions",
+    "icon": "minecraft:structure_void",
+    "key": "primary",
+    "powers": [
+		"voidtraveller:voidtravel",
+		"voidtraveller:voidothers",
+		"voidtraveller:voidrelease",
+		"voidtraveller:voidinv",
+		"voidtraveller:dmgbuff",
+		"voidtraveller:health",
+		"voidtraveller:exhaustion",
+		"voidtraveller:modifydmg",
+		"voidtraveller:craft",
+		"voidtraveller:haste",
+		"voidtraveller:fatigue_resource",
+		"voidtraveller:fatigue_reset",
+		"voidtraveller:fatigue_gain",
+		"voidtraveller:fatigue_level1",
+		"voidtraveller:fatigue_level2",
+		"voidtraveller:fatigue_level3",
+		"voidtraveller:updateshard",
+		"voidtraveller:particle"
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "type": "origins:simple",
+    "name": "§c§l§nHooves",
+    "description": "Your hands are hooves and thus cannot properly use Bows, Crossbows, or Ender Pearls.",
+    "hidden": false
+}

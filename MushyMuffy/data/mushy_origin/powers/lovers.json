@@ -1,0 +1,62 @@
+{
+    "type":"origins:multiple",
+    "gain":{
+    "type": "origins:action_over_time",
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:command",
+                "inverted": false,
+                "comparison": ">=",
+                "compare_to": 1,
+                "permission_level": 4,
+                "command": "execute if entity @e[distance=..6,tag=lush_lover]"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "mushy_origin:moisture_resource",
+                "comparison": "<",
+                "compare_to": 300
+            }
+        ]
+    },
+    "interval": 5,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "mushy_origin:moisture_resource",
+        "change": 1
+    }
+},
+"lose":{
+    "type": "origins:action_over_time",
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:command",
+                "inverted": false,
+                "comparison": ">=",
+                "compare_to": 1,
+                "permission_level": 4,
+                "command": "execute if entity @e[distance=..6,tag=lush_lover]"
+            },
+            {
+                "type": "origins:resource",
+                "resource": "mushy_origin:moisture_resource",
+                "comparison": ">",
+                "compare_to": 300
+            }
+        ]
+    },
+    "interval": 5,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "mushy_origin:moisture_resource",
+        "change": -1
+    }
+},
+    "hidden": true
+}

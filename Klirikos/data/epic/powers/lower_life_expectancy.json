@@ -1,0 +1,11 @@
+{
+  "type": "origins:attribute",
+  "modifier": {
+    "name": "Fragile health reduction",
+    "attribute": "minecraft:generic.max_health",
+    "value": -4.0,
+    "operation": "addition"
+  },
+	"name": "§c§l§nLower Life Expectancy",
+	"description": "You have 2 less heart than regular players."
+}

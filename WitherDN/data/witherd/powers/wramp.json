@@ -1,0 +1,309 @@
+{
+	"type": "origins:multiple",
+	"dmg_boost": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "addition",
+			"value": 6
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:ressource2",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"speed": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "addition",
+			"value": 0.02
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:ressource2",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"def_boost": {
+		"type": "origins:modify_damage_taken",
+		"modifier": {
+			"value": -0.20,
+			"operation": "multiply_total"
+		},
+		"damage_condition": {
+			"type": "origins:or",
+			"conditions": [{
+					"type": "origins:name",
+					"name": "generic"
+				},
+				{
+					"type": "origins:name",
+					"name": "magic"
+				},
+				{
+					"type": "origins:name",
+					"name": "wither"
+				},
+				{
+					"type": "origins:name",
+					"name": "witherSkull"
+				},
+				{
+					"type": "origins:name",
+					"name": "mob"
+				},
+				{
+					"type": "origins:name",
+					"name": "inFire"
+				},
+				{
+					"type": "origins:name",
+					"name": "onFire"
+				},
+				{
+					"type": "origins:name",
+					"name": "lava"
+				},
+				{
+					"type": "origins:name",
+					"name": "hotFloor"
+				},
+				{
+					"type": "origins:name",
+					"name": "thrown"
+				},
+				{
+					"type": "origins:name",
+					"name": "indirectMagic"
+				},
+				{
+					"type": "origins:name",
+					"name": "anvil"
+				},
+				{
+					"type": "origins:name",
+					"name": "fallingBlock"
+				},
+				{
+					"type": "origins:name",
+					"name": "dragonBreath"
+				},
+				{
+					"type": "origins:name",
+					"name": "dryOut"
+				},
+				{
+					"type": "origins:name",
+					"name": "badRespawnPoint"
+				},
+				{
+					"type": "origins:name",
+					"name": "thorns"
+				},
+				{
+					"type": "origins:name",
+					"name": "flyIntoWall"
+				},
+				{
+					"type": "origins:name",
+					"name": "outOfWorld"
+				},
+				{
+					"type": "origins:name",
+					"name": "cactus"
+				},
+				{
+					"type": "origins:name",
+					"name": "drown"
+				},
+				{
+					"type": "origins:name",
+					"name": "cramming"
+				},
+				{
+					"type": "origins:name",
+					"name": "trident"
+				},
+				{
+					"type": "origins:name",
+					"name": "arrow"
+				},
+				{
+					"type": "origins:name",
+					"name": "sting"
+				},
+				{
+					"type": "origins:name",
+					"name": "fall"
+				},
+				{
+					"type": "origins:name",
+					"name": "inWall"
+				},
+				{
+					"type": "origins:name",
+					"name": "lightningBolt"
+				},
+				{
+					"type": "origins:name",
+					"name": "starve"
+				},
+				{
+					"type": "origins:name",
+					"name": "sweetBerryBush"
+				},
+				{
+					"type": "origins:name",
+					"name": "player"
+				},
+				{
+					"type": "origins:name",
+					"name": "explosion"
+				},
+				{
+					"type": "origins:name",
+					"name": "explosion.player"
+				},
+				{
+					"type": "origins:name",
+					"name": "fireworks"
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:ressource2",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"remove": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "power remove @s witherd:souls",
+			"permission_level": 4
+		},
+		"interval": 1,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "witherd:ressource2",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"grant": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:execute_command",
+			"command": "power grant @s witherd:souls",
+			"permission_level": 4
+		},
+		"interval": 1,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "witherd:ressource2",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	},
+	"drain": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "witherd:ressource",
+			"change": -3.5
+		},
+		"interval": 20,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "witherd:ressource2",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"black": {
+		"type": "origins:model_color",
+		"red": 0.6,
+		"green": 0.6,
+		"blue": 0.6,
+		"alpha": 0.98,
+		"condition": {
+			"type": "origins:resource",
+			"resource": "*:ressource2",
+			"comparison": ">=",
+			"compare_to": 1
+		}
+	},
+	"ramp_end": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [{
+					"type": "origins:execute_command",
+					"command": "power grant @s witherd:rampage",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:ressource2",
+					"change": -1
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.ravager.death player @a ~ ~ ~ 1 .6",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.wither.death player @a ~ ~ ~ 1 1.5",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.wither.ambient player @a ~ ~ ~ 1 1.5",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s run particle minecraft:poof ~ ~.5 ~ 0.1 0.3 0.1 0 10 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @s run particle minecraft:soul ~ ~0.9 ~ 0.3 0.4 0.3 0.1 100 force",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "execute at @e[distance=1..15] run particle minecraft:warped_spore ~ ~1 ~ 0.4 0.4 0.4 1 100 force",
+					"permission_level": 4
+				}
+			]
+		},
+		"interval": 40,
+		"condition": {
+			"type": "origins:and",
+			"conditions": [{
+					"type": "origins:resource",
+					"resource": "witherd:ressource",
+					"comparison": "<",
+					"compare_to": 1
+				},
+				{
+					"type": "origins:resource",
+					"resource": "witherd:ressource2",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		}
+	},
+	"hidden": true
+}

@@ -1,0 +1,19 @@
+{
+    "type": "origins:model_color",
+    "red": 0.6,
+    "green": 0.3,
+	"blue": 0.75,
+    "alpha": 1,
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"comparison": ">",
+				"resource": "shulker:shulk_resource_hiding",
+				"compare_to": 0
+			}
+		]
+	},
+	"hidden": true
+}

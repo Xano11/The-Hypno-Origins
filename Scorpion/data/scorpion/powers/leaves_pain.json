@@ -1,0 +1,17 @@
+{
+	"type": "origins:modify_break_speed",
+	"block_condition": {
+		"type": "origins:in_tag",
+		"tag": "scorpion:leaves"
+	},
+	"condition": {
+		"type": "origins:using_effective_tool",
+		"inverted": true
+	},
+	"modifier": {
+		"name": "Strong Arms stone break speed bonus",
+		"value": 3,
+		"operation": "addition"
+	},
+	"hidden": true
+}

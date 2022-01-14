@@ -1,0 +1,10 @@
+{
+    "type": "origins:effect_immunity",
+    "effects": [
+        "minecraft:regeneration",
+        "minecraft:nausea",
+        "minecraft:hunger",
+        "minecraft:saturation"
+    ],
+    "hidden": true
+}

@@ -1,0 +1,9 @@
+{
+  "type": "origins:invulnerability",
+  "damage_condition": {
+    "type": "origins:name",
+    "name": "fall"
+	},
+	"name": "§a§l§nCat-Like Reflexes",
+  "description": "Your reflexes only let you land on your feet. You don't take fall damage."
+}

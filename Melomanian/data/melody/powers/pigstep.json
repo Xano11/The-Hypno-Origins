@@ -1,0 +1,84 @@
+{
+	"type": "origins:active_self",
+	"entity_action": {
+		"type": "origins:if_else",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"item": "minecraft:music_disc_pigstep"
+						}
+					}
+				},
+				{
+					"type": "origins:resource",
+					"resource": "melody:is_empty",
+					"comparison": "==",
+					"compare_to": 1
+				}
+			]
+		},
+		"if_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:music_disc.pigstep",
+					"volume": 7
+				},
+				{
+					"type": "origins:equipped_item_action",
+					"equipment_slot": "mainhand",
+					"action": {
+						"type": "origins:consume",
+						"amount": 1
+					}
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/resource set @s melody:is_empty 0",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @s melody:pigstep_active",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/power grant @s melody:pigstep_powers",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"permission_level": 4,
+					"command": "team add nether"
+				},
+				{
+					"type": "origins:execute_command",
+					"permission_level": 4,
+					"command": "team join nether @s"
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "/function melody:disc/pigstep",
+					"permission_level": 4
+				}
+			]
+		}
+	},
+	"cooldown": 5,
+	"hud_render": {
+		"should_render": false
+	},
+	"key": {
+		"key": "key.origins.primary_active"
+	},
+	"name": "§6§l§nPIGSTEP",
+	"description": "A sick dubstep from the Nether sets the fire in your heart!\n§aPros: zombifying, angy, tough, golden axes, shield piercing, piglin allies\n§r§cCons: hydrophobia, golden axes only, no mining, bonk brain, carnivore"
+}

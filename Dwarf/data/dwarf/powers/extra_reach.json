@@ -1,0 +1,19 @@
+{
+  "type": "origins:attribute",
+  "modifiers": [
+    {
+      "name": "Extra Reach block reach",
+      "attribute": "reach-entity-attributes:reach",
+      "value": 1,
+      "operation": "addition"
+    },
+    {
+      "name": "Extra Reach entity reach",
+      "attribute": "reach-entity-attributes:attack_range",
+      "value": 0,
+      "operation": "addition"
+    }
+  ],
+  "name":"§a§l§nNatural Builder",
+  "description" : "You can place block farther than others because of your building heritage."
+}

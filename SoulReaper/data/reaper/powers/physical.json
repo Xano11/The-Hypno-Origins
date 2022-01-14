@@ -1,0 +1,9 @@
+{
+  "type":"origins:modify_damage_taken",
+  "modifier":{
+    "operation": "multiply_total",
+        "value": 1
+  },
+  "name": "§c§l§nDevil's Deal",
+  "description": "You are binded to the Devil to retrieve souls for him. You take double damage because of his deal with you."
+}

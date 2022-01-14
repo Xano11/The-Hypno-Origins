@@ -1,0 +1,40 @@
+{
+    "type": "origins:active_self",
+    "key": "secondary",
+    "entity_action": {
+        "type": "origins:execute_command",
+        "command": "execute as @s run function voidtraveller:voidinvite",
+        "permission_level": 4
+    },
+    "cooldown": 1200,
+    "hud_render": {
+        "should_render": true,
+        "bar_index": 14,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    },
+    "name": "§a§l§nVoid Invite",
+    "description": "Invite players to the void by crafting the void shard semi-perm with a nether star!",
+    "hidden": false,
+    "condition": {
+        "type": "origins:or",
+        "conditions": [
+            {
+                "type": "origins:command",
+                "command": "execute if data entity @s {SelectedItem:{tag:{voidshard:true}}}",
+                "comparison": ">=",
+                "compare_to": "1",
+                "permission_level": 4,
+                "inverted": false
+            },
+            {
+                "type": "origins:command",
+                "command": "execute if data entity @s Inventory[{Slot:-106b,tag:{voidshard:1b}}]",
+                "comparison": ">=",
+                "compare_to": "1",
+                "permission_level": 4,
+                "inverted": false
+            }
+        ],
+        "inverted": false
+    }
+}

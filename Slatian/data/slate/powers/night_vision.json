@@ -1,0 +1,25 @@
+{
+    "type": "origins:stacking_status_effect",
+    "min_stacks": 22,
+    "max_stacks": 22,
+    "duration_per_stack": 10,
+    "effects": [
+        {
+            "effect": "minecraft:night_vision",
+            "is_ambient": true,
+            "show_particles": false,
+            "show_icon": false
+        }
+    ],
+	"condition": {
+        "type": "origins:in_block_anywhere",
+        "block_condition": {
+		"type": "origins:light_level",
+		"light_type": "sky",
+		"comparison": "<",
+		"compare_to": 5
+		}
+    },
+	"name": "§a§l§nCave Vision",
+	"description": "Born in the dark recesses of the world's various caving systems you have the natural ability to see in the dark when underground."
+}

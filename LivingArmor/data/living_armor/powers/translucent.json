@@ -1,0 +1,17 @@
+{
+  "type":"origins:multiple",
+    "translucent":{
+      "type": "origins:model_color",
+      "red": 1,
+      "green": 1,
+      "blue": 1,
+      "alpha": 0.3
+    },
+    "particles": {
+      "type": "origins:particle",
+      "particle": "enchant",
+      "frequency": 20
+    }, 
+  "name": "§e§l§nTranslucent",
+  "description": "Without your body your soul is barely visible."  
+}

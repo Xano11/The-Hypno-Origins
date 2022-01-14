@@ -1,0 +1,18 @@
+{
+    "type": "origins:modify_exhaustion",
+    "modifiers": [
+        {
+            "operation": "multiply_base",
+            "value": 0.6,
+            "name": "WoolExhaust"
+        }
+    ],
+    "condition": {
+        "type": "origins:resource",
+        "inverted": false,
+        "comparison": "==",
+        "resource": "woolorigin:woolresource",
+        "compare_to": 1
+    },
+    "hidden": true
+}

@@ -1,0 +1,481 @@
+{
+	"type": "origins:multiple",
+	"blindness": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 2,
+		"duration_per_stack": 20,
+		"effect": {
+			"effect": "minecraft:blindness",
+			"is_ambinet": true,
+			"show_particles": false,
+			"show_icon": false
+		}
+	},
+	"unwanted_protection":{
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 2,
+		"duration_per_stack": 20,
+		"effect": {
+				"effect": "minecraft:resistance",
+				"amplifier": 3,
+				"is_ambient": true,
+				"show_particles": false,
+				"show_icon": false
+			}
+	},
+	"armorless":{
+		"type": "origins:restrict_armor",
+		"head": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 0
+		},
+		"chest": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 0
+		},
+		"legs": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 0
+		},
+		"feet": {
+			"type": "origins:armor_value",
+			"comparison": ">",
+			"compare_to": 0
+		}
+	},
+	"slowness": {
+		"type": "origins:attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"value": -0.02,
+			"operation": "addition"
+		}
+	},
+	"shivers": {
+		"type": "origins:shaking"	
+	},
+	"antivore": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:food",
+			"inverted": false
+		}
+	},
+	"cursed_death": {
+	    "type": "origins:prevent_death",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+		    {
+				"type": "origins:execute_command",
+                "command": "particle minecraft:dust 0 0 0 2 ~ ~ ~ 3 3 3 1 1000",
+                "permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+                "command": "effect give @e[distance=..3] minecraft:instant_health 1 195 true",
+                "permission_level": 4
+			},
+            {
+                "type": "origins:execute_command",
+                "command": "effect give @e[distance=..3] minecraft:instant_damage 1 200 true",
+                "permission_level": 4
+            },
+			{
+				"type": "origins:execute_command",
+                "command": "playsound minecraft:entity.wither.death player @s ~ ~ ~ 1 1",
+                "permission_level": 4
+		    },
+			{
+				"type": "origins:execute_command",
+                "command": "kill @s",
+                "permission_level": 4
+			}
+			]
+		}
+	},
+	"cursed_touch": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "effect give @e[distance=..2] minecraft:instant_damage 1 1 true",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "effect give @e[distance=..1] minecraft:blindness 10 1 true",
+					"permission_level": 4
+				},
+				{ 
+					"type": "origins:execute_command",
+					"command": "effect give @e[distance=..1] minecraft:slowness 10 255 true",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "particle minecraft:dust 0 0 0 2 ~ ~ ~ 3 3 3 1 1000",
+					"permission_level": 4
+				}
+				]
+		},
+		"cooldown": 400,
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"hud_render": {
+			"should_render": true,
+			"bar_index": 0
+		}
+	},
+	"curse_particles": {
+			"type": "origins:action_over_time",
+			"entity_action": {
+				"type": "origins:execute_command",
+				"command": "particle minecraft:dust 0 0 0 2 ~ ~ ~ 1 1 1 1 10",
+				"permission_level": 4
+			},
+			"interval": 10
+	},
+	"cursed_norange": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:or",
+			"conditions": [
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:trident"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:crossbow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:long_bow"
+					}
+				},
+				{
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "medievalweapons:recurve_bow"
+					}
+				}
+			]
+		}
+	},
+	"cursed_immunity": {
+		"type": "origins:invulnerability",
+		"damage_condition": {
+			"type": "origins:name",
+			"name": "magic"
+		}
+	},
+	"cursed_burn": {
+		"type": "origins:modify_damage_taken",
+		"damage_condition": {
+			"type": "origins:fire"
+		},
+		"modifier": {
+			"operation": "multiply_base",
+			"value": 2
+		}
+	},
+	"coward": {
+		"type": "origins:modify_damage_dealt",
+		"modifier": {
+			"operation": "multiply_base",
+			"value": -1
+		}
+	},
+	"cursed_body": {
+		"type": "origins:attacker_action_when_hit",
+		"entity_action": {
+		"type": "origins:damage",
+		"amount": 1,
+		"source": {
+			"name": "wither",
+			"bypasses_armor": true
+		}
+		},	 
+		"cooldown": 0
+	},
+	"jumpscare": {
+		"type": "origins:action_over_time",
+		"interval": 220,
+		"entity_action": {
+			"type": "origins:chance",
+			"chance": 0.11,
+			"action": {
+				"type": "origins:choice",
+				"actions": [
+					{
+						"element": {
+							"type": "origins:and",
+							"actions": [
+								{
+									"type": "origins:execute_command",
+									"command": "/particle minecraft:elder_guardian ~ ~ ~ 0.25 0.25 0.25 1 1 force @s",
+									"permission_level": 4
+								},
+								{
+									"type": "origins:play_sound",
+									"sound": "minecraft:entity.elder_guardian.curse",
+									"volume": 10,
+									"pitch": 0.5
+								}
+							]
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.ghast.warn",
+							"volume": 10,
+							"pitch": 0.5
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.ghast.hurt",
+							"pitch": 0.5
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.vex.charge",
+							"volume": 10,
+							"pitch": 0.5
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.vex.death",
+							"volume": 10,
+							"pitch": 0.5
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.phantom.death",
+							"volume": 10,
+							"pitch": 0.5
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.enderman.scream",
+							"volume": 10,
+							"pitch": 0.5
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.enderman.death",
+							"volume": 10,
+							"pitch": 0.5
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.enderman.stare",
+							"volume": 10,
+							"pitch": 0.5
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.ender_dragon.growl",
+							"volume": 10,
+							"pitch": 0.5
+						},
+						"weight": 1
+					},
+					{
+						"element": {
+							"type": "origins:play_sound",
+							"sound": "minecraft:entity.ender_dragon.ambient",
+							"volume": 10,
+							"pitch": 0.5
+						},
+						"weight": 1
+					}
+				]
+			}
+		}
+	},
+	"nightmare": {
+		"type": "origins:prevent_sleep",
+		"message": "§kYou wanted to have this nightmare. DEAL WITH IT!!!"
+	},
+	"dizziness": {
+		"type": "origins:shader",
+		"shader": "minecraft:shaders/post/phosphor.json",
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:eleven_powers_glitch_active",
+			"comparison": "==",
+			"compare_to": 0
+		}
+	},
+	"glitch_active": {
+		"type": "origins:cooldown",
+		"cooldown": 60,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"glitch": {
+		"type": "origins:action_over_time",
+		"interval": 80,
+		"entity_action": {
+			"type": "origins:chance",
+			"action": {
+				"type": "origins:trigger_cooldown",
+				"power": "melody:eleven_powers_glitch_active"
+			},
+			"chance": 0.2
+		}
+	},
+	"glitch_flipped": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"start_value": 0
+	},
+	"glitch_flip": {
+		"type": "origins:action_over_time",
+		"interval": 1,
+		"entity_action": {
+			"type": "origins:choice",
+			"actions": [
+				{
+					"element": {
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:eleven_powers_glitch_flipped 1",
+						"permission_level": 4
+					},
+					"weight": 1
+				},
+				{
+					"element": {
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:eleven_powers_glitch_flipped 0",
+						"permission_level": 4
+					},
+					"weight": 1
+				}
+			]
+		},
+		"rising_action": {
+			"type": "origins:play_sound",
+			"sound": "minecraft:ambient.cave",
+			"pitch": 2
+		},
+		"falling_action": {
+			"type": "origins:execute_command",
+			"command": "/resource set @s melody:eleven_powers_glicth_flipped 0",
+			"permission_level": 4
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:eleven_powers_glitch_active",
+			"comparison": "!=",
+			"compare_to": 0
+		}
+	},
+	"glitch_upside_down": {
+		"type": "origins:shader",
+		"shader": "minecraft:shaders/post/flip.json",
+		"condition": {
+			"type": "origins:resource",
+			"resource": "melody:eleven_powers_glitch_flipped",
+			"comparison": "==",
+			"compare_to": 1
+		}
+	},
+	"delete_eleven": {
+		"type": "origins:action_over_time",
+		"interval": 20,
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:resource",
+				"resource": "melody:eleven_active",
+				"comparison": "==",
+				"compare_to": 71
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:eleven_powers",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/power remove @s melody:eleven_active",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:give",
+						"stack": {
+							"item": "minecraft:music_disc_11",
+							"amount": 1
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "/resource set @s melody:disc_cooldown 0",
+						"permission_level": 4
+					}
+				]
+			},
+			"else_action": {
+				"type": "origins:change_resource",
+				"resource": "melody:eleven_active",
+				"change": 1
+			}
+		}
+	}
+}

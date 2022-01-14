@@ -1,0 +1,37 @@
+{
+	"type": "origins:multiple",
+	"color":
+	{
+		"type": "origins:model_color",
+		"red": 0.5,
+		"green": 0.5,
+		"blue": 0.5
+	},
+	"invulnerabilities":
+	{
+	  "type": "origins:invulnerability",
+	  "damage_condition":
+	  {
+	  	"type": "origins:or",
+	  	"conditions":
+	  	[
+    		{
+          		"type": "origins:name",
+	      		"name": "drown"
+        	},
+  	    	{
+	      		"type": "origins:name",
+  	      		"name": "inWall"
+	    	}
+      	]
+	  }
+  	},
+	"particle":
+	{
+		"type": "origins:particle",
+		"particle": "minecraft:ash",
+		"frequency": 6
+	},
+	"name":"§e§l§nRock skin",
+	"description":"You are nearly unbreakable because of your Rock ancestors, so you are immune to drowning, and suffocating, You also are a darker tint due to being a rock."
+}

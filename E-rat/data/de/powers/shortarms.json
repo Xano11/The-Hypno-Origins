@@ -1,0 +1,57 @@
+{
+    "type": "origins:multiple",
+    "less_reach": {
+    "type": "origins:attribute",
+    "modifier": {
+        "name": "low build range speed",
+        "attribute": "reach-entity-attributes:reach",
+        "operation": "addition",
+        "value": -1
+        }
+    },
+    "no_channeling": {
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+            {	
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:trident"
+            }
+        },
+        {
+            "type": "origins:enchantment",
+            "enchantment": "minecraft:channeling",
+            "comparison": ">",
+            "compare_to": 0
+                }	
+            ]
+        }
+    },
+
+    "unwieldy": {
+		"type": "origins:prevent_item_use",
+		"item_condition": {
+			"type": "origins:ingredient",
+			"ingredient": [{
+                "item": "minecraft:bow"
+            },
+            {
+                "item": "minecraft:crossbow"
+            },
+            {
+                "item": "medievalweapons:long_bow"
+            },
+            {
+                "item": "medievalweapons:recurve_bow"
+            },
+            {
+                "item": "minecraft:shield"
+            }
+        ]
+        }
+    },
+    "name": "§c§l§nShort Arms",
+    "description": "Those short arms can't reach as far as you'd want. It makes your reach -1 and you can't pull back bows also you can't hold on to channelling tridents because discharge on touch with your skin"
+}

@@ -1,0 +1,1 @@
+ give @s potion{CustomPotionColor:62207,display:{Name:'[{"text":"Chronos","italic":false,"bold":true,"color":"aqua"}]',Lore:['[{"text":"A samurai life source.","color":"dark_aqua"}]']},Enchantments:[{}]} 1

@@ -1,0 +1,113 @@
+{
+	"type":"origins:multiple",
+	"explosion":{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+				"type": "origins:execute_command",
+				"command": "power grant @e[distance=..10] mushy_origin:mushroom_virus",
+				"permission_level": 4
+			},
+			{
+		    	"type": "origins:change_resource",
+		    	"resource": "mushy_origin:death_cooldown",
+		    	"change": 1
+		   	},
+			{
+				"type": "origins:execute_command",
+				"command": "playsound minecraft:entity.generic.explode master @a[distance=..15] ~ ~ ~ 10 1.5",
+				"permission_level": 4
+			},
+			{
+			  	"type": "origins:execute_command",
+			 	"command": "particle minecraft:mycelium ~ ~ ~ 1 1 1 100 1000 normal",
+			  	"permission_level": 4
+		 	},
+		  	{
+			  	"type": "origins:execute_command",
+			  	"command": "particle minecraft:spore_blossom_air ~ ~ ~ 1 1 1 100 1000 normal",
+			  	"permission_level": 4
+		  	},
+		  	{
+				"type": "origins:execute_command",
+				"command": "particle minecraft:spore_blossom_air ~ ~ ~ 1 1 1 100 1000 normal",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+				"command": "particle minecraft:sneeze ~ ~ ~ 1 1 1 1 1000 normal",
+				"permission_level": 4
+			},
+			{
+				"type": "origins:execute_command",
+         		"command": "playsound minecraft:entity.axolotl.death master @a[distance=..15] ~ ~ ~ 50 1",
+          		"permission_level": 4
+			}
+	  	]
+	},
+	"interval": 1,
+  "condition": {
+	  "type": "origins:and",
+	  "conditions": [
+		  {
+			  "type": "origins:health",
+			  "comparison": "==",
+			  "compare_to": 0
+		  },
+		  {
+			"type": "origins:resource",
+			"resource": "*:*_cooldown",
+			"comparison": "==",
+			"compare_to": 0
+		},
+	  {
+		"type": "origins:sneaking",
+		"inverted": true
+	  }
+	  ]
+	}
+	},
+	"cooldown":{
+    "type": "origins:resource",
+    "min": 0,
+    "max": 1,
+    "start_value": 1,
+    "hud_render": {
+      "should_render": true,
+      "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+      "bar_index": 17,
+      "condition": {
+        "type": "origins:resource",
+        "resource": "*:*_cooldown",
+        "comparison": "==",
+        "compare_to": 0,
+        "inverted": true
+      	}
+    	}
+  	},
+	  "cooldown_two":{
+	  "type": "origins:action_over_time",
+	  "interval": 1,
+	  "entity_action": {
+		  "type": "origins:change_resource",
+		  "resource": "*:*_cooldown",
+		  "change": -1
+	  },
+	  "condition": {
+		  "type": "origins:and",
+		  "conditions": [
+			  {
+				  "type": "origins:health",
+				  "comparison": "==",
+				  "compare_to": 0,
+				  "inverted": true
+			  }
+		  ]
+	  },
+	  "hidden": true
+  },
+	"name": "§a§l§nSpore Explosion",
+	"description": "When you die you explode into a cloud of dangerous spores."
+}

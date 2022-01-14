@@ -1,0 +1,11 @@
+{
+    "type": "origins:invisibility",
+    "render_armor": false,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "*:shulk_teleport_resource",
+        "comparison": ">=",
+        "compare_to": 3
+    },
+    "hidden": true
+}

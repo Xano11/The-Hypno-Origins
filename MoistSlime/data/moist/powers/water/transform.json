@@ -1,0 +1,26 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [{
+            "type": "origins:execute_command",
+            "command": "effect clear @s water_breathing"
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+                    "type": "origins:execute_command",
+                    "command": "origin set @s origins:origin moist:lavaslime"
+                }
+            }
+        ]
+    },
+    "interval": 1,
+    "condition": {
+        "type": "origins:status_effect",
+        "effect": "minecraft:fire_resistance"
+    },
+    "name": "§e§l§nTransform",
+	"description": "Getting the fire resistance effect will fill you with lava switching your upsides and downsides"
+}

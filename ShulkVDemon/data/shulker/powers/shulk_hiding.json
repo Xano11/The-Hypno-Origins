@@ -1,0 +1,160 @@
+{
+  "type":"origins:modify_damage_taken",
+  "modifier":{
+    "value": -0.99,
+    "operation":"multiply_total"
+  },
+  "damage_condition":{
+    "type":"origins:or",
+    "conditions":[
+      {
+        "type": "origins:name",
+        "name": "generic"
+      },
+      {
+        "type": "origins:name",
+        "name": "magic"
+      },
+      {
+        "type": "origins:name",
+        "name": "wither"
+      },
+      {
+        "type": "origins:name",
+        "name": "witherSkull"
+      },
+      {
+        "type": "origins:name",
+        "name": "mob"
+      },
+      {
+        "type": "origins:name",
+        "name": "inFire"
+      },
+      {
+        "type": "origins:name",
+        "name": "onFire"
+      },
+      {
+        "type": "origins:name",
+        "name": "lava"
+      },
+      {
+        "type": "origins:name",
+        "name": "hotFloor"
+      },
+      {
+        "type": "origins:name",
+        "name": "thrown"
+      },
+      {
+        "type": "origins:name",
+        "name": "indirectMagic"
+      },
+      {
+        "type": "origins:name",
+        "name": "anvil"
+      },
+      {
+        "type": "origins:name",
+        "name": "fallingBlock"
+      },
+      {
+        "type": "origins:name",
+        "name": "dragonBreath"
+      },
+      {
+        "type": "origins:name",
+        "name": "dryOut"
+      },
+      {
+        "type": "origins:name",
+        "name": "badRespawnPoint"
+      },
+      {
+        "type": "origins:name",
+        "name": "thorns"
+      },
+      {
+        "type": "origins:name",
+        "name": "flyIntoWall"
+      },
+      {
+        "type": "origins:name",
+        "name": "outOfWorld"
+      },
+      {
+        "type": "origins:name",
+        "name": "cactus"
+      },
+      {
+        "type": "origins:name",
+        "name": "drown"
+      },
+      {
+        "type": "origins:name",
+        "name": "cramming"
+      },
+      {
+        "type": "origins:name",
+        "name": "trident"
+      },
+      {
+        "type": "origins:name",
+        "name": "arrow"
+      },
+      {
+        "type": "origins:name",
+        "name": "sting"
+      },
+      {
+        "type": "origins:name",
+        "name": "fall"
+      },
+      {
+        "type": "origins:name",
+        "name": "inWall"
+      },
+      {
+        "type": "origins:name",
+        "name": "lightningBolt"
+      },
+      {
+        "type": "origins:name",
+        "name": "starve"
+      },
+      {
+        "type": "origins:name",
+        "name": "sweetBerryBush"
+      },
+      {
+        "type": "origins:name",
+        "name": "player"
+      },
+      {
+        "type": "origins:name",
+        "name": "explosion"
+      },
+      {
+        "type": "origins:name",
+        "name": "explosion.player"
+      },
+      {
+        "type": "origins:name",
+        "name": "fireworks"
+      }
+    ]
+  },
+	"condition": {
+		"type": "origins:or",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"comparison": "==",
+				"resource": "shulker:shulk_resource_hiding",
+				"compare_to": 1
+			}
+		]
+	},
+  "hidden": true
+}

@@ -1,0 +1,132 @@
+{
+    "name": "§e§l§nReconstruction",
+    "description": "Should your mortal coil shatter, you may perform a ritual to reconstruct it and conjure another gist to control. This ritual requires a full bar of hatred, and will leave you exhausted.",
+    "badges": [
+        {
+            "sprite": "origins:textures/gui/badge/info.png",
+            "text": "To perform the ritual:\nStand on a block of gold surrounded by\nfire, with a glass block 4 blocks above\nthe gold in order to contain the spirit.\nBreaking the glass will force the Gist\nto be sucked into your soul. "
+        }
+    ],
+
+    "type": "origins:action_over_time",
+    "interval": 20,
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "*:create_demon_resource",
+        "change": 1,
+        "operation": "set"
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "*:hatred_resource",
+                "comparison": ">=",
+                "compare_to": 1200
+            },
+            {
+                "type": "origins:on_block",
+                "block_condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:block",
+                            "block": "minecraft:gold_block"
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 1,
+                            "y": 0,
+                            "z": 0,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 1,
+                            "y": 0,
+                            "z": 1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 1,
+                            "y": 0,
+                            "z": -1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 0,
+                            "y": 0,
+                            "z": 1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 0,
+                            "y": 0,
+                            "z": -1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": -1,
+                            "y": 0,
+                            "z": 0,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": -1,
+                            "y": 0,
+                            "z": 1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": -1,
+                            "y": 0,
+                            "z": -1,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:fire"
+                            }
+                        },
+                        {
+                            "type": "origins:offset",
+                            "x": 0,
+                            "y": 4,
+                            "z": 0,
+                            "condition": {
+                                "type": "origins:block",
+                                "block": "minecraft:glass"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

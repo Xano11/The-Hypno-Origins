@@ -1,0 +1,85 @@
+{
+    "type": "origins:multiple",
+    "chainmail_helmet": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rpgorigins:chainmail_helmet",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "###",
+                "# #",
+                "   "
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:chain"
+                }
+            },
+            "result": {
+                "item": "minecraft:chainmail_helmet"
+            }
+        }
+    },
+    "chainmail_chestplate": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rpgorigins:chainmail_chestplate",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "# #",
+                "###",
+                "###"
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:chain"
+                }
+            },
+            "result": {
+                "item": "minecraft:chainmail_chestplate"
+            }
+        }
+    },
+    "chainmail_leggings": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rpgorigins:chainmail_leggings",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "###",
+                "# #",
+                "# #"
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:chain"
+                }
+            },
+            "result": {
+                "item": "minecraft:chainmail_leggings"
+            }
+        }
+    },
+    "chainmail_boots": {
+        "type": "origins:recipe",
+        "recipe": {
+            "id": "rpgorigins:chainmail_boots",
+            "type": "minecraft:crafting_shaped",
+            "pattern": [
+                "   ",
+                "# #",
+                "# #"
+            ],
+            "key": {
+                "#": {
+                    "item": "minecraft:chain"
+                }
+            },
+            "result": {
+                "item": "minecraft:chainmail_boots"
+            }
+        }
+    },
+    "name": "§a§l§nBlacksmith",
+    "description": "You can craft chainmail armor with chains."
+}

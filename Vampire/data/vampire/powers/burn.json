@@ -1,0 +1,30 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:damage",
+        "amount": 3,
+        "source": {
+          "name": "onFire",
+          "fire": true,
+          "bypasses_armor": false
+        }
+      },
+    "interval": 30,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+          {
+            "type": "origins:daytime"
+          },
+          {
+            "type": "origins:exposed_to_sky"
+          },
+          {
+            "type": "origins:in_rain",
+            "inverted": true
+          }
+        ]
+      },
+    "name":"§c§l§nPhotophobic",
+    "description":"You take damage whilst exposed to the sun."
+}

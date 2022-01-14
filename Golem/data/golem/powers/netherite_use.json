@@ -1,0 +1,103 @@
+{
+    "type": "origins:active_self",
+    "cooldown": 10,
+    "key": {
+        "key": "key.use",
+        "continuous": true
+    },
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:change_resource",
+                "change": 240,
+                "resource": "golem:resistance"
+            },
+            {
+                "type": "origins:execute_command",
+                "permission_level": 4,
+                "command": "/playsound minecraft:block.anvil.use player @s"
+            },
+            {
+                "type": "origins:if_else",
+                "condition": {
+                    "type": "origins:equipped_item",
+                    "inverted": false,
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:ingredient",
+                        "inverted": false,
+                        "ingredient": {
+                            "item": "minecraft:netherite_ingot"
+                        }
+                    }
+                },
+                "if_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "mainhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                },
+                "else_action": {
+                    "type": "origins:equipped_item_action",
+                    "equipment_slot": "offhand",
+                    "action": {
+                        "type": "origins:consume",
+                        "amount": 1
+                    }
+                }
+            }
+        ]
+    },
+    "hud_render": {
+        "should_render": false,
+        "bar_index": 9,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+    },
+    "condition": {
+        "type": "origins:and",
+        "inverted": false,
+        "conditions": [
+            {
+                "type": "origins:or",
+                "inverted": false,
+                "conditions": [
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "mainhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:netherite_ingot"
+                            }
+                        }
+                    },
+                    {
+                        "type": "origins:equipped_item",
+                        "inverted": false,
+                        "equipment_slot": "offhand",
+                        "item_condition": {
+                            "type": "origins:ingredient",
+                            "inverted": false,
+                            "ingredient": {
+                                "item": "minecraft:netherite_ingot"
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "origins:resource",
+                "inverted": false,
+                "comparison": "!=",
+                "compare_to": 240,
+                "resource": "golem:resistance"
+            }
+        ]
+    },
+    "hidden": true
+}

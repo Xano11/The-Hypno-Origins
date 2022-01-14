@@ -1,0 +1,24 @@
+{
+	"powers": [
+			"medic:warp",
+			"medic:discountfasttravel",
+			"medic:endheal",
+			"medic:aoeheal",
+			"medic:lowhealth",
+			"medic:lessdamage",
+			"medic:water_vulnerability",
+			"medic:pumpkin_hate",
+			"medic:beta_male",
+			"medic:credits",
+			"origins:ender_particles",
+			"origins:damage_from_potions"
+	],
+	"icon": {
+		"item": "minecraft:chorus_fruit",
+		"tag": "{Enchantments:[{}]}"
+	},
+	"order": 0,
+	"impact": 2,
+	"name": "Enderian Healer",
+	"description": "Long ago, the End City this Enderian resided in was attacked by the Ender Dragon. Without a healer, the End Guard stood no chance. He, being the sole survivor of the attack, vowed to become a healer like no other."
+}

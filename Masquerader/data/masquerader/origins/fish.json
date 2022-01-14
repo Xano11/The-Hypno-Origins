@@ -1,0 +1,25 @@
+{
+	"powers": [
+		"masquerader:fish/torpedo",
+		"masquerader:fish/scales",
+		"masquerader:agile",
+		"origins:water_vision",
+		"origins:aqua_affinity",
+		"origins:like_water",
+		"origins:aquatic",
+		"origins:conduit_power_on_land",
+		"origins:air_from_potions",
+		"masquerader:fish/blue",
+		"origins:water_breathing",
+		"masquerader:notweapons",
+		"masquerader:nohelmet",
+		"masquerader:fish/fishmask",
+		"masquerader:untransform"
+	],
+	"icon": "minecraft:sea_lantern",
+	"order": 10,
+	"impact": 3,
+	"name": "Sea Serpent",
+	"description": "A Masquerader that has harnessed the power of the deep oceans to prowl the waters",
+	"unchoosable": true
+}

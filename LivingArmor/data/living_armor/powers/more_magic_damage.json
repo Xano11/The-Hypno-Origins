@@ -1,0 +1,23 @@
+{
+  "type": "origins:modify_damage_taken",
+  "modifier": {
+      "name": "More magic damage taken",
+      "value": 1,
+      "operation": "multiply_total"
+  },
+  "damage_condition": {
+    "type": "origins:or",
+    "conditions": [
+      {
+        "type": "origins:name",
+        "name": "magic"
+      },
+      {
+        "type": "origins:name",
+        "name": "indirectMagic"
+      }
+    ]
+  },
+  "name": "§c§l§nMagic Overload",
+  "description": "Your soul is connected to armor by magic and other magical sources can disrupt that connection. You take more magic damage." 
+}

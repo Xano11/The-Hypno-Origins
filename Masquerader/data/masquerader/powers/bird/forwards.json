@@ -1,0 +1,37 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:add_velocity",
+        "z": 0.5,
+        "space": "local"
+      },
+      {
+	"type": "origins:exhaust",
+	"interval": 20,
+  "amount": 12
+  },
+  {"type": "origins:play_sound",
+    "sound": "minecraft:entity.parrot.fly"
+  }
+  ]
+  },
+  "condition": {
+    "type": "origins:food_level",
+    "comparison": "<=",
+    "compare_to": 8,
+    "inverted": true
+  },
+  "cooldown": 20,
+  "hud_render": {
+    "should_render": false
+  },
+  "name": "§a§l§nDash",
+  "description": "Propel yourself Forward at the cost of some hunger.",
+  "key": {
+    "key": "key.origins.secondary_active",
+    "continuous": true
+  }
+}

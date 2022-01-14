@@ -1,0 +1,21 @@
+{
+  "type": "origins:launch",
+  "cooldown": 400,
+  "hud_render": {
+    "bar_index": 4
+  },
+  "sound": "minecraft:entity.parrot.fly",
+  "speed": 1.25,
+  "key": {
+    "key": "key.origins.primary_active",
+    "continuous": true
+  },
+  "condition": {
+	  "type": "origins:resource",
+	  "resource": "sunbird:reborn_resource",
+	  "comparison": "<",
+	  "compare_to": 1
+  },
+  "name": "§a§l§nAscent",
+  "description": "Release a hot gust of wind upwards, gaining altitude to fly. This can only be used while having wings."
+}

@@ -1,0 +1,73 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+        "type": "origins:and",
+        "actions": [
+		{
+			"type": "origins:damage",
+			"amount": 6,
+			"source": {
+				"name": "Blood Sacrifice",
+				"unblockable": true,
+				"bypasses_armor": true
+			}
+		},{
+    "type": "origins:apply_effect",
+	"effect":
+	{
+		"effect": "minecraft:resistance",
+		"is_ambient": true,
+		"show_particle": false,
+		"show_icon": true,
+		"duration": 900
+	}
+		},
+			{
+				"type": "origins:play_sound",
+				"sound": "minecraft:entity.phantom.bite"
+			},
+			{
+		    	"type": "origins:execute_command",
+		    	"command": "effect give @e[distance=..4] minecraft:instant_damage",
+		    	"permission_level": 4
+    		},
+			{
+		    	"type": "origins:execute_command",
+		    	"command": "effect give @e[distance=..4] minecraft:wither 1",
+		    	"permission_level": 4
+    		},
+  			{
+		    	"type": "origins:execute_command",
+		    	"command": "particle minecraft:crimson_spore ~ ~1 ~ 0 0.3 0 1 150 normal",
+		    	"permission_level": 4
+    		},
+			{
+		    	"type": "origins:execute_command",
+		    	"command": "particle minecraft:damage_indicator ~ ~1 ~ 0 0.3 0 1.5 20 normal",
+		    	"permission_level": 4
+    		}]},
+  "cooldown": 890,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+    "bar_index": 5
+  },
+  "condition": {
+		"type": "origins:and",
+		"conditions": [{
+			"type": "origins:resource",
+			"resource": "caldera:demon/kill_count",
+			"comparison": ">=",
+			"compare_to": 100
+	},{
+		"type": "origins:health",
+    "comparison": ">",
+    "compare_to": 6
+	}
+	]},
+  "key":{
+	"key": "key.origins.secondary_active"
+  },
+  "name": "§a§l§nBlood Demon Art",
+    "description": "[Secondary]\nBlood Compass (kill 100 to unlock): Splatters your own blood to area around you, giving Instant Damage I to entities close to you, as well as detecting your enemies' movements, allowing you to minimize the damage you take."
+}

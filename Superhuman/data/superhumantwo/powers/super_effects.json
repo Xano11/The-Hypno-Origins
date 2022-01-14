@@ -1,0 +1,50 @@
+{
+	"type": "origins:stacking_status_effect",
+	"min_stacks": 0,
+	"max_stacks": 1,
+	"duration_per_stack": 20,
+	"effects": [
+	{
+		"effect": "minecraft:speed",
+		"duration": 110,
+		"amplifier": 1,
+		"is_ambient": true,
+		"show_particles": false,
+		"show_icon": false
+	},
+	{
+		"effect": "minecraft:jump_boost",
+		"duration": 110,
+		"amplifier": 1,
+		"is_ambient": true,
+		"show_particles": false,
+		"show_icon": false
+	},
+	{
+		"effect": "minecraft:strength",
+		"duration": 110,
+		"amplifier": 1,
+		"is_ambient": true,
+		"show_particles": false,
+		"show_icon": false
+	},
+	{
+		"effect": "minecraft:regeneration",
+		"duration": 110,
+		"amplifier": 0,
+		"is_ambient": true,
+		"show_particles": false,
+		"show_icon": false
+	},
+	{
+		"effect": "minecraft:resistance",
+		"duration": 110,
+		"amplifier": 1,
+		"is_ambient": true,
+		"show_particles": false,
+		"show_icon": false
+	}
+	],
+	"name": "§a§l§nAmplified",
+	"description": "You have permanent speed boost 2, jump boost 2, strength 2, resistance 2 and regeneration effects."
+}

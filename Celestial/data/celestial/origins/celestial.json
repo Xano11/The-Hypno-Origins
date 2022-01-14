@@ -1,0 +1,18 @@
+{
+    "impact": 2,
+    "name": "Celestial",
+    "description": "Beings born of starlight, they are celestially attuned.",
+    "icon": "minecraft:nether_star",
+    "powers": [
+		"celestial:ephemeral",
+		"celestial:peakz_funday",
+		"celestial:solar_attunement",
+		"celestial:lunar_attunement",
+		"celestial:eclipse",
+		"celestial:syzygy",
+    "celestial:solarshields",
+    "celestial:lunar_arrow"
+    ],
+    "order": 14,
+    "unchoosable": false
+}

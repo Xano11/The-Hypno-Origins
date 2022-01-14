@@ -1,0 +1,21 @@
+{
+    "type": "origins:resource",
+    "description": "Being in the overworld for too long can cause random effects (Return to void dimension to reset)\n",
+    "hidden": false,
+    "name": "§c§l§nFatigued",
+    "min": 0,
+    "hud_render": {
+        "should_render": true,
+        "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+        "bar_index": 19,
+        "condition": {
+            "type": "origins:resource",
+            "inverted": false,
+            "comparison": ">=",
+            "resource": "voidtraveller:fatigue_resource",
+            "compare_to": 600
+        }
+    },
+    "max": 1200,
+    "start_value": 0
+}

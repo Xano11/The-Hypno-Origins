@@ -1,0 +1,34 @@
+{
+	"type": "origins:attacker_action_when_hit",
+	"entity_action": {
+		"type": "origins:and",
+		"actions": [
+			{
+			  "type": "origins:execute_command",
+			  "command": "effect give @s minecraft:levitation 10 1 true",
+			  "permission_level": 4
+			},
+			{
+			  "type": "origins:execute_command",
+			  "command": "playsound minecraft:entity.shulker.hurt_closed master @a[distance=..20] ~ ~ ~ 2 0.7",
+			  "permission_level": 4
+			}
+		]
+	},
+	"condition": {
+		"type": "origins:or",
+		"conditions": [
+			{
+				"type": "origins:resource",
+				"comparison": "==",
+				"resource": "shulker:shulk_resource_hiding",
+				"compare_to": 1
+			}
+		]
+	},
+	"cooldown": 0,
+	"hud_render": {
+		"should_render": false
+	},
+  "hidden": true
+}

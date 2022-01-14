@@ -1,0 +1,1 @@
+give @s magma_cream{display:{Name:'[{"text":"Infused Chronos","italic":false,"bold":true,"color":"gold"}]'},Enchantments:[{}]} 1

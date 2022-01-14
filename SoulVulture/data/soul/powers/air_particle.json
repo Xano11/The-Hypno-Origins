@@ -1,0 +1,13 @@
+{
+	"type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "particle minecraft:campfire_signal_smoke ~ ~ ~ .3 .9 .3 0 2",
+		"permission_level": 4
+	},
+	"interval": 10,
+	"hidden": true,
+	"condition": {
+		"type": "origins:fall_flying"
+	}
+}

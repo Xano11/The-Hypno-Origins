@@ -1,0 +1,19 @@
+{
+	"type":"origins:conditioned_attribute",
+	"modifier":{
+	   "attribute": "minecraft:generic.movement_speed",
+	   "value": 0.015,
+	   "operation": "addition"
+	},
+	"condition":
+	{
+	"type": "origins:health",
+	"comparison": "<",
+	"compare_to": 6
+	},
+	"name": "§a§l§nOH SHOOT",
+	"description": "I GOTTA RUN IM ON 3 HEARTS",
+	"tick_rate": 2
+}
+
+

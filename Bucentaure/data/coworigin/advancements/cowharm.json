@@ -1,0 +1,31 @@
+{
+    "display": {
+        "frame": "goal",
+        "icon": {
+            "item": "minecraft:milk_bucket"
+        },
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": true,
+        "title": "Bitter Flavor",
+        "background": "minecraft:milk_bucket",
+        "description": "moo"
+    },
+    "rewards": {},
+    "requirements": [
+        [
+            "harmcrit"
+        ]
+    ],
+    "criteria": {
+        "harmcrit": {
+            "trigger": "minecraft:consume_item",
+            "conditions": {
+                "item": {
+                    "item": "minecraft:milk_bucket",
+                    "nbt": "{tag:cowharm}"
+                }
+            }
+        }
+    }
+}

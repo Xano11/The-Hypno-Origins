@@ -1,0 +1,1 @@
+title @s actionbar {"text":"Playing: Blocks by C418", "color":"red"}

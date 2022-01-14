@@ -1,0 +1,12 @@
+{
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+        "item": "minecraft:bow"
+        }
+    },
+	"name": "§c§l§nUnfamiliarity",
+    "description": "You don't like using bows. You are a crossbow hardcore fan though.",
+    "hidden": false
+}

@@ -1,0 +1,11 @@
+{
+  "type": "origins:prevent_sleep",
+  "block_condition": {
+    "type": "origins:height",
+    "comparison": ">",
+    "compare_to": 7
+  },
+  "message": "You must be deeper",
+  "name": "§c§l§nHome sweet home",
+  "description": "You can only sleep at bedrock Because your used to sleeping in the mines."
+}

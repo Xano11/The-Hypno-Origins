@@ -1,0 +1,117 @@
+{
+	"name": "§a§l§nSyzygy",
+	"description": "In the end, the stars align, making you more powerful. Your fists burn, dealing increased damage. You are fireproof. You become more agile, able to leap. You are able to breath in water.",
+	"type": "origins:multiple",
+	"solar_flame": {
+		"type": "origins:action_on_hit",
+		"bientity_action": {
+			"type": "origins:target_action",
+			"action": {
+				"type": "origins:set_on_fire",
+				"duration": 4
+			}
+		},
+		"bientity_condition": {
+			"type": "origins:actor_condition",
+			"condition": {
+				"type": "origins:dimension",
+				"dimension": "minecraft:the_end"
+			}
+		},
+		"cooldown": 20
+	},
+	"solar_strength": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.attack_damage",
+			"operation": "addition",
+			"value": 4,
+			"name": "Solar Strength"
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:dimension",
+			"dimension": "minecraft:the_end"
+		}
+	},
+	"solar_resistance": {
+		"type": "origins:fire_immunity",
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:predicate",
+					"predicate": "celestial:night",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_nether",
+					"inverted": true
+				},
+				{
+					"type": "origins:dimension",
+					"dimension": "minecraft:the_end",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"lunar_leap": {
+		"type": "origins:active_self",
+		"cooldown": 100,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+			"bar_index": 1
+		},
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:add_velocity",
+					"space": "local",
+					"z": 1
+				},
+				{
+					"type": "origins:play_sound",
+					"sound": "minecraft:entity.ender_dragon.flap",
+					"pitch": 1.5
+				}
+			]
+		},
+		"condition": {
+			"type": "origins:dimension",
+			"dimension": "minecraft:the_end"
+		}
+	},
+	"lunar_swiftness": {
+		"type": "origins:conditioned_attribute",
+		"modifier": {
+			"attribute": "minecraft:generic.movement_speed",
+			"operation": "addition",
+			"value": 0.02,
+			"name": "Lunar Swiftness"
+		},
+		"tick_rate": 20,
+		"condition": {
+			"type": "origins:dimension",
+			"dimension": "minecraft:the_end"
+		}
+	},
+	"lunar_resistance": {
+		"type": "origins:stacking_status_effect",
+		"min_stacks": 0,
+		"max_stacks": 1,
+		"duration_per_stack": 40,
+		"effect": {
+			"effect": "water_breathing",
+			"is_ambient": true,
+			"show_particles": false,
+			"show_icon": false
+		},
+		"condition": {
+			"type": "origins:dimension",
+			"dimension": "minecraft:the_end"
+		}
+	}
+}

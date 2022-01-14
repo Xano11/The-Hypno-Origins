@@ -1,0 +1,17 @@
+{
+	"type": "origins:conditioned_attribute",
+    "modifier": {
+	"attribute": "minecraft:generic.movement_speed",
+	"operation": "multiply_base",
+	"value": -0.60,
+	"name": "decreased speed"
+	},
+	"tick_rate": 5,
+	"condition": {
+		"type": "origins:resource",
+		"resource": "*:dash_resource",
+		"comparison": "==",
+		"compare_to": 0
+	},
+	"hidden": true
+}

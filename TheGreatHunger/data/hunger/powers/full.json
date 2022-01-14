@@ -1,0 +1,73 @@
+{
+    "type": "origins:multiple",
+    "slow": {
+        "type": "origins:conditioned_attribute",
+        "modifier":{
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": -0.05
+        }
+    },
+    "slow_one": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": -0.01
+            },
+        "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {      
+                "type": "origins:resource",
+                "resource": "hunger:swallow_mouth_limit",
+                "comparison": "==",
+                "compare_to": 1,
+                "inverted": false
+            }
+        ]
+        }
+    },
+    "slow_two": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": -0.02
+            },
+        "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {      
+                "type": "origins:resource",
+                "resource": "hunger:swallow_mouth_limit",
+                "comparison": "==",
+                "compare_to": 2,
+                "inverted": false
+            }
+        ]
+        }
+    },
+    "slow_three": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "operation": "addition",
+            "value": -0.03
+            },
+        "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {      
+                "type": "origins:resource",
+                "resource": "hunger:swallow_mouth_limit",
+                "comparison": "==",
+                "compare_to": 3,
+                "inverted": false
+            }
+        ]
+        }
+    },
+    "name": "§c§l§nStubby Legs",
+    "description": "You move very slow, and you move even slower the more things in your mouth."
+}

@@ -1,0 +1,24 @@
+{
+    "powers": [
+		"hunger:enchantment_powers",
+		"hunger:bear_trap",
+		"hunger:swallow",
+		"hunger:xp_eater",
+		"hunger:natural_armor",
+		"hunger:enchanted_creature",
+		"hunger:strong_arms",
+		"hunger:gear_wrecker",
+		"hunger:action_callback",
+		"hunger:hunger_fast",
+		"hunger:full",
+		"hunger:curse_attacker",
+		"hunger:stubby",
+		"hunger:particles_and_noises",
+		"hunger:lovers"
+    ],
+    "icon": "minecraft:rotten_flesh",
+    "order": 20,
+    "impact": 3,
+    "name": "Great Hunger",
+    "description": "An objectively cute dinosaur thing thought to be extinct."
+}

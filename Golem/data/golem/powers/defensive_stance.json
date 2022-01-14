@@ -16,7 +16,7 @@
 		},
 		{
 		  "type": "origins:execute_command",
-		  "command": "effect give @e[distance=..7] minecraft:resistance 30 1 true",
+		  "command": "effect give @e[distance=0.2..7] minecraft:resistance 30 1 true",
 		  "permission_level": 4
 		},
 		{

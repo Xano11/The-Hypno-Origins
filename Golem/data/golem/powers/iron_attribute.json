@@ -33,7 +33,7 @@
         },
         {
             "operation": "addition",
-            "value": 8,
+            "value": 5,
             "attribute": "minecraft:generic.attack_damage",
             "name": "golem attack damage"
         },

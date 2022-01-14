@@ -33,7 +33,7 @@
 "use":
 {
     "type": "origins:active_self",
-    "cooldown": 55,
+    "cooldown": 100,
     "key": {
         "key": "key.use",
         "continuous": true

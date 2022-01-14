@@ -1,5 +1,51 @@
 {
     "type": "origins:ignore_water",
     "description": "You're a set of armor and armors don't float.",
-    "name": "§c§l§nArmor Density"
+    "name": "§c§l§nArmor Density",
+	"condition": {
+		"type": "origins:and",
+		"conditions": [
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "head",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "minecraft:turtle_helmet"
+					}
+				}
+			},
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "chest",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "fullturtlearmor:turtle_chestplate"
+					}
+				}
+			},
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "legs",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "fullturtlearmor:turtle_leggings"
+					}
+				}
+			},
+			{
+				"type": "origins:equipped_item",
+				"equipment_slot": "feet",
+				"item_condition": {
+					"type": "origins:ingredient",
+					"ingredient": {
+						"item": "fullturtlearmor:turtle_boots"
+					}
+				}
+			}
+		],
+		"inverted": true
+	}
 }

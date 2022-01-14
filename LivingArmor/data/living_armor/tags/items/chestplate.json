@@ -7,6 +7,7 @@
         "minecraft:iron_chestplate",
         "minecraft:diamond_chestplate",
         "minecraft:netherite_chestplate",
-        "minecraft:elytra"
+        "minecraft:elytra",
+		"fullturtlearmor:turtle_chestplate"
     ]
 }

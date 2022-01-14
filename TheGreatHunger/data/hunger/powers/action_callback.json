@@ -1,0 +1,66 @@
+{
+    "name": "§a§l§nCamouflaged",
+    "description": "Mobs dont notice you until you get too close.",
+    "type": "origins:action_on_callback",
+    "execute_chosen_when_orb": true,
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:height 0.65",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:width 0.8",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:motion 1",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:view_bobbing 1.5",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:step_height 1",
+                "permission_level": 4
+            },
+			{
+                "type":"origins:execute_command",
+                "command":"tag @s add hunger",
+                "permission_level": 4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"tag @s add mush_lover",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:visibility .4",
+                "permission_level": 4
+            },
+			{
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:third_person 1.5",
+                "permission_level": 4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"team add prey",
+                "permission_level": 4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"team join prey",
+                "permission_level": 4
+            }
+        ]
+    }
+}

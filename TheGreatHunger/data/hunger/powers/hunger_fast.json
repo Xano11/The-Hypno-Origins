@@ -1,0 +1,35 @@
+{
+	"type": "origins:multiple",
+	"hunger": {
+		"type": "origins:modify_exhaustion",
+		"modifier": {
+			"value": 4,
+			"operation": "multiply_total"
+		}
+	},
+	"food": {
+		"type": "origins:modify_food",
+		"food_modifier": {
+			"operation": "multiply_base",
+			"value": -0.5
+		},
+		"saturation_modifier": {
+			"operation": "multiply_base",
+			"value": -0.5
+		}
+	},
+	"corpse_eater": {
+		"type": "origins:self_action_on_kill",
+		"entity_action": {
+				"type": "origins:feed",
+				"food": 8,
+				"saturation": 0.8
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+	"name": "§c§l§nBurning Metabolism",
+	"description": "Your hunger drains 500% faster, and food barely satiates you. Hunger has driven you to consume anything you kill even your own gear."	
+}

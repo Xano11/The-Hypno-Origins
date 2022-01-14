@@ -96,7 +96,7 @@
     "modifier": {
         "name": "more dmg",
         "operation": "multiply_total",
-        "value": 0.5
+        "value": 0.2
     }
 },
 "hidden": true

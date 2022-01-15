@@ -1,21 +1,14 @@
 {
-    "type": "origins:multiple",
-    "haste": {
+    "name": "§a§l§nShovel Mouth",
+    "description": "You are adept at digging soil/sand even without tools.",
         "type": "origins:modify_break_speed",
         "modifier": {
-            "name": "Strong Arms stone break speed bonus",
-            "value": 0.06,
+            "name": "Strong Arms break speed bonus",
+            "value": 0.1,
             "operation": "addition"
+            },
+            "block_condition": {
+                "type": "origins:in_tag",
+                "tag": "hunger:shovel"
             }
-        },
-    "stone": {
-        "type": "origins:modify_harvest",
-        "allow": true,
-        "block_condition": {
-            "type": "origins:in_tag",
-            "tag": "origins:natural_stone"
-        }
-    },
-    "name": "§a§l§nShovel Mouth",
-    "description": "You are adept at digging even without tools."
 }

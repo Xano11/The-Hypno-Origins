@@ -10,15 +10,7 @@
                 "comparison": ">=",
                 "compare_to": 1,
                 "permission_level": 4,
-                "command": "execute if entity @e[distance=..6,tag=lush_lover]"
-            },
-            {
-                "type": "origins:command",
-                "inverted": false,
-                "comparison": ">=",
-                "compare_to": 1,
-                "permission_level": 4,
-                "command": "execute if entity @e[distance=1..,team=prey]"
+                "command": "execute if entity @e[distance=..3,tag=lush_lover]"
             }
         ]
     },

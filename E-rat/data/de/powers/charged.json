@@ -37,10 +37,59 @@
             },
             "interval": 342,
             "condition": {
-            "type": "origins:resource",
-            "resource": "de:charged_resource",
-            "comparison": ">=",
-            "compare_to": 1
+                "type": "origins:and",
+                "conditions": [
+                    {
+                    "type": "origins:resource",
+                    "resource": "de:charged_resource",
+                    "comparison": ">=",
+                    "compare_to": 1
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "tag": "de:charged"
+                    },
+                    "radius": 3,
+                    "shape": "cube",
+                    "comparison": ">=", 
+                    "compare_to": 5,
+                    "inverted": true
+                }
+            ]
+        }
+    },
+
+    "gain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+			"resource": "de:charged_resource",
+			"change": 1
+        },
+        "interval": 100,
+        "condition": {
+            "type": "origins:and",
+            "conditions":[
+                    {
+                        "type": "origins:resource",
+                        "resource": "de:charge_resource",
+                        "comparison": "==",
+                        "compare_to": 1400
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "tag": "de:charged"
+                    },
+                    "radius": 3,
+                    "shape": "cube",
+                    "comparison": ">=", 
+                    "compare_to": 18
+                }
+            ]
         }
     },
 

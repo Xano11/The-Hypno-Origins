@@ -1,0 +1,9 @@
+{
+    "type": "origins:modify_xp_gain",
+    "modifier": {
+        "operation": "multiply_base",
+        "value": 0.15
+    },
+    "name":"§a§l§nExp Eater",
+    "description":"You gain more experience from orbs"
+}

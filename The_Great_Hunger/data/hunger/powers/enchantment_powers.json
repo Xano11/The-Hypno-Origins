@@ -1,0 +1,5558 @@
+{
+	"type": "origins:multiple",
+	"enchant_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+			"bar_index": 18
+		},
+		"start_value": 0
+	},
+	"protection_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 4,
+		"hud_render": {
+			"should_render": false
+		},
+		"start_value": 0
+	},
+	"fire_protection_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 4,
+		"hud_render": {
+			"should_render":  false
+		},
+		"start_value": 0
+	},
+	"feather_falling_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 4,
+		"hud_render": {
+			"should_render":  false
+		},
+		"start_value": 0
+	},
+	"blast_protection_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 4,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"projectile_protection_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 4,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"respiration_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"aqua_affinity_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"thorns_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"depth_strider_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"frost_walker_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 2,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"soul_speed_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":  false
+		},
+		"start_value": 0
+	},
+	"sharpness_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 5,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"smite_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 5,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"bane_of_arthropods_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 5,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"knockback_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 2,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"fire_aspect_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 2,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"looting_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"sweeping_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"efficiency_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 5,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"silk_touch_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"unbreaking_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":  false
+		},
+		"start_value": 0
+	},
+	"fortune_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"power_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 5,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"punch_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 2,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"flame_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"infinity_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"luck_of_the_sea_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"lure_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"loyalty_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"impaling_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 5,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"riptide_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"channeling_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"multishot_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"quick_charge_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 3,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"piercing_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 4,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"mending_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 1,
+		"hud_render": {
+			"should_render":  false
+		},
+		"start_value": 0
+	},
+	"water_protection_active": {
+		"type": "origins:resource",
+		"min": 0,
+		"max": 4,
+		"hud_render": {
+			"should_render":   false
+		},
+		"start_value": 0
+	},
+	"protection_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:protection 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_protection_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"protection_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:protection 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_protection_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"protection_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:protection 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_protection_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"protection_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:protection 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_protection_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"fire_protection_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:fire_protection 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fire_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fire_protection_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"fire_protection_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:fire_protection 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fire_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fire_protection_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"fire_protection_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:fire_protection 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fire_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fire_protection_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"fire_protection_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:fire_protection 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fire_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fire_protection_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"feather_falling_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:feather_falling 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_feather_falling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_feather_falling_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"feather_falling_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:feather_falling 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_feather_falling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_feather_falling_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"feather_falling_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:feather_falling 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_feather_falling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_feather_falling_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"feather_falling_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:feather_falling 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_feather_falling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_feather_falling_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"blast_protection_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:blast_protection 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_blast_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_blast_protection_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"blast_protection_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:blast_protection 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_blast_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_blast_protection_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"blast_protection_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:blast_protection 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_blast_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_blast_protection_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"blast_protection_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:blast_protection 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_blast_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_blast_protection_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"projectile_protection_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:projectile_protection 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_projectile_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_projectile_protection_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"projectile_protection_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:projectile_protection 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_projectile_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_projectile_protection_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"projectile_protection_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:projectile_protection 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_projectile_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_projectile_protection_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"projectile_protection_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:projectile_protection 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_projectile_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_projectile_protection_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"respiration_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:respiration 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_respiration_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_respiration_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"respiration_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:respiration 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_respiration_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_respiration_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"respiration_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:respiration 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_respiration_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_respiration_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"aqua_affinity_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:aqua_affinity 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_aqua_affinity_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_aqua_affinity_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"thorns_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:thorns 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_thorns_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_thorns_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"thorns_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:thorns 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_thorns_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_thorns_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"thorns_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:thorns 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_thorns_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_thorns_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"depth_strider_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:depth_strider 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_depth_strider_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_depth_strider_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"depth_strider_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:depth_strider 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_depth_strider_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_depth_strider_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"depth_strider_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:depth_strider 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_depth_strider_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_depth_strider_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"frost_walker_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:frost_walker 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_frost_walker_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_frost_walker_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"frost_walker_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:frost_walker 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_frost_walker_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_frost_walker_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"soul_speed_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:soul_speed 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_soul_speed_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_soul_speed_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"soul_speed_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:soul_speed 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_soul_speed_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_soul_speed_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"soul_speed_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:soul_speed 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_soul_speed_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_soul_speed_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"sharpness_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:sharpness 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_sharpness_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_sharpness_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"sharpness_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:sharpness 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_sharpness_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_sharpness_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"sharpness_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:sharpness 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_sharpness_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_sharpness_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"sharpness_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:sharpness 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_sharpness_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_sharpness_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"sharpness_five": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:sharpness 5",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_sharpness_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_sharpness_active",
+					"comparison": "==",
+					"compare_to": 5,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"smite_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:smite 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_smite_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_smite_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"smite_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:smite 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_smite_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_smite_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"smite_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:smite 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_smite_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_smite_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"smite_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:smite 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_smite_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_smite_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"smite_five": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:smite 5",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_smite_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_smite_active",
+					"comparison": "==",
+					"compare_to": 5,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"bane_of_arthropods_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:bane_of_arthropods 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"bane_of_arthropods_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:bane_of_arthropods 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"bane_of_arthropods_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:bane_of_arthropods 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"bane_of_arthropods_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:bane_of_arthropods 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"bane_of_arthropods_five": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:bane_of_arthropods 5",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_bane_of_arthropods_active",
+					"comparison": "==",
+					"compare_to": 5,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"knockback_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:knockback 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_knockback_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_knockback_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"knockback_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:knockback 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_knockback_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_knockback_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"fire_aspect_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:fire_aspect 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fire_aspect_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fire_aspect_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"fire_aspect_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:fire_aspect 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fire_aspect_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fire_aspect_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"looting_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:looting 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_looting_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_looting_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"looting_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:looting 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_looting_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_looting_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"looting_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:looting 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_looting_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_looting_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"sweeping_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:sweeping 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_sweeping_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_sweeping_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"sweeping_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:sweeping 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_sweeping_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_sweeping_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"sweeping_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:sweeping 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_sweeping_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_sweeping_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"efficiency_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:efficiency 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_efficiency_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_efficiency_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"efficiency_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:efficiency 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_efficiency_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_efficiency_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"efficiency_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:efficiency 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_efficiency_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_efficiency_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"efficiency_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:efficiency 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_efficiency_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_efficiency_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"efficiency_five": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:efficiency 5",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_efficiency_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_efficiency_active",
+					"comparison": "==",
+					"compare_to": 5,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"silk_touch_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:silk_touch 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_silk_touch_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_silk_touch_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"unbreaking_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:unbreaking 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_unbreaking_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_unbreaking_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"unbreaking_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:unbreaking 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_unbreaking_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_unbreaking_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"unbreaking_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:unbreaking 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_unbreaking_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_unbreaking_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"fortune_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:fortune 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fortune_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fortune_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"fortune_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:fortune 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fortune_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fortune_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"fortune_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:fortune 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_fortune_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_fortune_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"power_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:power 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_power_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_power_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"power_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:power 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_power_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_power_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"power_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:power 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_power_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_power_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"power_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:power 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_power_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_power_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"power_five": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:power 5",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_power_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_power_active",
+					"comparison": "==",
+					"compare_to": 5,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"punch_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:punch 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_punch_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_punch_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"punch_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:punch 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_punch_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_punch_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"flame_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:flame 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_flame_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_flame_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"infinity_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:infinity 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_infinity_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_infinity_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"luck_of_the_sea_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:luck_of_the_sea 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_luck_of_the_sea_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_luck_of_the_sea_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"luck_of_the_sea_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:luck_of_the_sea 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_luck_of_the_sea_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_luck_of_the_sea_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"luck_of_the_sea_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:luck_of_the_sea 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_luck_of_the_sea_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_luck_of_the_sea_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"lure_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:lure 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_lure_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_lure_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"lure_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:lure 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_lure_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_lure_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"lure_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:lure 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_lure_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_lure_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"loyalty_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:loyalty 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_loyalty_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_loyalty_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"loyalty_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:loyalty 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_loyalty_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_loyalty_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"loyalty_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:loyalty 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_loyalty_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_loyalty_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"impaling_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:impaling 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_impaling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_impaling_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"impaling_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:impaling 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_impaling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_impaling_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"impaling_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:impaling 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_impaling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_impaling_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"impaling_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:impaling 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_impaling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_impaling_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"impaling_five": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:impaling 5",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_impaling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_impaling_active",
+					"comparison": "==",
+					"compare_to": 5,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"riptide_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:riptide 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_riptide_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_riptide_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"riptide_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:riptide 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_riptide_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_riptide_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"riptide_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:riptide 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_riptide_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_riptide_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"channeling_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:channeling 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_channeling_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_channeling_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},	
+	"multishot_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:multishot 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_multishot_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_multishot_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"quick_charge_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:quick_charge 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_quick_charge_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_quick_charge_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"quick_charge_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:quick_charge 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_quick_charge_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_quick_charge_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"quick_charge_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:quick_charge 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_quick_charge_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_quick_charge_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"piercing_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:piercing 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_piercing_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_piercing_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"piercing_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:piercing 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_piercing_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_piercing_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"piercing_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:piercing 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_piercing_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_piercing_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"piercing_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:piercing 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_piercing_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_piercing_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"mending_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s minecraft:mending 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_mending_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_mending_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"water_protection_one": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s origins:water_protection 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_water_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_water_protection_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"water_protection_two": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s origins:water_protection 2",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_water_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_water_protection_active",
+					"comparison": "==",
+					"compare_to": 2,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"water_protection_three": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s origins:water_protection 3",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_water_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_water_protection_active",
+					"comparison": "==",
+					"compare_to": 3,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"water_protection_four": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "enchant @s origins:water_protection 4",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_water_protection_active",
+					"operation": "set",
+					"change": 0
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "*:*_water_protection_active",
+					"comparison": "==",
+					"compare_to": 4,
+					"inverted": false
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				}
+			]
+		}
+	},
+	"spit_out": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "item modify entity @s weapon.mainhand hunger:lore",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "item modify entity @s weapon.mainhand hunger:slobber",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.llama.spit master @a[distance=..6] ~ ~ ~ 100 0.8 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:block.enchantment_table.use master @a[distance=..6] ~ ~ ~ 100 0.5 1",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:add_xp",
+					"levels": -3
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "*:*_enchant_active",
+					"operation": "add",
+					"change": -1
+				}
+			]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.secondary_active",
+			"continuous": false
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:equipped_item",
+					"equipment_slot": "mainhand",
+					"item_condition": {
+						"type": "origins:ingredient",
+						"ingredient": {
+							"tag": "hunger:weapons"
+						}
+					}
+				},
+				{
+					"type": "origins:xp_levels",
+					"comparison": ">=",
+					"compare_to": 3
+				},
+				{
+					"type": "origins:resource",
+					"resource": "*:*_enchant_active",
+					"comparison": "==",
+					"compare_to": 1,
+					"inverted": false
+				}
+			]
+		}
+	},
+	"enchant_check": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:equipped_item",
+						"equipment_slot": "mainhand",
+						"item_condition": {
+							"type": "origins:ingredient",
+							"ingredient": {
+								"tag": "hunger:weapons"
+							}
+						}
+					},
+					{
+						"type": "origins:equipped_item",
+						"equipment_slot": "mainhand",
+						"item_condition": {
+							"type": "origins:nbt",
+							"nbt": "{Enchantments:[{}]}}}"
+						}
+					},
+					{
+                        "type": "origins:sneaking",
+                        "inverted": true
+                    }
+				]
+			},
+			"if_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"permission_level": 4,
+						"command": "function hunger:check"
+					}
+				]
+			}
+		},
+		"cooldown": 20,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": false
+		}
+	},
+	"enchant_monch": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:equipped_item",
+						"equipment_slot": "mainhand",
+						"item_condition": {
+							"type": "origins:ingredient",
+							"ingredient": {
+								"tag": "hunger:weapons"
+							}
+						}
+					},
+					{
+						"type": "origins:equipped_item",
+						"equipment_slot": "mainhand",
+						"item_condition": {
+							"type": "origins:nbt",
+							"nbt": "{Enchantments:[{}]}}}"
+						}
+					},
+					{
+                        "type": "origins:sneaking",
+                        "inverted": true
+                    }
+				]
+			},
+			"if_action": {
+				"type": "origins:delay",
+				"ticks": 1,
+				"action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:equipped_item_action",
+						"equipment_slot": "mainhand",
+						"action": {
+							"type": "origins:damage",
+							"amount": 100,
+							"ignore_unbreaking": false
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "item modify entity @s weapon.mainhand hunger:clean",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "item modify entity @s weapon.mainhand hunger:grindstone",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "item modify entity @s weapon.mainhand hunger:weight",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "playsound minecraft:entity.generic.eat master @a[distance=..6] ~ ~ ~ 100 0.5 1",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:feed",
+						"food": 4,
+						"saturation": 0.4
+					},
+					{
+						"type": "origins:change_resource",
+						"resource": "*:*_enchant_active",
+						"operation": "add",
+						"change": 1
+					}
+				]
+				}
+			}
+		},
+		"cooldown": 30,
+		"hud_render": {
+			"should_render": true,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_points_01.png",
+		    "bar_index": 22
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": false
+		}
+	},
+	"normal_monch": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:and",
+				"conditions": [
+					{
+						"type": "origins:equipped_item",
+						"equipment_slot": "mainhand",
+						"item_condition": {
+							"type": "origins:ingredient",
+							"ingredient": {
+								"tag": "hunger:weapons"
+							}
+						}
+					},
+					{
+						"type": "origins:sneaking"
+					}
+				]
+			},
+			"if_action": {
+				"type": "origins:delay",
+				"ticks": 1,
+				"action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "item modify entity @s weapon.mainhand hunger:clean",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:equipped_item_action",
+						"equipment_slot": "mainhand",
+						"action": {
+							"type": "origins:damage",
+							"amount": 100,
+							"ignore_unbreaking": false
+						}
+					},
+					{
+						"type": "origins:execute_command",
+						"command": "playsound minecraft:entity.generic.eat master @a[distance=..6] ~ ~ ~ 100 0.5 1",
+						"permission_level": 4
+					},
+					{
+						"type": "origins:feed",
+						"food": 4,
+						"saturation": 0.4
+					}
+				]
+				}
+			}
+		},
+		"cooldown": 30,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.origins.primary_active",
+			"continuous": false
+		}
+	},
+	"name": "§a§l§nBetter Grindstone",
+	"description": "You can consume the enchantments off of gear with your primary and store them, use your secondary to apply the enchantments at the cost of 3 levels. (shift + primary to take a bite of gear for food without touching the enchants)"
+}

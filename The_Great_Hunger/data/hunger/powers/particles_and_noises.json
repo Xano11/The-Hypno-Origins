@@ -1,0 +1,127 @@
+{
+	"type": "origins:multiple",
+	"bark":{
+		"type": "origins:active_self",
+		"entity_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "playsound minecraft:entity.wolf.ambient master @a[distance=..6] ~ ~ ~ 100 0.7 1",
+						"permission_level": 4
+					}
+				]
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.spectatorOutlines"
+			}
+		},
+	"bark_hell":{
+		"type": "origins:active_self",
+		"entity_action": {
+				"type": "origins:and",
+				"actions": [
+					{
+						"type": "origins:execute_command",
+						"command": "playsound minecraft:entity.wolf.howl master @a[distance=..6] ~ ~ ~ 100 0.5 1",
+						"permission_level": 4
+					}
+				]
+		},
+		"cooldown": 200,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.hotbar.9",
+			"continuous": false
+			}
+		},
+	"particles": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:choice",
+			"actions": [{
+					"element": {
+						"type": "origins:execute_command",
+                "command": "particle minecraft:falling_dripstone_water ~ ~.6 ~ .5 .5 .5 100 5 normal",
+                "permission_level": 4
+					},
+					"weight": 10
+				},
+				{
+					"element": {
+						"type": "origins:execute_command",
+						"command": "particle minecraft:enchant ~ ~ ~ 0.1 0.1 0.1 10 10 normal",
+						"permission_level": 4
+					},
+					"weight": 5
+				}
+			]
+		},
+		"interval": 100
+	},
+	"ambient_noise": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+            "type": "origins:chance",
+            "action":
+             {    
+			"type": "origins:play_sound",
+			"sound": "minecraft:entity.wolf.pant",
+			"volume": 10,
+			"pitch": 0.5
+		},
+        "chance": 0.1
+	    },
+        "interval": 100
+    },
+    "bite": {
+        "type": "origins:active_self",
+         "entity_action": {
+            "type": "origins:chance",
+            "action":
+            {    
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.generic.eat master @a[distance=..6] ~ ~ ~ 100 0.6 1",
+                "permission_level": 4
+            },
+            "chance": 0.2
+          },
+          "key": {
+            "key": "key.attack",
+            "continuous": false
+          },
+          "cooldown": 10,
+          "hud_render": {
+            "should_render": false
+         }
+      },
+	"ouch": {
+		"type": "origins:self_action_when_hit",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "particle minecraft:enchant ~ ~ ~ 0.1 0.1 0.1 10 100 normal",
+					"permission_level": 4
+				},
+				{
+					"type": "origins:execute_command",
+					"command": "playsound minecraft:entity.wolf.growl master @a[distance=..6] ~ ~ ~ 100 0.5 1",
+					"permission_level": 4
+				}
+			]
+		},
+		"cooldown": 140,
+		"hud_render": {
+			"should_render": false
+		}
+	},
+    "hidden": true
+}

@@ -1,9 +1,0 @@
-{
-    "function": "minecraft:set_lore",
-    "lore": [
-      {
-        "text": "This smell isn't gonna wash out...",
-        "italic": true
-      }
-    ]
-}

@@ -5517,11 +5517,6 @@
 				"type": "origins:and",
 				"actions": [
 					{
-						"type": "origins:execute_command",
-						"command": "item modify entity @s weapon.mainhand hunger:clean",
-						"permission_level": 4
-					},
-					{
 						"type": "origins:equipped_item_action",
 						"equipment_slot": "mainhand",
 						"action": {

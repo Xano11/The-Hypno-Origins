@@ -3,16 +3,6 @@
     "hitbox":{
         "type": "origins:prevent_entity_collision"
     },
-    "blind": {
-        "type": "origins:phasing",
-        "blacklist": false,
-        "render_type": "blindness",
-        "view_distance": 4,
-        "block_condition": {
-            "type": "origins:block",
-            "block": "minecraft:beacon"
-        }
-    },
 	"invis": {
         "type": "origins:invisibility",
         "render_armor": false
@@ -119,21 +109,12 @@
     },
     "escape": {
         "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
+        "entity_action": 
             {
                 "type": "origins:execute_command",
                 "command": "power remove @s hunger:stomach",
                 "permission_level": 4
             },
-            {
-                "type": "origins:execute_command",
-                "command": "resource change @p[distance=1..] hunger:swallow_mouth_limit -1",
-                "permission_level": 4
-            }
-            ]
-        },
         "condition": {
             "type": "origins:and",
             "conditions": [
@@ -155,7 +136,7 @@
         "entity_action": 
             {
                 "type": "origins:execute_command",
-                "command": "team join prey @s[type=!minecraft:player]",
+                "command": "team join prey",
                 "permission_level": 4
             },
         "condition": {

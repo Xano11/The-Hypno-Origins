@@ -103,6 +103,35 @@
             "compare_to": 4
         }
     },
+	
+    "perfect_gain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+			"resource": "de:charge_resource",
+			"change": 20
+        },
+        "interval": 10,
+        "condition": {
+            "type": "origins:or",
+            "conditions":[
+                    {
+                        "type": "origins:in_rain"
+                    },
+                    {
+                        "type": "origins:block_in_radius",
+                        "block_condition": {
+                            "type": "origins:in_tag",
+                            "tag": "de:charged"
+                    },
+                    "radius": 3,
+                    "shape": "cube",
+                    "comparison": ">=", 
+                    "compare_to": 18
+                }
+            ]
+        }
+    },
 
     "drain2": {
         "type": "origins:action_over_time",

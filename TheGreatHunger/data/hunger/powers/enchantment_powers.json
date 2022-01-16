@@ -5289,12 +5289,12 @@
 				},
 				{
 					"type": "origins:execute_command",
-					"command": "playsound minecraft:entity.llama.spit master @a[distance=..6] ~ ~ ~ 100 0.8 1",
+					"command": "playsound minecraft:entity.llama.spit ambient @a[distance=..6] ~ ~ ~ 100 0.8",
 					"permission_level": 4
 				},
 				{
 					"type": "origins:execute_command",
-					"command": "playsound minecraft:block.enchantment_table.use master @a[distance=..6] ~ ~ ~ 100 0.5 1",
+					"command": "playsound minecraft:block.enchantment_table.use ambient @a[distance=..6] ~ ~ ~ 100 0.5",
 					"permission_level": 4
 				},
 				{
@@ -5459,7 +5459,7 @@
 					},
 					{
 						"type": "origins:execute_command",
-						"command": "playsound minecraft:entity.generic.eat master @a[distance=..6] ~ ~ ~ 100 0.5 1",
+						"command": "playsound minecraft:entity.generic.eat ambient @a[distance=..6] ~ ~ ~ 100 0.5",
 						"permission_level": 4
 					},
 					{
@@ -5532,7 +5532,7 @@
 					},
 					{
 						"type": "origins:execute_command",
-						"command": "playsound minecraft:entity.generic.eat master @a[distance=..6] ~ ~ ~ 100 0.5 1",
+						"command": "playsound minecraft:entity.generic.eat ambient @a[distance=..6] ~ ~ ~ 100 0.5",
 						"permission_level": 4
 					},
 					{

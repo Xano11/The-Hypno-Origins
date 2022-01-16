@@ -588,30 +588,6 @@
 			"value": -0.01
 		}
 	},
-	"magic_1": {
-		"type": "origins:modify_damage_taken",
-		"damage_condition": {
-			"type": "origins:name",
-			"name": "magic"
-		},
-		"modifier": {
-			"name": "Protection",
-			"operation": "multiply_total",
-			"value": -0.5
-		}
-	},
-	"magic_2": {
-		"type": "origins:modify_damage_taken",
-		"damage_condition": {
-			"type": "origins:name",
-			"name": "magic.player"
-		},
-		"modifier": {
-			"name": "Protection",
-			"operation": "multiply_total",
-			"value": -0.5
-		}
-	},
 	"name": "§a§l§nMagic Eater",
-	"description": "You take less damage from magic and enchanted weapons."
+	"description": "You take less damage from enchanted weapons."
 }

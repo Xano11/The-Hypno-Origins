@@ -1,0 +1,6 @@
+{
+    "operation": "multiply_total",
+    "value": -0.35,
+    "attribute": "minecraft:generic.attack_speed",
+    "name": "golem attack speed"
+}

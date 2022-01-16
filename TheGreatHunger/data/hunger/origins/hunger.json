@@ -14,7 +14,8 @@
 		"hunger:curse_attacker",
 		"hunger:stubby",
 		"hunger:particles_and_noises",
-		"hunger:lovers"
+		"hunger:lovers",
+		"hunger:atk"
     ],
     "icon": "minecraft:rotten_flesh",
     "order": 20,

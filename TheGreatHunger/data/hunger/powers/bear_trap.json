@@ -30,7 +30,7 @@
             "compare_to": 0
         }
     },
-	"invis": {
+    "invis": {
         "type": "origins:stacking_status_effect",
         "min_stacks": -1,
         "max_stacks": 1,
@@ -48,27 +48,6 @@
             "comparison": "==",
             "compare_to": 0
         }
-    },
-    "fang": {
-        "type":"origins:modify_damage_taken",
-        "modifier":{
-          "value": -1.00,
-          "operation":"multiply_total"
-        },
-          "damage_condition":{
-            "type":"origins:and",
-            "conditions":[
-              {
-                  "type": "origins:name",
-                  "name": "magic"
-              },
-              {
-                  "type": "origins:amount",
-                  "comparison": "==",
-                  "compare_to": 6
-              }
-            ]
-          }
     },
     "no_use": {
         "type": "origins:prevent_item_use",

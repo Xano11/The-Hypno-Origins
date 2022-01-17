@@ -17,7 +17,8 @@
 		"de:instincts",
 		"extraorigins:jockey",
 		"origins:like_air",
-		"de:credits"
+		"de:credits",
+		"de:berry_dmg"
 	],
 	"icon": {
 		"item": "minecraft:comparator",

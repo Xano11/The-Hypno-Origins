@@ -14,7 +14,9 @@
 		"soul:resource",
 		"soul:extra_resource",
 		"soul:pickup",
-		"soul:pocketfeed"
+		"soul:pocketfeed",
+		"soul:prey",
+		"soul:attackspeed"
 	],
 	"icon": "minecraft:soul_sand",
 	"order": 10,

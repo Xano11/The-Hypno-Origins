@@ -1,0 +1,35 @@
+{
+    "type":"origins:multiple",
+
+    "give_effect":{
+    "type": "origins:target_action_on_hit",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+        {
+        "type": "origins:execute_command",
+        "command": "power grant @s soul:prey_effects"
+        },
+        {
+            "type": "origins:execute_command",
+            "command": "power remove @e[distance=0.1..] soul:prey_effects"
+        }
+    ]
+    },
+    "bientity_condition": {
+        "type": "origins:target_condition",
+        "condition": {
+        "type": "origins:power",
+        "power": "soul:prey_effects",
+        "inverted": true
+    }
+    },
+    "cooldown": 1,
+    "hud_render": {
+        "should_render": false,
+        "bar_index": 5
+    }
+    },
+    "name": "§a§l§nPreybird",
+    "description": "By attacking a mob, you will stack consecutively stacks of prey. Once they reach 6, they will glow and take more damage on their next hit. Attacking another entity or waiting too long will remove the prey stacks."
+}

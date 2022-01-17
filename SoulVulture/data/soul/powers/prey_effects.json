@@ -1,0 +1,120 @@
+{
+    "type":"origins:multiple",
+
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": -1,
+        "max": 7,
+        "start_value": 0,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+            "bar_index": 7
+        },
+        "max_action": {
+		"type": "origins:delay",
+		"action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s soul:prey_effects"
+        },
+        "ticks": 1
+    },
+    "min_action": {
+		"type": "origins:delay",
+		"action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s soul:prey_effects"
+        },
+        "ticks": 1
+    }    
+},
+
+"particles":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "particle minecraft:soul_fire_flame ~ ~1 ~ 0.5 0.5 0.5 0.1 20",
+		"permission_level": 4
+	},
+    "interval": 30,
+    "condition":
+    {
+        "type": "origins:resource",
+        "resource": "soul:prey_effects_resource",
+        "comparison": "==",
+        "compare_to": 6
+    }
+},
+
+"remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "soul:prey_effects_resource",
+        "change": -1
+    },
+    "interval": 60,
+    "condition":
+    {
+        "type": "origins:resource",
+        "resource": "soul:prey_effects_resource",
+        "comparison": "<",
+        "compare_to": 6
+    }
+},
+
+
+"gain_resource":{
+    "type": "origins:self_action_when_hit",
+    "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "soul:prey_effects_resource",
+        "change": 1
+    },
+    "damage_condition": {
+        "type": "origins:amount",
+        "comparison": ">=",
+        "compare_to": 8.0
+    },
+    "cooldown": 1
+},
+"more_dmg":
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "name": "more dmg",
+        "operation": "addition",
+        "value": 15
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "soul:prey_effects_resource",
+                "comparison": "==",
+                "compare_to": 6
+            }
+        ]
+    }
+},
+"glow":
+{
+    "type": "origins:self_glow",
+    "use_teams": false,
+    "red": 0,
+    "green": 0.6,
+    "blue": 0.8,
+    "bientity_condition": {
+        "type": "origins:actor_condition",
+        "condition": {
+            "type": "origins:origin",
+            "origin": "soul:soul_vulture",
+            "layer": "origins:origin"
+        }
+    }
+},
+"hidden": true
+}

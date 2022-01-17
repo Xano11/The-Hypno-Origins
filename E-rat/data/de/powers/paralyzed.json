@@ -1,47 +1,21 @@
 {
     "type": "origins:multiple",
-    "no_move": {
-		"type": "origins:attribute",
-		"modifier": {
-			"name": "Max health increase",
-			"attribute": "minecraft:generic.movement_speed",
-			"value": -0.8,
-			"operation": "multiply_total"
-		}
-	},
 
-	"no_jump": {
-		"type": "origins:modify_jump",
-		"modifier": {
-			"operation": "multiply_total",
-			"value": -1
-		}
-	},
-
-	"no_attack": {
-		"type": "origins:modify_damage_dealt",
-		"modifier": {
-			"operation": "multiply_total",
-			"value": -0.6
-		}
-	},
-
-    "particles": {
-        "type": "origins:particle",
-		"particle": "minecraft:electric_spark",
-		"frequency": 32
-	},
 
     "resource": {
 		"type": "origins:resource",
 		"min": 0,
-		"max": 60,
-		"start_value": 60,
+		"max": 400,
+		"start_value": 400,
 		"hud_render": {
 		"should_render": true,
-		"sprite_location": "origins:textures/gui/resource_bar.png",
-		"bar_index": 2
-		}
+		"sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_01.png",
+		"bar_index": 0
+		},
+		"min_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s de:paralyzed"
+        }
 	},
 
 	"drain": {
@@ -53,38 +27,15 @@
 		},
 		"interval": 1
 	},
-	"damage":
+	"gibe":
 	{
-		"type": "origins:action_over_time",
-		"entity_action": {
-			"type": "origins:damage",
-			"amount": 2,
-			"source": {
-				"name": "magic",
-				"bypasses_armor": true,
-				"unblockable": true
-			}
-		},
-		"interval": 10,
-		"condition": {
-			"type": "origins:moving"
-		}
-	},
-	"remove": {
         "type": "origins:action_over_time",
-		"entity_action": {
+        "entity_action": {
             "type": "origins:execute_command",
-            "command": "power remove @e[limit=1,sort=nearest] de:paralyzed",
-            "permission_level": 4
-		},
-		"interval": 1,
-        "condition": {
-        "type": "origins:resource",
-        "resource": "de:paralyzed_resource",
-        "comparison": "==",
-        "compare_to": 0
-        }
-	},
+            "command": "power grant @s de:paralyzed_effects"
+        },
+        "interval": 60
+    },
     "name": "§c§l§nParalyzed",
 	"description": "Shocking, Your frozen in place"
 }

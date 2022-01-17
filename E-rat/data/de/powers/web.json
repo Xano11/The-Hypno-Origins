@@ -16,7 +16,7 @@
                         "actions": [
                             {
                                 "type": "origins:execute_command",
-                                "command": "power grant @e[limit=1,sort=nearest] de:paralyzed",
+                                "command": "power grant @e[limit=1,sort=nearest] de:paralyzed_effects",
                                 "permission_level": 4
                             },
                             {

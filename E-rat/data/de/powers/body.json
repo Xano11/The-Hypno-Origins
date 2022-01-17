@@ -41,7 +41,7 @@
     "particles": {
         "type": "origins:particle",
 		"particle": "minecraft:electric_spark",
-		"frequency": 16
+		"frequency": 5
 	},
 
     "scamper": {

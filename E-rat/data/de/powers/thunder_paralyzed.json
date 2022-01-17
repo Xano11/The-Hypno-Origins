@@ -8,7 +8,7 @@
         "actions": [
         {
     		"type": "origins:damage",
-    		"amount": 15,
+    		"amount": 1,
     		"source": {
             "name": "lightningBolt",
             "bypasses_armor": false,
@@ -80,8 +80,8 @@
     "resource": {
 		"type": "origins:resource",
 		"min": 0,
-		"max": 30,
-		"start_value": 30,
+		"max": 60,
+		"start_value": 60,
 		"hud_render": {
 		"should_render": true,
 		"sprite_location": "origins:textures/gui/resource_bar.png",

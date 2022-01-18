@@ -27,6 +27,21 @@
 		},
 		"interval": 1
 	},
+	"drain_water": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "origins:change_resource",
+			"resource": "de:paralyzed_resource",
+			"change": -3
+		},
+		"condition": {
+			"type": "origins:fluid_height",
+			"fluid": "minecraft:water",
+			"comparison": ">",
+			"compare_to": 0
+		},
+		"interval": 1
+	},
 	"gibe":
 	{
         "type": "origins:action_over_time",

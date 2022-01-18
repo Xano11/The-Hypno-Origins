@@ -1,6 +1,6 @@
 {
 	"type": "origins:action_over_time",
-	"interval": 6000,
+	"interval": 600,
 	"entity_action": {
 		"type": "origins:and",
 		"actions": [
@@ -8,11 +8,6 @@
 				"type": "origins:change_resource",
 				"resource": "sunbird:reborn_resource",
 				"change": -1
-			},
-			{
-				"type": "origins:execute_command",
-				"permission_level": 4,
-				"command": "particle minecraft:happy_villager ~ ~1 ~ 0.375 0.375 0.375 1 5000 normal"
 			}
 		]
 	},

@@ -11,7 +11,7 @@
 			{
 				"type": "origins:change_resource",
 				"resource": "sunbird:reborn_resource",
-				"change": 1
+				"change": 100
 			},
 			{
 				"type": "origins:heal",
@@ -55,11 +55,11 @@
 		]
 	},
 	"condition": {
-		"type": "origins:resource",
-		"resource": "sunbird:reborn_resource",
-		"comparison": "<",
-		"compare_to": 1
-	},
+        "type": "origins:command",
+        "command": "execute if entity @s[tag=adult]",
+        "comparison": "==",
+        "compare_to": 1
+    },
 	"name": "§a§l§nRebirth",
 	"description": "You are able of return from your ashes. When you die in Full form you reborn as a baby instead of dying, but at the cost of losing your wings and becoming more fragile."
 }

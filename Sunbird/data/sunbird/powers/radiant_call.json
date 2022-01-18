@@ -11,13 +11,27 @@
 			{
 				"type": "origins:execute_command",
 				"permission_level": 4,
-				"command": "particle minecraft:happy_villager ~ ~1 ~ 6 3 6 0 1000 normal"
+				"command": "particle minecraft:flame ~ ~1 ~ 4 2 4 0 1000 normal"
 			},
 			{
-				"type": "origins:play_sound",
-				"sound": "minecraft:entity.player.levelup",
-				"volume": 2,
-				"pitch": 1
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "particle minecraft:ash ~ ~1 ~ 4 2 4 0 1000 normal"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "particle minecraft:falling_lava ~ ~1 ~ 4 2 4 0 1000 normal"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "particle minecraft:smoke ~ ~1 ~ 4 2 4 0 1000 normal"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "playsound minecraft:entity.parrot.imitate.blaze player @a[distance=..12] ~ ~ ~ 3 1"
 			}
 		]
 	},

@@ -3,7 +3,7 @@
 	"entity_action": {
 		"type": "origins:change_resource",
 		"resource": "sunbird:reborn_resource",
-		"change": -1
+		"change": -100
 	},
 	"hidden": true
 }

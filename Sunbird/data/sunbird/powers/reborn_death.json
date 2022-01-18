@@ -1,13 +1,13 @@
 {
 	"type": "origins:action_over_time",
-	"interval": 10,
+	"interval": 5,
 	"entity_action": {
 		"type": "origins:and",
 		"actions": [
 			{
 				"type": "origins:change_resource",
 				"resource": "sunbird:reborn_resource",
-				"change": -1
+				"change": -100
 			}
 		]
 	},

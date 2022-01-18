@@ -6,7 +6,7 @@
             {
         "type": "origins:damage",
         
-        "amount": 7,
+        "amount": 5,
         "source": {
             "name": "onFire",
             "bypasses_armor": true,

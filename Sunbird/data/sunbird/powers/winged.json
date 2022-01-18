@@ -1,12 +1,6 @@
 {
 	"type": "origins:elytra_flight",
 	"render_elytra": true,
-	"condition": {
-		"type": "origins:command",
-		"command": "execute if entity @s[tag=adult]",
-		"comparison": "==",
-		"compare_to": 1
-	},
 	"name": "§a§l§nWinged",
 	"description": "When on Full form you have wings, allowing you to fly freely."
 }

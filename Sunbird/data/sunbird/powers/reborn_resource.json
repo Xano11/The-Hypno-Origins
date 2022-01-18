@@ -46,6 +46,11 @@
 				"type": "origins:execute_command",
 				"permission_level": 4,
 				"command": "tag @s remove baby"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "power grant @s sunbird:winged"
 			}
 		]
 	},
@@ -71,6 +76,11 @@
 				"type": "origins:execute_command",
 				"permission_level": 4,
 				"command": "tag @s add baby"
+			},
+			{
+				"type": "origins:execute_command",
+				"permission_level": 4,
+				"command": "power remove @s sunbird:winged"
 			}
 		]
 	},

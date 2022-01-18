@@ -19,8 +19,8 @@
 				"power": "sunbird:gliding_toggle"
 			},
 			{
-				"type": "origins:resource",
-				"resource": "sunbird:reborn_resource",
+				"type": "origins:command",
+				"command": "execute if entity @s[tag=baby]",
 				"comparison": "==",
 				"compare_to": 1
 			}

@@ -102,6 +102,16 @@
       "value": 4
     }
 },
+"more_attack_speed":
+{
+
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "multiply_total",
+      "value": 0.5
+    }
+},
 "more_jump":
 {
     "type": "origins:modify_jump",

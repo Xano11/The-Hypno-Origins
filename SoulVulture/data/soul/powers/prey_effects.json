@@ -8,8 +8,7 @@
         "max": 7,
         "start_value": 0,
         "hud_render": {
-            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
-            "bar_index": 7
+            "should_render": false
         },
         "max_action": {
 		"type": "origins:delay",
@@ -55,13 +54,13 @@
         "resource": "soul:prey_effects_resource",
         "change": -1
     },
-    "interval": 60,
+    "interval": 100,
     "condition":
     {
         "type": "origins:resource",
         "resource": "soul:prey_effects_resource",
         "comparison": "<",
-        "compare_to": 6
+        "compare_to": 1
     }
 },
 
@@ -69,9 +68,13 @@
 "gain_resource":{
     "type": "origins:self_action_when_hit",
     "entity_action": {
+        "type": "origins:delay",
+		"action": {
         "type": "origins:change_resource",
         "resource": "soul:prey_effects_resource",
         "change": 1
+    },
+    "ticks": 1
     },
     "damage_condition": {
         "type": "origins:amount",
@@ -96,7 +99,7 @@
                 "resource": "soul:prey_effects_resource",
                 "comparison": "==",
                 "compare_to": 6
-            }
+            }           
         ]
     }
 },

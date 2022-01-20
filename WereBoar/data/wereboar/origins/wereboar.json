@@ -24,7 +24,8 @@
 		"wereboar:remove_effects",
 		"wereboar:overtime",
 		"wereboar:leap",
-		"wereboar:leap_resource"
+		"wereboar:leap_resource",
+		"wereboar:transform_effects"
 	],
 	"icon": "minecraft:golden_axe",
 	"order": 1,

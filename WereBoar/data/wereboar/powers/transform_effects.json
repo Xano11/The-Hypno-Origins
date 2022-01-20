@@ -1,0 +1,111 @@
+{
+  "type": "origins:multiple",
+  
+
+  "health":{
+
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.max_health",
+      "operation": "addition",
+      "value": 6
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "wereboar:resource",
+        "comparison": ">",
+        "compare_to": 0
+    }
+  },
+  "attack_speed":{
+
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_speed",
+      "operation": "addition",
+      "value": 0.3
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "wereboar:resource",
+        "comparison": ">",
+        "compare_to": 0
+    }
+  },
+  "mining_speed":{
+      "type": "origins:modify_break_speed",
+      "modifier": {
+          "operation": "multiply_base",
+          "value": 0.5
+      },
+      "condition": {
+        "type": "origins:resource",
+        "resource": "wereboar:resource",
+        "comparison": ">",
+        "compare_to": 0
+    }
+  },
+  "damage":{
+
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+      "attribute": "minecraft:generic.attack_damage",
+      "operation": "addition",
+      "value": 5
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "wereboar:resource",
+        "comparison": ">",
+        "compare_to": 0
+    }
+  },
+  "gain_more_resource": 
+    {
+    "type": "origins:action_over_time",
+	  "entity_action": {
+        "type": "origins:change_resource",
+        "resource": "wereboar:leap_resource_resource",
+        "change": 5
+      },
+    "interval": 5,
+    "condition": {
+      "type": "origins:resource",
+      "resource": "wereboar:resource",
+      "comparison": ">",
+      "compare_to": 0
+    }
+    },
+  "bloodlust": 
+  {
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+        {
+            "type": "origins:execute_command",
+                "command": "effect give @s minecraft:absorption 30 0 false",
+                "permission_level": 4
+        },
+        {
+            "type": "origins:execute_command",
+                "command": "effect give @s minecraft:regeneration 15 1 false",
+                "permission_level": 4
+        },
+        {
+            "type": "origins:execute_command",
+                "command": "execute at @s run particle minecraft:dust 3 0 0 1.5 ~ ~1 ~ 0.25 0 0.25 1 100 force",
+                "permission_level": 4
+        }
+    ]
+},
+"condition": {
+  "type": "origins:resource",
+  "resource": "wereboar:resource",
+  "comparison": ">",
+  "compare_to": 0
+},
+"cooldown": 1
+},
+  "hidden": true
+}

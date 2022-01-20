@@ -1,110 +1,259 @@
 {
-  "type": "origins:multiple",
-  
-  "health":{
+    "type":"origins:multiple",
 
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-      "attribute": "minecraft:generic.max_health",
-      "operation": "addition",
-      "value": 6
-    },
-    "condition": {
-        "type": "origins:resource",
-        "resource": "wereboar:resource",
-        "comparison": ">",
-        "compare_to": 0
-    }
+"resource":
+{
+  "type": "origins:resource",
+  "min": 0,
+  "max": 15,
+  "start_value": 0,
+  "hud_render": {
+    "should_render": true,
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png",
+    "bar_index": 4
   },
-  "attack_speed":{
+  "min_action": {
+    "type": "origins:and",
+    "actions": [{
+    "type": "origins:execute_command",
+    "command": "resource set @s wereboar:berserk_resource 0"
+            }
+        ]
+    }
+},
+"lose_resource":
+{
+  "type": "origins:resource",
+  "min": 0,
+  "max": 100,
+  "start_value": 100,
+  "hud_render": {
+      "should_render": false
+  },
+  "min_action": {
+    "type": "origins:and",
+    "actions": [
+        {
+    "type": "origins:execute_command",
+    "command": "resource set @s wereboar:berserk_resource 0"
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "wereboar:berserk_lose_resource",
+                "change": 100
+            }
+        ]
+    }
+},
+  "berserk_up":
+  {
+    "type": "origins:self_action_on_hit",
+    "entity_action":  {
+        "type": "origins:change_resource",
+        "resource": "wereboar:berserk_resource",
+        "change": 1
+    },
+    "damage_condition": {
+        "type": "origins:amount",
+        "comparison": ">=",
+        "compare_to": 10.0
+    },
+    "cooldown": 1
+    },
+    "berserk_keepup":
+    {
+      "type": "origins:self_action_on_hit",
+      "entity_action":  {
+          "type": "origins:change_resource",
+          "resource": "wereboar:berserk_lose_resource",
+          "change": 100
+      },
+      "damage_condition": {
+          "type": "origins:amount",
+          "comparison": ">=",
+          "compare_to": 10.0
+      },
+      "cooldown": 1
+      },
+      "overtime_lose":
+        {
+        "type": "origins:action_over_time",
+        "interval": 1,
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "wereboar:berserk_lose_resource",
+            "change": -1
+        },
+        "hidden": true
+    },
+    "attack_speed1":{
 
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-      "attribute": "minecraft:generic.attack_speed",
-      "operation": "addition",
-      "value": 0.3
-    },
-    "condition": {
-        "type": "origins:resource",
-        "resource": "wereboar:resource",
-        "comparison": ">",
-        "compare_to": 0
-    }
-  },
-  "mining_speed":{
-      "type": "origins:modify_break_speed",
-      "modifier": {
-          "operation": "multiply_base",
-          "value": 0.5
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_speed",
+          "operation": "addition",
+          "value": 0.1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": ">=",
+            "compare_to": 3
+        }
+      },
+      "damage1":{
+    
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_damage",
+          "operation": "addition",
+          "value": 1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": ">=",
+            "compare_to": 3
+        }
+      },
+      "attack_speed2":{
+
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_speed",
+          "operation": "addition",
+          "value": 0.1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": ">=",
+            "compare_to": 6
+        }
+      },
+      "damage2":{
+    
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_damage",
+          "operation": "addition",
+          "value": 1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": ">=",
+            "compare_to": 6
+        }
+      },
+      "attack_speed3":{
+
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_speed",
+          "operation": "addition",
+          "value": 0.1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": ">=",
+            "compare_to": 9
+        }
+      },
+      "damage3":{
+    
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_damage",
+          "operation": "addition",
+          "value": 1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": ">=",
+            "compare_to": 9
+        }
+      },
+      "attack_speed4":{
+
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_speed",
+          "operation": "addition",
+          "value": 0.1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": ">=",
+            "compare_to": 12
+        }
+      },
+      "damage4":{
+    
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_damage",
+          "operation": "addition",
+          "value": 1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": ">=",
+            "compare_to": 12
+        }
+      },
+      "attack_speed5":{
+
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_speed",
+          "operation": "addition",
+          "value": 0.1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": "==",
+            "compare_to": 15
+        }
+      },
+      "damage5":{
+    
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+          "attribute": "minecraft:generic.attack_damage",
+          "operation": "addition",
+          "value": 1
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "wereboar:berserk_resource",
+            "comparison": "==",
+            "compare_to": 15
+        }
+      },
+      "dmg_self":
+      {
+        "type": "origins:self_action_on_hit",
+        "entity_action":  {
+          "type": "origins:damage",
+          "amount": 2,
+          "source": {
+              "name": "generic.player",
+              "bypasses_armor": true,
+              "unblockable": true
+          }
       },
       "condition": {
         "type": "origins:resource",
-        "resource": "wereboar:resource",
-        "comparison": ">",
-        "compare_to": 0
-    }
-  },
-  "damage":{
-
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-      "attribute": "minecraft:generic.attack_damage",
-      "operation": "addition",
-      "value": 5
-    },
-    "condition": {
-        "type": "origins:resource",
-        "resource": "wereboar:resource",
-        "comparison": ">",
-        "compare_to": 0
-    }
-  },
-  "gain_more_resource": 
-    {
-    "type": "origins:action_over_time",
-	  "entity_action": {
-        "type": "origins:change_resource",
-        "resource": "wereboar:leap_resource_resource",
-        "change": 5
+        "resource": "wereboar:berserk_resource",
+        "comparison": "==",
+        "compare_to": 15
       },
-    "interval": 5,
-    "condition": {
-      "type": "origins:resource",
-      "resource": "wereboar:resource",
-      "comparison": ">",
-      "compare_to": 0
+        "cooldown": 1
     }
-    },
-  "bloodlust": 
-  {
-    "type": "origins:self_action_on_kill",
-    "entity_action": {
-        "type": "origins:and",
-        "actions": [
-        {
-            "type": "origins:execute_command",
-                "command": "effect give @s minecraft:absorption 30 0 false",
-                "permission_level": 4
-        },
-        {
-            "type": "origins:execute_command",
-                "command": "effect give @s minecraft:regeneration 15 1 false",
-                "permission_level": 4
-        },
-        {
-            "type": "origins:execute_command",
-                "command": "execute at @s run particle minecraft:dust 3 0 0 1.5 ~ ~1 ~ 0.25 0 0.25 1 100 force",
-                "permission_level": 4
-        }
-    ]
-},
-"condition": {
-  "type": "origins:resource",
-  "resource": "wereboar:resource",
-  "comparison": ">",
-  "compare_to": 0
-},
-"cooldown": 1
-},
-  "hidden": true
 }

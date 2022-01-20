@@ -1,4 +1,7 @@
 {
+    "type":"origins:multiple",
+    
+    "death_prevent":{
     "type": "origins:prevent_death",
     "entity_action": {
         "type": "origins:and",
@@ -99,6 +102,60 @@
                 }
             }
         ]
+    }
+},
+    "resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "start_value": 200,
+        "hud_render": {
+            "should_render": false
+        },
+        "min_action": {
+            "type": "origins:and",
+            "actions": [
+                
+        {
+            "type": "origins:delay",
+                "ticks": 1,
+                "action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s arena:undying"
+            }
+        },
+        {
+            "type": "origins:execute_command",
+            "command": "particle minecraft:totem_of_undying ~ ~ ~ 1 1 1 1 1000",
+            "permission_level": 4
+        },
+        {
+            "type": "origins:execute_command",
+            "command": "tellraw @s {\"text\":\"\",\"color\":\"yellow\",\"extra\":[{\"selector\":\"@s\"},{\"text\":\", you've lost the arena invulnerability.\"}]}",
+            "permission_level": 4
+        }
+    ]
+}        
+},
+"lose":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "arena:undying_resource",
+        "change": -20
     },
+    "interval": 20,
+    "condition":
+    {
+        "type": "origins:command",
+        "inverted": false,
+        "comparison": "==",
+        "compare_to": 0,
+        "permission_level": 4,
+        "command": "execute if entity @e[distance=..75,type=armor_stand,tag=arena_death]"
+    }
+},
 "hidden": true
 }

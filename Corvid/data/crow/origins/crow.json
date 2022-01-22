@@ -8,7 +8,8 @@
 		"origins:fragile",
 		"origins:lay_eggs",
 		"origins:fresh_air",
-		"crow:luck_effect"	
+		"crow:luck_effect",
+		"crow:secret_stash"	
 	],
 	"icon": "minecraft:wither_rose",
 	"order": 4,

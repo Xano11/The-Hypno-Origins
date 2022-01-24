@@ -1,0 +1,167 @@
+{
+    "type":"origins:multiple",
+
+
+    "resource":{
+	"type": "origins:resource",
+	"min": 0,
+	"max": 250,
+	"start_value": 0,
+	"hud_render": {
+		"should_render": true,
+		"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+		"bar_index": 20
+	},
+	"hidden": true
+},
+"gain_resource": 
+{
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [{
+            "type": "origins:add_xp",
+            "levels": -1
+        },
+        {
+            "type": "origins:change_resource",
+              "resource": "engineer:resource_resource",
+              "change": 50
+        }
+            ]
+        },
+        "cooldown": 5,
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [{
+            "type": "origins:xp_points",
+            "comparison": ">=",
+            "compare_to": 7
+                },
+                {
+                    "type": "origins:sneaking"
+                }
+                
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": true
+        }
+},
+"gain_resource2": 
+{
+    "type": "origins:self_action_on_kill",
+    "entity_action": {
+    "type": "origins:change_resource",
+    "resource": "engineer:resource_resource",
+    "change": 1
+    },
+    "cooldown": 5,
+    "hud_render": {
+            "should_render": false
+    }
+},
+"weak_resource":
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "addition",
+        "value": -0.04,
+        "name": "Increased sprinting speed"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "engineer:resource_resource",
+        "comparison": "<",
+        "compare_to": 50
+    }
+},
+"weak_resource2":
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "name": "more dmg",
+        "operation": "multiply_total",
+        "value": 0.5
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "engineer:resource_resource",
+        "comparison": "<",
+        "compare_to": 50
+    }
+},
+"more_reach":
+{
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "reach-entity-attributes:reach",
+        "operation": "addition",
+        "value": 1,
+        "name": "Increased building reach"
+    },
+    "tick_rate": 20,
+    "condition": {
+        "type": "origins:resource",
+        "resource": "engineer:resource_resource",
+        "comparison": ">",
+        "compare_to": 50
+    }
+},
+"cant_mine":
+{
+    "type": "origins:modify_break_speed",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.5
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "engineer:resource_resource",
+        "comparison": "<",
+        "compare_to": 50
+    }
+},
+"cant_swim":
+{
+    "type": "origins:ignore_water"
+},
+"condition": {
+    "type": "origins:resource",
+    "resource": "engineer:resource_resource",
+    "comparison": "<",
+    "compare_to": 50
+},
+"cant_jump":
+{
+    "type": "origins:modify_jump",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.25
+    },
+    "condition": {
+        "type": "origins:resource",
+        "resource": "engineer:resource_resource",
+        "comparison": "<",
+        "compare_to": 50
+    }
+},
+"no_elytra": 
+{
+    "type": "origins:prevent_elytra_flight",
+    "condition": {
+        "type": "origins:resource",
+        "resource": "engineer:resource_resource",
+        "comparison": "<",
+        "compare_to": 50
+    }
+},
+"name":"§e§l§nArchitectus",
+"description":"You can use your levels to channel into your energy source : Architectus. This energy flow allows the usage of powers and to gain energy, you can convert levels ([sneaking + primary ability]) or kill mobs. Having not enough, or enough, will grant you negatives/positives."
+}

@@ -1,0 +1,18 @@
+{
+	"powers": [
+		"engineer:fly",
+		"engineer:resource",
+		"engineer:block",
+		"engineer:pickup",
+		"engineer:pouch",
+		"engineer:ender",
+		"engineer:repair",
+		"engineer:hp",
+		"engineer:explosion_trauma"
+	],
+	"icon": "minecraft:quartz_pillar",
+	"order": 4,
+	"impact": 3,
+	"name": "The Engineer",
+	"description": "No one knows about them, but they know one thing; this person knows everything around the block."
+}

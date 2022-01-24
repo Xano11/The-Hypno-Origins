@@ -1,0 +1,87 @@
+{
+    "type": "origins:action_on_block_break",
+    "block_action": {
+        "type": "origins:and",
+        "actions": [{
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "y": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "y": -1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": -1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "x": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "x": -1
+            }
+        ]
+    },
+    "entity_action": {
+        "type": "origins:change_resource",
+          "resource": "engineer:resource_resource",
+          "change": -10
+    },
+    "block_condition": {
+        "type": "origins:adjacent",
+        "adjacent_condition": {
+            "type": "origins:in_tag",
+            "tag": "engineer:indestructible"
+        },
+        "comparison": ">=",
+        "compare_to": 1,
+        "inverted": true
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+        "type": "origins:sneaking"
+        },
+        {
+            "type": "origins:resource",
+            "resource": "engineer:resource_resource",
+            "comparison": ">",
+            "compare_to": 10
+            }
+        ]
+    },
+    "only_when_harvested": true,
+    "name":"§a§l§nSuper Destruction 3000 ",
+    "description":"Channeling your Architectus energy, you break a star shaped amount of blocks. But, it will not work if any of the blocks is indestructible. (Has an architectus cost)"
+}

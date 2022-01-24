@@ -1,0 +1,14 @@
+{
+    "type": "origins:modify_damage_taken",
+    "damage_condition": {
+        "type": "origins:name",
+        "name": "explosion"
+    },
+    "modifier": {
+        "name": "Weak to explosions",
+        "operation": "multiply_total",
+        "value": 1
+    },
+    "name":"§c§l§nGrief Trauma",
+    "description":"You remember accomplishing your best build... which was ruined by TNT. You take more damage from explosions due to the trauma."
+}

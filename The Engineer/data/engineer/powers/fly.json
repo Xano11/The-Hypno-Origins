@@ -1,0 +1,100 @@
+{
+    "type":"origins:multiple",
+    
+    "fly":
+    {
+    "type": "origins:creative_flight",
+    "condition": {
+        "type": "origins:resource",
+        "resource": "engineer:resource_resource",
+        "comparison": ">",
+        "compare_to": 0
+        }
+    },
+    "speed":
+    {
+		"type": "origins:modify_air_speed",
+		"modifier": {
+			"operation": "addition",
+			"value": -0.033
+		},
+		"condition": {
+            "type": "origins:creative_flying"
+        },
+	"hidden": true
+},
+"cant_dealdmg":
+{
+    "type": "origins:modify_damage_dealt",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -1
+    },
+    "condition": {
+        "type": "origins:creative_flying"
+    }
+},
+"more_dmg":
+{
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+        "name": "more dmg",
+        "operation": "multiply_total",
+        "value": 0.5
+    },
+    "condition": {
+        "type": "origins:creative_flying"
+    }
+},
+"particles":
+{
+    "type": "origins:action_over_time",
+    "interval": 2,
+    "entity_action": {
+        "type": "origins:execute_command",
+        "permission_level": 4,
+        "command": "particle minecraft:cloud ~ ~ ~ 0.5 0 0.5 0.1 10 normal"
+    },
+    "condition": {
+        "type": "origins:creative_flying"
+    },
+    "hidden": true
+},
+"cost":
+{
+    "type": "origins:action_over_time",
+    "interval": 10,
+    "entity_action": {
+        "type": "origins:change_resource",
+          "resource": "engineer:resource_resource",
+          "change": -1
+    },
+    "condition": {
+        "type": "origins:creative_flying"
+    },
+    "hidden": true
+},
+"cost2":
+{
+    "type": "origins:action_over_time",
+    "interval": 1,
+    "entity_action": {
+        "type": "origins:change_resource",
+          "resource": "engineer:resource_resource",
+          "change": -1
+    },
+    "condition": {
+        "type": "origins:and",
+    "conditions": [{
+        "type": "origins:creative_flying"
+            },
+            {
+                "type": "origins:sprinting"
+            }
+        ]
+    },
+    "hidden": true
+},
+"name":"§a§l§nLevitation.",
+"description":"You can use your Architectus energy to levitate around."
+}

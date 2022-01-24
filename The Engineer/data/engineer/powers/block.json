@@ -1,4 +1,7 @@
 {
+    "type":"origins:multiple",
+
+    "break": {
     "type": "origins:action_on_block_break",
     "block_action": {
         "type": "origins:and",
@@ -40,7 +43,8 @@
             "type": "origins:execute_command",
             "command": "setblock ~ ~ ~ minecraft:air destroy"
         },
-        "x": 1
+        "z": 1,
+        "y": 1
             },
             {
         "type": "origins:offset",
@@ -48,7 +52,26 @@
             "type": "origins:execute_command",
             "command": "setblock ~ ~ ~ minecraft:air destroy"
         },
-        "x": -1
+        "z": -1,
+        "y": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": 1,
+        "y": -1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": -1,
+        "y": -1
             }
         ]
     },
@@ -58,14 +81,84 @@
           "change": -10
     },
     "block_condition": {
-        "type": "origins:adjacent",
-        "adjacent_condition": {
-            "type": "origins:in_tag",
-            "tag": "engineer:indestructible"
-        },
-        "comparison": ">=",
-        "compare_to": 1,
-        "inverted": true
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "y": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "y": -1,
+                "inverted": true
+            },{
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": -1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": 1,
+                "y": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": -1,
+                "y": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": 1,
+                "y": -1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": -1,
+                "y": -1,
+                "inverted": true
+            }
+        ]
     },
     "condition": {
         "type": "origins:and",
@@ -81,7 +174,8 @@
             }
         ]
     },
-    "only_when_harvested": true,
+    "only_when_harvested": true
+},
     "name":"§a§l§nSuper Destruction 3000 ",
     "description":"Channeling your Architectus energy, you break a star shaped amount of blocks. But, it will not work if any of the blocks is indestructible. (Has an architectus cost)"
 }

@@ -7,14 +7,14 @@
         "equipment_slot": "mainhand",
         "action": {
             "type": "origins:damage",
-            "amount": -50,
+            "amount": -25,
             "ignore_unbreaking": true
                 }
             },
             {
                 "type": "origins:change_resource",
                   "resource": "engineer:resource_resource",
-                  "change": -100
+                  "change": -25
             }
         ]
     },
@@ -24,7 +24,7 @@
         "type": "origins:resource",
         "resource": "engineer:resource_resource",
         "comparison": ">=",
-        "compare_to": 100
+        "compare_to": 25
             },
             {
                 "type": "origins:sneaking",

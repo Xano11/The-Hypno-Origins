@@ -6,9 +6,9 @@
 		"engineer:pickup",
 		"engineer:pouch",
 		"engineer:ender",
-		"engineer:repair",
 		"engineer:hp",
-		"engineer:explosion_trauma"
+		"engineer:explosion_trauma",
+		"engineer:block_choice"
 	],
 	"icon": "minecraft:quartz_pillar",
 	"order": 4,

@@ -22,7 +22,7 @@
             "actions": [{
                 "type": "origins:execute_command",
                 "permission_level": 4,
-                "command": "xp add @s -25 points"
+                "command": "xp add @s -27 points"
             },
         {
             "type": "origins:change_resource",
@@ -31,30 +31,27 @@
         }
             ]
         },
-        "cooldown": 5,
+        "cooldown": 5 ,
         "hud_render": {
             "should_render": false
         },
         "condition": {
             "type": "origins:and",
-            "conditions": [{
-            "type": "origins:xp_points",
-            "comparison": ">=",
-            "compare_to": 25
-                },
+            "conditions": [
                 {
-                    "type": "origins:xp_points",
-                    "comparison": ">=",
-                    "compare_to": 25
-                        },
-                {
-                    "type": "origins:sneaking"
+                    "type": "origins:sneaking",
+                    "inverted": false
                 },
                 {
                     "type": "origins:resource",
                     "resource": "engineer:resource_resource",
-                    "comparison": "<=",
-                    "compare_to": 249
+                    "comparison": "<",
+                    "compare_to": 250
+                },
+                {
+                    "type": "origins:xp_levels",
+                    "comparison": ">=",
+                    "compare_to": 3
                 }
             ]
         },
@@ -69,7 +66,7 @@
     "entity_action": {
     "type": "origins:change_resource",
     "resource": "engineer:resource_resource",
-    "change": 1
+    "change": 5
     },
     "cooldown": 5,
     "hud_render": {

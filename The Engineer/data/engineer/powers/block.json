@@ -1,7 +1,363 @@
 {
     "type":"origins:multiple",
 
-    "break": {
+    "break_x": {
+    "type": "origins:action_on_block_break",
+    "block_action": {
+        "type": "origins:and",
+        "actions": [{
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "y": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "y": -1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "x": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "x": -1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "x": 1,
+        "y": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": -1,
+        "y": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "x": 1,
+        "y": -1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "x": -1,
+        "y": -1
+            }
+        ]
+    },
+    "entity_action": {
+        "type": "origins:change_resource",
+          "resource": "engineer:resource_resource",
+          "change": -10
+    },
+    "block_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "y": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "y": -1,
+                "inverted": true
+            },{
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "x": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "x": -1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "x": 1,
+                "y": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "x": -1,
+                "y": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "x": 1,
+                "y": -1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "x": -1,
+                "y": -1,
+                "inverted": true
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+            "type": "origins:resource",
+            "resource": "engineer:resource_resource",
+            "comparison": ">",
+            "compare_to": 10
+            },
+            {
+                "type": "origins:resource",
+                "resource": "engineer:block_choice_resource",
+                "comparison": "==",
+                "compare_to": 1
+            }
+        ]
+    },
+    "only_when_harvested": true
+},
+"break_y": {
+    "type": "origins:action_on_block_break",
+    "block_action": {
+        "type": "origins:and",
+        "actions": [{
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": -1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "x": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "x": -1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": 1,
+        "x": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": -1,
+        "x": 1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": 1,
+        "x": -1
+            },
+            {
+        "type": "origins:offset",
+        "action": {
+            "type": "origins:execute_command",
+            "command": "setblock ~ ~ ~ minecraft:air destroy"
+        },
+        "z": -1,
+        "x": -1
+            }
+        ]
+    },
+    "entity_action": {
+        "type": "origins:change_resource",
+          "resource": "engineer:resource_resource",
+          "change": -10
+    },
+    "block_condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "x": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "x": -1,
+                "inverted": true
+            },{
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": -1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": 1,
+                "x": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": -1,
+                "x": 1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": 1,
+                "x": -1,
+                "inverted": true
+            },
+            {
+                "type": "origins:offset",
+                "condition": {
+                    "type": "origins:in_tag",
+                    "tag": "engineer:indestructible"
+                },
+                "z": -1,
+                "x": -1,
+                "inverted": true
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+        {
+            "type": "origins:resource",
+            "resource": "engineer:resource_resource",
+            "comparison": ">",
+            "compare_to": 10
+            },
+            {
+                "type": "origins:resource",
+                "resource": "engineer:block_choice_resource",
+                "comparison": "==",
+                "compare_to": 2
+            }
+        ]
+    },
+    "only_when_harvested": true
+},
+"break_z": {
     "type": "origins:action_on_block_break",
     "block_action": {
         "type": "origins:and",
@@ -164,13 +520,16 @@
         "type": "origins:and",
         "conditions": [
         {
-        "type": "origins:sneaking"
-        },
-        {
             "type": "origins:resource",
             "resource": "engineer:resource_resource",
             "comparison": ">",
             "compare_to": 10
+            },
+            {
+                "type": "origins:resource",
+                "resource": "engineer:block_choice_resource",
+                "comparison": "==",
+                "compare_to": 3
             }
         ]
     },

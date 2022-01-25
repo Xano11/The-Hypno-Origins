@@ -5,6 +5,10 @@
           "key": "key.origins.secondary_active",
           "continuous": false
       },
+      "condition": {
+        "type": "origins:sneaking",
+        "inverted": true
+    },
     "name": "§a§l§nBuilder Pouch",
     "description": "You have a special builder pouch that grants you an additional 9 inventory slots."
   }

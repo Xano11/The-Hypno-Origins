@@ -5,7 +5,7 @@
 {
   "type": "origins:resource",
   "min": 0,
-  "max": 15,
+  "max": 5,
   "start_value": 0,
   "hud_render": {
     "should_render": true,
@@ -25,8 +25,8 @@
 {
   "type": "origins:resource",
   "min": 0,
-  "max": 100,
-  "start_value": 100,
+  "max": 60,
+  "start_value": 60,
   "hud_render": {
       "should_render": false
   },
@@ -40,7 +40,7 @@
             {
                 "type": "origins:change_resource",
                 "resource": "wereboar:berserk_lose_resource",
-                "change": 100
+                "change": 60
             }
         ]
     }
@@ -66,7 +66,7 @@
       "entity_action":  {
           "type": "origins:change_resource",
           "resource": "wereboar:berserk_lose_resource",
-          "change": 100
+          "change": 60
       },
       "damage_condition": {
           "type": "origins:amount",
@@ -98,7 +98,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": ">=",
-            "compare_to": 3
+            "compare_to": 1
         }
       },
       "damage1":{
@@ -113,7 +113,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": ">=",
-            "compare_to": 3
+            "compare_to": 1
         }
       },
       "attack_speed2":{
@@ -128,7 +128,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": ">=",
-            "compare_to": 6
+            "compare_to": 2
         }
       },
       "damage2":{
@@ -143,7 +143,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": ">=",
-            "compare_to": 6
+            "compare_to": 2
         }
       },
       "attack_speed3":{
@@ -158,7 +158,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": ">=",
-            "compare_to": 9
+            "compare_to": 3
         }
       },
       "damage3":{
@@ -173,7 +173,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": ">=",
-            "compare_to": 9
+            "compare_to": 3
         }
       },
       "attack_speed4":{
@@ -188,7 +188,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": ">=",
-            "compare_to": 12
+            "compare_to": 4
         }
       },
       "damage4":{
@@ -203,7 +203,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": ">=",
-            "compare_to": 12
+            "compare_to": 4
         }
       },
       "attack_speed5":{
@@ -218,7 +218,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": "==",
-            "compare_to": 15
+            "compare_to": 5
         }
       },
       "damage5":{
@@ -233,7 +233,7 @@
             "type": "origins:resource",
             "resource": "wereboar:berserk_resource",
             "comparison": "==",
-            "compare_to": 15
+            "compare_to": 5
         }
       },
       "dmg_self":
@@ -252,7 +252,7 @@
         "type": "origins:resource",
         "resource": "wereboar:berserk_resource",
         "comparison": "==",
-        "compare_to": 15
+        "compare_to": 5
       },
         "cooldown": 1
     }

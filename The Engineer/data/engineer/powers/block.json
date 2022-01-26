@@ -52,7 +52,7 @@
             "type": "origins:execute_command",
             "command": "setblock ~ ~ ~ minecraft:air destroy"
         },
-        "z": -1,
+        "x": -1,
         "y": 1
             },
             {

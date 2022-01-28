@@ -1,0 +1,14 @@
+{
+    "replace": false,
+    "values": [
+      "minecraft:iron_axe",
+      "medievalweapons:iron_small_axe",
+      "medievalweapons:iron_francisca",
+      "medievalweapons:iron_big_axe",
+      "medievalweapons:iron_dagger",
+      "minecraft:iron_sword",
+      "medievalweapons:iron_long_sword",
+      "medievalweapons:iron_healing_staff",
+      "medievalweapons:iron_mace"
+    ]
+  }

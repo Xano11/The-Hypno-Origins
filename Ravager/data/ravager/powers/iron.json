@@ -1,0 +1,63 @@
+{
+    "type":"origins:multiple",
+
+    "weak":{
+    "type": "origins:modify_damage_dealt",
+    "damage_condition": {
+        "type": "origins:attacker",
+        "entity_condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "mainhand",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "tag": "ravager:iron"
+                }
+            },
+            "inverted": true
+        }
+    },
+    "modifier": {
+        "operation": "addition",
+        "value": -6
+    }
+    },
+    "iron":
+    {
+        "type": "origins:multiple",
+        "golden_axe": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.attack_damage",
+            "operation": "addition",
+            "value": 3,
+            "name": "iron dmg"
+                },
+        "tick_rate": 20,
+            "condition": {
+                "type": "origins:equipped_item",
+                "equipment_slot": "mainhand",
+                "item_condition": {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "ravager:iron"
+                    }
+                }
+            }
+    },
+    "tooltip":
+    {
+        "type": "origins:tooltip",
+        "item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "tag": "ravager:iron"
+            }
+        },
+        "text": "Sharpened iron. Your favorite."
+    },
+            "name": "§a§l§nIron-ic Preference",
+            "description": "You are refined in your material change. You only used Iron and you hate anything else."
+    },
+        "hidden": true
+}

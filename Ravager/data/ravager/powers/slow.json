@@ -1,4 +1,7 @@
 {
+	"type":"origins:multiple",
+
+	"slow":{
 	"type": "origins:conditioned_attribute",
     "modifier": {
 	"attribute": "minecraft:generic.movement_speed",
@@ -12,6 +15,16 @@
 		"resource": "*:dash_resource",
 		"comparison": "==",
 		"compare_to": 0
+	}
+	},
+
+	"slow_air":
+	{
+		"type": "origins:modify_air_speed",
+		"modifier": {
+			"operation": "addition",
+			"value": -0.006
+		}
 	},
 	"hidden": true
 }

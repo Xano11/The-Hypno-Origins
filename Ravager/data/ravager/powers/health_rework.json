@@ -1,0 +1,85 @@
+{
+    "type": "origins:multiple",
+    "health_resource": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 4,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "health1": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 5,
+            "name": "Increased Combat Health 1"
+        },
+        "tick_rate": 2,
+        "condition": {
+            "type": "origins:command",
+            "inverted": false,
+            "comparison": ">=",
+            "compare_to": 1,
+            "permission_level": 4,
+            "command": "execute if entity @e[tag=ravager,distance=..15,type=!minecraft:player]"
+        }
+    },
+    "health2": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 5,
+            "name": "Increased Combat Health 2"
+        },
+        "tick_rate": 2,
+        "condition": {
+            "type": "origins:command",
+            "inverted": false,
+            "comparison": ">=",
+            "compare_to": 2,
+            "permission_level": 4,
+            "command": "execute if entity @e[tag=ravager,distance=..15,type=!minecraft:player]"
+        }
+    },
+    "health3": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 5,
+            "name": "Increased Combat Health 3"
+        },
+        "tick_rate": 2,
+        "condition": {
+            "type": "origins:command",
+            "inverted": false,
+            "comparison": ">=",
+            "compare_to": 3,
+            "permission_level": 4,
+            "command": "execute if entity @e[tag=ravager,distance=..15,type=!minecraft:player]"
+        }
+    },
+    "health4": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "operation": "addition",
+            "value": 5,
+            "name": "Increased Combat Health 4"
+        },
+        "tick_rate": 2,
+        "condition": {
+            "type": "origins:command",
+            "inverted": false,
+            "comparison": ">=",
+            "compare_to": 4,
+            "permission_level": 4,
+            "command": "execute if entity @e[tag=ravager,distance=..15,type=!minecraft:player]"
+        }
+    },
+    "name": "§a§l§nMade For Combat",
+	"description": "Depending on the amount of pillagers around you, you gain hp to a maximum of 20 hearts."
+}

@@ -3,7 +3,7 @@
 		"ravager:dash",
 		"ravager:roar",
 		"ravager:army",
-		"ravager:health",
+		"ravager:health_rework",
 		"ravager:strong",
 		"ravager:entitycramming",
 		"ravager:slow",
@@ -12,7 +12,9 @@
 		"ravager:extrafood",
 		"ravager:slowswim",
 		"ravager:slowmining",
-		"ravager:nobows"
+		"ravager:nobows",
+		"ravager:iron",
+		"ravager:speed_immunity"
 	],
 	"icon": {
 		"item": "minecraft:ravager_spawn_egg",

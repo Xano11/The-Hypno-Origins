@@ -1,0 +1,8 @@
+{
+    "type": "origins:effect_immunity",
+    "effects": [
+        "minecraft:speed"
+    ],
+"name": "§c§l§nToo slow to be fast.",
+"description": "You don't get affected by speed."
+}

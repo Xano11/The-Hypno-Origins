@@ -4,7 +4,7 @@
 	{
 		"attribute": "minecraft:generic.attack_damage",
 		"operation": "addition",
-		"value": 6
+		"value": 3
 	},
 	{
 		"attribute": "minecraft:generic.knockback_resistance",

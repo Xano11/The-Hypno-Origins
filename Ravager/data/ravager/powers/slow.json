@@ -23,7 +23,7 @@
 		"type": "origins:modify_air_speed",
 		"modifier": {
 			"operation": "addition",
-			"value": -0.006
+			"value": -0.004
 		}
 	},
 	"hidden": true

@@ -1,0 +1,29 @@
+{
+    "type": "origins:action_over_time",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [{
+        "type": "origins:delay",
+        "ticks": 1,
+        "action": {
+            "type": "origins:execute_command",
+            "command": "tag @e remove lurk"
+                }
+            },
+            {
+        "type": "origins:delay",
+        "ticks": 2,
+        "action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s executioner:lurked"
+                }
+            }
+        ]
+    },
+    "interval": 5,
+    "condition": {
+        "type": "origins:dimension",
+        "dimension": "minecraft:overworld",
+        "inverted": true
+    }
+}

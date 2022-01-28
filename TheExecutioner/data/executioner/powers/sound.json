@@ -5,8 +5,8 @@
         "action":
          {    
         "type": "origins:play_sound",
-        "sound": "minecraft:entity.shulker.close",
-        "volume": 10,
+        "sound": "minecraft:ambient.cave player",
+        "volume": 3,
         "pitch": 0.7
     },
     "chance": 0.2

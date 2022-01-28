@@ -1,0 +1,174 @@
+{
+    "type":"origins:multiple",
+
+    "summon":{
+    "type":"origins:active_self",
+    "entity_action":{
+        "type":"origins:and",
+        "actions":[
+            {
+                "type":"origins:execute_command",
+                "command":"particle minecraft:sneeze ~ ~ ~ 3 3 3 0.01 100",
+                "permission_level":4
+            },   
+            {
+                "type":"origins:execute_command",
+                "command":"playsound minecraft:entity.spider.ambient player @a[distance=..20] ~ ~ ~ 3 1.5",
+                "permission_level":4
+            },  
+            {
+                "type":"origins:execute_command",
+                "command":"function executioner:pest",
+                "permission_level":4
+            },
+            {
+                "type":"origins:execute_command",
+                "command":"power grant @s executioner:spooder",
+                "permission_level":4
+            },
+            {
+                "type": "origins:delay",
+                "ticks": 2,
+                "action": {
+                    "type": "origins:and",
+                    "actions": [
+                        {
+                            "type":"origins:execute_command",
+                            "command":"execute as @e[type=minecraft:spider,tag=pest] run scale set pehkui:width 0.1 @s",
+                            "permission_level":4
+                        },
+                        {
+                            "type":"origins:execute_command",
+                            "command":"execute as @e[type=minecraft:spider,tag=pest] run scale set pehkui:heigth 0.1 @s",
+                            "permission_level":4
+                        },
+                        {
+                            "type":"origins:execute_command",
+                            "command":"execute as @e[type=minecraft:spider,tag=pest] run scale set pehkui:reach 0.3 @s",
+                            "permission_level":4
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "origins:exhaust",
+                "amount": 6
+            },
+            {
+                "type": "origins:change_resource",
+                  "resource": "executioner:resource_resource",
+                  "change": -120
+            }
+        ]
+    },
+    "cooldown": 1,
+    "hud_render":{
+        "should_render":false
+    },
+        "condition": {
+            "type": "origins:and",
+			"conditions": [
+                                {
+                                    "type": "origins:resource",
+                                    "resource": "executioner:resource_resource",
+                                    "comparison": "==",
+                                    "compare_to": 120
+                                },
+                                {
+                                    "type": "origins:sneaking",
+                                    "inverted": true
+                                },
+                                {
+                                    "type": "origins:equipped_item",
+                                    "equipment_slot": "mainhand",
+                                    "item_condition": {
+                                        "type": "origins:ingredient",
+                                        "ingredient": {
+                                            "tag": "executioner:long_sword"
+                                    }
+                            },
+                            "inverted": true
+                    }            
+            ]
+        },      
+    "key":{
+        "key":"key.origins.primary_active"
+    }
+    },
+
+    "attacker":
+    {
+        "type": "origins:target_action_on_hit",
+        "cooldown": 1,
+        "entity_action":
+        {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @s add self"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "execute at @e[tag=pest,distance=..20] run summon snowball ~ ~1.5 ~ {Tags:[\"aggro.init\"],Motion:[0.0,-1.0,0.0]}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "execute as @e[tag=aggro.init] run data modify entity @s Owner set from entity @e[tag=self,limit=1] UUID"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @s remove self"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @e remove aggro.init"
+                }
+            ]
+        }
+    },
+    "attacker2":
+    {
+        "type": "origins:attacker_action_when_hit",
+        "cooldown": 1,
+        "entity_action":
+        {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @s add self"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "execute at @e[tag=pest,distance=..20] run summon snowball ~ ~1.5 ~ {Tags:[\"aggro.init\"],Motion:[0.0,-1.0,0.0]}"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "execute as @e[tag=aggro.init] run data modify entity @s Owner set from entity @e[tag=self,limit=1] UUID"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @s remove self"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "permission_level": 4,
+                    "command": "tag @e remove aggro.init"
+                }
+            ]
+        }
+    },
+
+    "name":"§a§l§nPlague.",
+    "description":"[Primary] Whilst not holding your weapon of choice and [sneaking], you can summon a group of small spiders."
+}

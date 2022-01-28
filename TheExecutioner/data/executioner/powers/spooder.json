@@ -1,0 +1,75 @@
+{
+    "type":"origins:multiple",
+
+"cant_see":
+{
+    "type": "origins:action_on_callback",
+    "entity_action_added": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "scale set pehkui:visibility 0",
+                "permission_level": 4
+            }
+        ]
+    }
+},
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 200,
+        "start_value": 200,
+        "hud_render": {
+            "should_render": false
+        },
+        "min_action": {
+        "type": "origins:and",
+        "actions": [
+    {
+        "type": "origins:delay",
+        "ticks": 2,
+        "action": {
+        "type": "origins:execute_command",
+        "command": "power remove @s executioner:spooder"
+            }
+        },
+        {
+            "type": "origins:delay",
+            "ticks": 1,
+            "action": {
+            "type": "origins:execute_command",
+            "command": "kill @e[tag=pest]"
+                }
+            },
+        {
+            "type": "origins:execute_command",
+            "command": "scale reset pehkui:visibility"
+        }
+    ]
+}
+        
+},
+"particles":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+		"type": "origins:execute_command",
+		"command": "particle minecraft:dust_color_transition 0.1 0.1 0.1 1 0.4 0.2 0.1 ~ ~ ~ 1 1 1 1 100",
+		"permission_level": 4
+	},
+    "interval": 20
+},
+"remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "executioner:spooder_resource",
+        "change": -20
+    },
+    "interval": 20
+},
+"hidden": true
+}

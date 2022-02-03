@@ -2,7 +2,7 @@
   "type": "origins:active_self",
   "entity_action": {
     "type": "origins:add_velocity",
-    "z": 5,
+    "z": 3,
     "space": "local"
   },
   "cooldown": 120,

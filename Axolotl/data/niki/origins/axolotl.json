@@ -11,13 +11,10 @@
 		"niki:riptide_boost",
 		"niki:impaled",
 		"niki:impaled_melee",
-		"niki:motion",
 		"niki:small",
 		"niki:small2",
 		"niki:low_health",
-		"origins:aquatic"
-		
-		
+		"origins:aquatic"	
 	],
 	"icon": "minecraft:brain_coral",
 	"order": 66,

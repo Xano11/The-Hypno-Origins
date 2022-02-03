@@ -14,54 +14,25 @@
         "interval": 100,
         "entity_action": {
             "type": "origins:change_resource",
-            "resource": "niki:feign_death_resource",
+            "resource": "niki:play_dead_resource",
             "change": 100
         }
-    },
-    "feign_death": {
-        "type": "origins:self_action_when_hit",
+    },   
+    "get": {
+        "type": "origins:action_over_time",
+        "interval": 20,
         "entity_action": {
-            "type": "origins:chance",
-            "chance": 0.1,
-            "action": {
-                "type": "origins:and",
-                "actions": [
-                    {
-                        "type": "origins:apply_effect",
-                        "effects": [
-                            {
-                                "effect": "minecraft:regeneration",
-                                "duration": 200,
-                                "amplifier": 0
-                            },
-                            {
-                                "effect": "minecraft:slowness",
-                                "duration": 200,
-                                "amplifier": 0
-                            },
-                            {
-                                "effect": "minecraft:invisibility",
-                                "duration": 200,
-                                "amplifier": 0
-                            }
-                        ]
-                    },
-                    {
-                        "type": "origins:change_resource",
-                        "resource": "niki:feigh_death_resource",
-                        "change": -6000
-                    }
-                ]
-            }
+            "type": "origins:execute_command",
+            "command": "power grant @s niki:feign",
+            "permission_level": 4
         },
         "condition": {
             "type": "origins:resource",
-            "resource": "niki:feigning_resource_resource",
+            "resource": "niki:play_dead_resource",
             "comparison": "==",
             "compare_to": 0
-        },
-        "cooldown": 1
-    },
+        }
+    },    
     "name": "§a§l§nFeign Death",
     "description": "You have a chance of feigning death in combat."
 }

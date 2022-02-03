@@ -5,19 +5,24 @@
   		"actions": [
     		{
     			"type": "origins:execute_command",
-    			"command": "scale set pehkui:base 0.5",
+    			"command": "scale set pehkui:height 0.8",
     			"permission_level": 4
    			},
-			   {
+			{
     			"type": "origins:execute_command",
-    			"command": "scale set pehkui:reach 1.7",
+    			"command": "scale set pehkui:width 0.8",
     			"permission_level": 4
    			},
-		    {    
-		    	"type": "origins:execute_command",
-    		"command": "scale delay set 0",
-    		"permission_level": 4
-    		}
+			{
+    			"type": "origins:execute_command",
+    			"command": "scale set pehkui:motion 0.8",
+    			"permission_level": 4
+   			},
+			{
+    			"type": "origins:execute_command",
+    			"command": "scale set pehkui:reach 0.7",
+    			"permission_level": 4
+   			}
   		]
   	},
     "interval": 20,

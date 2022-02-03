@@ -1,0 +1,110 @@
+{
+    "type": "origins:prevent_death",
+    "entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:clear_effect"
+            },
+            {
+                "type": "origins:apply_effect",
+                "effects": [
+                    {
+                        "effect": "minecraft:regeneration",
+                        "amplifier": 1,
+                        "duration": 300
+                    },
+                    {
+                        "effect": "minecraft:fire_resistance",
+                        "duration": 200
+                    }
+                ]
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "head",
+                "action": {
+                    "type": "origins:damage",
+                    "amount": -100,
+                    "ignore_unbreaking": false
+                }
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "chest",
+                "action": {
+                    "type": "origins:damage",
+                    "amount": -100,
+                    "ignore_unbreaking": false
+                }
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "legs",
+                "action": {
+                    "type": "origins:damage",
+                    "amount": -100,
+                    "ignore_unbreaking": false
+                }
+            },
+            {
+                "type": "origins:equipped_item_action",
+                "equipment_slot": "feet",
+                "action": {
+                    "type": "origins:damage",
+                    "amount": -100,
+                    "ignore_unbreaking": false
+                }
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 1 0 0.5 1 ~ ~1 ~ 2 0.6 2 10 1000",
+                "permission_level": 4 
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:dust 1 1 1 1 ~ ~1 ~ 1 0.6 1 10 1000",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.axolotl.splash player @s ~ ~ ~ 3 0.5 1",
+                "permission_level": 4 
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "playsound minecraft:entity.axolotl.death player @s ~ ~ ~ 3 1 1",
+                "permission_level": 4 
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "power grant @s niki:invisible",
+                "permission_level": 4 
+            },
+            {
+                "type": "origins:delay",
+				"action": {
+                "type": "origins:execute_command",
+                "command": "power remove @s niki:feign",
+                "permission_level": 4
+                },
+                "ticks":1
+            },
+            {
+                "type": "origins:heal",
+                "amount": 6
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:enchant ~ ~ ~ 1 1 1 1 100",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:change_resource",
+                "resource": "niki:play_dead_resource",
+                "change": -6000
+            }
+        ]
+    },
+    "hidden": true
+}

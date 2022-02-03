@@ -14,7 +14,8 @@
 		"niki:small",
 		"niki:small2",
 		"niki:low_health",
-		"origins:aquatic"	
+		"origins:aquatic",
+		"niki:night_vision"	
 	],
 	"icon": "minecraft:brain_coral",
 	"order": 66,

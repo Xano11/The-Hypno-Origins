@@ -10,7 +10,7 @@
     },
     "modifier": {
         "operation": "addition",
-        "value": 4,
+        "value": 3,
         "name": "diamond damage boost"
     },
     "self_action": {

@@ -2,7 +2,7 @@
     "type": "origins:attribute",
 
     "operation": "multiply_total",
-    "value": -0.40,
+    "value": -0.25,
     "attribute": "minecraft:generic.attack_speed",
     "name": "lower attack speed",
     "hidden": true

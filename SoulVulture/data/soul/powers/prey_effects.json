@@ -89,7 +89,7 @@
     "modifier": {
         "name": "more dmg",
         "operation": "addition",
-        "value": 15
+        "value": 10
     },
     "condition": {
         "type": "origins:and",

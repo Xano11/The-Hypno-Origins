@@ -24,8 +24,6 @@
     },
     "iron":
     {
-        "type": "origins:multiple",
-        "golden_axe": {
         "type": "origins:conditioned_attribute",
         "modifier": {
             "attribute": "minecraft:generic.attack_damage",
@@ -56,8 +54,6 @@
         },
         "text": "Sharpened iron. Your favorite."
     },
-            "name": "§a§l§nIron-ic Preference",
-            "description": "You are refined in your material change. You only used Iron and you hate anything else."
-    },
-        "hidden": true
+        "name": "§a§l§nIron-ic Preference",
+        "description": "You are refined in your material change. You only used Iron and you hate anything else."
 }

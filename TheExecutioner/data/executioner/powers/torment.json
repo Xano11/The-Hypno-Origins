@@ -74,29 +74,12 @@
     "type": "origins:prevent_elytra_flight"
     
 },
-"cant_projectile":
-{
-    "type": "origins:modify_projectile_damage",
-    "modifier": {
-        "operation": "multiply_total",
-        "value": -0.5
-    }
-},
 "cant_dealdmg":
 {
     "type": "origins:modify_damage_dealt",
     "modifier": {
         "operation": "multiply_total",
         "value": -0.5
-    }
-},
-"more_dmg":
-{
-    "type": "origins:modify_damage_taken",
-    "modifier": {
-        "name": "more dmg",
-        "operation": "multiply_total",
-        "value": 0.2
     }
 },
 "hidden": true

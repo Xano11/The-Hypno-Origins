@@ -92,7 +92,7 @@
         "modifier": {
           "attribute": "minecraft:generic.attack_speed",
           "operation": "addition",
-          "value": 0.1
+          "value": 0.08
         },
         "condition": {
             "type": "origins:resource",
@@ -107,7 +107,7 @@
         "modifier": {
           "attribute": "minecraft:generic.attack_damage",
           "operation": "addition",
-          "value": 1
+          "value": 0.5
         },
         "condition": {
             "type": "origins:resource",
@@ -122,7 +122,7 @@
         "modifier": {
           "attribute": "minecraft:generic.attack_speed",
           "operation": "addition",
-          "value": 0.1
+          "value": 0.08
         },
         "condition": {
             "type": "origins:resource",
@@ -137,7 +137,7 @@
         "modifier": {
           "attribute": "minecraft:generic.attack_damage",
           "operation": "addition",
-          "value": 1
+          "value": 0.5
         },
         "condition": {
             "type": "origins:resource",
@@ -152,7 +152,7 @@
         "modifier": {
           "attribute": "minecraft:generic.attack_speed",
           "operation": "addition",
-          "value": 0.1
+          "value": 0.08
         },
         "condition": {
             "type": "origins:resource",
@@ -167,7 +167,7 @@
         "modifier": {
           "attribute": "minecraft:generic.attack_damage",
           "operation": "addition",
-          "value": 1
+          "value": 0.5
         },
         "condition": {
             "type": "origins:resource",
@@ -182,7 +182,7 @@
         "modifier": {
           "attribute": "minecraft:generic.attack_speed",
           "operation": "addition",
-          "value": 0.1
+          "value": 0.08
         },
         "condition": {
             "type": "origins:resource",
@@ -197,7 +197,7 @@
         "modifier": {
           "attribute": "minecraft:generic.attack_damage",
           "operation": "addition",
-          "value": 1
+          "value": 0.5
         },
         "condition": {
             "type": "origins:resource",
@@ -212,7 +212,7 @@
         "modifier": {
           "attribute": "minecraft:generic.attack_speed",
           "operation": "addition",
-          "value": 0.1
+          "value": 0.08
         },
         "condition": {
             "type": "origins:resource",

@@ -10,7 +10,7 @@
     "modifier": {
         "name": "more arachnid dmg",
         "operation": "multiply_total",
-        "value": 2
+        "value": 1
     },
     "name": "§c§l§nArachnophobe",
 	"description": "Arthropods scare you. Like, alot."

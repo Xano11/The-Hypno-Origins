@@ -17,21 +17,6 @@
         "compare_to": 0
     }
   },
-  "attack_speed":{
-
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-      "attribute": "minecraft:generic.attack_speed",
-      "operation": "addition",
-      "value": 0.3
-    },
-    "condition": {
-        "type": "origins:resource",
-        "resource": "wereboar:resource",
-        "comparison": ">",
-        "compare_to": 0
-    }
-  },
   "mining_speed":{
       "type": "origins:modify_break_speed",
       "modifier": {
@@ -39,21 +24,6 @@
           "value": 0.5
       },
       "condition": {
-        "type": "origins:resource",
-        "resource": "wereboar:resource",
-        "comparison": ">",
-        "compare_to": 0
-    }
-  },
-  "damage":{
-
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-      "attribute": "minecraft:generic.attack_damage",
-      "operation": "addition",
-      "value": 5
-    },
-    "condition": {
         "type": "origins:resource",
         "resource": "wereboar:resource",
         "comparison": ">",

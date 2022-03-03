@@ -13,7 +13,8 @@
         "vampire:burn",
         "vampire:switch",
         "vampire:blood_gain",
-        "origins:fall_immunity"
+        "origins:fall_immunity",
+        "vampire:antiburn"
         
     ],
     "icon":"minecraft:red_candle",

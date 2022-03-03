@@ -188,34 +188,6 @@
 ]
 }
 },
-"child_damage":
-{
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-        "attribute": "minecraft:generic.attack_damage",
-        "operation": "addition",
-        "value": 1,
-        "name": "Increased dmg"
-    },
-    "tick_rate": 20,
-    "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-                "type": "origins:resource",
-                "resource": "basilisk:growth_resource",
-                "comparison": ">",
-                "compare_to": 30
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "basilisk:growth_resource",
-                    "comparison": "<=",
-                    "compare_to": 60
-                }
-]
-}
-},
 "child_size":
 {
         "type": "origins:action_over_time",
@@ -268,34 +240,6 @@
                         "compare_to": 90
                     }
     ]
-}
-},
-"youngadult_damage":
-{
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-        "attribute": "minecraft:generic.attack_damage",
-        "operation": "addition",
-        "value": 2,
-        "name": "Increased dmg"
-    },
-    "tick_rate": 20,
-    "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-                "type": "origins:resource",
-                "resource": "basilisk:growth_resource",
-                "comparison": ">",
-                "compare_to": 60
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "basilisk:growth_resource",
-                    "comparison": "<=",
-                    "compare_to": 90
-                }
-]
 }
 },
 "youngadult_size":
@@ -360,34 +304,6 @@
         "attribute": "minecraft:generic.max_health",
         "value": 6,
         "operation": "addition"
-    },
-    "tick_rate": 20,
-    "condition": {
-        "type": "origins:and",
-        "conditions": [
-            {
-                "type": "origins:resource",
-                "resource": "basilisk:growth_resource",
-                "comparison": ">",
-                "compare_to": 90
-                },
-                {
-                    "type": "origins:resource",
-                    "resource": "basilisk:growth_resource",
-                    "comparison": "<=",
-                    "compare_to": 120
-                }
-]
-}
-},
-"adult_damage":
-{
-    "type": "origins:conditioned_attribute",
-    "modifier": {
-        "attribute": "minecraft:generic.attack_damage",
-        "operation": "addition",
-        "value": 3,
-        "name": "Decreased dmg"
     },
     "tick_rate": 20,
     "condition": {

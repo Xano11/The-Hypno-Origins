@@ -50,7 +50,7 @@
     "type": "origins:action_over_time",
 	"entity_action": {
         "type": "origins:damage",
-        "amount": 2,
+        "amount": 1,
         "source": {
             "name": "sting",
             "bypasses_armor": true,

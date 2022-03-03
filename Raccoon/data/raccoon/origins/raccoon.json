@@ -26,7 +26,8 @@
 		"raccoon:raccoon/stealth_tag_remove",
 		"origins:no_shield",
 		"raccoon:raccoon/hungry",
-		"raccoon:raccoon/hungry_immunity"
+		"raccoon:raccoon/hungry_immunity",
+		"origins:cat_vision"
     ],
 	"icon": {
 		"item": "minecraft:structure_block"

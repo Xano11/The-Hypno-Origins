@@ -137,7 +137,7 @@
 		"type": "origins:modify_projectile_damage",
 		"modifier": {
 			"operation": "addition",
-			"value": 4
+			"value": 2
 		},
 		"condition": {
 			"type": "origins:and",

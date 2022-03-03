@@ -3,7 +3,7 @@
     "modifier": {
         "attribute": "minecraft:generic.attack_damage",
         "operation": "addition",
-        "value": 6,
+        "value": 4,
         "name": "trident"
         },
     "tick_rate": 20,

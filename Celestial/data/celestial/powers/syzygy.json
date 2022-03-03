@@ -25,7 +25,7 @@
 		"modifier": {
 			"attribute": "minecraft:generic.attack_damage",
 			"operation": "addition",
-			"value": 4,
+			"value": 2,
 			"name": "Solar Strength"
 		},
 		"tick_rate": 20,

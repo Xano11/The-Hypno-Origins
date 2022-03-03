@@ -56,7 +56,7 @@
     "modifier": {
         "name": "Extra damage when submerged",
         "operation": "addition",
-        "value": 3
+        "value": 2
     },
 	"condition": {
 		"type": "origins:resource",
@@ -71,7 +71,7 @@
     "modifier": {
         "name": "Extra damage when submerged",
         "operation": "addition",
-        "value": 6
+        "value": 4
     },
 	"condition": {
 		"type": "origins:resource",
@@ -86,7 +86,7 @@
     "modifier": {
         "name": "Extra damage when submerged",
         "operation": "addition",
-        "value": 9
+        "value": 6
     },
 	"condition": {
 		"type": "origins:resource",
@@ -101,7 +101,7 @@
     "modifier": {
         "name": "Extra damage when submerged",
         "operation": "addition",
-        "value": 12
+        "value": 8
     },
 	"condition": {
 		"type": "origins:resource",
@@ -116,7 +116,7 @@
     "modifier": {
         "name": "Extra damage when submerged",
         "operation": "addition",
-        "value": 15
+        "value": 10
     },
 	"condition": {
 		"type": "origins:resource",

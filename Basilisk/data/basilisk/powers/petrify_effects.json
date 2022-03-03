@@ -139,19 +139,5 @@
         "value": -1
     }
 },
-"more_dmg":
-{
-    "type": "origins:modify_damage_taken",
-    "damage_condition": {
-        "type": "origins:amount",
-        "comparison": ">=",
-        "compare_to": 3.0
-    },
-    "modifier": {
-        "name": "more dmg",
-        "operation": "addition",
-        "value": 5
-    }
-},
 "hidden": true
 }

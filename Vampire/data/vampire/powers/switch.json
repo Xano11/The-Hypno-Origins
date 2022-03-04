@@ -22,12 +22,12 @@
                         "actions": [
                             {
                                 "type": "origins:execute_command",
-                                "command": "execute as @s at @s run tag @e[limit=1,sort=nearest,distance=0.2..] add vampired",
+                                "command": "execute as @s at @s run tag @e[limit=1,sort=nearest,distance=0.2..,type=!ender_dragon] add vampired",
                                 "permission_level": 4
                             },
                             {
                                 "type": "origins:execute_command",
-                                "command": "execute as @s at @s run power grant @e[limit=1,sort=nearest,distance=0.2..] vampire:switch_effects",
+                                "command": "execute as @s at @s run power grant @e[limit=1,sort=nearest,distance=0.2..,type=!ender_dragon] vampire:switch_effects",
                                 "permission_level": 4
                             },
                             {

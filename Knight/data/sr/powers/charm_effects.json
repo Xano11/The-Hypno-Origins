@@ -1,0 +1,111 @@
+{
+    "type": "origins:multiple",
+
+	"stalwart": {
+            "type": "origins:self_action_when_hit",
+            "entity_action":  {
+                "type":"origins:execute_command",
+                "command":"power grant @s sr:stalwart",
+                "permission_level": 4
+            },
+        "cooldown": 1,
+            "condition":{
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{display:{Name:'[{\"text\":\"Stalwart\",\"italic\":false,\"color\":\"dark_purple\"},{\"text\":\" Shell ✦\",\"italic\":false,\"color\":\"dark_purple\"}]',Lore:['[{\"text\":\"Grants more invincibility frames to the knight.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],\"enchant_the_rainbow:GlintColor\":10}"
+            }
+        }
+    },
+    "rabbit": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "resource change @s sr:dash -5",
+            "permission_level": 4
+        },
+        "interval": 10,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{display:{Name:'[{\"text\":\"Breath of the rabbit\",\"italic\":false,\"color\":\"white\"},{\"text\":\" \"},{\"text\":\"⋞\",\"bold\":true}]',Lore:['[{\"text\":\"Decreases the dash cooldown.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],\"enchant_the_rainbow:GlintColor\":0}"
+            }
+        }
+    },
+"mercury": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "addition",
+        "value": 0.05,
+        "name": "more speed"
+            },
+    "tick_rate": 20,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{display:{Name:'[{\"text\":\"Mercurys grace\",\"italic\":false,\"color\":\"aqua\"},{\"text\":\"⋙\",\"bold\":true}]',Lore:['[{\"text\":\"Increases your movement speed.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],\"enchant_the_rainbow:GlintColor\":3}"
+            }
+        }
+},
+"heart": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 2,
+        "name": "more hp"
+            },
+    "tick_rate": 20,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{display:{Name:'[{\"text\":\"Unbreakable Heart\",\"italic\":false,\"color\":\"red\"},{\"text\":\" \",\"color\":\"white\"},{\"text\":\"❤\",\"color\":\"white\",\"bold\":true}]',Lore:['[{\"text\":\"Increases your health.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],\"enchant_the_rainbow:GlintColor\":14}"
+            }
+        }
+},
+"strength": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_damage",
+        "operation": "addition",
+        "value": 2,
+        "name": "more dmg"
+            },
+    "tick_rate": 20,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{display:{Name:'[{\"text\":\"Hades Strength\",\"italic\":false,\"color\":\"gold\"},{\"text\":\" \",\"color\":\"white\"},{\"text\":\"♕\",\"color\":\"white\",\"bold\":true}]',Lore:['[{\"text\":\"Increases your damage.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],\"enchant_the_rainbow:GlintColor\":1}"
+            }
+        }
+},
+"heavy": {
+    "type": "origins:conditioned_attribute",
+    "modifier": {
+        "attribute": "minecraft:generic.attack_knockback",
+        "operation": "addition",
+        "value": 300,
+        "name": "knockback"
+            },
+    "tick_rate": 20,
+        "condition": {
+            "type": "origins:equipped_item",
+            "equipment_slot": "offhand",
+            "item_condition": {
+                "type": "origins:nbt",
+                "nbt": "{display:{Name:'[{\"text\":\"Heavy Blow\",\"italic\":false,\"color\":\"gray\"},{\"text\":\" \",\"color\":\"white\"},{\"text\":\"☄\",\"color\":\"white\",\"bold\":true}]',Lore:['[{\"text\":\"Increases your knockback.\",\"italic\":false,\"color\":\"white\"}]']},Enchantments:[{}],\"enchant_the_rainbow:GlintColor\":7}"
+            }
+        }
+    },
+	"hidden": true
+}

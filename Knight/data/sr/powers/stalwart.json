@@ -1,0 +1,37 @@
+{
+        "type": "origins:multiple",
+
+"nodmg":
+{
+	"type": "origins:modify_damage_taken",
+	"modifier": {
+		"operation": "multiply_total",
+		"value": -1
+	}
+},
+"duration":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 18,
+        "start_value": 30,
+        "hud_render": {
+            "should_render": false
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "power remove @s sr:stalwart"
+        }
+        
+    },
+    "remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "sr:stalwart_duration",
+        "change": -1
+    },
+    "interval": 1
+}
+}

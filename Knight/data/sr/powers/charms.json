@@ -1,0 +1,174 @@
+{
+    "type": "origins:multiple",
+
+	"stalwart": {
+            "type": "origins:item_on_item",
+            "on_item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:nautilus_shell"
+                }
+            },
+            "using_item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:nether_star"
+            }
+        },
+            "using_item_action": {
+                "type": "origins:consume",
+                "amount": 1
+            },
+            "on_item_action": {
+                "type": "origins:consume",
+                "amount": 1
+            },
+            "entity_action": {
+                    "type": "origins:execute_command",
+                    "command": "function sr:stalwart",
+                    "permission_level": 4
+            }
+        },
+    "rabbit": {
+        "type": "origins:item_on_item",
+        "on_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:rabbit_foot"
+            }
+        },
+        "using_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:nether_star"
+            }
+        },
+        "using_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "on_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "entity_action": {
+                "type": "origins:execute_command",
+                "command": "function sr:rabbit",
+                "permission_level": 4
+        }
+    },
+"mercury": {
+    "type": "origins:item_on_item",
+    "on_item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:sugar"
+        }
+    },
+    "using_item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:nether_star"
+    }
+    },
+    "using_item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "on_item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function sr:speed",
+            "permission_level": 4
+    }
+},
+"heart": {
+    "type": "origins:item_on_item",
+    "on_item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:heart_of_the_sea"
+        }
+    },
+    "using_item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:nether_star"
+        }
+    },
+    "using_item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "on_item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function sr:heart",
+            "permission_level": 4
+    }
+},
+"strength": {
+    "type": "origins:item_on_item",
+    "on_item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:blaze_powder"
+        }
+    },
+    "using_item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:nether_star"
+    }
+    },
+    "using_item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "on_item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function sr:strength",
+            "permission_level": 4
+    }
+},
+"heavy": {
+    "type": "origins:item_on_item",
+    "on_item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:firework_star"
+        }
+    },
+    "using_item_condition": {
+        "type": "origins:ingredient",
+        "ingredient": {
+            "item": "minecraft:nether_star"
+    }
+},
+    "using_item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "on_item_action": {
+        "type": "origins:consume",
+        "amount": 1
+    },
+    "entity_action": {
+            "type": "origins:execute_command",
+            "command": "function sr:heavy",
+            "permission_level": 4
+    }
+},
+	"name": "§e§l§nCharm Channeling",
+	"description": "Using Nether Stars, you can create charms that will grant you buffs if held in your offhand."
+}

@@ -1,0 +1,1 @@
+give @s blaze_powder{display:{Name:'[{"text":"Hades Strength","italic":false,"color":"gold"},{"text":" ","color":"white"},{"text":"♕","color":"white","bold":true}]',Lore:['[{"text":"Increases your damage.","italic":false,"color":"white"}]']},Enchantments:[{}],"enchant_the_rainbow:GlintColor":1} 1

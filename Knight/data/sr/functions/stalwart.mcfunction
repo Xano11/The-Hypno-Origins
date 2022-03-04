@@ -1,0 +1,1 @@
+give @s nautilus_shell{display:{Name:'[{"text":"Stalwart","italic":false,"color":"dark_purple"},{"text":" Shell ✦","italic":false,"color":"dark_purple"}]',Lore:['[{"text":"Grants more invincibility frames to the knight.","italic":false,"color":"white"}]']},Enchantments:[{}],"enchant_the_rainbow:GlintColor":10} 1

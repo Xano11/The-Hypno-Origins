@@ -1,0 +1,1 @@
+give @s rabbit_foot{display:{Name:'[{"text":"Breath of the rabbit","italic":false,"color":"white"},{"text":" "},{"text":"⋞","bold":true}]',Lore:['[{"text":"Decreases the dash cooldown.","italic":false,"color":"white"}]']},Enchantments:[{}],"enchant_the_rainbow:GlintColor":0} 1

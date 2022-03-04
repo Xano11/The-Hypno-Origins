@@ -5,7 +5,12 @@
 		"sr:sword",
 		"sr:smaller",
 		"sr:flammable",
-		"origins:arthropod"
+		"origins:arthropod",
+		"sr:charms",
+		"sr:charm_effects",
+		"sr:dash",
+		"sr:test",
+		"sr:debuff"
 	],
 	"icon": {
 		"item": "minecraft:stone_sword",

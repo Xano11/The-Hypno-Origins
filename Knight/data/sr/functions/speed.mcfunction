@@ -1,0 +1,1 @@
+give @s sugar{display:{Name:'[{"text":"Mercurys grace","italic":false,"color":"aqua"},{"text":"⋙","bold":true}]',Lore:['[{"text":"Increases your movement speed.","italic":false,"color":"white"}]']},Enchantments:[{}],"enchant_the_rainbow:GlintColor":3} 1

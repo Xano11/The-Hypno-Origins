@@ -1,0 +1,1 @@
+give @s firework_star{display:{Name:'[{"text":"Heavy Blow","italic":false,"color":"gray"},{"text":" ","color":"white"},{"text":"☄","color":"white","bold":true}]',Lore:['[{"text":"Increases your knockback.","italic":false,"color":"white"}]']},Enchantments:[{}],"enchant_the_rainbow:GlintColor":7} 1

@@ -30,20 +30,6 @@
             "name": "fallingStalactite"
         }
     },
-
-    "dragon_strength": {
-        "type": "origins:modify_damage_dealt",
-        "modifier": {
-            "name": "Extra damage to dragons",
-            "operation": "multiply_total",
-            "value": 2
-        },
-        "target_condition": {
-            "type": "origins:entity_type",
-            "entity_type": "minecraft:ender_dragon"
-        }
-    },
-    
     "name": "§c§l§nType Weakness",
     "description": "You take more damage from poison and falling stalactites due to your weaknesses to those elements."
 }

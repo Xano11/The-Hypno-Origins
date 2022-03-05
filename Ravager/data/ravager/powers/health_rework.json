@@ -80,6 +80,78 @@
             "command": "execute if entity @e[tag=ravager,distance=..15,type=!minecraft:player]"
         }
     },
+        "speed1": {
+            "type": "origins:conditioned_attribute",
+            "modifier": {
+                "attribute": "minecraft:generic.movement_speed",
+                "operation": "addition",
+                "value": 0.045,
+                "name": "Increased Combat Speed 1"
+            },
+            "tick_rate": 2,
+            "condition": {
+                "type": "origins:command",
+                "inverted": false,
+                "comparison": ">=",
+                "compare_to": 1,
+                "permission_level": 4,
+                "command": "execute if entity @e[tag=ravager,distance=..15,type=!minecraft:player]"
+            }
+        },
+        "speed2": {
+            "type": "origins:conditioned_attribute",
+            "modifier": {
+                "attribute": "minecraft:generic.movement_speed",
+                "operation": "addition",
+                "value": 0.045,
+                "name": "Increased Combat Speed 2"
+            },
+            "tick_rate": 2,
+            "condition": {
+                "type": "origins:command",
+                "inverted": false,
+                "comparison": ">=",
+                "compare_to": 2,
+                "permission_level": 4,
+                "command": "execute if entity @e[tag=ravager,distance=..15,type=!minecraft:player]"
+            }
+        },
+        "speed3": {
+            "type": "origins:conditioned_attribute",
+            "modifier": {
+                "attribute": "minecraft:generic.movement_speed",
+                "operation": "addition",
+                "value": 0.045,
+                "name": "Increased Combat Speed 3"
+            },
+            "tick_rate": 2,
+            "condition": {
+                "type": "origins:command",
+                "inverted": false,
+                "comparison": ">=",
+                "compare_to": 3,
+                "permission_level": 4,
+                "command": "execute if entity @e[tag=ravager,distance=..15,type=!minecraft:player]"
+            }
+        },
+        "speed4": {
+            "type": "origins:conditioned_attribute",
+            "modifier": {
+                "attribute": "minecraft:generic.movement_speed",
+                "operation": "addition",
+                "value": 0.045,
+                "name": "Increased Combat Speed 4"
+            },
+            "tick_rate": 2,
+            "condition": {
+                "type": "origins:command",
+                "inverted": false,
+                "comparison": ">=",
+                "compare_to": 4,
+                "permission_level": 4,
+                "command": "execute if entity @e[tag=ravager,distance=..15,type=!minecraft:player]"
+            }
+        },
     "name": "§a§l§nMade For Combat",
 	"description": "Depending on the amount of pillagers around you, you gain hp to a maximum of 20 hearts."
 }

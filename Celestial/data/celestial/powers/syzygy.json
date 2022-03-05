@@ -40,19 +40,8 @@
 			"type": "origins:and",
 			"conditions": [
 				{
-					"type": "origins:predicate",
-					"predicate": "celestial:night",
-					"inverted": true
-				},
-				{
 					"type": "origins:dimension",
-					"dimension": "minecraft:the_nether",
-					"inverted": true
-				},
-				{
-					"type": "origins:dimension",
-					"dimension": "minecraft:the_end",
-					"inverted": true
+					"dimension": "minecraft:the_end"
 				}
 			]
 		}

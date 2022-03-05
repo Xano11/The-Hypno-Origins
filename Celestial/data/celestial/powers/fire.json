@@ -1,0 +1,221 @@
+{
+    "type":"origins:multiple",
+
+
+
+"resource":
+{ 
+        "type": "origins:resource",
+        "min": 0,
+        "max": 300,
+        "start_value": 300,
+        "hud_render": {
+            "should_render": false
+        },
+        "min_action": {
+            "type": "origins:execute_command",
+            "command": "kill @s"
+        }
+        
+},
+"damage1":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "power grant @e[distance=..3,tag=!celestial] celestial:fire_damage",
+                "permission_level": 4
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [{
+        "type": "origins:resource",
+        "resource": "celestial:fire_resource",
+        "comparison": ">=",
+        "compare_to": 270
+    },
+    {
+        "type": "origins:resource",
+        "resource": "celestial:fire_resource",
+        "comparison": "<=",
+        "compare_to": 300
+    }
+    ]
+    },
+    "interval": 10
+},
+"damage2":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "power grant @e[distance=..5,tag=!celestial] celestial:fire_damage",
+                "permission_level": 4
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [{
+        "type": "origins:resource",
+        "resource": "celestial:fire_resource",
+        "comparison": ">=",
+        "compare_to": 240
+            },
+            {
+                "type": "origins:resource",
+                "resource": "celestial:fire_resource",
+                "comparison": "<=",
+                "compare_to": 270
+            }
+        ]
+    },
+    "interval": 10
+},
+"damage3":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "power grant @e[distance=..7,tag=!celestial] celestial:fire_damage",
+                "permission_level": 4
+            }
+        ]
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [{
+        "type": "origins:resource",
+        "resource": "celestial:fire_resource",
+        "comparison": "<=",
+        "compare_to": 240
+            }
+        ]
+    },
+    "interval": 10
+},
+"particles1":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:flame ~ ~ ~ 2 0 2 0.1 350 force",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:campfire_cosy_smoke ~ ~ ~ 2 0 2 0.1 50 force",
+                "permission_level": 4
+            }
+        ]
+    },
+    "interval": 2,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [{
+        "type": "origins:resource",
+        "resource": "celestial:fire_resource",
+        "comparison": ">=",
+        "compare_to": 270
+    },
+    {
+        "type": "origins:resource",
+        "resource": "celestial:fire_resource",
+        "comparison": "<=",
+        "compare_to": 300
+    }
+    ]
+    }
+},
+"particles2":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:flame ~ ~ ~ 3 0 3 0.1 350 force",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:campfire_cosy_smoke ~ ~ ~ 3 0 3 0.1 50 force",
+                "permission_level": 4
+            }
+        ]
+    },
+    "interval": 2,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [{
+        "type": "origins:resource",
+        "resource": "celestial:fire_resource",
+        "comparison": ">=",
+        "compare_to": 240
+            },
+            {
+                "type": "origins:resource",
+                "resource": "celestial:fire_resource",
+                "comparison": "<=",
+                "compare_to": 270
+            }
+        ]
+    }
+},
+"particles3":
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:flame ~ ~ ~ 4 0 4 0.1 350 force",
+                "permission_level": 4
+            },
+            {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:campfire_cosy_smoke ~ ~ ~ 4 0 4 0.1 50 force",
+                "permission_level": 4
+            }
+        ]
+    },
+    "interval": 2,
+    "condition": {
+        "type": "origins:and",
+        "conditions": [{
+        "type": "origins:resource",
+        "resource": "celestial:fire_resource",
+        "comparison": "<=",
+        "compare_to": 240
+            }
+        ]
+    }
+},
+"remove_resource": 
+{
+    "type": "origins:action_over_time",
+	"entity_action": {
+        "type": "origins:change_resource",
+        "resource": "celestial:fire_resource",
+        "change": -20
+    },
+    "interval": 20
+},
+"hidden": true
+}

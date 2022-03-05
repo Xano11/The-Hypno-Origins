@@ -85,7 +85,7 @@
             "modifier": {
                 "attribute": "minecraft:generic.movement_speed",
                 "operation": "addition",
-                "value": 0.045,
+                "value": 0.025,
                 "name": "Increased Combat Speed 1"
             },
             "tick_rate": 2,
@@ -103,7 +103,7 @@
             "modifier": {
                 "attribute": "minecraft:generic.movement_speed",
                 "operation": "addition",
-                "value": 0.045,
+                "value": 0.025,
                 "name": "Increased Combat Speed 2"
             },
             "tick_rate": 2,
@@ -121,7 +121,7 @@
             "modifier": {
                 "attribute": "minecraft:generic.movement_speed",
                 "operation": "addition",
-                "value": 0.045,
+                "value": 0.025,
                 "name": "Increased Combat Speed 3"
             },
             "tick_rate": 2,
@@ -139,7 +139,7 @@
             "modifier": {
                 "attribute": "minecraft:generic.movement_speed",
                 "operation": "addition",
-                "value": 0.045,
+                "value": 0.025,
                 "name": "Increased Combat Speed 4"
             },
             "tick_rate": 2,

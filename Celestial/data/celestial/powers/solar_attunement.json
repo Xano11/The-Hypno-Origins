@@ -17,9 +17,10 @@
 				"type": "origins:and",
 				"conditions": [
 					{
-						"type": "origins:predicate",
-						"predicate": "celestial:night",
-						"inverted": true
+						"type": "origins:resource",
+						"resource": "celestial:alternating_resource",
+						"comparison": "==",
+						"compare_to": 0
 					},
 					{
 						"type": "origins:dimension",
@@ -49,10 +50,11 @@
 			"type": "origins:and",
 			"conditions": [
 				{
-					"type": "origins:predicate",
-					"predicate": "celestial:night",
-					"inverted": true
-				},
+                    "type": "origins:resource",
+                    "resource": "celestial:alternating_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
 				{
 					"type": "origins:dimension",
 					"dimension": "minecraft:the_nether",
@@ -76,10 +78,11 @@
 			"type": "origins:and",
 			"conditions": [
 				{
-					"type": "origins:predicate",
-					"predicate": "celestial:night",
-					"inverted": true
-				},
+                    "type": "origins:resource",
+                    "resource": "celestial:alternating_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
 				{
 					"type": "origins:dimension",
 					"dimension": "minecraft:the_nether",
@@ -106,10 +109,11 @@
 			"type": "origins:and",
 			"conditions": [
 				{
-					"type": "origins:predicate",
-					"predicate": "celestial:night",
-					"inverted": true
-				},
+                    "type": "origins:resource",
+                    "resource": "celestial:alternating_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
 				{
 					"type": "origins:dimension",
 					"dimension": "minecraft:the_nether",
@@ -129,10 +133,11 @@
 			"type": "origins:and",
 			"conditions": [
 				{
-					"type": "origins:predicate",
-					"predicate": "celestial:night",
-					"inverted": true
-				},
+                    "type": "origins:resource",
+                    "resource": "celestial:alternating_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
 				{
 					"type": "origins:dimension",
 					"dimension": "minecraft:the_nether",
@@ -177,10 +182,11 @@
 					]
 				},
 				{
-					"type": "origins:predicate",
-					"predicate": "celestial:night",
-					"inverted": true
-				},
+                    "type": "origins:resource",
+                    "resource": "celestial:alternating_resource",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
 				{
 					"type": "origins:dimension",
 					"dimension": "minecraft:the_nether",

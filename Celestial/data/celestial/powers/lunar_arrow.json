@@ -45,8 +45,10 @@
                     "compare_to": 100
                 },
                 {
-                    "type": "origins:daytime",
-                    "inverted": true
+                    "type": "origins:resource",
+                    "resource": "celestial:alternating_resource",
+                    "comparison": "==",
+                    "compare_to": 1
                 }
             ]
         },
@@ -83,8 +85,10 @@
             "type": "origins:and",
 			"conditions": [
                 {
-                    "type": "origins:daytime",
-                    "inverted": true
+                    "type": "origins:resource",
+                    "resource": "celestial:alternating_resource",
+                    "comparison": "==",
+                    "compare_to": 1
                 },
                 {
                     "type": "origins:exposed_to_sky"

@@ -11,7 +11,10 @@
 		"celestial:eclipse",
 		"celestial:syzygy",
     "celestial:solarshields",
-    "celestial:lunar_arrow"
+    "celestial:lunar_arrow",
+    "celestial:alternating",
+    "celestial:scorched",
+    "celestial:callback"
     ],
     "order": 14,
     "unchoosable": false
